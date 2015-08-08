@@ -33,4 +33,6 @@ google_analytics: ""
 timezone: America/Fortaleza
 
 gems:
+- i18n
 - i18n_filter
+- jemoji
