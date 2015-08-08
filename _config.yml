@@ -18,7 +18,7 @@ navigation:
  - title: Portifolio
    url: /Portifolio
  - title: Sobre
-   url: /Sobre
+   url: /sobre
  - title: Contato
    url: /contact
 
@@ -29,7 +29,5 @@ social:
    email: 5rodrigo@hotmail.com
 
 google_analytics: ""
-
-imgheader: mountain.jpg
 
 timezone: America/Fortaleza
