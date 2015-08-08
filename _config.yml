@@ -1,0 +1,35 @@
+title: Blog do Rodrigo
+description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
+author: "Rodrigo"
+
+#url: "http://rodrigo54.github.io/"
+url: "http://127.0.0.1:4000"
+baseurl: ""
+paginate_path: "blog/page:num/"
+permalink: blog/:title/
+
+markdown: redcarpet
+highlighter: pygments
+paginate: 5
+
+navigation:
+ - title: Home
+   url: /index.html
+ - title: Portifolio
+   url: /Portifolio
+ - title: Sobre
+   url: /Sobre
+ - title: Contato
+   url: /contact
+
+social:
+   github: rodrigo54
+   twitter: rodrigo254mix
+   facebook: rodrigo54
+   email: 5rodrigo@hotmail.com
+
+google_analytics: ""
+
+imgheader: mountain.jpg
+
+timezone: America/Fortaleza
