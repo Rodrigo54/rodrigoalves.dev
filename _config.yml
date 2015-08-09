@@ -1,5 +1,5 @@
 title: Blog do Rodrigo
-description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
+description: Um blog feito com muito carinho!
 author: "Rodrigo"
 
 #url: "http://rodrigo54.github.io/"
@@ -7,20 +7,20 @@ url: "http://127.0.0.1:4000"
 baseurl: ""
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
-safe: false
+
 markdown: redcarpet
 highlighter: pygments
 paginate: 5
 
 navigation:
  - title: Home
-   url: /index.html
+   url: "/index.html"
  - title: Portifolio
-   url: /Portifolio
+   url: /portifolio/home.html
  - title: Sobre
-   url: /sobre
+   url: /sobre/home.html
  - title: Contato
-   url: /contact
+   url: /contato/home.html
 
 social:
    github: rodrigo54
@@ -31,8 +31,3 @@ social:
 google_analytics: ""
 
 timezone: America/Fortaleza
-
-gems:
-- i18n
-- i18n_filter
-- jemoji
