@@ -60,7 +60,14 @@ HEADER STYLING
 	height: 15em;
 	position: relative;
 	padding-bottom: 2em;
-
+    &:before{
+        height: 15em;
+        -webkit-filter: blur(2px);
+        -moz-filter: blur(2px);
+        -o-filter: blur(2px);
+        -ms-filter: blur(2px);
+        filter: blur(2px);
+    }
 	.container {
 		position: relative;
 		top: 50%;
@@ -70,12 +77,23 @@ HEADER STYLING
 		@include span(9 of 12);
         float: none;
 		margin: 0 auto;
+        div{
+            @include span(9 of 12);
+            height: 100px;
+            margin-top: 15px;
+        }
+        img{
+            display: block;
+            @include span(2 of 12);            
+            border-radius: 50%;
+        }
 	}
-
+    
+    
 	h1 {
-		font-size: 3em;
+		font-size: 2.68em;
 		line-height: 1;
-		letter-spacing: -3px;
+		letter-spacing: -2px;
 		padding-left: 0;
         text-shadow: 4px 3px 0px $primary-color, 9px 8px 0px rgba(0, 0, 0, 0.15);
 	}

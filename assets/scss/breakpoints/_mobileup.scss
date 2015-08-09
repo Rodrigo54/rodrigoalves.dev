@@ -167,20 +167,29 @@ PAGE STYLES
 HEADER STYLING
 ***************/
 
-.header {
-	background-color: seagreen;
-	background-image: url('../img/folhas.jpg');
-	background-size: cover; 
-	background-position: center center;
+.header {	
 	color: white;
 	padding: 0;
 	height: 3em;
-
+    &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 3em;
+        background-color: seagreen;
+	    background-image: url('../img/folhas.jpg');
+	    background-size: cover; 
+	    background-position: center center;        
+    }
 	.container {
 		padding: 0;
 		@include container(100%);
 	}
-
+    img{
+        display: none;
+    }
 	h1 {
 		margin: 0;
 		float: left;

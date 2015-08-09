@@ -1,5 +1,7 @@
  <div class="header">
      <div class="container">
+        <img src="{{ site.photohome | prepend: site.baseurl }}" alt="Milha foto">
+        <div>
          <h1 class="logo"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
          <nav class="nav-collapse">
              <ul class="noList">
@@ -10,5 +12,6 @@
                  {% endfor %}                 
              </ul>
          </nav>
+         </div>
      </div>
  </div><!-- end .header -->

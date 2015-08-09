@@ -14,7 +14,7 @@ paginate: 5
 
 navigation:
  - title: Home
-   url: "/index.html"
+   url: /index.html
  - title: Portifolio
    url: /portifolio/home.html
  - title: Sobre
@@ -29,5 +29,7 @@ social:
    email: 5rodrigo@hotmail.com
 
 google_analytics: ""
+
+photohome: /assets/img/photo.jpg
 
 timezone: America/Fortaleza
