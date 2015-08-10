@@ -493,6 +493,35 @@ POST LIST STYLING
 		h3 {
 			margin: 0 0 .5em;
 		}
+        .imagebg{
+            display: block;
+            width: 100%;
+            height: 5rem;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            .date {
+                color: white;
+                text-shadow: 0 2px 0 rgba(0, 0, 0, 0.85);
+            }
+
+            h3 {                
+                text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.85);
+                a{&:hover {
+                   color: lighten($primary-color, 25%);
+                }}
+            }
+            img{
+                z-index: -1;
+                display: block;
+                position: absolute;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                left: 0;
+                width: 100%;
+            }
+        }
 	}
 }
-

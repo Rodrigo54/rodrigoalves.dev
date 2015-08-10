@@ -8,6 +8,7 @@ title: Blog do Rodrigo
   <ul class="posts noList">
     {% for post in paginator.posts %}
       <li>
+        <div {% if post.image %} class="imagebg" {% endif %}>
         <span class="date">
         {% assign m = post.date | date: "%-m" %}
         {{ post.date | date: "%-d de " }}
@@ -31,6 +32,7 @@ title: Blog do Rodrigo
         {% if post.image %}
         <img src="{{ '/assets/img/' | prepend: site.baseurl | append: post.image }}" alt="" />
         {% endif %}
+        </div>
         <p class="description">{% if post.description %}{{ post.description | strip_html | strip_newlines | truncate: 250 }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 250 }}{% endif %}</p>
       </li>
     {% endfor %}
