@@ -1,62 +1,78 @@
 ---
 layout: default
 ---
-<div class="post">
-  {% if page.image %}
-    <div class="featuredImage">
-        <img src="{{ '/assets/img/' | prepend: site.baseurl | append: page.image }}" alt="" />
-      </div>
-  {% endif %}
-  <h1 class="postTitle">{{ page.title }}</h1>
-  <p class="meta">
-        {% assign d = page.date | date: "%a" %}
-        {% assign m = page.date | date: "%-m" %}
-        {% case d %}
-          {% when "Sun" %}Domingo
-          {% when "Mon" %}Segunda
-          {% when "Tue" %}Terça
-          {% when "Wed" %}Quarta
-          {% when "Thu" %}Quinta
-          {% when "Fri" %}Sexta
-          {% when "Sat" %}Sábado
-        {% endcase %}
-        {{ page.date | date: "%-d de " }}
-        {% case m %}
-          {% when '1' %}Janeiro
-          {% when '2' %}Fevereiro
-          {% when '3' %}Março
-          {% when '4' %}Abril
-          {% when '5' %}Maio
-          {% when '6' %}Junho
-          {% when '7' %}Julho
-          {% when '8' %}Agosto
-          {% when '9' %}Setembro
-          {% when '10' %}Outubro
-          {% when '11' %}Novembro
-          {% when '12' %}Dezembro
-        {% endcase %}
-        {{ page.date | date: " de %Y" }} | Leia em <span class="time">{{ page.content | number_of_words | divided_by:180 }}</span> Minutos</p>
-  
-  {{ content }}
-  
-  <!-- POST NAVIGATION -->
-  <div class="postNav clearfix">
-    {% if page.previous.url %} 
-      <a class="prev{% if page.previous.image %} image{% endif %}" href="{{ page.previous.url | prepend: site.baseurl }}"><span>&laquo;&nbsp;{{ page.previous.title }}</span>
-      {% if page.previous.image %} 
-        <img src="{{ '/assets/img/' | prepend: site.baseurl | append: page.previous.image }}" alt="">
-      {% endif %}
-    </a>
-    {% endif %}  
-    {% if page.next.url %}  
-      <a class="next{% if page.next.image %} image{% endif %}" href="{{ page.next.url | prepend: site.baseurl }}"><span>{{ page.next.title }}&nbsp;&raquo;</span>
-      {% if page.next.image %} 
-        <img src="{{ '/assets/img/' | prepend: site.baseurl | append: page.next.image }}" alt="">
-      {% endif %} 
-      </a>
-    {% endif %} 
-  </div>
 
-  {% include disqus.html %}
-  
-</div>
+<!-- Post Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>{{ page.title }}</h1>
+                    {% if page.subtitle %}
+                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    {% endif %}
+                    <span class="meta">Postado por {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} em 
+                    {% assign d = page.date | date: "%a" %}
+                    {% assign m = page.date | date: "%-m" %}
+                    {% case d %}
+                      {% when "Sun" %}Domingo
+                      {% when "Mon" %}Segunda
+                      {% when "Tue" %}Terça
+                      {% when "Wed" %}Quarta
+                      {% when "Thu" %}Quinta
+                      {% when "Fri" %}Sexta
+                      {% when "Sat" %}Sábado
+                    {% endcase %}
+                    {{ page.date | date: "%-d de " }}
+                    {% case m %}
+                      {% when '1' %}Janeiro
+                      {% when '2' %}Fevereiro
+                      {% when '3' %}Março
+                      {% when '4' %}Abril
+                      {% when '5' %}Maio
+                      {% when '6' %}Junho
+                      {% when '7' %}Julho
+                      {% when '8' %}Agosto
+                      {% when '9' %}Setembro
+                      {% when '10' %}Outubro
+                      {% when '11' %}Novembro
+                      {% when '12' %}Dezembro
+                    {% endcase %}
+                    {{ page.date | date: " de %Y" }}
+                    | Leia em {{ page.content | number_of_words | divided_by:180 }} Minutos</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				{{ content }}
+
+                <hr>
+                <ul class="pager">
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Postagem Anterior</a>
+                    </li>
+                    {% endif %}
+                    {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Proxima Postagem &rarr;</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                {% include disqus.html %}
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>

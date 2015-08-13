@@ -1,49 +1,53 @@
 ---
-layout: default
-title: Blog do Rodrigo
+layout: page
+description: "Desenvolvedor Web"
 ---
 
-<div class="home" id="home">
-  <h1 class="pageTitle">Postagens Recentes</h1>
-  <ul class="posts noList">
-    {% for post in paginator.posts %}
-      <li>
-        <div {% if post.image %} class="imagebg" {% endif %}>
-        <span class="date">
-        {% assign m = post.date | date: "%-m" %}
-        {{ post.date | date: "%-d de " }}
-        {% case m %}
-          {% when '1' %}Janeiro
-          {% when '2' %}Fevereiro
-          {% when '3' %}Março
-          {% when '4' %}Abril
-          {% when '5' %}Maio
-          {% when '6' %}Junho
-          {% when '7' %}Julho
-          {% when '8' %}Agosto
-          {% when '9' %}Setembro
-          {% when '10' %}Outubro
-          {% when '11' %}Novembro
-          {% when '12' %}Dezembro
-        {% endcase %}
-        {{ post.date | date: " de %Y" }}
-        </span>
-        <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-        {% if post.image %}
-        <img src="{{ '/assets/img/' | prepend: site.baseurl | append: post.image }}" alt="" />
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
         {% endif %}
-        </div>
-        <p class="description">{% if post.description %}{{ post.description | strip_html | strip_newlines | truncate: 250 }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 250 }}{% endif %}</p>
-      </li>
-    {% endfor %}
-  </ul>
-  <!-- Pagination links -->
-  <div class="pagination">
+    </a>
+    <p class="post-meta">Postado por {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} em 
+    {% assign m = post.date | date: "%-m" %}
+    {{ post.date | date: "%-d de " }}
+    {% case m %}
+      {% when '1' %}Janeiro
+      {% when '2' %}Fevereiro
+      {% when '3' %}Março
+      {% when '4' %}Abril
+      {% when '5' %}Maio
+      {% when '6' %}Junho
+      {% when '7' %}Julho
+      {% when '8' %}Agosto
+      {% when '9' %}Setembro
+      {% when '10' %}Outubro
+      {% when '11' %}Novembro
+      {% when '12' %}Dezembro
+    {% endcase %}
+    {{ post.date | date: " de %Y" }}</p>
+</div>
+<hr>
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous button__outline">Novas Postagens</a> 
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Novas Postagens</a>
+    </li>
     {% endif %}
     {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next button__outline">Postagens Anteriores</a>
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Postagens Anteriores &rarr;</a>
+    </li>
     {% endif %}
-  </div>
-</div>
+</ul>
+{% endif %}

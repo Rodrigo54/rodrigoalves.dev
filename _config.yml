@@ -1,35 +1,19 @@
-title: Blog do Rodrigo
-description: Um blog feito com muito carinho!
-author: "Rodrigo"
-
-#url: "http://rodrigo54.github.io/"
-url: "http://127.0.0.1:4000"
+# Site settings
+title: Rodrigo Alves
+header-img: img/home-bg.jpg
+email: your-email@yourdomain.com
+description: "Meu Blog"
 baseurl: ""
-paginate_path: "blog/page:num/"
-permalink: blog/:title/
+url: "http://localhost:4000/"
+twitter_username: rodrigo254mix
+github_username:  rodrigo54
+facebook_username:  rodrigo54
+email_site: rodrigo54mix@gmail.com
 
-markdown: redcarpet
+# Build settings
+markdown: kramdown
 highlighter: pygments
+#permalink: pretty
+permalink: /:title/
 paginate: 5
-
-navigation:
- - title: Home
-   url: /index.html
- - title: Portifolio
-   url: /portifolio/home.html
- - title: Sobre
-   url: /sobre/home.html
- - title: Contato
-   url: /contato/home.html
-
-social:
-   github: rodrigo54
-   twitter: rodrigo254mix
-   facebook: rodrigo54
-   email: 5rodrigo@hotmail.com
-
-google_analytics: ""
-
-photohome: /assets/img/photo.jpg
-
-timezone: America/Fortaleza
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
