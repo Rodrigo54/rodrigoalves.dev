@@ -14,7 +14,7 @@ description: "Desenvolvedor Web"
         </h3>
         {% endif %}
     </a>
-    <p class="post-meta">Postado por {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} em 
+    <p class="post-meta">Postado em 
     {% assign m = post.date | date: "%-m" %}
     {{ post.date | date: "%-d de " }}
     {% case m %}
