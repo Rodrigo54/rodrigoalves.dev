@@ -11,8 +11,7 @@ facebook_username:  rodrigo54
 email_site: rodrigo54mix@gmail.com
 
 # Build settings
-#markdown: kramdown
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
 #permalink: pretty
 permalink: /:title/
