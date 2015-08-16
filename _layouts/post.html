@@ -12,17 +12,17 @@ layout: default
                     {% if page.subtitle %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% endif %}
-                    <span class="meta">Postado por {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} em 
+                    <span class="meta">Postado 
                     {% assign d = page.date | date: "%a" %}
                     {% assign m = page.date | date: "%-m" %}
                     {% case d %}
-                      {% when "Sun" %}Domingo
-                      {% when "Mon" %}Segunda
-                      {% when "Tue" %}Terça
-                      {% when "Wed" %}Quarta
-                      {% when "Thu" %}Quinta
-                      {% when "Fri" %}Sexta
-                      {% when "Sat" %}Sábado
+                      {% when "Sun" %}no Domingo
+                      {% when "Mon" %}na Segunda feira
+                      {% when "Tue" %}na Terça feira
+                      {% when "Wed" %}na Quarta feira
+                      {% when "Thu" %}na Quinta feira
+                      {% when "Fri" %}na Sexta feira
+                      {% when "Sat" %}no Sábado
                     {% endcase %}
                     {{ page.date | date: "%-d de " }}
                     {% case m %}
@@ -40,7 +40,9 @@ layout: default
                       {% when '12' %}Dezembro
                     {% endcase %}
                     {{ page.date | date: " de %Y" }}
-                    | Leia em {{ page.content | number_of_words | divided_by:180 }} Minutos</p>
+                    | <i class="fa fa-clock-o"></i>
+                    {% assign l = page.content | number_of_words | divided_by:180 %}
+                    {% if l > 1 %} Leia em {{ l }} Minutos {% else %}Leia em menos de 1 Minuto{% endif %}</p>
                     </span>
                 </div>
             </div>
@@ -69,6 +71,7 @@ layout: default
                     </li>
                     {% endif %}
                 </ul>
+                <hr>
                 {% include disqus.html %}
             </div>
         </div>
