@@ -4,11 +4,11 @@ title:      "Atualizando a versão do PHP no Wampserver"
 subtitle:   "Use o PHP 7 no Wampserver."
 date:       2015-08-19 20:30:00
 author:     "Rodrigo Alves"
-header-img: "img/illustration-contrib.jpg"
+header-img: "img/WampServer-Welcome-Screen.jpg"
 ---
 
-Siga os passos abaixo para atualizar o php no Wampserver
------------
+<p>Siga os passos abaixo para atualizar o php no Wampserver</p>
+<hr>
 
 1.    Parar servidor WAMP.
 
