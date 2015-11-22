@@ -1,10 +1,10 @@
 ---
 layout:     post
 title:      "Atualizando a versão do PHP no Wampserver"
-subtitle:   "Use o PHP 7 no Wampserver."
+subtitle:   "Use o PHP 5.6 no Wampserver."
 date:       2015-08-19 20:30:00
 author:     "Rodrigo Alves"
-header-img: "img/WampServer.jpg"
+header-img: "img/home-bg.jpg"
 ---
 
 <p>Siga os passos abaixo para atualizar o php no Wampserver</p>

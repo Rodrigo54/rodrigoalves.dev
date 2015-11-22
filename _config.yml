@@ -1,13 +1,14 @@
 # Site settings
-title: Blog do Rodrigo
-header-img: img/home-bg.jpg
-email: your-email@yourdomain.com
+title: Blog do Rodrigo Alves
+header-img: img/snapshot.jpg
+email: rodrigo54mix@gmail.com
 description: "Meu Blog"
 baseurl: ""
 url: "http://localhost:4000/"
 twitter_username: rodrigo254mix
 github_username:  rodrigo54
 facebook_username:  rodrigo54
+linkedin_username: rodrigo54
 email_site: rodrigo54mix@gmail.com
 
 # Build settings
