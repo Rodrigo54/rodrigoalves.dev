@@ -12,7 +12,7 @@ layout: default
                     {% if page.subtitle %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% endif %}
-                    <span class="meta">Postado 
+                    <span class="meta">Postado
                     {% assign d = page.date | date: "%a" %}
                     {% assign m = page.date | date: "%-m" %}
                     {% case d %}
@@ -42,7 +42,7 @@ layout: default
                     {{ page.date | date: " de %Y" }}
                     | <i class="fa fa-clock-o"></i>
                     {% assign l = page.content | number_of_words | divided_by:180 %}
-                    {% if l > 1 %} Leia em {{ l }} Minutos {% else %}Leia em menos de 1 Minuto{% endif %}</p>
+                    {% if l > 1 %} Leia em {{ l }} Minutos {% else %}Leia em menos de 1 Minuto{% endif %}
                     </span>
                 </div>
             </div>
