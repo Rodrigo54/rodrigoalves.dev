@@ -1,7 +1,7 @@
-# Home Page
-[![Version Alfa](https://img.shields.io/badge/version-alfa-yellow.svg)](http://github.com/Rodrigo54/ordenacao_de_strings)
+# Blog do Rodrigo Alves
+[![Version 1.0](https://img.shields.io/badge/version-1.0-brightgreen.svg)](http://github.com/Rodrigo54/rodrigo54.github.io)
 
-Página Web pessoal 
+blog Web pessoal
 
 Feito em Jekyll
 
