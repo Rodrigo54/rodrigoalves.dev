@@ -11,7 +11,7 @@ Siga os passos abaixo para atualizar o php no Wampserver
 
 1.  Parar servidor WAMP.
 
-2.  Vá para [A página de downloads do php](http://windows.php.net/qa/) e faça o dowload do pacode zip da versão do php. Certifique-se que esta baixando a versão  **Thread Safe** compativel (x86 ou x64).
+2.  Vá para [A página de downloads do php](http://windows.php.net/download/) e faça o dowload do pacode zip da versão do php. Certifique-se que esta baixando a versão  **Thread Safe** compativel (x86 ou x64).
 
 3.  Crie uma pasta para sua versão do php. Ex: `wamp/bin/php/php5.6.11`
 

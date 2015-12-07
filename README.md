@@ -7,3 +7,9 @@ blog Web pessoal
 Feito em Jekyll
 
 tema [Clean Blog](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll)
+
+### Instruções
+
+  1. instale o Jekyll.
+  2. execute o comando ` jekyll serve --baseurl '' ` para usar localmente
+  3. use o comando ` htmlproof ./_site --only-4xx --check-favicon ` para validar o html
