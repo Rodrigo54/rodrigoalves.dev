@@ -14,7 +14,7 @@ description: "Desenvolvedor Web"
         </h3>
         {% endif %}
     </a>
-    <p class="post-meta">Postado em 
+    <p class="post-meta">Postado em
     {% assign m = post.date | date: "%-m" %}
     {{ post.date | date: "%-d de " }}
     {% case m %}
@@ -31,7 +31,12 @@ description: "Desenvolvedor Web"
       {% when '11' %}Novembro
       {% when '12' %}Dezembro
     {% endcase %}
-    {{ post.date | date: " de %Y" }}</p>
+    {{ post.date | date: " de %Y" }}
+    <br><i class="fa fa-clock-o"></i>
+    {% assign l = post.content | number_of_words | divided_by:180 %}
+    {% if l > 1 %} Leia em {{ l }} Minutos {% else %}Leia em menos de 1 Minuto{% endif %}
+    {% if post.music %} - <i class="fa fa-music"></i> Ouvindo <a href="{{ post.music.url }}" target="_blank">{{ post.music.title }}</a>.{% endif %}
+    </p>
 </div>
 <hr>
 {% endfor %}

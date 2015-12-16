@@ -5,6 +5,7 @@ node_modules
 Gemfile.lock
 npm-debug.log
 tmp
+src_img
 
 # Windows image file caches
 Thumbs.db

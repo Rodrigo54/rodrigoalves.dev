@@ -40,9 +40,10 @@ layout: default
                       {% when '12' %}Dezembro
                     {% endcase %}
                     {{ page.date | date: " de %Y" }}
-                    | <i class="fa fa-clock-o"></i>
+                    <br><i class="fa fa-clock-o"></i>
                     {% assign l = page.content | number_of_words | divided_by:180 %}
                     {% if l > 1 %} Leia em {{ l }} Minutos {% else %}Leia em menos de 1 Minuto{% endif %}
+                    {% if page.music %} - <i class="fa fa-music"></i> Ouvindo <a href="{{ page.music.url }}" target="_blank">{{ page.music.title }}</a>.{% endif %}
                     </span>
                 </div>
             </div>

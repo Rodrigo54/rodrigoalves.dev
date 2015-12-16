@@ -5,6 +5,9 @@ subtitle:   "Use desde o PHP 5.3 até o PHP 7.0 no Wampserver."
 date:       2015-12-07 16:30:15
 author:     "Rodrigo Alves"
 header-img: "img/post-bg-01.jpg"
+music:
+  title:    "Don't Stop - Knightlife"
+  url:      "https://open.spotify.com/track/377e3RYbkuNSpZkV0yEQKE"
 ---
 
 Quando iniciamos um projeto do zero, fica fácil decidir qual a versão do PHP será usada.

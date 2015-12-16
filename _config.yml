@@ -13,10 +13,8 @@ email_site: rodrigo54mix@gmail.com
 timezone: America/Fortaleza
 
 # Build settings
-# markdown: kramdown
 markdown: redcarpet
 highlighter: pygments
-#permalink: pretty
 permalink: /:title/
 paginate: 5
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]

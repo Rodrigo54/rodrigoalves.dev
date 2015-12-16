@@ -1,5 +1,9 @@
+var pngquant = require('imagemin-pngquant');
+var mozjpeg = require('imagemin-mozjpeg');
+
 module.exports = function(grunt) {
 
+    require('time-grunt')(grunt);
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -60,15 +64,42 @@ module.exports = function(grunt) {
                 }
             },
         },
+
+        imagemin:{
+          target: {
+            options: {
+              optimizationLevel: 3,
+              progressive: true,
+              use: [pngquant(), mozjpeg()]
+            }, // options
+            files: [{
+              expand: true,
+              cwd: 'src_img/',
+              src: ['**/*.{png,jpg,jpeg,gif,svg}'],
+              dest: 'img/'
+            }] // files
+          } // target
+        }, // imagemin
+
+        shell: {
+            jekyllServe: {
+                command: "jekyll serve --baseurl '' "
+            }
+        }
+
     });
 
     // Load the plugins.
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-banner');
+    grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'less', 'usebanner']);
+    grunt.registerTask('serve', 'shell');
+    grunt.registerTask('img', 'imagemin');
+    grunt.registerTask('default', ['uglify', 'less', 'usebanner', 'img']);
 
 };

@@ -5,6 +5,9 @@ subtitle:   "Use o PHP 5.6 no Wampserver."
 date:       2015-08-19 20:30:00
 author:     "Rodrigo Alves"
 header-img: "img/home-bg.jpg"
+music:
+  title:    "There Might Be Coffee - deadmau5"
+  url:      "https://open.spotify.com/track/7rwgvDDkdHTBMAruB2Lr3Z"
 ---
 
 Siga os passos abaixo para atualizar o php no Wampserver
