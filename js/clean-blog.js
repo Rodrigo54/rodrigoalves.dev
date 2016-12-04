@@ -1058,5 +1058,5 @@ jQuery(document).ready(function($) {
     }
 });
 
-//add target="_blank" em links externos
-$("a[href^='http']").attr("target","_blank");
+// add target="_blank" em links externos
+$('a[href^="http://"]').not('a[href*=rodrigom]').attr('target','_blank');

@@ -30,38 +30,37 @@ wampserver, ele chegou a atualizar até a versão 2.5.18 quando enfim a Alterway
 decidiu implementar as atualizações feitas por ele e a inclui-lo no processo de
 desenvolvimento do wampserver.
 
-Veja o Changelog do wampserver 2.5.18 <a href="http://forum.wampserver.com/read.php?2,130837" target="_blank">aqui</a>.
+Veja o Changelog do wampserver 2.5.18 [aqui](http://forum.wampserver.com/read.php?2,130837).
 
-Veja o Changelog do wampserver 3.0.0 <a href="http://forum.wampserver.com/read.php?2,136483" target="_blank">aqui</a>.
+Veja o Changelog do wampserver 3.0.0 [aqui](http://forum.wampserver.com/read.php?2,136483).
 
 ## Por onde começar?
 
 Existem dois modos de adicionar versões do PHP no wampserver.
 Uma das maneiras é a manual que pode ser conferida
-[aqui nesse artigo]({{ site.baseurl }}/atualizando-a-versao-do-php-no-wampserver/).
+[aqui nesse artigo](http://blog.rodrigoalves.me/atualizando-a-versao-do-php-no-wampserver/).
 E a outra é utilizando os add-ons do próprio wampserver.
 Nesse artigo, vou mostrar como adicionar uma nova versão do PHP utilizando
 os add-ons do wampserver 3.0.
 
-1.  Instale o wampserver 3.0 no <a href="https://sourceforge.net/projects/wampserver/files/latest/download" target="_blank">sourceforge</a>
+1.  Instale o wampserver 3.0 no [sourceforge](http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3_x86_apache2.4.17_mysql5.7.9_php5.6.15.exe/download)
 
     > É importante notar que apenas as versões do PHP 5.5 e superiores
     > dão suporte 64 bits por isso para instalar versões como o
     > PHP 5.4 ou inferiores é necessário instalar o wampserver x86
 
 2.  Baixe os Add-ons do *wampserver x86* <br>
-    * <a target="_blank" href="http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/wampserver3_x86_addon_php5.3.29.exe/download">PHP 5.3</a>
-    * <a target="_blank" href="http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/wampserver3_x86_addon_php5.4.45.exe/download">PHP 5.4</a>
-    * <a target="_blank" href="http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/wampserver3_x86_addon_php5.5.30.exe/download">PHP 5.5</a>
-    * <a target="_blank" href="http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/Php/wampserver3_x86_addon_php5.6.26.exe/download">PHP 5.6</a>
-    * <a target="_blank" href="http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/Php/wampserver3_x86_addon_php7.0.13.exe/download">PHP 7.0</a>
-    * <a target="_blank" href="http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/Php/wampserver3_x86_addon_php7.1.0.exe/download">PHP 7.1</a>
-    * *Opcional* <a target="_blank" href="https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/Apache/wampserver3_x86_addon_apache2.2.31.exe/download">Apache 2.2</a>.
+    * [PHP 5.3](http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/wampserver3_x86_addon_php5.3.29.exe/download)
+    * [PHP 5.4](http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/wampserver3_x86_addon_php5.4.45.exe/download)
+    * [PHP 5.5](http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/wampserver3_x86_addon_php5.5.30.exe/download)
+    * [PHP 5.6](http://aviatechno.net/files/wampserver/wampserver3_x86_addon_php5.6.16.exe)
+    * [PHP 7.0](http://aviatechno.net/files/wampserver/wampserver3_x86_addon_php7.0.0.exe)
+    * *Opcional* [Apache 2.2](http://aviatechno.net/files/wampserver/wampserver3_x86_addon_apache2.2.31.exe)
 
 ## PHP na linha de comando
 
 O PHP, assim como outras linguagens de programação, oferece a opção
-de execução via linha de comando. Para quem usa o <a href="https://getcomposer.org/" target="_blank">Composer</a> é preciso
+de execução via linha de comando. Para quem usa o [Composer](https://getcomposer.org/) é preciso
 definir a variável de ambiente do PHP no Windows. Mas já que temos
 várias versões do PHP instaladas será mais eficiente fazer com que
 a variável de ambiente do Windows mude conforme mudamos a versão do php no wampserver.
@@ -98,7 +97,7 @@ FOR /F "tokens=*" %%a IN ('type %file%') DO (
 CALL !serverPath:"=!\bin\php\php!%key%!\php.exe %*
 
 ```
-Veja o arquivo original <a href="https://gist.github.com/hieblmedia/d83b0ace4861a51344ca" target="_blank">aqui</a>
+Veja o arquivo original [aqui](https://gist.github.com/hieblmedia/d83b0ace4861a51344ca)
 
 Crie o arquivo **php.bat** em `path\para-o\wamp\bin\php`
 

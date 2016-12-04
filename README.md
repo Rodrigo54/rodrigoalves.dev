@@ -15,4 +15,4 @@ tema [Clean Blog](https://github.com/IronSummitMedia/startbootstrap-clean-blog-j
   1. instale o Jekyll ` gem install jekyll bundler `
   2. instale as gems ` bundle install `
   2. execute o comando ` bundle exec jekyll serve --baseurl '' --no-watch ` para usar localmente em [http://localhost:4000](http://localhost:4000)
-  3. use o comando ` bundle exec htmlproofer ./_site --only-4xx --check-favicon ` para validar o html
+  3. use o comando ` htmlproof ./_site --only-4xx --check-favicon ` para validar o html
