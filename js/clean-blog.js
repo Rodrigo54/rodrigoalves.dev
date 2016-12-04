@@ -9,6 +9,12 @@ $(function() {
     $("[data-toggle='tooltip']").tooltip();
 });
 
+
+// add target="_blank" em links externos
+$(function() {
+    $('a[href^="http://"]').not('a[href*=rodrigom]').attr('target','_blank');
+});
+
 // Contact Form Scripts
 
 $(function() {
@@ -1057,6 +1063,3 @@ jQuery(document).ready(function($) {
             });
     }
 });
-
-// add target="_blank" em links externos
-$('a[href^="http://"]').not('a[href*=rodrigom]').attr('target','_blank');
