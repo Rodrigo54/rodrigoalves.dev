@@ -11,7 +11,7 @@ $(function() {
 
 // add target="_blank" em links externos
 $(function() {
-    $('a[href^="http"]').not('a[href*=rodrigom]').attr('target','_blank');
+    $('a[href^="http://"], a[href^="https://"]').not('a[href*=rodrigom]').attr('target','_blank');
 });
 
 // Contact Form Scripts
