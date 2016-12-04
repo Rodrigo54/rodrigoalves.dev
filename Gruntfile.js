@@ -2,6 +2,14 @@ var pngquant = require('imagemin-pngquant');
 var mozjpeg = require('imagemin-mozjpeg');
 
 module.exports = function(grunt) {
+    // Load the plugins.
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-banner');
+    grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-uncss');
 
     require('time-grunt')(grunt);
     // Project configuration.
@@ -85,21 +93,26 @@ module.exports = function(grunt) {
             jekyllServe: {
                 command: "jekyll serve --baseurl '' "
             }
-        }
+        },
+
+        uncss: {
+          options: {
+            ignoreSheets : [/fonts.googleapis/],
+            ignore: ['#added_at_runtime', '.created_by_jQuery'],
+            csspath: './css/',
+            htmlroot: './_site/'
+          },
+          dist: {
+              src: './_site/**/*.html',
+              dest: './css/<%= pkg.name %>.min.css'
+          }
+        },
 
     });
-
-    // Load the plugins.
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-banner');
-    grunt.loadNpmTasks('grunt-shell');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     // Default task(s).
     grunt.registerTask('serve', 'shell');
     grunt.registerTask('img', 'imagemin');
-    grunt.registerTask('default', ['uglify', 'less', 'usebanner', 'img']);
+    grunt.registerTask('default', ['uglify', 'less', 'uncss', 'usebanner', 'img']);
 
 };

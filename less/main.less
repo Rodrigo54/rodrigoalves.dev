@@ -202,7 +202,7 @@ hr.small {
     }
     .subheading {
       font-size: 24px;
-      line-height: 1.1,
+      line-height: 1.1;
       display: block;
       .sans-serif;
       font-weight: 300;
@@ -482,4 +482,15 @@ img::-moz-selection {
 
 body {
   webkit-tap-highlight-color: @brand-primary;
+}
+
+.portfolio-item {
+  margin-bottom: 25px;
+  img{
+    border: .5px solid #404040;
+    box-shadow: 1px 1px 3px #708090;
+  }
+  > a:hover > img{
+    border: 1px solid #0085a1;
+  }
 }
