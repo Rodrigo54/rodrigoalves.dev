@@ -8,5 +8,3 @@ gem 'github-pages', versions['github-pages']
 gem 'rake'
 gem 'jemoji'
 gem 'html-proofer'
-gem 'pygments.rb'
-gem 'redcarpet'
