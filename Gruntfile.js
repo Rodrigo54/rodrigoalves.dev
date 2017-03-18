@@ -92,13 +92,16 @@ module.exports = function(grunt) {
         shell: {
             jekyllServe: {
                 command: "jekyll serve --baseurl '' "
+            },
+            deleteSite: {
+                command: "rd /s _site"
             }
         },
 
         uncss: {
           options: {
             ignoreSheets : [/fonts.googleapis/],
-            ignore: ['#added_at_runtime', '.created_by_jQuery'],
+            ignore: [/.tooltip/, '.highlight'],
             csspath: './css/',
             htmlroot: './_site/'
           },
@@ -113,6 +116,7 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('serve', 'shell');
     grunt.registerTask('img', 'imagemin');
-    grunt.registerTask('default', ['uglify', 'less', 'uncss', 'usebanner', 'img']);
+    grunt.registerTask('css', ['less', 'uncss']);
+    grunt.registerTask('default', ['shell:deleteSite', 'uglify', 'less', 'uncss', 'usebanner', 'img']);
 
 };

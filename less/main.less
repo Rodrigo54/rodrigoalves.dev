@@ -4,6 +4,7 @@ body {
   .serif;
   font-size: 20px;
   color: @gray-dark;
+  word-wrap: break-word
 }
 
 // -- Typography
@@ -263,6 +264,9 @@ hr.small {
       font-size: 30px;
       margin-top: 30px;
       margin-bottom: 10px;
+      @media only screen and (min-width: 768px) {
+        font-size: 36px;
+      }
     }
     > .post-subtitle {
       margin: 0;
@@ -282,13 +286,6 @@ hr.small {
       &:focus {
         color: @brand-primary;
         text-decoration: underline;
-      }
-    }
-  }
-  @media only screen and (min-width: 768px) {
-    > a {
-      > .post-title {
-        font-size: 36px;
       }
     }
   }
@@ -356,8 +353,8 @@ footer {
     margin: 0;
     font-size: 0.85em;
     line-height: 1.764705882em;
-    vertical-align: middle;
-    vertical-align: baseline;
+    // vertical-align: middle;
+    // vertical-align: baseline;
     opacity: 0;
     -webkit-transition: top 0.3s ease,opacity 0.3s ease;
     -moz-transition: top 0.3s ease,opacity 0.3s ease;
@@ -481,7 +478,7 @@ img::-moz-selection {
 }
 
 body {
-  webkit-tap-highlight-color: @brand-primary;
+  -webkit-tap-highlight-color: @brand-primary;
 }
 
 .portfolio-item {

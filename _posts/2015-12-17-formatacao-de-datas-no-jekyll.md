@@ -19,7 +19,7 @@ Jekyll (gerador de site estático) usa do Shopify o
 Para ver as datas é usando a tag `{% raw  %}{{ page.date }}{% endraw %}` fornecida pelo Liquid.
 Com nenhuma outra alteração, as datas produzidas são algo como:
 
-```
+```liquid
 {{ page.date }}
 ```
 
@@ -27,13 +27,13 @@ Se houver projetos que usam esse formato, eles são poucos e não se relacionam.
 A criação de uma data mais amigável é feita através da aplicação do filtro `date:` do Liquid.
 Por exemplo, combinando a tag e o filtro:
 
-```
+```liquid
 {% raw  %}{{ page.date | date: '%B %d, %Y' }}{% endraw %}
 ```
 
 produz uma data mais amigável ao leitor:
 
-```
+```liquid
 {{ page.date | date: '%B %d, %Y' }}
 ```
 
@@ -72,7 +72,7 @@ conseguir praticamente qualquer formato de data desejado.
 
 *   **Data para String**
 
-    ```
+    ```liquid
     {% raw  %}{{ page.date | date_to_string }}{% endraw %}
     ```
 
@@ -83,7 +83,7 @@ conseguir praticamente qualquer formato de data desejado.
 
 *   **Data para String longa**
 
-    ```
+    ```liquid
     {% raw  %}{{ page.date | date_to_long_string }}{% endraw %}
     ```
 
@@ -95,7 +95,7 @@ conseguir praticamente qualquer formato de data desejado.
 
 *   **Data no padrão XML**
 
-    ```
+    ```liquid
     {% raw  %}{{ page.date | date_to_xmlschema }}{% endraw %}
     ```
 
@@ -107,7 +107,7 @@ conseguir praticamente qualquer formato de data desejado.
 
 *   **Data no padrão RFC-822**
 
-    ```
+    ```liquid
     {% raw  %}{{ page.date | date_to_rfc822 }}{% endraw %}
     ```
 
@@ -120,7 +120,7 @@ conseguir praticamente qualquer formato de data desejado.
 
 *   **Data no formato ISO 8601**
 
-    ```
+    ```liquid
     {% raw  %}{{ page.date | date: "%Y-%m-%d" }}{% endraw %}
     ```
 
@@ -131,7 +131,7 @@ conseguir praticamente qualquer formato de data desejado.
 
 *   **Data no formato Americano com ano de 4 digitos** (com zeros à esquerda)
 
-    ```
+    ```liquid
     {% raw  %}{{ page.date | date: "%m/%d/%Y" }}{% endraw %}
     ```
 
@@ -142,7 +142,7 @@ conseguir praticamente qualquer formato de data desejado.
 
 *   **Data no formato Americano com ano de 4 digitos** (sem zeros à esquerda)
 
-    ```
+    ```liquid
     {% raw  %}{{ page.date | date: "%-m/%-d/%Y" }}{% endraw %}
     ```
 
@@ -153,7 +153,7 @@ conseguir praticamente qualquer formato de data desejado.
 
 *   **Data no formato Americano com ano de 2 digitos** (sem zeros à esquerda)
 
-    ```
+    ```liquid
     {% raw  %}{{ page.date | date: "%-m/%-d/%y" }}{% endraw %}
     ```
 
@@ -164,7 +164,7 @@ conseguir praticamente qualquer formato de data desejado.
 
 *   **Data no formato Americano com mês completo** (sem zeros à esquerda)
 
-    ```
+    ```liquid
     {% raw  %}{{ page.date | date: "%-d %B %Y" }}{% endraw %}
     ```
 
@@ -175,7 +175,7 @@ conseguir praticamente qualquer formato de data desejado.
 
 *   **Data no formato Brasileiro com mês completo** (sem zeros à esquerda)
 
-    ```
+    ```liquid
     {% raw  %}
     {% assign m = page.date | date: "%-m" %}
     {{ page.date | date: "%-d de" }}
@@ -264,7 +264,7 @@ conseguir praticamente qualquer formato de data desejado.
 
 *   **Data no formato padrão Americano com mês completo** (sem zeros à esquerda)
 
-    ```
+    ```liquid
     {% raw  %}{{ page.date | date: "%B %-d, %Y" }}{% endraw %}
     ```
 
@@ -275,7 +275,7 @@ conseguir praticamente qualquer formato de data desejado.
 
 *   **Data no formato Americano com mês completo e dias ordenados** (sem zeros à esquerda)
 
-    ```
+    ```liquid
     {% raw  %}
     {% assign d = page.date | date: "%-d"  %}
     {{ page.date | date: "%B" }}
@@ -324,7 +324,7 @@ conseguir praticamente qualquer formato de data desejado.
 
 *   **Data no formato Brasileiro com dia e mês completo** (sem zeros à esquerda)
 
-    ```
+    ```liquid
     {% raw  %}
     {% assign d = page.date | date: "%a" %}
     {% assign m = page.date | date: "%-m" %}
