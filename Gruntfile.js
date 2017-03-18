@@ -33,14 +33,14 @@ module.exports = function(grunt) {
             minified: {
                 options: {
                     paths: ["css"],
-                    cleancss: true
+                    compress: true
                 },
                 files: {
                     "css/<%= pkg.name %>.min.css": "less/<%= pkg.name %>.less"
                 }
             }
         },
-        banner: '/*!\n' +
+        banner: '/*\n' +
             ' * <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
             ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
             ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n' +
