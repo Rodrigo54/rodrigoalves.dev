@@ -101,7 +101,7 @@ module.exports = function(grunt) {
         uncss: {
           options: {
             ignoreSheets : [/fonts.googleapis/],
-            ignore: [/.tooltip/, '.highlight'],
+            ignore: [/.tooltip/, /.collapse/, /.in/, '.highlight'],
             csspath: './css/',
             htmlroot: './_site/'
           },
@@ -116,7 +116,8 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('serve', 'shell');
     grunt.registerTask('img', 'imagemin');
+    grunt.registerTask('clear', 'shell:deleteSite');
     grunt.registerTask('css', ['less', 'uncss']);
-    grunt.registerTask('default', ['shell:deleteSite', 'uglify', 'less', 'uncss', 'usebanner', 'img']);
+    grunt.registerTask('default', ['uglify', 'less', 'uncss', 'usebanner', 'img']);
 
 };
