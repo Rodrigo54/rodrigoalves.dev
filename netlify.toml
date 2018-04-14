@@ -2,3 +2,6 @@
   command = "npm run build:static && hugo"
   publish = "public"
   HUGO_VERSION = "0.38"
+
+[context.deploy-preview.environment]
+  HUGO_VERSION = "0.38"
