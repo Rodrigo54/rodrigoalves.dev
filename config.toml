@@ -1,4 +1,4 @@
-baseurl = "https://rodrigoalves.me"
+baseurl = "https://rodrigoalves.me/blog"
 languageCode = "pt-BR"
 title = "Blog do Rodrigo Alves"
 canonifyurls = true
