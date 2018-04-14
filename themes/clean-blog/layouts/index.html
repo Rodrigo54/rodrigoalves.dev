@@ -1,0 +1,46 @@
+{{ partial "header.html" .}}
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}/img/snapshot.jpg')">
+     <div class="container">
+       <div class="row">
+         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+           <div class="site-heading">
+             <h1>{{ .Site.Title }}</h1>
+             <hr class="small">
+             {{ with .Site.Params.Description }}<span class="subheading">{{ . }}</span>{{ end }}
+           </div>
+         </div>
+       </div>
+     </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          {{ range .Paginator.Pages }}
+            {{ .Render "summary"}}
+          {{ end }}
+          <!-- Pager -->
+          <ul class="pager">
+            {{ if .Paginator.HasPrev }}
+              <li class="previous">                
+                <a class="left" href="{{ .Paginator.Prev.URL }}">
+                  &larr; Novas Postagens
+                </a>
+              </li>
+            {{ end }}
+            {{ if .Paginator.HasNext }}
+              <li class="next">                
+                <a class="left" href="{{ .Paginator.Next.URL }}">
+                  Postagens Anteriores &rarr;
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+{{ partial "footer.html" .}}

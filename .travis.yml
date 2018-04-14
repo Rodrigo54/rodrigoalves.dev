@@ -1,13 +1,9 @@
-language: ruby
-rvm:
-  - 2.1
-# branch whitelist
-branches:
-  only:
-  - master
+language: python
+
+install: 
+  - "curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | grep \"browser_download_url.*Linux-64bit.deb\" | cut -d '\"' -f 4 | wget -qi -"
+  - "sudo dpkg -i hugo*.deb"
+  - "pip install Pygments"
+
 script:
-  - bundle exec jekyll build
-  - bundle exec htmlproofer ./_site --only-4xx --check-favicon
-env:
-  global:
-    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+  - hugo

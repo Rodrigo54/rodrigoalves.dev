@@ -1,0 +1,20 @@
+<time class="post-date" datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00 " | safeHTML }}">
+   Postado {{ index $.Site.Data.semana (printf "%s" .Date.Weekday) }}, {{ .Date.Day }} de {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+</time>
+<br />
+{{ if .Site.Params.ShowReadTime }}
+  <i class="fa fa-clock-o"></i>
+  {{ $l := .ReadingTime }}
+  {{ if lt 1 ($l) }}
+    Leia em {{ .ReadingTime }} Minutos
+  {{ else }}
+    Leia em menos de 1 Minuto
+  {{ end }}
+{{ end }}
+
+{{ if .Params.music }}
+- <i class="fa fa-music"></i> Ouvindo
+<a href="{{ .Params.music.url }}" target="_blank">{{ .Params.music.title }}</a>.
+{{ end }}
+
+<br />
