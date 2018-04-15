@@ -1,7 +1,7 @@
 [context.deploy-preview]
-  command = "sed -i 's/DEPLOY_URL_PLACEHOLDER/$DEPLOY_PRIME_URL/g' netlify.toml && npm run build:static && hugo"
+  command = "npm run build:static && hugo"
   publish = "public"
 
 [context.deploy-preview.environment]
-  HUGO_BASEURL = "DEPLOY_URL_PLACEHOLDER" 
+  HUGO_BASEURL = 'https://deploy-preview-1--rodrigo54-blog.netlify.com/'
   HUGO_VERSION = "0.38"
