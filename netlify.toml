@@ -1,5 +1,5 @@
 [context."hugo"]
-  command = "HUGO_BASEURL=$DEPLOY_PRIME_URL npm run build:static && hugo"
+  command = "HUGO_BASEURL=${DEPLOY_PRIME_URL} npm run build:static && hugo"
   publish = "public"
   HUGO_VERSION = "0.38"
 
