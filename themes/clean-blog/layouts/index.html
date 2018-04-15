@@ -19,22 +19,16 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          {{ range .Paginator.Pages }}
+          {{ $posts := or .Site.Params.PostSummariesFrontPage 4 }}
+          {{ range first $posts ( where .Data.Pages "Type" "blog" ) }}
             {{ .Render "summary"}}
           {{ end }}
           <!-- Pager -->
           <ul class="pager">
-            {{ if .Paginator.HasPrev }}
-              <li class="previous">                
-                <a class="left" href="{{ .Paginator.Prev.URL }}">
-                  &larr; Novas Postagens
-                </a>
-              </li>
-            {{ end }}
             {{ if .Paginator.HasNext }}
               <li class="next">                
-                <a class="left" href="{{ .Paginator.Next.URL }}">
-                  Postagens Anteriores &rarr;
+                <a class="left" href="blog">
+                  Mais Artigos &rarr;
                 </a>
               </li>
             {{ end }}

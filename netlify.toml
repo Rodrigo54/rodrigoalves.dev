@@ -3,5 +3,5 @@
   publish = "public"
 
 [context.deploy-preview.environment]
-  HUGO_BASEURL = 'https://deploy-preview-1--rodrigo54-blog.netlify.com/'
+  HUGO_BASEURL = 'https://deploy-preview-1--rodrigo54-blog.netlify.com'
   HUGO_VERSION = "0.38"

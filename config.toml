@@ -1,8 +1,8 @@
-baseurl = "https://rodrigoalves.me/blog"
+baseurl = "https://rodrigoalves.me"
 languageCode = "pt-BR"
 title = "Blog do Rodrigo Alves"
 canonifyurls = true
-paginate = 10
+paginate = 5
 
 disqusShortname = "rodrigo-io"
 googleAnalytics = ""
@@ -18,7 +18,7 @@ enableEmoji = true
   Description = "Desenvolvedor Web"
   Author = "Rodrigo Alves Mesquita"
   email = "rodrigo54mix@gmail.com" #Remove this line if you would prefer not to use an email button in the footer.
-  postSummariesFrontPage = 2 #Number of post summaries to show on front page, comment out to allow default(4)
+  postSummariesFrontPage = 3 #Number of post summaries to show on front page, comment out to allow default(4)
   showReadTime = true #set to false to exclude read time from header of post
 
 [[params.social]]
