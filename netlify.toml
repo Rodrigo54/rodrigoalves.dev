@@ -1,6 +1,6 @@
 [context."hugo"]
   HUGO_BASEURL = "DEPLOY_URL_PLACEHOLDER" 
-  command = "sed -i s/DEPLOY_URL_PLACEHOLDER/$DEPLOY_PRIME_URL/g netlify.toml && npm run build:static && hugo"
+  command = "sed -i 's/DEPLOY_URL_PLACEHOLDER/$DEPLOY_PRIME_URL/g' netlify.toml && npm run build:static && hugo"
   publish = "public"
   HUGO_VERSION = "0.38"
 
