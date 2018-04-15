@@ -102,7 +102,7 @@ module.exports = function(grunt) {
         copy: {
             fonts: {
                 files: [
-                    { expand: true, src: ['src/fonts/*'], dest: 'static/fonts/', filter: 'isFile' },
+                    { expand: true, flatten: true, src: ['src/fonts/*'], dest: 'static/fonts/', filter: 'isFile' },
                 ],
             },
         },
