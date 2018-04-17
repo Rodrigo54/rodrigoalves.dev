@@ -52,3 +52,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 .vscode
+
+node_modules/
+public/
+static/

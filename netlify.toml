@@ -1,0 +1,14 @@
+[context.production]
+  command = "npm run build:static && hugo"
+  publish = "public"
+
+[context.production.environment]
+  HUGO_VERSION = "0.38"
+
+[context.deploy-preview]
+  command = "npm run build:static && hugo"
+  publish = "public"
+
+[context.deploy-preview.environment]
+  HUGO_BASEURL = 'https://deploy-preview-1--rodrigo54-blog.netlify.com'
+  HUGO_VERSION = "0.38"
