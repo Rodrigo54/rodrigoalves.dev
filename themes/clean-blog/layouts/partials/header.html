@@ -10,7 +10,7 @@
     <meta name="author" content="{{ if .Params.authors }}{{ .Params.authors }}{{ else if .Site.Params.Author }}{{.Site.Params.Author}}{{ end }}">
     <meta name="keywords" content="{{ if .Keywords }}{{ delimit .Keywords ", " }}{{ end }}">
     
-    <link rel="icon" href="/img/favicon.png" />
+    <link rel="icon" href="{{ .Site.BaseURL }}img/favicon.png" />
     <title>
         {{ if $.IsNode }}
             {{ .Site.Title }}
@@ -25,7 +25,7 @@
     {{ end }}
 
     <!-- Custom CSS -->
-    <link href="{{ .Site.BaseURL }}/css/clean-blog.min.css" rel="stylesheet">
+    <link href="{{ .Site.BaseURL }}css/clean-blog.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
