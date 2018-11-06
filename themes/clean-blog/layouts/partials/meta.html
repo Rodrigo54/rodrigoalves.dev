@@ -3,7 +3,7 @@
 </time>
 <br />
 {{ if .Site.Params.ShowReadTime }}
-  <i class="fa fa-clock-o"></i>
+  <i class="far fa-clock"></i>
   {{ $l := .ReadingTime }}
   {{ if lt 1 ($l) }}
     Leia em {{ .ReadingTime }} Minutos
@@ -13,7 +13,7 @@
 {{ end }}
 
 {{ if .Params.music }}
-- <i class="fa fa-music"></i> Ouvindo
+- <i class="fas fa-music"></i> Ouvindo
 <a href="{{ .Params.music.url }}" target="_blank">{{ .Params.music.title }}</a>.
 {{ end }}
 

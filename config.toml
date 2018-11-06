@@ -1,16 +1,12 @@
 baseurl = "https://rodrigoalves.me/"
 languageCode = "pt-BR"
-title = "Blog do Rodrigo Alves"
+title = "Rodrigo Alves"
 canonifyurls = true
 paginate = 5
 
 disqusShortname = "rodrigo-io"
 googleAnalytics = ""
 theme = "clean-blog"
-pygmentsStyle = "monokai"
-pygmentsUseClassic = true
-pygmentsCodeFences = true
-pygmentsUseClasses = true
 enableEmoji = true
 
 [params]

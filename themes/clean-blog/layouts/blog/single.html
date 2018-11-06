@@ -2,12 +2,13 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    {{ if isset .Params "image" }}<header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}{{ .Params.image }}')">
-      {{ else }}<header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}img/post-bg.jpg')">
+    {{ if isset .Params "image" }}<header class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Params.image }}')">
+      {{ else }}<header class="masthead" style="background-image: url('{{ .Site.BaseURL }}img/post-bg.jpg')">
     {{ end }}
+      <div class="overlay"></div>
       <div class="container">
         <div class="row">
-           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+           <div class="col-lg-8 col-md-10 mx-auto">
              <div class="post-heading">
                <h1>{{ .Title }}</h1>
                <h2 class="subheading">{{ .Description }}</h2>
@@ -24,8 +25,9 @@
     <article>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="col-lg-8 col-md-10 mx-auto">
                   {{ .Content }}
+                  <hr>
                   {{ partial "comments.html" .}}
                 </div>
             </div>

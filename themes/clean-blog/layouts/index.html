@@ -1,14 +1,14 @@
 {{ partial "header.html" .}}
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}img/snapshot.jpg')">
+<header class="masthead" style="background-image: url('img/snapshot.jpg')">
+  <div class="overlay"></div>
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading">
           <h1>{{ .Site.Title }}</h1>
-          <hr class="small"> {{ with .Site.Params.Description }}
-          <span class="subheading">{{ . }}</span>{{ end }}
+          <span class="subheading">{{ .Site.Params.Description }}</span>
         </div>
       </div>
     </div>
@@ -18,21 +18,17 @@
 <!-- Main Content -->
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="col-lg-8 col-md-10 mx-auto">
       {{ $posts := or .Site.Params.PostSummariesFrontPage 4 }}
       {{ range first $posts ( where .Data.Pages "Type" "blog" ) }}
         {{ .Render "summary"}}
       {{ end }}
       <!-- Pager -->
-      <ul class="pager">
+      <div class="clearfix">
         {{ if .Paginator.HasNext }}
-        <li class="next">
-          <a class="left" href="blog">
-            Mais Artigos &rarr;
-          </a>
-        </li>
+        <a class="btn btn-primary float-right" href="blog">Mais Artigos &rarr;</a>
         {{ end }}
-      </ul>
+      </div>
     </div>
   </div>
 </div>

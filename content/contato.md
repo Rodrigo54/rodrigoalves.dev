@@ -7,4 +7,4 @@ type: "contact"
 weight: -140
 ---
 
-Quer entrar em contato comigo? Preencha o formulário abaixo para enviar-me uma mensagem e eu vou tentar retornar para você dentro de 24 horas!
+Quer entrar em contato comigo? Preencha o formulário abaixo para enviar-me uma mensagem e eu vou tentar retornar para você o mais breve possivel!

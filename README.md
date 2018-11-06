@@ -1,6 +1,6 @@
 # Blog do Rodrigo Alves
-[![Version 2.0](https://img.shields.io/badge/version-2.0-blue.svg)](http://github.com/Rodrigo54/rodrigo54.github.io)
-[![Travis](https://img.shields.io/travis/Rodrigo54/rodrigo54.github.io.svg)](https://travis-ci.org/Rodrigo54/rodrigo54.github.io)
+[![Version 3.0](https://img.shields.io/badge/version-3.0-blue.svg)](http://github.com/Rodrigo54/rodrigoalves.me)
+[![Travis](https://img.shields.io/travis/Rodrigo54/rodrigoalves.me.svg)](https://travis-ci.org/Rodrigo54/rodrigoalves.me)
 
 ![Imgur](https://i.imgur.com/YelUeVn.png)
 
@@ -8,7 +8,7 @@ blog Web pessoal
 
 Feito em Hugo
 
-tema [Clean Blog](https://github.com/humboldtux/startbootstrap-clean-blog)
+tema [Clean Blog](https://github.com/blackrockdigital/startbootstrap-clean-blog/)
 
 ### Instruções
 
