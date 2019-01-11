@@ -39,7 +39,7 @@ Veja o Changelog do wampserver 3.0.0 [aqui](http://forum.wampserver.com/read.php
 
 Existem dois modos de adicionar versões do PHP no wampserver.
 Uma das maneiras é a manual que pode ser conferida
-[aqui nesse artigo]({{ site.baseurl }}/atualizando-a-versao-do-php-no-wampserver/).
+[aqui nesse artigo](/blog/atualizando-a-versao-do-php-no-wampserver/).
 E a outra é utilizando os add-ons do próprio wampserver.
 Nesse artigo, vou mostrar como adicionar uma nova versão do PHP utilizando
 os add-ons do wampserver 3.0.
