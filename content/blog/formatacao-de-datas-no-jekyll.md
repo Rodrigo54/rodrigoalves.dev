@@ -3,7 +3,7 @@ title = 'Formatação de datas no Jekyll'
 description = 'Tudo o que você queria saber sobre formatação de datas no Jekyll, mas tinham medo de perguntar.'
 date = '2015-12-17T12:00:00Z'
 author = 'Rodrigo Alves'
-image = 'img/post-bg-03.jpg'
+thumbnail = 'img/post-bg-03.jpg'
 comments = true
 [music]
   title = 'Houdini - Foster The People'

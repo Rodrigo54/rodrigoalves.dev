@@ -2,9 +2,7 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    {{ if isset .Params "image" }}<header class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Params.image }}')">
-      {{ else }}<header class="masthead" style="background-image: url('{{ .Site.BaseURL }}img/post-bg.jpg')">
-    {{ end }}
+    <header class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Params.thumbnail }}')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">

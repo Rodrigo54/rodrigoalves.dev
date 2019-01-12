@@ -11,17 +11,17 @@ import pkg from './package.json';
 
 const paths = {
   styles: {
-    src: 'themes/clean-blog/scss/**/*.scss',
-    dest: 'themes/clean-blog/static/css/'
+    src: 'src/scss/**/*.scss',
+    dest: 'static/css/'
   },
   scripts: {
-    src: 'themes/clean-blog/js/**/*.js',
-    dest: 'themes/clean-blog/static/js/'
+    src: 'src/js/**/*.js',
+    dest: 'static/js/'
   },
   vendor: {
-    root: 'themes/clean-blog/static/vendor/',
-    jquery: 'themes/clean-blog/static/vendor/jquery/',
-    bootstrap: 'themes/clean-blog/static/vendor/bootstrap/',
+    root: 'static/vendor/',
+    jquery: 'static/vendor/jquery/',
+    bootstrap: 'static/vendor/bootstrap/',
   },
   img: {
     src: 'src/img/**/*.{jpg,jpeg,png}',
@@ -92,6 +92,7 @@ function cssminify() {
 
 // CSS
 const styles =  gulp.series(csscompile, cssminify);
+gulp.task('css', styles);
 
 // Minify JavaScript
 function scripts() {

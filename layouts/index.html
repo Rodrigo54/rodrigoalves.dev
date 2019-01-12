@@ -1,7 +1,10 @@
 {{ partial "header.html" .}}
 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('img/snapshot.jpg')">
+<header
+  class="masthead"
+  style="background-image: url('{{ .Site.BaseURL }}{{ .Site.Params.thumbnail }}')"
+>
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -21,14 +24,15 @@
     <div class="col-lg-8 col-md-10 mx-auto">
       {{ $posts := or .Site.Params.PostSummariesFrontPage 4 }}
       {{ range first $posts ( where .Data.Pages "Type" "blog" ) }}
-        {{ .Render "summary"}}
+      {{ .Render "summary"}} {{ end }}
+    </div>
+  </div>
+  <!-- Pager -->
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto d-flex flex-row-reverse">
+      {{ if .Paginator.HasNext }}
+      <a class="btn btn-primary float-right" href="blog">Mais Artigos &rarr;</a>
       {{ end }}
-      <!-- Pager -->
-      <div class="clearfix">
-        {{ if .Paginator.HasNext }}
-        <a class="btn btn-primary float-right" href="blog">Mais Artigos &rarr;</a>
-        {{ end }}
-      </div>
     </div>
   </div>
 </div>

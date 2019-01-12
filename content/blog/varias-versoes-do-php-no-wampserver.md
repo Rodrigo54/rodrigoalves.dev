@@ -3,7 +3,7 @@ title = 'Várias versões do PHP no Wampserver'
 description = 'Use desde o PHP 5.3 até o PHP 7.0 no Wampserver.'
 date = '2015-12-07T16:30:15Z'
 author = 'Rodrigo Alves'
-image = 'img/post-bg-01.jpg'
+thumbnail = 'img/post-bg-01.jpg'
 comments = true
 [music]
   title = "Don't Stop - Knightlife"

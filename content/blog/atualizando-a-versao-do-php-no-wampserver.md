@@ -3,7 +3,7 @@ title = 'Atualizando a versão do PHP no Wampserver'
 description = 'Use o PHP 5.6 no Wampserver.'
 date = '2015-08-19T20:30:00Z'
 author = 'Rodrigo Alves'
-image = 'img/home-bg.jpg'
+thumbnail = 'img/home-bg.jpg'
 comments = true
 [music]
   title = 'There Might Be Coffee - deadmau5'
@@ -40,6 +40,6 @@ Siga os passos abaixo para atualizar o php no Wampserver
 9. Escolha a versão antiga do php. Ex: php 5.5.12
 10. Reinicie o servidor WAMP.
 11. Agora escolha a nova versão do php. Ex: php 5.6.11.
-12. Verifique se o caminho do PEAR está correto em php.ini,  e modifique caso nessecario.
+12. Verifique se o caminho do PEAR está correto em php.ini,  e modifique caso precise.
 13. Reinicie o servidor WAMP.
 14. Aproveite!

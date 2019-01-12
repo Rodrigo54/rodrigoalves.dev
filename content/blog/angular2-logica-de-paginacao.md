@@ -3,7 +3,7 @@ title = 'Angular 2 - Lógica de Paginação'
 description = 'Este é um exemplo de como implementar uma paginação em Angular 2 com uma lógica como a do Google.'
 date = '2017-03-18 07:20:00 -0700'
 author = 'Rodrigo Alves'
-image = 'img/post-bg-07.jpg'
+thumbnail = 'img/post-bg-07.jpg'
 comments = true
 [music]
   title = 'Strobe - deadmau5'

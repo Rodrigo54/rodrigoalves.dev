@@ -1,13 +1,13 @@
 {{ partial "header.html" . }}
 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('{{ .Site.BaseURL }}/img/home-bg.jpg')">
+<header class="masthead" style="background-image: url('img/home-bg.jpg')">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading">
-          <h1>Postagens</h1>
+          <h1>{{ .Title }}</h1>
           <span class="subheading">{{ .Description }}</span>
         </div>
       </div>
@@ -22,15 +22,17 @@
       {{ range (.Paginate ( .Data.Pages )).Pages }}
       {{ .Render "summary"}}
       {{ end }}
-      <!-- Pager -->
-      <div class="clearfix">
-        {{ if .Paginator.HasPrev }}
-        <a class="btn btn-primary float-left" href="{{ .Paginator.Prev.URL }}">&larr; Novas Postagens</a>
-        {{ end }}
-        {{ if .Paginator.HasNext }}
-        <a class="btn btn-primary float-right" href="{{ .Paginator.Next.URL }}">Postagens Anteriores &rarr;</a>
-        {{ end }}
-      </div>
+    </div>
+  </div>
+  <!-- Pager -->
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto d-flex justify-content-between">
+      {{ if .Paginator.HasPrev }}
+      <a class="btn btn-primary float-left mr-auto" href="{{ .Paginator.Prev.URL }}">&larr; Novas Postagens</a>
+      {{ end }}
+      {{ if .Paginator.HasNext }}
+      <a class="btn btn-primary float-right ml-auto" href="{{ .Paginator.Next.URL }}">Postagens Anteriores &rarr;</a>
+      {{ end }}
     </div>
   </div>
 </div>

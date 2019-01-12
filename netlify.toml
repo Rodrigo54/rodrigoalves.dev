@@ -1,14 +1,19 @@
 [context.production]
-  command = "npm run build:static && hugo"
+  command = "npm run build:static && hugo --gc --minify"
   publish = "public"
 
 [context.production.environment]
-  HUGO_VERSION = "0.38"
+  HUGO_VERSION = "0.53"
 
 [context.deploy-preview]
-  command = "npm run build:static && hugo"
+  command = "npm run build:static && hugo  --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
   publish = "public"
 
 [context.deploy-preview.environment]
-  HUGO_BASEURL = 'https://deploy-preview-1--rodrigo54-blog.netlify.com'
-  HUGO_VERSION = "0.38"
+  HUGO_VERSION = "0.53"
+
+[context.branch-deploy]
+  command = "hugo  --gc --minify -b $DEPLOY_PRIME_URL"
+
+[context.branch-preview.environment]
+  HUGO_VERSION = "0.53"

@@ -6,14 +6,15 @@ paginate = 5
 
 disqusShortname = "rodrigo-io"
 googleAnalytics = ""
-theme = "clean-blog"
 enableEmoji = true
+enableRobotsTXT = true
 
 [params]
   DateForm = "Mon, Jan 2, 2006"
   Description = "Desenvolvedor Web"
   Author = "Rodrigo Alves Mesquita"
-  email = "rodrigo54mix@gmail.com" #Remove this line if you would prefer not to use an email button in the footer.
+  email = "rodrigo54mix@gmail.com"
+  thumbnail = 'img/snapshot.jpg'
   postSummariesFrontPage = 3 #Number of post summaries to show on front page, comment out to allow default(4)
   showReadTime = true #set to false to exclude read time from header of post
 
@@ -34,3 +35,8 @@ enableEmoji = true
   name = "home"
   url = "/"
   weight = -200
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
