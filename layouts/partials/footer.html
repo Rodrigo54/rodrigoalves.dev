@@ -9,7 +9,7 @@
       {{ end }}
       {{ if isset .Site.Params "social" }}
       {{ range .Site.Params.social }}
-      <a class="list-inline-item mdc-fab" href="{{ .url }}" target="_blank">
+      <a class="list-inline-item mdc-fab" href="{{ .url }}" target="_blank" rel="noopener">
         <i class="mdc-fab__icon fab fa-{{ .title }} "></i>
       </a>
       {{ end }}
