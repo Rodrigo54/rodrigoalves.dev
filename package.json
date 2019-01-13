@@ -1,20 +1,18 @@
 {
-  "name": "clean-blog",
-  "title": "Clean Blog",
-  "version": "2.0.0",
-  "homepage": "http://startbootstrap.com",
+  "private": true,
+  "name": "rodrigoalves.me",
+  "title": "Site Rodrigo Alves",
+  "version": "3.0.0",
+  "homepage": "https://rodrigoalves.me/",
   "scripts": {
-    "build:static": "webpack -p",
-    "start": "webpack --watch"
+    "build:static": "webpack -p --mode production",
+    "start": "webpack --watch --mode development"
   },
   "license": "MIT",
-  "author": "Start Bootstrap",
-  "contributors": [
-    "David Miller (http://davidmiller.io/)"
-  ],
+  "author": "Rodrigo Alves Mesquita",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BlackrockDigital/startbootstrap-clean-blog.git"
+    "url": "https://github.com/Rodrigo54/rodrigoalves.me.git"
   },
   "dependencies": {
     "@material/button": "^0.43.0",
@@ -23,21 +21,21 @@
     "@material/icon-button": "^0.43.0",
     "@material/ripple": "^0.43.0",
     "@material/textfield": "^0.43.0",
-    "imagemin-webpack-plugin": "^2.4.0",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-transform-object-assign": "^6.22.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1",
+    "imagemin-webpack-plugin": "^2.4.0",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.5",
     "copy-webpack-plugin": "^4.6.0",
-    "css-loader": "^1.0.0",
-    "extract-loader": "^3.0.0",
-    "file-loader": "^2.0.0",
+    "css-loader": "^2.1.0",
+    "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.9.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "sass-loader": "^7.1.0",
-    "webpack": "^3.12.0"
+    "style-loader": "^0.21.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
   }
 }
