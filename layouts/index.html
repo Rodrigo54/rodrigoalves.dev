@@ -1,40 +1,36 @@
-{{ partial "header.html" .}}
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns#">
+  {{ partial "head.html" .}}
+<body>
+{{ partial "navbar.html" .}}
 
 <!-- Page Header -->
-<header
-  class="masthead"
-  style="background-image: url('{{ .Site.BaseURL }}{{ .Site.Params.thumbnail }}')"
->
+<header class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Site.Params.thumbnail }}')">
   <div class="overlay"></div>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="site-heading">
-          <h1>{{ .Site.Title }}</h1>
-          <span class="subheading">{{ .Site.Params.Description }}</span>
-        </div>
-      </div>
+    <div class="site-heading">
+      <h1>{{ .Site.Title }}</h1>
+      <span class="subheading">{{ .Site.Params.Description }}</span>
     </div>
   </div>
 </header>
 
 <!-- Main Content -->
 <div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-      {{ $posts := or .Site.Params.PostSummariesFrontPage 4 }}
-      {{ range first $posts ( where .Data.Pages "Type" "blog" ) }}
-      {{ .Render "summary"}} {{ end }}
-    </div>
+  <div>
+    {{ $posts := or .Site.Params.PostSummariesFrontPage 4 }}
+    {{ range first $posts ( where .Data.Pages "Type" "blog" ) }}
+    {{ .Render "summary"}} {{ end }}
   </div>
   <!-- Pager -->
-  <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto d-flex flex-row-reverse">
-      {{ if .Paginator.HasNext }}
-      <a class="btn btn-primary float-right" href="blog">Mais Artigos &rarr;</a>
-      {{ end }}
-    </div>
+  <div class="paginator">
+    {{ if .Paginator.HasNext }}
+    <a class="paginator-next mdc-button mdc-button--raised" href="blog">Mais Artigos &rarr;</a>
+    {{ end }}
   </div>
 </div>
 
 {{ partial "footer.html" .}}
+
+</body>
+</html>

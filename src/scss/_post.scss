@@ -1,26 +1,25 @@
 // Styling for the post page
 .post-preview {
   &:not(:last-child){
-    border-bottom: 1px solid var(--gray);
+    border-bottom: 1px solid var(--medium);
     &:after {
       display: block;
       content: '';
-      width: 7px;
-      height: 7px;
+      width: 5px;
+      height: 5px;
       position: relative;
-      top: 4px;
+      top: 3px;
       left: 50%;
       margin-left: -5px;
-      background: var(--gray);
+      background: var(--medium);
       border-radius: 100%;
       box-shadow: #fff 0 0 0 5px;
    }
   }
   > a {
-    color: $gray-900;
+    text-decoration: none;
     &:focus,
     &:hover {
-      text-decoration: none;
       color: var(--primary);
     }
   }
@@ -33,15 +32,14 @@
     font-weight: 300;
     margin: 10px 0;
   }
-
   .post-meta {
-    font-size: 18px;
+    font-size: 16px;
     font-style: italic;
     margin-top: 0;
-    color: var(--gray);
+    color: var(--medium);
     > a {
       text-decoration: none;
-      color: var(--gray);
+      color: var(--medium);
       &:focus,
       &:hover {
         text-decoration: underline;
@@ -54,6 +52,43 @@
       > .post-title {
         font-size: 36px;
       }
+    }
+  }
+}
+
+hr{
+  margin: 35px 0;
+  border: none;
+  border-bottom: 1px solid var(--medium);
+  &:after {
+    display: block;
+    content: '';
+    width: 5px;
+    height: 5px;
+    position: relative;
+    top: -2px;
+    left: 50%;
+    margin-left: -5px;
+    background: var(--medium);
+    border-radius: 100%;
+    box-shadow: #fff 0 0 0 5px;
+  }
+}
+
+.grid-angular-pag{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > div {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    span {
+      text-align: center;
+      width: 25px;
+    }
+    strong{
+      color: #F44336;
     }
   }
 }

@@ -1,47 +1,23 @@
-<hr>
 <!-- Footer -->
-<footer>
+<footer class="footer">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <ul class="list-inline text-center">
-          {{ with .Site.Params.email }}
-          <li class="list-inline-item">
-            <a href="mailto:{{ . }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          {{ end }}
-          {{ if isset .Site.Params "social" }}
-          {{ range .Site.Params.social }}
-          <li class="list-inline-item">
-            <a href="{{ .url }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-{{ .title }} fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          {{ end }}
-          {{ end }}
-        </ul>
-        <p class="copyright">Copyright &copy; {{ .Site.Title }} {{ dateFormat "2006" now }}</p>
-      </div>
-    </div>
+    <ul class="list-inline">
+      {{ with .Site.Params.email }}
+      <a class="list-inline-item mdc-fab" href="mailto:{{ . }}">
+        <i class="mdc-fab__icon far fa-envelope"></i>
+      </a>
+      {{ end }}
+      {{ if isset .Site.Params "social" }}
+      {{ range .Site.Params.social }}
+      <a class="list-inline-item mdc-fab" href="{{ .url }}" target="_blank">
+        <i class="mdc-fab__icon fab fa-{{ .title }} "></i>
+      </a>
+      {{ end }}
+      {{ end }}
+    </ul>
+    <p class="copyright">Copyright &copy; {{ .Site.Title }} {{ dateFormat "2006" now }}</p>
   </div>
 </footer>
 
-<!-- Bootstrap core JavaScript -->
-<script src="{{ .Site.BaseURL }}vendor/jquery/jquery.min.js"></script>
-<script src="{{ .Site.BaseURL }}vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Custom scripts for this template -->
-<script src="{{ .Site.BaseURL }}js/clean-blog.min.js"></script>
-
+<script src="{{ .Site.BaseURL }}js/bundle.js"></script>
 {{ template "_internal/google_analytics.html" . }}
-
-</body>
-</html>

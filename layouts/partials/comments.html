@@ -1,3 +1,5 @@
 {{ if .Params.Comments }}
-   {{ template "_internal/disqus.html" . }}
+<div class="post-coments">
+  {{ template "_internal/disqus.html" . }}
+</div>
 {{ end }}

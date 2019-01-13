@@ -1,16 +1,16 @@
-{{ partial "header.html" .}}
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns#">
+  {{ partial "head.html" .}}
+<body>
+{{ partial "navbar.html" .}}
 
 <!-- Page Header -->
 <header class="masthead" style="background-image: url('img/home-bg.jpg')">
   <div class="overlay"></div>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="site-heading">
-          <h1>{{ .Site.Title }}</h1>
-          <span class="subheading">{{ .Site.Params.Description }}</span>
-        </div>
-      </div>
+    <div class="site-heading">
+      <h1>{{ .Site.Title }}</h1>
+      <span class="subheading">{{ .Site.Params.Description }}</span>
     </div>
   </div>
 </header>
@@ -32,3 +32,6 @@
 </div>
 
 {{ partial "footer.html" .}}
+
+</body>
+</html>

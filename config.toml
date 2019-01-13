@@ -32,9 +32,15 @@ enableRobotsTXT = true
   url = "https://br.linkedin.com/in/rodrigo54"
 
 [[menu.main]]
-  name = "home"
+  identifier = "home"
+  name = "Home"
   url = "/"
   weight = -200
+[[menu.main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "/blog/"
+  weight = -199
 
 [sitemap]
   changefreq = "monthly"

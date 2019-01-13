@@ -1,62 +1,70 @@
-{{ partial "header.html" . }}
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns#">
+  {{ partial "head.html" .}}
+<body>
+{{ partial "navbar.html" .}}
 
 <!-- Page Header -->
 <header class="masthead" style="background-image: url('{{ .Site.BaseURL }}/img/contact-bg.jpg')">
   <div class="overlay"></div>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="page-heading">
-          <h1>{{ .Title }}</h1>
-          <span class="subheading">{{ .Description }}</span>
-        </div>
-      </div>
+    <div class="page-heading">
+      <h1>{{ .Title }}</h1>
+      <span class="subheading">{{ .Description }}</span>
     </div>
   </div>
 </header>
 
 <!-- Main Content -->
 <div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-      {{ .Content }}
-      <form name="sentMessage" id="contactForm" novalidate autocomplete="contact"  method="POST" netlify-honeypot="bot-field" netlify>
-        <div class="invisible d-none">
-          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-        </div>
-        <div class="control-group">
-          <div class="form-group floating-label-form-group controls">
-            <label>Nome</label>
-            <input type="text" class="form-control" placeholder="Nome" id="name" required
-              data-validation-required-message="Por favor, insira seu nome." name="nome">
-            <p class="help-block text-danger"></p>
-          </div>
-        </div>
-        <div class="control-group">
-          <div class="form-group floating-label-form-group controls">
-            <label>Email</label>
-            <input type="email" class="form-control" placeholder="Email" id="email" required
-              data-validation-required-message="Por favor, insira seu email." name="email">
-            <p class="help-block text-danger"></p>
-          </div>
-        </div>
-        <div class="control-group">
-          <div class="form-group floating-label-form-group controls">
-            <label>Mensagem</label>
-            <textarea name="message" rows="5" class="form-control" placeholder="Mensagem" id="message" required
-              data-validation-required-message="Por favor, digite uma mensagem."></textarea>
-            <p class="help-block text-danger"></p>
-          </div>
-        </div>
-        <br>
-        <div data-netlify-recaptcha></div>
-        <div id="success"></div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">Enviar</button>
-        </div>
-      </form>
+  <div>{{ .Content }}</div>
+  <form class="contact-form" name="sentMessage" id="contactForm" autocomplete="off" netlify-honeypot="bot-field" netlify>
+
+    <div class="bot-field" hidden>
+      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
     </div>
-  </div>
+
+    <div class="mdc-text-field-nome mdc-text-field mdc-text-field--outlined w-50 mb-3">
+      <input type="text" id="name-tf-outlined" required name="nome" class="mdc-text-field__input">
+      <div class="mdc-notched-outline">
+        <div class="mdc-notched-outline__leading"></div>
+        <div class="mdc-notched-outline__notch">
+          <label for="name-tf-outlined" class="mdc-floating-label">Digite seu Nome</label>
+        </div>
+        <div class="mdc-notched-outline__trailing"></div>
+      </div>
+    </div>
+
+    <div class="mdc-text-field-email mdc-text-field mdc-text-field--outlined w-50 mb-3">
+      <input type="email" id="email-tf-outlined" required name="email" class="mdc-text-field__input">
+      <div class="mdc-notched-outline">
+        <div class="mdc-notched-outline__leading"></div>
+        <div class="mdc-notched-outline__notch">
+          <label for="email-tf-outlined" class="mdc-floating-label">Digite seu Email</label>
+        </div>
+        <div class="mdc-notched-outline__trailing"></div>
+      </div>
+    </div>
+
+    <div class="mdc-text-field-message mdc-text-field mdc-text-field--textarea mdc-text-field--outlined w-100 mb-3">
+      <textarea id="textarea" class="mdc-text-field__input" required rows="4" cols="40"></textarea>
+      <div class="mdc-notched-outline">
+        <div class="mdc-notched-outline__leading"></div>
+        <div class="mdc-notched-outline__notch">
+          <label for="tf-outlined" class="mdc-floating-label">Mensagem</label>
+        </div>
+        <div class="mdc-notched-outline__trailing"></div>
+      </div>
+    </div>
+
+    <div class="recaptcha" data-netlify-recaptcha></div>
+
+    <button type="submit" class="mdc-button mdc-button--raised">Enviar</button>
+
+  </form>
 </div>
 
 {{ partial "footer.html" . }}
+
+</body>
+</html>

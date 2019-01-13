@@ -1,40 +1,39 @@
-{{ partial "header.html" . }}
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns#">
+  {{ partial "head.html" .}}
+<body>
+{{ partial "navbar.html" .}}
 
 <!-- Page Header -->
 <header class="masthead" style="background-image: url('img/home-bg.jpg')">
   <div class="overlay"></div>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="site-heading">
-          <h1>{{ .Title }}</h1>
-          <span class="subheading">{{ .Description }}</span>
-        </div>
-      </div>
+    <div class="site-heading">
+      <h1>{{ .Title }}</h1>
+      <span class="subheading">{{ .Description }}</span>
     </div>
   </div>
 </header>
 
 <!-- Main Content -->
 <div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-      {{ range (.Paginate ( .Data.Pages )).Pages }}
-      {{ .Render "summary"}}
-      {{ end }}
-    </div>
+  <div>
+    {{ range (.Paginate ( .Data.Pages )).Pages }}
+    {{ .Render "summary"}}
+    {{ end }}
   </div>
   <!-- Pager -->
-  <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto d-flex justify-content-between">
-      {{ if .Paginator.HasPrev }}
-      <a class="btn btn-primary float-left mr-auto" href="{{ .Paginator.Prev.URL }}">&larr; Novas Postagens</a>
-      {{ end }}
-      {{ if .Paginator.HasNext }}
-      <a class="btn btn-primary float-right ml-auto" href="{{ .Paginator.Next.URL }}">Postagens Anteriores &rarr;</a>
-      {{ end }}
-    </div>
+  <div class="paginator">
+    {{ if .Paginator.HasPrev }}
+    <a class="paginator-prev mdc-button mdc-button--raised" href="{{ .Paginator.Prev.URL }}">&larr; Novas Postagens</a>
+    {{ end }}
+    {{ if .Paginator.HasNext }}
+    <a class="paginator-next mdc-button mdc-button--raised" href="{{ .Paginator.Next.URL }}">Postagens Anteriores &rarr;</a>
+    {{ end }}
   </div>
 </div>
 
 {{ partial "footer.html" . }}
+
+</body>
+</html>
