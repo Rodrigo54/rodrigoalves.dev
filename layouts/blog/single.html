@@ -6,7 +6,7 @@
 
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Params.thumbnail }}')">
+<header role="banner" class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Params.thumbnail }}')">
   <div class="overlay"></div>
   <div class="container">
     <div class="post-heading">
@@ -20,13 +20,13 @@
 </header>
 
 <!-- Post Content -->
-<div class="container">
+<main role="main" class="container">
   <article>
     {{ .Content }}
   </article>
   <hr>
   {{ partial "comments.html" .}}
-</div>
+</main>
 
 {{ partial "footer.html" .}}
 

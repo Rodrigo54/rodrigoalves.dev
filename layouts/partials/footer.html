@@ -1,9 +1,9 @@
 <!-- Footer -->
-<footer class="footer">
+<footer  role="contentinfo" class="footer">
   <div class="container">
     <div class="list-inline">
       {{ with .Site.Params.email }}
-      <a class="list-inline-item mdc-fab" href="mailto:{{ . }}">
+      <a class="list-inline-item mdc-fab" href="mailto:{{ . }}" aria-label="email">
         <i class="mdc-fab__icon far fa-envelope"></i>
       </a>
       {{ end }}

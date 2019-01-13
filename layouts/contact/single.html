@@ -5,7 +5,7 @@
 {{ partial "navbar.html" .}}
 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('{{ .Site.BaseURL }}/img/contact-bg.jpg')">
+<header role="banner" class="masthead" style="background-image: url('{{ .Site.BaseURL }}/img/contact-bg.jpg')">
   <div class="overlay"></div>
   <div class="container">
     <div class="page-heading">
@@ -16,7 +16,7 @@
 </header>
 
 <!-- Main Content -->
-<div class="container">
+<main role="main" class="container">
   <div>{{ .Content }}</div>
   <form class="contact-form" name="rodrigoalves_me" id="contactForm" autocomplete="off" netlify-honeypot="bot-field" netlify>
 
@@ -62,7 +62,7 @@
     <button type="submit" class="mdc-button mdc-button--raised">Enviar</button>
 
   </form>
-</div>
+</main>
 
 {{ partial "footer.html" . }}
 

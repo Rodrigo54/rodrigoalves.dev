@@ -5,11 +5,7 @@
 {{ partial "navbar.html" .}}
 
 <!-- Page Header -->
-{{ if isset .Params "thumbnail" }}
-<header class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Params.thumbnail }}')">
-  {{ else }}
-<header class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Site.Params.thumbnail }}')">
-{{ end }}
+<header role="banner" class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Params.thumbnail }}')">
   <div class="overlay"></div>
   <div class="container">
     <div class="page-heading">
@@ -20,7 +16,7 @@
 </header>
 
 <!-- Main Content -->
-<div class="container">
+<main role="main" class="container">
   <div class="portfolio">
     {{ range $.Site.Data.portfolio.itens }}
       <div class="portfolio-item">
@@ -32,7 +28,7 @@
       </div>
     {{ end }}
   </div>
-</div>
+</main>
 
 {{ partial "footer.html" . }}
 

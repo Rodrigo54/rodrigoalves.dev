@@ -5,7 +5,7 @@
 {{ partial "navbar.html" .}}
 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Site.Params.thumbnail }}')">
+<header role="banner" class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Site.Params.thumbnail }}')">
   <div class="overlay"></div>
   <div class="container">
     <div class="site-heading">
@@ -16,7 +16,7 @@
 </header>
 
 <!-- Main Content -->
-<div class="container">
+<main role="main" class="container">
   <div>
     {{ $posts := or .Site.Params.PostSummariesFrontPage 4 }}
     {{ range first $posts ( where .Data.Pages "Type" "blog" ) }}
@@ -28,7 +28,7 @@
     <a class="paginator-next mdc-button mdc-button--raised" href="blog">Mais Artigos &rarr;</a>
     {{ end }}
   </div>
-</div>
+</main>
 
 {{ partial "footer.html" .}}
 

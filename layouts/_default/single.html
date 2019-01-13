@@ -7,9 +7,9 @@
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
 {{ if isset .Params "thumbnail" }}
-<header class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Params.thumbnail }}')">
+<header role="banner" class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Params.thumbnail }}')">
   {{ else }}
-<header class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Site.Params.thumbnail }}')">
+<header role="banner" class="masthead" style="background-image: url('{{ .Site.BaseURL }}{{ .Site.Params.thumbnail }}')">
 {{ end }}
   <div class="overlay"></div>
   <div class="container">
@@ -21,12 +21,12 @@
 </header>
 
 <!-- Post Content -->
-<div class="container">
+<main role="main" class="container">
   <article>
     {{ .Content }}
   </article>
   {{ partial "comments.html" .}}
-</div>
+</main>
 
 {{ partial "footer.html" .}}
 

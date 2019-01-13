@@ -5,7 +5,7 @@
 {{ partial "navbar.html" .}}
 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('{{ .Site.BaseURL }}/img/home-bg.jpg')">
+<header role="banner" class="masthead" style="background-image: url('{{ .Site.BaseURL }}/img/home-bg.jpg')">
   <div class="overlay"></div>
   <div class="container">
     <div class="site-heading">
@@ -16,7 +16,7 @@
 </header>
 
 <!-- Main Content -->
-<div class="container">
+<main role="main" class="container">
   <div>
     {{ range (.Paginate ( .Data.Pages )).Pages }}
     {{ .Render "summary"}}
@@ -31,7 +31,7 @@
     <a class="paginator-next mdc-button mdc-button--raised" href="{{ .Paginator.Next.URL }}">Postagens Anteriores &rarr;</a>
     {{ end }}
   </div>
-</div>
+</main>
 
 {{ partial "footer.html" . }}
 
