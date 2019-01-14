@@ -64,9 +64,11 @@ header.masthead {
       @include sans-serif-font;
     }
     @media only screen and (min-width: 768px) {
-      h1 {
-        font-size: 80px;
-      }
+      h1 { font-size: 80px; }
+    }
+    @media only screen and (max-width: 400px) {
+      h1 { font-size: 36px; }
+      .subheading { font-size: 18px }
     }
   }
 
@@ -91,15 +93,16 @@ header.masthead {
       font-style: italic;
       @include serif-font;
       p { margin: 0px; }
+      i { margin-right: 5px; }
       a { color: var(--primary-contrast); }
     }
     @media only screen and (min-width: 768px) {
-      h1 {
-        font-size: 55px;
-      }
-      .subheading {
-        font-size: 30px;
-      }
+      h1 { font-size: 55px; }
+      .subheading { font-size: 30px; }
+    }
+    @media only screen and (max-width: 400px) {
+      h1 { font-size: 36px; }
+      .subheading { font-size: 18px }
     }
   }
 }
