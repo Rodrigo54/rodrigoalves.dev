@@ -15,4 +15,4 @@ tema [Clean Blog](https://github.com/blackrockdigital/startbootstrap-clean-blog/
   1. `npm install`
   1. `npm run build:static` para compilar os  arquivos estaticos
   1. `hugo serve` para servidor de desenvolvimento
-  1. `hugo` para compilar o site
+  1. `hugo --gc --minify` para compilar o site

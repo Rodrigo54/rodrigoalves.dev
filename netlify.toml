@@ -6,7 +6,7 @@
   HUGO_VERSION = "0.53"
 
 [context.deploy-preview]
-  command = "npm run build:static && hugo  --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+  command = "npm run build:static && hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
   publish = "public"
 
 [context.deploy-preview.environment]

@@ -21,7 +21,8 @@
     "@material/icon-button": "^0.43.0",
     "@material/ripple": "^0.43.0",
     "@material/textfield": "^0.43.0",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "typed.js": "^2.0.9"
   },
   "devDependencies": {
     "imagemin-webpack-plugin": "^2.4.0",

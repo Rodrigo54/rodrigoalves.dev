@@ -59,12 +59,27 @@ module.exports = [
     },
     plugins: [
       new CopyWebpackPlugin([
-        { from: 'src/img/**/*', to: 'img/', flatten: true }
+        { from: 'src/img/**/*', to: 'img/', flatten: true },
+        { from: 'src/videos/**/*', to: 'videos/', flatten: true }
       ]),
-      new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
+      new ImageminPlugin({
+        disable: process.env.NODE_ENV !== 'production',
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        jpegtran: { progressive: true }
+      }),
       new MiniCssExtractPlugin({
         filename: 'css/bundle.css'
       })
-    ]
+    ],
+    stats: {
+      all: false,
+      assets: true,
+      modules: true,
+      maxModules: 0,
+      errors: true,
+      warnings: true,
+      moduleTrace: true,
+      errorDetails: true
+    }
   }
 ];
