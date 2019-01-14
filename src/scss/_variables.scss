@@ -9,12 +9,12 @@ $break-point-mobile: 992px;
 }
 
 :root{
-  --primary: hsl(275, 50%, 30%);
+  --primary: hsl(270, 100%, 30%);
   --primary-contrast: #fff;
   --secundary: #fff700;
   --secundary-contrast: #000;
   --medium: hsl(275, 5%, 30%);
-  --mdc-theme-primary: hsl(275, 50%, 30%);
+  --mdc-theme-primary: hsl(270, 100%, 30%);
   --mdc-theme-primary: var(--primary);
 
 }

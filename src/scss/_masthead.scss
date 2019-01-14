@@ -1,6 +1,11 @@
 // Styling for the masthead
 header.masthead {
   // TIP: Background images are set within the HTML using inline CSS!
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 50px;
   background: no-repeat center center;
   background-color: var(--primary);
@@ -40,11 +45,8 @@ header.masthead {
   .post-heading,
   .site-heading {
     text-shadow: 2px 2px 2px rgba(0,0,0,.5);
-    padding: 200px 0 150px;
+    padding: 50px 0px;
     color: var(--primary-contrast);
-    @media only screen and (min-width: 768px) {
-      padding: 200px 0;
-    }
   }
   .page-heading,
   .site-heading {
@@ -67,6 +69,7 @@ header.masthead {
       }
     }
   }
+
   .post-heading {
     h1 {
       font-size: 35px;
@@ -87,9 +90,8 @@ header.masthead {
       font-weight: 300;
       font-style: italic;
       @include serif-font;
-      a {
-        color: var(--primary-contrast);
-      }
+      p { margin: 0px; }
+      a { color: var(--primary-contrast); }
     }
     @media only screen and (min-width: 768px) {
       h1 {
