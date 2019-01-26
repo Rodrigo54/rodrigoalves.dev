@@ -12,13 +12,16 @@ function togglerDrawer(event) {
 navbarToggler.addEventListener('click', togglerDrawer);
 backdrop.addEventListener('click', togglerDrawer);
 
-const typed = new Typed('#typed', {
-  strings: ["Developer", "Designer", "Geek", "Rodrigo^10000"],
-  typeSpeed: 200,
-  backSpeed: 100,
-  backDelay: 1000,
-  loop: true,
-});
+const typeString = document.querySelector('#typed');
+if(typeString) {
+  const typed = new Typed('#typed', {
+    strings: ["Developer", "Designer", "Geek", "Rodrigo^10000"],
+    typeSpeed: 200,
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true,
+  });
+}
 
 const form = document.querySelector('#contactForm');
 if(form) {
