@@ -5,7 +5,7 @@
   "version": "3.0.0",
   "homepage": "https://rodrigoalves.me/",
   "scripts": {
-    "build:static": "webpack -p --mode production",
+    "build:static": "rimraf static/ public/ && webpack -p --mode production",
     "start": "webpack --watch --mode development"
   },
   "license": "MIT",
@@ -25,18 +25,20 @@
     "typed.js": "^2.0.9"
   },
   "devDependencies": {
-    "imagemin-webpack-plugin": "^2.4.0",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "babel-loader": "^8.0.5",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^2.1.0",
+    "imagemin-webpack-plugin": "^2.4.0",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.9.4",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.21.0",
     "webpack": "^4.28.4",
-    "webpack-cli": "^3.2.1"
+    "webpack-cli": "^3.2.1",
+    "workbox-webpack-plugin": "^3.6.3"
   }
 }

@@ -2,6 +2,16 @@ import { MDCDrawer } from '@material/drawer';
 import { MDCTextField } from '@material/textfield';
 import Typed from 'typed.js';
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then(registration => {
+      console.log('SW registered: ', registration);
+    }).catch(registrationError => {
+      console.log('SW registration failed: ', registrationError);
+    });
+  });
+}
+
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const backdrop = document.querySelector('.mdc-drawer-scrim');
 const navbarToggler = document.querySelector('.navbar-toggler');
