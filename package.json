@@ -2,7 +2,7 @@
   "private": true,
   "name": "rodrigoalves.me",
   "title": "Site Rodrigo Alves",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "homepage": "https://rodrigoalves.me/",
   "scripts": {
     "build:static": "rimraf static/ public/ && webpack -p --mode production",
