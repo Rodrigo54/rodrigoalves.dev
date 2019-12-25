@@ -1,5 +1,5 @@
 # Blog do Rodrigo Alves
-[![Version 3.0](https://img.shields.io/badge/version-3.0-blue.svg)](http://github.com/Rodrigo54/rodrigoalves.me)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/406197a0-b334-47a9-963f-2d985d001b45/deploy-status)](https://app.netlify.com/sites/rodrigo54-blog/deploys)
 [![Travis](https://img.shields.io/travis/Rodrigo54/rodrigoalves.me.svg)](https://travis-ci.org/Rodrigo54/rodrigoalves.me)
 
 ![Imgur](https://i.imgur.com/YelUeVn.png)
