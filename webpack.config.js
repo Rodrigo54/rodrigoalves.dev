@@ -50,8 +50,10 @@ module.exports = [
             {
               loader: 'sass-loader',
               options: {
-                minimize: true,
-                includePaths: ['./node_modules']
+                sassOptions: {
+                  minimize: true,
+                  includePaths: ['./node_modules']
+                }
               }
             }
           ]
