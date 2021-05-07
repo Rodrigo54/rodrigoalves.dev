@@ -4,11 +4,11 @@
   environment = { NODE_VERSION = "14.15.3" }
 
 [context.deploy-preview]
-  command = "npm run "
+  command = "npm run build"
   publish = "public/"
   environment = { NODE_VERSION = "14.15.3" }
 
 [context.branch-deploy]
-  command = "npm run "
+  command = "npm run build"
   publish = "public/"
   environment = { NODE_VERSION = "14.15.3" }
