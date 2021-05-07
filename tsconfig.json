@@ -1,0 +1,25 @@
+{
+  "include": ["./src/**/*"],
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["dom", "es2017"],
+    "noImplicitAny": false,
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@components/*": ["components/*"],
+      "@templates/*": ["templates/*"],
+      "@utils/*": ["utils/*"],
+      "@model/*": ["model/*"],
+      "@styles/*": ["styles/*"]
+    }
+  }
+}
