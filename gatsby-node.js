@@ -5,9 +5,10 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     resolve: {
       alias: {
         '@components': path.resolve(__dirname, 'src/components'),
-        "@templates/*": path.resolve(__dirname, 'src/templates'),
+        "@templates": path.resolve(__dirname, 'src/templates'),
         '@utils': path.resolve(__dirname, 'src/utils'),
-        "@model/*": path.resolve(__dirname, 'src/model'),
+        "@model": path.resolve(__dirname, 'src/model'),
+        "@styles": path.resolve(__dirname, 'src/styles'),
       },
     },
   })

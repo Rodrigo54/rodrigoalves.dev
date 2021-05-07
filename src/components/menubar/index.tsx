@@ -1,4 +1,4 @@
-// import getThemeColor from '@utils/getThemeColor';
+import getThemeColor from '@utils/getThemeColor';
 import React, { useEffect, useState } from 'react';
 import { UpArrowAlt as Arrow } from '@styled-icons/boxicons-regular/UpArrowAlt';
 import { Grid } from '@styled-icons/boxicons-solid/Grid';
@@ -14,10 +14,6 @@ const MenuBar: React.FC = () => {
 
   const isDarkMode = theme === 'dark';
   const isListMode = display === 'list';
-
-  function getThemeColor() {
-    return '#000000'
-  }
 
   useEffect(() => {
     setTheme(globalThis.__theme);

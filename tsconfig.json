@@ -18,7 +18,8 @@
       "@components/*": ["components/*"],
       "@templates/*": ["templates/*"],
       "@utils/*": ["utils/*"],
-      "@model/*": ["model/*"]
+      "@model/*": ["model/*"],
+      "@styles/*": ["styles/*"]
     }
   }
 }

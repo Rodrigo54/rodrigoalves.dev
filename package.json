@@ -34,6 +34,7 @@
     "gatsby-source-filesystem": "^3.3.0",
     "gatsby-transformer-sharp": "^3.3.0",
     "gsap": "^3.6.1",
+    "lazysizes": "^5.3.2",
     "netlify-cms-app": "^2.14.45",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
