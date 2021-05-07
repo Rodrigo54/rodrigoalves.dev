@@ -1,5 +1,6 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from '@components/layout';
+import SEO from '@components/seo';
 
 // styles
 const pageStyles = {
@@ -129,6 +130,7 @@ const links = [
 const IndexPage = () => {
   return (
     <Layout>
+      <SEO title='Home' />
       <main style={pageStyles}>
         <title>Home Page</title>
         <h1 style={headingStyles}>
