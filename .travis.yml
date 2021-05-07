@@ -1,15 +1,14 @@
-language: python
+language: node_js
+node_js:
+  - stable
+cache:
+  directories:
+  - node_modules
 
-python:
-  - "3.6"
-
-install:
-  # install latest release version
-  # - wget $(wget -qO- https://api.github.com/repos/gohugoio/hugo/releases/latest | sed -r -n '/browser_download_url/{/Linux-64bit.deb/{s@[^:]*:[[:space:]]*"([^"]*)".*@\1@g;p}}')
-  - wget https://github.com/gohugoio/hugo/releases/download/v0.53/hugo_0.53_Linux-64bit.deb
-  - sudo dpkg -i hugo*.deb
-  - pip install Pygments
-  - rm -rf public 2> /dev/null
+before_script:
+  - npm i -g gatsby
+  - npm install
+  - npm run clean
 
 script:
-  - hugo
+  - npm run build
