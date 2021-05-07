@@ -13,6 +13,7 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -24,7 +25,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        icon: `src/images/icon.png`,
+        name: `Rodrigo Alves`,
+        short_name: `Rodrigo Alves`,
+        start_url: `/`,
+        background_color: `#16202c`,
+        theme_color: `#16202c`,
+        display: `minimal-ui`,
+        icon: `src/img/favicon.png`,
       },
     },
     `gatsby-plugin-mdx`,
@@ -34,7 +41,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `./src/images/`,
+        path: `./src/img/`,
       },
       __key: `images`,
     },
@@ -45,6 +52,20 @@ module.exports = {
         path: `./src/pages/`,
       },
       __key: `pages`,
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `./src/posts/`,
+      },
+      __key: `posts`,
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/src/posts`,
+      },
     },
   ],
 };
