@@ -3,7 +3,7 @@ import media from 'styled-media-query';
 import { GatsbyImage } from "gatsby-plugin-image";
 
 export const PostHeader = styled.header`
-  margin: auto 30px 40px;
+  margin: 0px 0px 40px;
 `;
 
 export const PostTitle = styled.h1`
@@ -58,7 +58,7 @@ export const PostThumbnail = styled(GatsbyImage)`
 
 export const MainContent = styled.section`
   font-family: var(--font-sans-serif);
-  margin: 0px 30px;
+  margin: 0px 0px 80px;
   ${media.lessThan('large')`
     max-width: 100%;
   `}

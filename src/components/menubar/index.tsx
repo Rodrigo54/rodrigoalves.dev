@@ -30,6 +30,7 @@ const MenuBar: React.FC = () => {
       setTimeout(() => {
         globalThis.DISQUS.reset({
           reload: true,
+          config: {}
         });
       }, 300);
     }

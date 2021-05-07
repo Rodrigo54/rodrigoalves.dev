@@ -1,6 +1,7 @@
 
 import Comments from '@components/comments';
 import Layout from '@components/layout';
+import PaperLayout from '@components/paper-layout';
 import RecommendedPosts from '@components/recommended-posts';
 import SEO from '@components/seo';
 import { Post } from '@model/post';
@@ -25,8 +26,7 @@ export const query = graphql`
           publicURL
           childImageSharp {
             gatsbyImageData(
-              layout: CONSTRAINED,
-              width: 1440,
+              layout: FULL_WIDTH,
               placeholder: BLURRED
             )
           }
@@ -87,8 +87,7 @@ const BlogPost: React.FC<Props> = ({ data, pageContext: { nextPost, previousPost
         description={frontmatter.description}
         image={frontmatter.featuredImage.publicURL}
       />
-      <S.PostThumbnail alt={frontmatter.title} image={featuredImage} />
-      <S.PostPaper>
+      <PaperLayout alt={frontmatter.title} image={featuredImage}>
         <S.PostHeader>
           <S.PostTitle>{frontmatter.title}</S.PostTitle>
           <S.PostDescription>{frontmatter.description}</S.PostDescription>
@@ -99,7 +98,7 @@ const BlogPost: React.FC<Props> = ({ data, pageContext: { nextPost, previousPost
         <MDXRenderer components={{wrapper: S.MainContent}}>{body}</MDXRenderer>
         <RecommendedPosts next={next} previous={previous} />
         {comments}
-      </S.PostPaper>
+      </PaperLayout>
     </Layout>
   );
 }
