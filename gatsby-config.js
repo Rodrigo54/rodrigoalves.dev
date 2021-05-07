@@ -13,6 +13,8 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -34,9 +36,35 @@ module.exports = {
         icon: `src/img/favicon.png`,
       },
     },
-    `gatsby-plugin-mdx`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          `gatsby-remark-embed-gist`,
+          `gatsby-remark-lazy-load`,
+          {
+            resolve: `gatsby-remark-lazy-load`,
+            options: {
+              maxWidth: 960,
+              linkImagesToOriginal: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              theme: {
+                default: 'Dark+ (default dark)',
+                parentSelector: {
+                  'body.dark': 'Dark+ (default dark)',
+                  'body.light': 'Light+ (default light)'
+                }
+              }
+            },
+          }
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -60,12 +88,6 @@ module.exports = {
         path: `./src/posts/`,
       },
       __key: `posts`,
-    },
-    {
-      resolve: "gatsby-plugin-page-creator",
-      options: {
-        path: `${__dirname}/src/posts`,
-      },
     },
   ],
 };
