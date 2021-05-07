@@ -10,6 +10,13 @@ import "lazysizes";
 export const onClientEntry = () => {
   console.log("We've started!");
 
+  (function() {
+    window.__getThemeColor = () => {
+      const body = window?.document?.body;
+      return window?.getComputedStyle(body).getPropertyValue('--color1-shade');
+    }
+  })();
+
   // Load Themes
   (function() {
     window.__onThemeChange = () => {};

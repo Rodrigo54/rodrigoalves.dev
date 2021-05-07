@@ -1,3 +1,5 @@
 export default function getThemeColor() {
-  return getComputedStyle(document.body).getPropertyValue('--color1-shade');
+  if (globalThis?.__getThemeColor) {
+    return globalThis.__getThemeColor() ?? '';
+  }
 }
