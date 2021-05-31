@@ -10,7 +10,7 @@ export const PostPaper = styled.div`
   padding: 25px;
   max-width: 900px;
   width: 90%;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.10), 0 10px 10px rgba(0,0,0,0.10);
   ${media.lessThan('large')`
     width: 90vw;
   `}

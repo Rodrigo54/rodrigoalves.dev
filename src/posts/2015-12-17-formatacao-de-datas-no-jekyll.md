@@ -5,6 +5,7 @@ date: '2015-12-17T12:00:00Z'
 author: 'Rodrigo Alves'
 featuredImage: '../img/post-bg-03.jpg'
 comments: true
+tags: ["jekyll"]
 music:
   title: 'Houdini - Foster The People'
   url: 'https://open.spotify.com/track/5Fli1xRi01bvCjsZvKWro0'

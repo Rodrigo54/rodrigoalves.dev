@@ -1,8 +1,11 @@
 import getThemeColor from '@utils/getThemeColor';
 import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
+import { Clock } from '@styled-icons/fa-regular/Clock';
+import { Music } from '@styled-icons/fa-solid/Music';
 
 import * as S from './styles';
+import PostInfo from '@components/post-info';
 
 type Props = {
   slug: string,
@@ -13,6 +16,11 @@ type Props = {
   timeToRead: number,
   title: string,
   description: string,
+  tags: string[],
+  music: {
+    title: string,
+    url: string,
+  }
 };
 
 const PostItem: React.FC<Props> = ({
@@ -23,30 +31,29 @@ const PostItem: React.FC<Props> = ({
   date,
   timeToRead,
   title,
-  description
+  description,
+  tags,
+  music
 }) => {
   const image = getImage(featuredImage) as any;
 
   return (
-    <S.PostItemLink
-      to={`/blog${slug}`}
-      cover={true}
-      direction='right'
-      bg={getThemeColor()}
-      duration={0.6}
-    >
+    <S.PostItemWrapper>
       <S.PostItemThumbnail alt={title} image={image} objectFit='cover' />
-      <S.PostItemWrapper>
-        <S.PostItemInfo>
-          <S.PostItemDate>
-            {date} • {timeToRead} min de leitura
-          </S.PostItemDate>
+      <S.PostItemContent>
+        <S.PostItemLink
+          to={`/blog${slug}`}
+          cover={true}
+          direction='right'
+          bg={getThemeColor()}
+          duration={0.6}
+        >
           <S.PostItemTitle>{title}</S.PostItemTitle>
           <S.PostItemDescription>{description}</S.PostItemDescription>
-        </S.PostItemInfo>
-        <S.PostItemTag background={background}>{category}</S.PostItemTag>
-      </S.PostItemWrapper>
-    </S.PostItemLink>
+        </S.PostItemLink>
+        <PostInfo info={{ timeToRead, date, music, tags }} />
+      </S.PostItemContent>
+    </S.PostItemWrapper>
   );
 }
 

@@ -28,6 +28,7 @@ const IndexPage: React.FC = () => {
                 slug
               }
               frontmatter{
+                tags
                 title
                 author
                 description
@@ -41,7 +42,7 @@ const IndexPage: React.FC = () => {
                     )
                   }
                 }
-                date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                date(locale: "pt-br")
                 music{
                   title
                   url
@@ -70,7 +71,9 @@ const IndexPage: React.FC = () => {
             date={post.date}
             timeToRead={post.timeToRead}
             title={post.title}
+            music={post.music}
             description={post.description}
+            tags={post.tags}
             featuredImage={post.featuredImage}
           />
         ))}

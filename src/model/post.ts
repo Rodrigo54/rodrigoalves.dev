@@ -8,6 +8,7 @@ export interface Post {
     description: string,
     featuredImage: any,
     comments: string,
+    tags: string[],
     date_timestamp: string,
     date: string,
     music: {

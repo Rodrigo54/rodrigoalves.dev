@@ -5,7 +5,10 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
-    "lib": ["dom", "es2017"],
+    "lib": [
+      "dom",
+      "ESNext"
+    ],
     "noImplicitAny": false,
     "jsx": "react",
     "strict": true,

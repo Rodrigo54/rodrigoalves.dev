@@ -3,6 +3,9 @@ import Comments from '@components/comments';
 import Layout from '@components/layout';
 import PaperLayout from '@components/paper-layout';
 import RecommendedPosts from '@components/recommended-posts';
+import { Clock } from '@styled-icons/fa-regular/Clock';
+import { Music } from '@styled-icons/fa-solid/Music';
+import { CalendarAlt as Calendar } from '@styled-icons/fa-regular/CalendarAlt';
 import SEO from '@components/seo';
 import { Post } from '@model/post';
 import { graphql } from 'gatsby';
@@ -11,6 +14,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
 
 import * as S from './styles';
+import PostInfo from '@components/post-info';
 
 export const query = graphql`
   query PostQuery($slug: String!) {
@@ -19,6 +23,7 @@ export const query = graphql`
         slug
       }
       frontmatter {
+        tags,
         title
         author
         description
@@ -32,8 +37,7 @@ export const query = graphql`
           }
         }
         comments
-        date_timestamp: date
-        date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+        date(locale: "pt-br")
         music {
           title
           url
@@ -74,7 +78,7 @@ const BlogPost: React.FC<Props> = ({ data, pageContext: { nextPost, previousPost
   } : undefined;
 
   const { frontmatter, timeToRead, body, fields: { slug } } = data.mdx;
-  const identifier = new Date(frontmatter.date_timestamp).getTime();
+  const identifier = new Date(frontmatter.date).getTime();
   const comments = frontmatter.comments ?
     (<Comments identifier={identifier} url={slug} title={frontmatter.title} />) : undefined;
 
@@ -91,9 +95,12 @@ const BlogPost: React.FC<Props> = ({ data, pageContext: { nextPost, previousPost
         <S.PostHeader>
           <S.PostTitle>{frontmatter.title}</S.PostTitle>
           <S.PostDescription>{frontmatter.description}</S.PostDescription>
-          <S.PostDate>
-            {frontmatter.date} • {timeToRead} min de leitura
-          </S.PostDate>
+          <PostInfo info={{
+            timeToRead,
+            date: frontmatter.date,
+            music: frontmatter.music,
+            tags: frontmatter.tags,
+          }} />
         </S.PostHeader>
         <MDXRenderer components={{wrapper: S.MainContent}}>{body}</MDXRenderer>
         <RecommendedPosts next={next} previous={previous} />

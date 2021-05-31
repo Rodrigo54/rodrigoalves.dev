@@ -5,6 +5,7 @@ date: "2017-03-18 07:20:00 -0700"
 author: "Rodrigo Alves"
 featuredImage: "../img/post-bg-07.jpg"
 comments: true
+tags: ["angular", "typescript"]
 music:
   title: "Strobe - deadmau5"
   url: "https://open.spotify.com/track/6c9EGVj5CaOeoKd9ecMW1U"
@@ -73,7 +74,7 @@ Aqui está o que parece para cada página se houver 15 páginas totais:
         <span>7</span>
         <span>8</span>
         <span>9</span>
-        <span>10</span>    
+        <span>10</span>
     </div>
     <div>
         <span>1</span>
@@ -87,7 +88,7 @@ Aqui está o que parece para cada página se houver 15 páginas totais:
         <span>7</span>
         <span>8</span>
         <span>9</span>
-        <span>10</span>    
+        <span>10</span>
     </div>
     <div>
         <span>1</span>
@@ -359,7 +360,7 @@ export class AppComponent implements OnInit {
 }
 ```
 
-# HTML Template com itens paginados e navegação
+## HTML Template com itens paginados e navegação
 
 Um exemplo de modelo angular 2 que mostra uma lista de itens paginados e os links de paginação para navegar entre páginas.
 

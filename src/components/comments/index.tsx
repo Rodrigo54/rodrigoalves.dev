@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDisqusComments from 'react-disqus-comments';
+import { Disqus } from 'gatsby-plugin-disqus';
 
 import * as S from './styles';
 
@@ -9,15 +9,17 @@ type Props = {
   identifier: number,
 };
 
-const Comments: React.FC<Props> = ({ url, title, identifier }) => {
-  const completeURL = `https://rodrigoalves.me/blog${url}`;
-  const disqusShortname = 'rodrigo-io';
+const Comments: React.FC<Props> = ({
+  url,
+  title,
+  identifier
+}) => {
+  const completeURL = `https://rodrigoalves.dev/blog${url}`;
 
   return (
     <S.CommentsWrapper>
       <S.CommentsTitle>Comentários</S.CommentsTitle>
-      <ReactDisqusComments
-        shortname={disqusShortname}
+      <Disqus
         identifier={`${identifier}`}
         title={title}
         url={completeURL}

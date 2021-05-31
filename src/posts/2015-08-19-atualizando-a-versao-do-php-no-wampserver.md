@@ -5,6 +5,7 @@ date: '2015-08-19T20:30:00Z'
 author: 'Rodrigo Alves'
 featuredImage: '../img/home-bg.jpg'
 comments: true
+tags: ["PHP"]
 music:
   title: 'There Might Be Coffee - deadmau5'
   url: 'https://open.spotify.com/track/7rwgvDDkdHTBMAruB2Lr3Z'

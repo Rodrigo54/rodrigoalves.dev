@@ -21,6 +21,7 @@ export const query = graphql`
             slug
           }
           frontmatter {
+            tags
             title
             author
             description
@@ -34,7 +35,7 @@ export const query = graphql`
                 )
               }
             }
-            date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+            date(locale: "pt-br")
             music {
               title
               url
@@ -68,6 +69,7 @@ const BlogList: React.FC<Props> = ({ pageContext, data }) => {
     timeToRead: node.timeToRead,
     slug: node.fields.slug,
   }));
+
   return (
     <Layout>
       <SEO title='Blog' />
@@ -80,7 +82,9 @@ const BlogList: React.FC<Props> = ({ pageContext, data }) => {
             date={post.date}
             timeToRead={post.timeToRead}
             title={post.title}
+            music={post.music}
             description={post.description}
+            tags={post.tags}
             featuredImage={post.featuredImage}
           />
         ))}

@@ -3,15 +3,15 @@ import media from 'styled-media-query';
 import { GatsbyImage } from "gatsby-plugin-image";
 
 export const PostHeader = styled.header`
-  margin: 0px 0px 40px;
+  margin: 0px 0px 20px;
 `;
 
 export const PostTitle = styled.h1`
   font-family: var(--font-serif);
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 400;
   letter-spacing: 0.05rem;
-  margin: 1rem auto;
+  margin: 0.8rem auto;
   ${media.lessThan('large')`
     font-size: 2.8rem;
     line-height: 1.1;
@@ -21,31 +21,10 @@ export const PostTitle = styled.h1`
 export const PostDescription = styled.h2`
   font-family: var(--font-sans-serif);
   font-weight: 200;
-  margin: 40px 0px;
+  margin: 30px 0px 20px;
   font-size: 1.6rem;
   line-height: 1.3;
   ${media.lessThan('large')`
-  `}
-`;
-
-export const PostDate = styled.p`
-  font-family: var(--font-sans-serif);
-  font-size: 1rem;
-  margin: 20px 0px;
-  letter-spacing: 0.02rem;
-`;
-
-export const PostPaper = styled.div`
-  background: var(--color2);
-  color: var(--color2-contrast);
-  z-index: 2;
-  margin: -120px auto 0px;
-  padding: 20px 0px;
-  max-width: 900px;
-  width: 90%;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  ${media.lessThan('large')`
-    width: 90vw;
   `}
 `;
 
@@ -73,7 +52,7 @@ export const MainContent = styled.section`
   iframe,
   .button-post {
     color: var(--color2-contrast);
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 300;
     line-height: 1.7;
     letter-spacing: 0.02rem;
@@ -89,7 +68,7 @@ export const MainContent = styled.section`
   h3,
   h4,
   h5 {
-    margin: 2.4rem auto 1rem;
+    margin: 2rem auto 1rem;
   }
   ul,
   ol {
@@ -146,28 +125,28 @@ export const MainContent = styled.section`
     line-height: 1.4;
   }
   h1 {
-    font-size: 2.8rem;
+    font-size: 2rem;
     ${media.lessThan('large')`
       font-size: 1.875rem;
     `}
   }
   h2 {
-    font-size: 2.1rem;
+    font-size: 1.7rem;
     ${media.lessThan('large')`
       font-size: 1.375rem;
     `}
   }
   h3 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     ${media.lessThan('large')`
       font-size: 1.125rem;
     `}
   }
   h4 {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
   h5 {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
   }
   strong {
     font-weight: 700;

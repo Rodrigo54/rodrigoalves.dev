@@ -22,6 +22,12 @@ module.exports = {
         trackingId: `rtrtr`,
       },
     },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `rodrigo-io`
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     {

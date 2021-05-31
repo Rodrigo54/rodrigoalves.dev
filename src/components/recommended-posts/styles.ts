@@ -6,6 +6,7 @@ export const RecommendedWrapper = styled.section`
   border-top: 1px solid var(--color2-light);
   background: var(--color2);
   display: flex;
+  margin: 0px -25px;
   flex-flow: row nowrap;
 `;
 
