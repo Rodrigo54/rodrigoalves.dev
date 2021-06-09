@@ -8,11 +8,12 @@ export const PostPaper = styled.div`
   z-index: 2;
   margin: -120px auto 0px;
   padding: 25px;
-  max-width: 900px;
+  max-width: 1200px;
   width: 90%;
   box-shadow: 0 14px 28px rgba(0,0,0,0.10), 0 10px 10px rgba(0,0,0,0.10);
   ${media.lessThan('large')`
     width: 90vw;
+    max-width: 900px;
   `}
 `;
 

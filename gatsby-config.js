@@ -28,6 +28,12 @@ module.exports = {
         shortname: `rodrigo-io`
       }
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `http://rodrigoalves.dev`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     {

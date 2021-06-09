@@ -7,18 +7,25 @@ export const PostItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin: 20px;
-  min-height: 240px;
+  height: 250px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   background: var(--color2);
   color: var(--color1-contrast);
-  body#grid & {
-    flex-direction: column;
-    margin: 0px;
-  }
   &:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }
+  body#grid & {
+    flex-direction: column;
+    margin: 0px;
+    height: 600px;
+    ${media.lessThan('small')`
+      height: 350px;
+    `}
+  }
+  ${media.lessThan('small')`
+    height: 350px;
+  `}
 `;
 
 export const PostItemLink = styled(AniLink)`
@@ -41,23 +48,25 @@ interface PostItemThumbnailProps {
 };
 
 export const PostItemThumbnail = styled(GatsbyImage)<PostItemThumbnailProps>`
-  width: 100%;
+  max-width: 400px;
   height: 200px;
   margin: 0px;
   body#list & {
-    height: 240px;
+    height: 250px;
     flex: 1;
   }
+  ${media.lessThan('small')`
+    visibility: hidden;
+    display: none;
+  `}
 `;
 
 export const PostItemContent = styled.section`
   display: flex;
   flex-direction: column;
-  font-family: var(--font-serif);
-  font-size: 1.6rem;
-  line-height: 1.3;
   padding: 15px;
   flex: 1.5;
+  width: 100%;
 `;
 
 export const PostItemTitle = styled.h1`
@@ -67,6 +76,9 @@ export const PostItemTitle = styled.h1`
   body#grid & {
     margin: 15px 0px;
   }
+  ${media.lessThan('large')`
+    font-size: 1.4rem;
+  `}
 `;
 
 export const PostItemDescription = styled.p`
@@ -75,4 +87,7 @@ export const PostItemDescription = styled.p`
   font-weight: 300;
   line-height: 1.2;
   margin: 10px 0px;
+  ${media.lessThan('large')`
+    font-size: 1rem;
+  `}
 `;

@@ -48,7 +48,9 @@ const PostInfo: React.FC<Props> = ({ info: { date, timeToRead, music, tags } }) 
     const stringDate = Intl.DateTimeFormat("pt-BR", {
       dateStyle: "long",
     }).format(dateObj);
-    return `Postado ${prefix}, ${stringDate}`;
+    return (
+      <p><span>Postado {prefix},</span><span> {stringDate}</span></p>
+    );
   }
 
   return (
@@ -60,10 +62,10 @@ const PostInfo: React.FC<Props> = ({ info: { date, timeToRead, music, tags } }) 
         <Clock size="15" /> Leia em {timeToRead} min
       </S.PostReadTime>
       <S.PostMusic>
-        <Music size="15" /> Ouvindo
+        <Music size="15" /> <span>Ouvindo </span>
         <S.PostMusicLink
           href={music.url}
-          rel="external"
+          rel="noopener"
           target="_blank"
         >
           {music.title}

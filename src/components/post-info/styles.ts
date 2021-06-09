@@ -5,9 +5,6 @@ import media from 'styled-media-query';
 export const PostInfoWrapper = styled.div`
   display: grid;
   grid-template: repeat(auto, 3) / 1fr;
-  ${media.lessThan('large')`
-    grid-template: repeat(auto, 3) / 1fr;
-  `}
 `;
 
 export const PostTagsRow = styled.div`
@@ -22,9 +19,21 @@ export const PostDate = styled.time`
   font-family: var(--font-serif);
   font-size: 0.9rem;
   margin: 5px 0px;
+  ${media.lessThan('small')`
+    p > span:first-child {
+      visibility: hidden;
+      display: none;
+    }
+  `}
+  body#grid & {
+    p > span:first-child {
+      visibility: hidden;
+      display: none;
+    }
+  }
 `;
 
-export const PostReadTime = styled.span`
+export const PostReadTime = styled.p`
   display: flex;
   gap: 5px;
   font-family: var(--font-serif);
@@ -33,13 +42,25 @@ export const PostReadTime = styled.span`
   margin: 5px 0px;
 `;
 
-export const PostMusic = styled.span`
+export const PostMusic = styled.p`
   display: flex;
   gap: 5px;
   font-family: var(--font-serif);
   font-size: 0.9rem;
   line-height: 1.2;
   margin: 5px 0px;
+  body#grid & {
+    span {
+      visibility: hidden;
+      display: none;
+    }
+  }
+  ${media.lessThan('small')`
+    span {
+      visibility: hidden;
+      display: none;
+    }
+  `}
 `;
 
 export const PostMusicLink = styled.a`
@@ -47,6 +68,10 @@ export const PostMusicLink = styled.a`
   text-decoration: none;
   border-bottom: 1px dashed transparent;
   transition: border-bottom 0.3s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;
   &:hover {
     border-bottom: 1px dashed var(--color3-light);
   }
