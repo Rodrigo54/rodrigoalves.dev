@@ -1,7 +1,7 @@
 ---
 title: "Angular 2 - Lógica de Paginação"
 description: "Este é um exemplo de como implementar uma paginação em Angular 2 com uma lógica como a do Google."
-date: "2017-03-18 07:20:00 -0700"
+date: "2017-03-18 07:20:00 -0300"
 author: "Rodrigo Alves"
 featuredImage: "../img/post-bg-07.jpg"
 comments: true
@@ -10,6 +10,7 @@ music:
   title: "Strobe - deadmau5"
   url: "https://open.spotify.com/track/6c9EGVj5CaOeoKd9ecMW1U"
 ---
+
 ## Lógica de paginação do Google
 
 A lógica na paginação do Google é a seguinte:
@@ -19,218 +20,9 @@ o link ativo (página atual) está na 6ª posição, exceto quando o link ativo 
 
 Aqui está o que parece para cada página se houver 15 páginas totais:
 
-<div class="grid-angular-pag">
-    <div>
-        <span>
-            <strong>1</strong>
-        </span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>5</span>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
-    </div>
-    <div>
-        <span>1</span>
-        <span>
-            <strong>2</strong>
-        </span>
-        <span>3</span>
-        <span>4</span>
-        <span>5</span>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
-    </div>
-    <div>
-        <span>1</span>
-        <span>2</span>
-        <span>
-            <strong>3</strong>
-        </span>
-        <span>4</span>
-        <span>5</span>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
-    </div>
-    <div>
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>
-            <strong>4</strong>
-        </span>
-        <span>5</span>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
-    </div>
-    <div>
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>
-            <strong>5</strong>
-        </span>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
-    </div>
-    <div>
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>5</span>
-        <span>
-            <strong>6</strong>
-        </span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
-    </div>
-    <div>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>5</span>
-        <span>6</span>
-        <span>
-            <strong>7</strong>
-        </span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
-        <span>11</span>
-    </div>
-    <div>
-        <span>3</span>
-        <span>4</span>
-        <span>5</span>
-        <span>6</span>
-        <span>7</span>
-        <span>
-            <strong>8</strong>
-        </span>
-        <span>9</span>
-        <span>10</span>
-        <span>11</span>
-        <span>12</span>
-    </div>
-    <div>
-        <span>4</span>
-        <span>5</span>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>
-            <strong>9</strong>
-        </span>
-        <span>10</span>
-        <span>11</span>
-        <span>12</span>
-        <span>13</span>
-    </div>
-    <div>
-        <span>5</span>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>
-            <strong>10</strong>
-        </span>
-        <span>11</span>
-        <span>12</span>
-        <span>13</span>
-        <span>14</span>
-    </div>
-    <div>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
-        <span>
-            <strong>11</strong>
-        </span>
-        <span>12</span>
-        <span>13</span>
-        <span>14</span>
-        <span>15</span>
-    </div>
-    <div>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
-        <span>11</span>
-        <span>
-            <strong>12</strong>
-        </span>
-        <span>13</span>
-        <span>14</span>
-        <span>15</span>
-    </div>
-    <div>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
-        <span>11</span>
-        <span>12</span>
-        <span>
-            <strong>13</strong>
-        </span>
-        <span>14</span>
-        <span>15</span>
-    </div>
-    <div>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
-        <span>11</span>
-        <span>12</span>
-        <span>13</span>
-        <span>
-            <strong>14</strong>
-        </span>
-        <span>15</span>
-    </div>
-    <div>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
-        <span>11</span>
-        <span>12</span>
-        <span>13</span>
-        <span>14</span>
-        <span>
-            <strong>15</strong>
-        </span>
-    </div>
-</div>
+import AngularPagination from "@posts/components/angular-pagination";
+
+<AngularPagination />
 
 ## Executando o Exemplo Angular 2 Localmente
 
