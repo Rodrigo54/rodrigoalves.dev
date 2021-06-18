@@ -12,6 +12,8 @@ export const SocialLinksWrapper = styled.nav`
 export const SocialLinksList = styled.ul`
   align-items: center;
   display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
   justify-content: space-around;
   list-style: none;
 `;

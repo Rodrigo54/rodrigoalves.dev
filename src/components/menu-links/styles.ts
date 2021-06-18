@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import media from 'styled-media-query';
 
 export const MenuLinksWrapper = styled.nav`
-  margin: 40px auto auto;
+  margin: 20px auto auto;
   width: 100%;
   ${media.lessThan('large')`
     display: none;

@@ -65,7 +65,7 @@ const PostInfo: React.FC<Props> = ({ info: { date, timeToRead, music, tags } }) 
         <Music size="15" /> <span>Ouvindo </span>
         <S.PostMusicLink
           href={music.url}
-          rel="noopener"
+          rel='noopener noreferrer'
           target="_blank"
         >
           {music.title}

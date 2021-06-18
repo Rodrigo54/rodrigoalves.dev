@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Avatar from '../avatar';
 import * as S from './styles';
+import SocialLinks from '../social-links';
 
 type site = {
   site: {
@@ -45,6 +46,7 @@ const Profile: React.FC = () => {
         </S.ProfileAuthor>
       </S.ProfileLink>
       <S.ProfileDescription>{description}</S.ProfileDescription>
+      <SocialLinks />
     </S.ProfileWrapper>
   );
 }
