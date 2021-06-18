@@ -56,9 +56,7 @@ export const MainContent = styled.section`
     font-weight: 300;
     line-height: 1.7;
     letter-spacing: 0.02rem;
-    ${media.lessThan('large')`
-      word-break: break-word;
-    `}
+    word-break: break-word;
   }
   p {
     margin: 0 auto .4rem;
