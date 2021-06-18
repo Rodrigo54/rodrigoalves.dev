@@ -22,7 +22,9 @@
       "@templates/*": ["templates/*"],
       "@utils/*": ["utils/*"],
       "@model/*": ["model/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@pages/*": ["pages/*"],
+      "@posts/*": ["posts/*"]
     }
   }
 }
