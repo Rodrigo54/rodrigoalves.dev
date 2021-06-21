@@ -31,9 +31,9 @@ const ThemeStyles = createGlobalStyle`
     --color2-shade: #2b2b2b;
     --color2-contrast: #fff;
 
-    --color3: #1565c0;
-    --color3-light: #7fc9ff;
-    --color3-shade: #0d47a1;
+    --color3: #4c0099;
+    --color3-light: #b39ddb;
+    --color3-shade: #311b92;
     --color3-contrast: #fff;
   }
   body.light {

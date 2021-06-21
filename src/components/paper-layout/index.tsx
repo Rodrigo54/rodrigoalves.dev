@@ -5,12 +5,16 @@ import React from 'react';
 import * as S from './styles';
 
 type Props = {
+  title?: string;
+  subtitle?: string;
   image?: IGatsbyImageData;
   alt?: string;
   children: React.ReactNode,
 };
 
 const PaperLayout: React.FC<Props> = ({
+  title,
+  subtitle,
   image,
   alt,
   children
@@ -37,12 +41,16 @@ const PaperLayout: React.FC<Props> = ({
     : getImage(data.file);
 
   return (
-    <>
-      <S.PostThumbnail alt={alt ?? 'Featured Image'} image={featuredImage} />
-      <S.PostPaper>
+    <S.PaperWrapper>
+      <S.Thumbnail alt={alt ?? 'Featured Image'} image={featuredImage} />
+      <S.Header>
+        <h1>{title}</h1>
+        <p>{subtitle}</p>
+      </S.Header>
+      <S.PaperContent>
         {children}
-      </S.PostPaper>
-    </>
+      </S.PaperContent>
+    </S.PaperWrapper>
   )
 }
 

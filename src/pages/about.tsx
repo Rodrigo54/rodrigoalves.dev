@@ -28,6 +28,8 @@ const AboutPage: React.FC = () => {
     <Layout>
       <SEO title="Sobre Mim" />
       <PaperLayout
+        title="Sobre Mim"
+        subtitle="Basta querer mudar o mundo através da web."
         image={data.file}
         alt="Sobre Mim"
       >
