@@ -20,7 +20,15 @@ export const PostPaper = styled.div`
 export const PostThumbnail = styled(GatsbyImage)`
   z-index: 1;
   width: 100%;
-  margin: auto;
   height: 350px;
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 0.4;
+    background-color: var(--color3);
+  }
 `;
 
