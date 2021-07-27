@@ -1,12 +1,9 @@
 import React from "react";
 
-import Layout from "@components/layout";
-import SEO from "@components/seo";
-import PaperLayout from "@components/paper-layout";
-import { graphql, useStaticQuery } from "gatsby";
 import * as S from "./styles";
 import ProfessionalExperience from "./professional-experience";
 import AcademicFormation from "./formation";
+import AllSocialLinks from "./all-social-links";
 
 const AboutPageContent: React.FC = () => {
   return (
@@ -40,6 +37,7 @@ const AboutPageContent: React.FC = () => {
 
       <ProfessionalExperience />
       <AcademicFormation />
+      <AllSocialLinks />
     </S.MainContent>
   );
 };
