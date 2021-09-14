@@ -61,7 +61,7 @@ export const Thumbnail = styled(GatsbyImage)`
     height: 100%;
     width: 100%;
     z-index: 1;
-    opacity: 0.4;
+    opacity: 0.1;
     background-color: var(--color3);
   }
 `;
