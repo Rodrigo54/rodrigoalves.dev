@@ -1,0 +1,48 @@
+baseurl = "https://rodrigoalves.dev/"
+languageCode = "pt-BR"
+title = "Rodrigo Alves"
+canonifyurls = true
+paginate = 5
+
+disqusShortname = "rodrigo-io"
+googleAnalytics = ""
+enableEmoji = true
+enableRobotsTXT = true
+
+[params]
+  DateForm = "Mon, Jan 2, 2006"
+  Description = "Desenvolvedor Web"
+  Author = "Rodrigo Alves Mesquita"
+  email = "rodrigo54mix@gmail.com"
+  thumbnail = 'img/snapshot.jpg'
+  postSummariesFrontPage = 3 #Number of post summaries to show on front page, comment out to allow default(4)
+  showReadTime = true #set to false to exclude read time from header of post
+
+[[params.social]]
+  title = "twitter"
+  url = "https://twitter.com/rodrigo254mix"
+[[params.social]]
+  title = "github-alt"
+  url = "https://github.com/rodrigo54"
+[[params.social]]
+  title = "facebook"
+  url = "https://www.facebook.com/rodrigo54"
+[[params.social]]
+  title = "linkedin"
+  url = "https://br.linkedin.com/in/rodrigo54"
+
+[[menu.main]]
+  identifier = "home"
+  name = "Home"
+  url = "/"
+  weight = -200
+[[menu.main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "/blog/"
+  weight = -199
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
