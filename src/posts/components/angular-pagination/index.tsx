@@ -1,6 +1,6 @@
-import { range } from "lodash";
-import React, { useState, useEffect } from "react";
-import * as S from "./styles";
+import { range } from 'lodash';
+import React, { useState, useEffect } from 'react';
+import * as S from './styles';
 
 type PageType = {
   totalItems: number;
@@ -24,10 +24,10 @@ const AngularPagination: React.FC = () => {
 
   function getPager(
     totalItems: number,
-    currentPage: number = 1,
-    pageSize: number = 10
+    currentPage = 1,
+    pageSize = 10
   ): PageType {
-    let totalPages = Math.ceil(totalItems / pageSize);
+    const totalPages = Math.ceil(totalItems / pageSize);
 
     let startPage: number, endPage: number;
     if (totalPages <= 10) {
@@ -46,9 +46,9 @@ const AngularPagination: React.FC = () => {
       }
     }
 
-    let startIndex = (currentPage - 1) * pageSize;
-    let endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
-    let pages = range(startPage, endPage + 1);
+    const startIndex = (currentPage - 1) * pageSize;
+    const endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
+    const pages = range(startPage, endPage + 1);
 
     return {
       totalItems: totalItems,
@@ -72,7 +72,7 @@ const AngularPagination: React.FC = () => {
   }
 
   useEffect(() => {
-    const allItems = new Array(150).fill("").map((value, index) => index + 1);
+    const allItems = new Array(150).fill('').map((value, index) => index + 1);
     for (let index = 1; index <= 15; index++) {
       const pageItem = setPage(index, allItems);
       list.push(pageItem);
@@ -85,7 +85,7 @@ const AngularPagination: React.FC = () => {
         return (
           <S.PaginationRow key={item.pager.currentPage}>
             {item.pager.pages.map((page) => {
-              const stringPage = page.toFixed().padStart(2, "0");
+              const stringPage = page.toFixed().padStart(2, '0');
               if (item.pager.currentPage === page) {
                 return <S.PageStrong key={page}>{stringPage}</S.PageStrong>;
               } else {

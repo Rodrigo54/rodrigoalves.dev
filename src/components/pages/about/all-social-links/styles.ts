@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import media from "styled-media-query"
+import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Title = styled.h2`
   font-family: var(--font-serif);
@@ -57,5 +57,5 @@ export const Name = styled.h3`
 `;
 
 export const Nickname = styled.span`
- font-style: italic;
+  font-style: italic;
 `;

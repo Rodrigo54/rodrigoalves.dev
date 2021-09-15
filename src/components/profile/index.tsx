@@ -1,54 +1,27 @@
-import getThemeColor from '@utils/getThemeColor';
-import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Avatar from '../avatar';
 import * as S from './styles';
 import SocialLinks from '../social-links';
-
-type site = {
-  site: {
-    siteMetadata: {
-      title: string,
-      position: string,
-      description: string,
-    }
-  }
-}
+import { Metadata } from '@model/metadata';
+import Link from 'next/link';
 
 const Profile: React.FC = () => {
-  const { site: { siteMetadata } } = useStaticQuery<site>(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            position
-            description
-          }
-        }
-      }
-    `,
-  );
-  const { title, position, description } = siteMetadata;
+  const { title, position, description } = Metadata;
   return (
     <S.ProfileWrapper>
-      <S.ProfileLink
-        to='/'
-        cover={true}
-        direction='left'
-        bg={getThemeColor()}
-        duration={0.6}
-      >
-        <Avatar alt={title} />
-        <S.ProfileAuthor>
-          {title}
-          <S.ProfilePosition>{position}</S.ProfilePosition>
-        </S.ProfileAuthor>
-      </S.ProfileLink>
+      <Link href="/404" passHref>
+        <S.ProfileLink>
+          <Avatar alt={title} />
+          <S.ProfileAuthor>
+            {title}
+            <S.ProfilePosition>{position}</S.ProfilePosition>
+          </S.ProfileAuthor>
+        </S.ProfileLink>
+      </Link>
       <S.ProfileDescription>{description}</S.ProfileDescription>
       <SocialLinks />
     </S.ProfileWrapper>
   );
-}
+};
 
 export default Profile;

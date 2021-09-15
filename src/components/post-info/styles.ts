@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
-
 export const PostInfoWrapper = styled.div`
   display: grid;
   grid-template: repeat(auto, 3) / 1fr;

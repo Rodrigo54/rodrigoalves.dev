@@ -23,22 +23,24 @@ const MenuBar: React.FC = () => {
   }, []);
 
   const setPreferredTheme = () => {
-    if(globalThis?.__setPreferredTheme) {
+    if (globalThis?.__setPreferredTheme) {
       globalThis.__setPreferredTheme(isDarkMode ? 'light' : 'dark');
     }
     if (globalThis.DISQUS !== undefined) {
       setTimeout(() => {
         globalThis.DISQUS.reset({
           reload: true,
-          config: {}
+          config: {},
         });
       }, 300);
     }
   };
 
   const setPreferredConfig = () => {
-    if(globalThis?.__setPreferredConfig) {
-      globalThis.__setPreferredConfig({ display: isListMode ? 'grid' : 'list' });
+    if (globalThis?.__setPreferredConfig) {
+      globalThis.__setPreferredConfig({
+        display: isListMode ? 'grid' : 'list',
+      });
     }
   };
 
@@ -49,39 +51,31 @@ const MenuBar: React.FC = () => {
   return (
     <S.MenuBarWrapper>
       <S.MenuBarGroup>
-        <S.MenuBarLink
-          to='/'
-          cover='true'
-          direction='right'
-          bg={getThemeColor()}
-          duration={0.6}
-          title='Voltar para Home'
-        >
-          <S.MenuBarItem>
-            <Home />
-          </S.MenuBarItem>
+        <S.MenuBarLink href="/">
+          <a title="Voltar para Home">
+            <S.MenuBarItem>
+              <Home />
+            </S.MenuBarItem>
+          </a>
         </S.MenuBarLink>
       </S.MenuBarGroup>
       <S.MenuBarGroup>
-        <S.MenuBarItem
-          title='Mudar o tema'
-          onClick={() => setPreferredTheme()}
-        >
+        <S.MenuBarItem title="Mudar o tema" onClick={() => setPreferredTheme()}>
           <Light />
         </S.MenuBarItem>
         <S.MenuBarItem
-          title='Mudar visualização'
-          className='display'
+          title="Mudar visualização"
+          className="display"
           onClick={() => setPreferredConfig()}
         >
           {isListMode ? <Grid /> : <List />}
         </S.MenuBarItem>
-        <S.MenuBarItem title='Ir para o Topo' onClick={() => toTop()}>
+        <S.MenuBarItem title="Ir para o Topo" onClick={() => toTop()}>
           <Arrow />
         </S.MenuBarItem>
       </S.MenuBarGroup>
     </S.MenuBarWrapper>
   );
-}
+};
 
 export default MenuBar;

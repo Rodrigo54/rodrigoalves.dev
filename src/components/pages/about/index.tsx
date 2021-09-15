@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import * as S from "./styles";
-import ProfessionalExperience from "./professional-experience";
-import AcademicFormation from "./formation";
-import AllSocialLinks from "./all-social-links";
+import * as S from './styles';
+import ProfessionalExperience from './professional-experience';
+import AcademicFormation from './formation';
+import AllSocialLinks from './all-social-links';
 
 const AboutPageContent: React.FC = () => {
   return (

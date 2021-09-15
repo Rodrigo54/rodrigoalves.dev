@@ -1,4 +1,3 @@
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
@@ -19,18 +18,16 @@ export const MenuLinksList = styled.ul`
 export const MenuLinksItem = styled.li`
   width: 100%;
   padding: 0.5rem 0;
-  .active {
-    color: var(--color3-light);
-  }
 `;
 
-export const MenuLinksLink = styled(AniLink)`
+export const MenuLinksLink = styled.a`
   color: var(--color1-contrast);
   font-family: var(--font-sans-serif);
   text-decoration: none;
   transition: color 0.5s;
   width: 100%;
-  &:hover {
+  &:hover,
+  &.active {
     color: var(--color3-light);
   }
 `;

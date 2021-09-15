@@ -29,8 +29,8 @@ export const query = graphql`
               publicURL
               childImageSharp {
                 gatsbyImageData(
-                  layout: CONSTRAINED,
-                  width: 400,
+                  layout: CONSTRAINED
+                  width: 400
                   placeholder: BLURRED
                 )
               }
@@ -50,11 +50,11 @@ export const query = graphql`
 
 type Props = {
   pageContext: {
-    currentPage: number,
-    numPages: number,
+    currentPage: number;
+    numPages: number;
   };
   data: {
-    allMdx: { edges: { node: Post }[] }
+    allMdx: { edges: { node: Post }[] };
   };
 };
 
@@ -62,9 +62,10 @@ const BlogList: React.FC<Props> = ({ pageContext, data }) => {
   const { currentPage, numPages } = pageContext;
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
-  const prevPage = currentPage - 1 === 1 ? '/blog/' : `/blog/page/${currentPage - 1}`;
+  const prevPage =
+    currentPage - 1 === 1 ? '/blog/' : `/blog/page/${currentPage - 1}`;
   const nextPage = `/blog/page/${currentPage + 1}`;
-  const postList = data.allMdx.edges.map(({node}) => ({
+  const postList = data.allMdx.edges.map(({ node }) => ({
     ...node.frontmatter,
     timeToRead: node.timeToRead,
     slug: node.fields.slug,
@@ -72,13 +73,13 @@ const BlogList: React.FC<Props> = ({ pageContext, data }) => {
 
   return (
     <Layout>
-      <SEO title='Blog' />
+      <SEO title="Blog" />
       <S.ListWrapper>
         {postList.map((post, index) => (
           <PostItem
             key={index}
             slug={post.slug}
-            category='JS'
+            category="JS"
             date={post.date}
             timeToRead={post.timeToRead}
             title={post.title}
@@ -99,6 +100,6 @@ const BlogList: React.FC<Props> = ({ pageContext, data }) => {
       />
     </Layout>
   );
-}
+};
 
 export default BlogList;

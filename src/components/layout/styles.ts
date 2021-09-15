@@ -18,8 +18,8 @@ export const LayoutMain = styled.main`
   width: 100%;
   body#grid & {
     grid-template-areas:
-      "posts"
-      "pagination";
+      'posts'
+      'pagination';
   }
   ${media.lessThan('large')`
     padding: 4.125rem 0 3rem 0;

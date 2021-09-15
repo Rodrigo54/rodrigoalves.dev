@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { GatsbyImage } from "gatsby-plugin-image";
 
 export const PostHeader = styled.header`
   margin: 0px 0px 20px;
@@ -28,13 +27,6 @@ export const PostDescription = styled.h2`
   `}
 `;
 
-export const PostThumbnail = styled(GatsbyImage)`
-  z-index: 1;
-  width: 100%;
-  margin: auto;
-  height: 350px;
-`;
-
 export const MainContent = styled.section`
   font-family: var(--font-sans-serif);
   margin: 0px 0px 80px;
@@ -59,7 +51,7 @@ export const MainContent = styled.section`
     word-break: break-word;
   }
   p {
-    margin: 0 auto .4rem;
+    margin: 0 auto 0.4rem;
   }
   h1,
   h2,

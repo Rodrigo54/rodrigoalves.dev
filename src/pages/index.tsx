@@ -4,94 +4,57 @@ import Pagination from '@components/pagination';
 import PostItem from '@components/post-item';
 import SEO from '@components/seo';
 import getThemeColor from '@utils/getThemeColor';
-import { graphql, useStaticQuery } from 'gatsby';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import Link from 'next/link';
 import React from 'react';
-import { Post } from '@model/Post';
+import { getAllPosts, Post } from '@posts/render';
 
-type allMarkdownRemark = {
-  allMdx: { edges: { node: Post }[] }
-};
+type IndexPageProps = { posts: Post[]; prevPosts: Post[]; nextPosts: Post[] };
 
-const IndexPage: React.FC = () => {
-  const { allMdx } = useStaticQuery<allMarkdownRemark>(
-    graphql`
-      query{
-        allMdx(
-          sort: { fields: frontmatter___date, order: DESC }
-          limit: 5
-        ){
-          edges{
-            node {
-              timeToRead
-              fields {
-                slug
-              }
-              frontmatter{
-                tags
-                title
-                author
-                description
-                featuredImage {
-                  publicURL
-                  childImageSharp {
-                    gatsbyImageData(
-                      layout: CONSTRAINED,
-                      width: 400,
-                      placeholder: BLURRED
-                    )
-                  }
-                }
-                date(locale: "pt-br")
-                music{
-                  title
-                  url
-                }
-              }
-            }
-          }
-        }
-      }
-    `,
-  );
-  const postList = allMdx.edges.map(({node}) => ({
-    ...node.frontmatter,
-    timeToRead: node.timeToRead,
-    slug: node.fields.slug,
-  }));
+const IndexPage: React.FC<IndexPageProps> = ({
+  posts,
+  prevPosts,
+  nextPosts,
+}) => {
+  const postList = posts;
   return (
     <Layout>
-      <SEO title='Home' />
+      <SEO title="Home" />
       <S.ListWrapper>
         {postList.map((post, index) => (
           <PostItem
             key={index}
             slug={post.slug}
-            category='JS'
-            date={post.date}
-            timeToRead={post.timeToRead}
-            title={post.title}
-            music={post.music}
-            description={post.description}
-            tags={post.tags}
-            featuredImage={post.featuredImage}
+            category="JS"
+            date={post.frontmatter.date}
+            timeToRead={post.frontmatter.timeToRead}
+            title={post.frontmatter.title}
+            music={post.frontmatter.music}
+            description={post.frontmatter.description}
+            tags={post.frontmatter.tags}
+            featuredImage={post.frontmatter.featuredImage}
           />
         ))}
       </S.ListWrapper>
       <Pagination>
-        <div />
-        <AniLink
-          cover={true}
-          direction='left'
-          bg={getThemeColor()}
-          duration={0.6}
-          to={'/blog/'}
-        >
-          Veja mais artigos
-        </AniLink>
+        <Link href="/blog/">
+          <a>Veja mais artigos</a>
+        </Link>
       </Pagination>
     </Layout>
   );
+};
+
+export async function getStaticProps() {
+  const posts = await getAllPosts();
+
+  const startIndex = 0;
+  const endIndex = 5;
+  const prevPosts = null;
+  const nextPosts = endIndex >= posts.length ? null : 2;
+
+  return {
+    props: { posts: posts.slice(startIndex, endIndex), prevPosts, nextPosts },
+  };
 }
 
 export default IndexPage;

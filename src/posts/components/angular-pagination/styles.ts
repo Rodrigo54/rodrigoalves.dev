@@ -7,7 +7,7 @@ export const PaginationColumn = styled.div`
   width: 270px;
   gap: 10px;
   margin: 30px;
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     margin: 30px 0px;
   `}
 `;
