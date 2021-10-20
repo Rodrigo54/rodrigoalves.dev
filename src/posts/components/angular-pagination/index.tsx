@@ -71,7 +71,7 @@ const AngularPagination: React.FC = () => {
 
   const createList = () => {
     const allItems = new Array(150).fill('').map((value, index) => index + 1);
-    const list = [];
+    const list: PagedItemType[] = [];
     for (let index = 1; index <= 15; index++) {
       const pageItem = setPage(index, allItems);
       list.push(pageItem);
