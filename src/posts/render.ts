@@ -23,7 +23,9 @@ async function getSlugList() {
   return slugs.filter((slug) => /^(\d{4}-\d{2}-\d{2}-)/.test(slug));
 }
 
-export async function getPostBySlug(slug: string) {
+export async function getPostBySlug(
+  slug: string
+): Promise<{ [key: string]: any }> {
   const realSlug = replaceSlug(slug);
 
   const fileNamesList = await getSlugList();

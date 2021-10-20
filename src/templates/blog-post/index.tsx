@@ -45,7 +45,7 @@ const BlogPost: React.FC<Props> = ({
       }
     : undefined;
 
-  const { frontmatter, timeToRead, body, slug } = data;
+  const { frontmatter, timeToRead, body, slug, content } = data;
   const comments = frontmatter.comments ? (
     <Comments slug={slug} title={frontmatter.title} />
   ) : undefined;
@@ -72,10 +72,11 @@ const BlogPost: React.FC<Props> = ({
             }}
           />
         </S.PostHeader>
+        {/* <MDX>{content}</MDX> */}
         {/* <MDXProvider components={{ wrapper: S.MainContent }}>
-          <MDX>{body}</MDX>
+          <MDX>{content}</MDX>
         </MDXProvider> */}
-        <div dangerouslySetInnerHTML={{ __html: body }} />
+        <S.MainContent dangerouslySetInnerHTML={{ __html: body }} />
         <RecommendedPosts next={next} previous={previous} />
         {comments}
       </PaperLayout>

@@ -2,51 +2,10 @@ import Layout from '@components/layout';
 import Pagination from '@components/pagination';
 import PostItem from '@components/post-item';
 import SEO from '@components/seo';
-import { graphql } from 'gatsby';
-import { Post } from 'model/Post';
+import { Post } from '@model/post';
 import React from 'react';
 
 import * as S from './styles';
-
-export const query = graphql`
-  query PostList($skip: Int!, $limit: Int!) {
-    allMdx(
-      sort: { fields: frontmatter___date, order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            tags
-            title
-            author
-            description
-            featuredImage {
-              publicURL
-              childImageSharp {
-                gatsbyImageData(
-                  layout: CONSTRAINED
-                  width: 400
-                  placeholder: BLURRED
-                )
-              }
-            }
-            date(locale: "pt-br")
-            music {
-              title
-              url
-            }
-          }
-          timeToRead
-        }
-      }
-    }
-  }
-`;
 
 type Props = {
   pageContext: {

@@ -20,8 +20,6 @@ type PagedItemType = {
 };
 
 const AngularPagination: React.FC = () => {
-  const [list, setList] = useState<PagedItemType[]>([]);
-
   function getPager(
     totalItems: number,
     currentPage = 1,
@@ -71,17 +69,19 @@ const AngularPagination: React.FC = () => {
     };
   }
 
-  useEffect(() => {
+  const createList = () => {
     const allItems = new Array(150).fill('').map((value, index) => index + 1);
+    const list = [];
     for (let index = 1; index <= 15; index++) {
       const pageItem = setPage(index, allItems);
       list.push(pageItem);
     }
-  }, []);
+    return list;
+  };
 
   return (
     <S.PaginationColumn>
-      {list.map((item) => {
+      {createList().map((item) => {
         return (
           <S.PaginationRow key={item.pager.currentPage}>
             {item.pager.pages.map((page) => {

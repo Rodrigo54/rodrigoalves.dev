@@ -1,15 +1,18 @@
----
-title: "Lógica de Paginação com Angular"
-description: "Este é um exemplo de como implementar uma paginação em Angular 2 com uma lógica como a do Google."
-date: "2017-03-18 07:20:00 -0300"
-author: "Rodrigo Alves"
-featuredImage: "/img/post-bg-04.jpg"
-comments: true
-tags: ["angular", "typescript"]
-music:
-  title: "Strobe - deadmau5"
-  url: "https://open.spotify.com/track/6c9EGVj5CaOeoKd9ecMW1U"
----
+import AngularPagination from '../../posts/components/angular-pagination';
+
+export const meta = {
+  title: "Lógica de Paginação com Angular",
+  description: "Este é um exemplo de como implementar uma paginação em Angular 2 com uma lógica como a do Google.",
+  date: "2017-03-18 07:20:00 -0300",
+  author: "Rodrigo Alves",
+  featuredImage: "/img/post-bg-04.jpg",
+  comments: true,
+  tags: ["angular", "typescript"],
+  music: {
+    title: "Strobe - deadmau5",
+    url: "https://open.spotify.com/track/6c9EGVj5CaOeoKd9ecMW1U",
+  }
+}
 
 ## Lógica de paginação do Google
 
@@ -19,8 +22,6 @@ Há 10 links de página mostrados a qualquer momento (por exemplo, 1 2 3 4 5 6 7
 o link ativo (página atual) está na 6ª posição, exceto quando o link ativo da página está abaixo de 6 ou a menos de 4 da última posição
 
 Aqui está o que parece para cada página se houver 15 páginas totais:
-
-import AngularPagination from "@posts/components/angular-pagination";
 
 <AngularPagination />
 
@@ -41,38 +42,38 @@ Foi usado o projeto angular 2 quickstart como uma base para o aplicativo, ele é
 Para facilitar a reutilização da lógica de paginação em diferentes componentes ou módulos Angular 2, colocamos a lógica de paginação em um serviço angular 2.
 
 ```typescript
-import * as _ from "underscore"
+import * as _ from 'underscore';
 
 export class PagerService {
   getPager(totalItems: number, currentPage: number = 1, pageSize: number = 10) {
     // calculando o total de paginas
-    let totalPages = Math.ceil(totalItems / pageSize)
+    let totalPages = Math.ceil(totalItems / pageSize);
 
-    let startPage: number, endPage: number
+    let startPage: number, endPage: number;
     if (totalPages <= 10) {
       // Se tiver menos de 10 páginas totais para mostrar tudo
-      startPage = 1
-      endPage = totalPages
+      startPage = 1;
+      endPage = totalPages;
     } else {
       // Se tiver mais de 10 páginas totais, calcular as páginas inicial e final
       if (currentPage <= 6) {
-        startPage = 1
-        endPage = 10
+        startPage = 1;
+        endPage = 10;
       } else if (currentPage + 4 >= totalPages) {
-        startPage = totalPages - 9
-        endPage = totalPages
+        startPage = totalPages - 9;
+        endPage = totalPages;
       } else {
-        startPage = currentPage - 5
-        endPage = currentPage + 4
+        startPage = currentPage - 5;
+        endPage = currentPage + 4;
       }
     }
 
     // Cálculo de índices de itens iniciais e finais
-    let startIndex = (currentPage - 1) * pageSize
-    let endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1)
+    let startIndex = (currentPage - 1) * pageSize;
+    let endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
 
     // Criar um array de páginas para o ng-repeat no componente
-    let pages = _.range(startPage, endPage + 1)
+    let pages = _.range(startPage, endPage + 1);
 
     // Retornar objeto com todas as propriedades exigidas para exibição
     return {
@@ -85,7 +86,7 @@ export class PagerService {
       startIndex: startIndex,
       endIndex: endIndex,
       pages: pages,
-    }
+    };
   }
 }
 ```
@@ -95,59 +96,59 @@ export class PagerService {
 Um exemplo de componente angular 2 que usa o Pager Service acima para paginar uma lista de itens fictícios que são extraídos de um arquivo json no servidor.
 
 ```typescript
-import { Component, OnInit } from "@angular/core"
-import { Http, Headers, RequestOptions, Response } from "@angular/http"
-import { Observable } from "rxjs/Observable"
-import "rxjs/add/operator/map"
+import { Component, OnInit } from '@angular/core';
+import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
-import * as _ from "underscore"
+import * as _ from 'underscore';
 
-import { PagerService } from "./_services/index"
+import { PagerService } from './_services/index';
 
 @Component({
   moduleId: module.id,
-  selector: "app",
-  templateUrl: "app.component.html",
+  selector: 'app',
+  templateUrl: 'app.component.html',
 })
 export class AppComponent implements OnInit {
   constructor(private http: Http, private pagerService: PagerService) {}
 
   // array com todos os itens a serem paginados
-  private allItems: any[]
+  private allItems: any[];
 
   // pager object
-  pager: any = {}
+  pager: any = {};
 
   // items paginados
-  pagedItems: any[]
+  pagedItems: any[];
 
   ngOnInit() {
     // pega os arquivos
     this.http
-      .get("./dummy-data.json")
+      .get('./dummy-data.json')
       .map((response: Response) => response.json())
-      .subscribe(data => {
+      .subscribe((data) => {
         //Definir os itens para a resposta json
-        this.allItems = data
+        this.allItems = data;
 
         //Inicializar na página 1
-        this.setPage(1)
-      })
+        this.setPage(1);
+      });
   }
 
   setPage(page: number) {
     if (page < 1 || page > this.pager.totalPages) {
-      return
+      return;
     }
 
     // pega o objeto pager do serviço
-    this.pager = this.pagerService.getPager(this.allItems.length, page)
+    this.pager = this.pagerService.getPager(this.allItems.length, page);
 
     // pega a página atual de itens
     this.pagedItems = this.allItems.slice(
       this.pager.startIndex,
       this.pager.endIndex + 1
-    )
+    );
   }
 }
 ```

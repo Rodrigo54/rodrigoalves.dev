@@ -15,33 +15,33 @@ const MenuBar: React.FC = () => {
   const isDarkMode = theme === 'dark';
   const isListMode = display === 'list';
 
-  useEffect(() => {
-    setTheme(globalThis.__theme);
-    setDisplay(globalThis.__config?.display);
-    globalThis.__onThemeChange = () => setTheme(globalThis.__theme);
-    globalThis.__onConfigChange = () => setDisplay(globalThis.__config.display);
-  }, []);
+  // useEffect(() => {
+  //   setTheme(globalThis.__theme);
+  //   setDisplay(globalThis.__config?.display);
+  //   globalThis.__onThemeChange = () => setTheme(globalThis.__theme);
+  //   globalThis.__onConfigChange = () => setDisplay(globalThis.__config.display);
+  // }, []);
 
   const setPreferredTheme = () => {
-    if (globalThis?.__setPreferredTheme) {
-      globalThis.__setPreferredTheme(isDarkMode ? 'light' : 'dark');
-    }
-    if (globalThis.DISQUS !== undefined) {
-      setTimeout(() => {
-        globalThis.DISQUS.reset({
-          reload: true,
-          config: {},
-        });
-      }, 300);
-    }
+    // if (globalThis?.__setPreferredTheme) {
+    //   globalThis.__setPreferredTheme(isDarkMode ? 'light' : 'dark');
+    // }
+    // if (globalThis.DISQUS !== undefined) {
+    //   setTimeout(() => {
+    //     globalThis.DISQUS.reset({
+    //       reload: true,
+    //       config: {},
+    //     });
+    //   }, 300);
+    // }
   };
 
   const setPreferredConfig = () => {
-    if (globalThis?.__setPreferredConfig) {
-      globalThis.__setPreferredConfig({
-        display: isListMode ? 'grid' : 'list',
-      });
-    }
+    // if (globalThis?.__setPreferredConfig) {
+    //   globalThis.__setPreferredConfig({
+    //     display: isListMode ? 'grid' : 'list',
+    //   });
+    // }
   };
 
   const toTop = () => {

@@ -8,8 +8,8 @@ type Props = {
   isLast?: boolean;
   currentPage?: number;
   numPages?: number;
-  prevPage?: string;
-  nextPage?: string;
+  prevPage?: any;
+  nextPage?: any;
   children?: React.ReactNode;
 };
 

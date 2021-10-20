@@ -18,15 +18,15 @@ export const PaginationRow = styled.div`
   justify-content: space-between;
 `;
 export const PageStrong = styled.span`
-  background-color: var(--color3);
+  background-color: var(--color3, green);
   color: var(--color3-contrast);
   padding: 5px;
   border-radius: 3px;
 `;
 
 export const PageSpan = styled.span`
-  background-color: var(--color2);
-  color: var(--color2-contrast);
+  background-color: var(--color2, #fff);
+  color: var(--color2-contrast, #000);
   padding: 5px;
   border-radius: 3px;
 `;
