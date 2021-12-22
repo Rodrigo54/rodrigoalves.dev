@@ -4,8 +4,6 @@ import PaperLayout from '@components/paper-layout';
 import PostInfo from '@components/post-info';
 import RecommendedPosts from '@components/recommended-posts';
 import SEO from '@components/seo';
-import MDX from '@mdx-js/runtime';
-import { MDXProvider } from '@mdx-js/react';
 import React from 'react';
 
 import * as S from './styles';
@@ -45,7 +43,7 @@ const BlogPost: React.FC<Props> = ({
       }
     : undefined;
 
-  const { frontmatter, timeToRead, body, slug, content } = data;
+  const { frontmatter, timeToRead, body, slug } = data;
   const comments = frontmatter.comments ? (
     <Comments slug={slug} title={frontmatter.title} />
   ) : undefined;
@@ -72,10 +70,6 @@ const BlogPost: React.FC<Props> = ({
             }}
           />
         </S.PostHeader>
-        {/* <MDX>{content}</MDX> */}
-        {/* <MDXProvider components={{ wrapper: S.MainContent }}>
-          <MDX>{content}</MDX>
-        </MDXProvider> */}
         <S.MainContent dangerouslySetInnerHTML={{ __html: body }} />
         <RecommendedPosts next={next} previous={previous} />
         {comments}

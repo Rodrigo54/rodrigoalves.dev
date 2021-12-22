@@ -1,5 +1,6 @@
 import { range } from 'lodash';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
 import * as S from './styles';
 
 type PageType = {

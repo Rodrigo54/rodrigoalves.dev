@@ -1,28 +1,28 @@
-import * as remarkVscode from 'gatsby-remark-vscode';
-
-import AngularPagination from '@posts/components/angular-pagination';
-
 import * as babel from '@babel/core';
-import React from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
 import mdx from '@mdx-js/mdx';
-import { MDXProvider, mdx as createElement } from '@mdx-js/react';
+import { mdx as createElement, MDXProvider } from '@mdx-js/react';
+import AngularPagination from '@posts/components/angular-pagination';
+import * as remarkVscode from 'gatsby-remark-vscode';
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { ServerStyleSheet } from 'styled-components';
 
-const transform = (code) =>
-  babel.transform(code, {
+const transform = (code) => {
+  return babel.transformSync(code, {
     plugins: [
+      ['styled-components', { ssr: true }],
       '@babel/plugin-transform-react-jsx',
       '@babel/plugin-proposal-object-rest-spread',
-      'babel-plugin-styled-components',
     ],
   }).code;
+};
 
 const renderWithReact = async (mdxCode) => {
   const jsx = await mdx(mdxCode, {
     skipExport: true,
     remarkPlugins: [
-      remarkVscode.remarkPlugin,
       [
+        remarkVscode.remarkPlugin,
         {
           theme: {
             default: 'Dark+ (default dark)',
@@ -46,8 +46,6 @@ const renderWithReact = async (mdxCode) => {
 
   const element = fn(React, ...Object.values(scope));
   const components = {
-    h1: ({ children }) =>
-      React.createElement('h1', { style: { color: 'tomato' } }, children),
     AngularPagination,
   };
 
@@ -57,9 +55,23 @@ const renderWithReact = async (mdxCode) => {
     element
   );
 
-  return renderToStaticMarkup(elementWithProvider);
+  return makeStyles(elementWithProvider);
 };
 
 export async function markdownToHtml(mdxString: string) {
   return renderWithReact(mdxString);
+}
+
+function makeStyles(component: React.ReactElement) {
+  const sheet = new ServerStyleSheet();
+  try {
+    const html = renderToString(sheet.collectStyles(component));
+    const styles = sheet.getStyleTags();
+    return styles.concat(html);
+  } catch (error) {
+    // handle error
+    console.error(error);
+  } finally {
+    sheet.seal();
+  }
 }
