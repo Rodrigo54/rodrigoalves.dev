@@ -20,7 +20,12 @@ const PaperLayout: React.FC<Props> = ({
   return (
     <S.PaperWrapper>
       <S.Thumbnail>
-        <Image alt={alt ?? 'Featured Image'} src={image} layout="fill" />
+        <Image
+          alt={alt ?? 'Featured Image'}
+          src={image}
+          layout="fill"
+          priority
+        />
       </S.Thumbnail>
       <S.Header>
         <h1>{title}</h1>

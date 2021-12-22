@@ -24,6 +24,7 @@ const renderWithReact = async (mdxCode) => {
       [
         remarkVscode.remarkPlugin,
         {
+          injectStyles: false,
           theme: {
             default: 'Dark+ (default dark)',
             parentSelector: {

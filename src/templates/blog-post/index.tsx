@@ -4,7 +4,7 @@ import PaperLayout from '@components/paper-layout';
 import PostInfo from '@components/post-info';
 import RecommendedPosts from '@components/recommended-posts';
 import SEO from '@components/seo';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import * as S from './styles';
 
@@ -43,12 +43,16 @@ const BlogPost: React.FC<Props> = ({
       }
     : undefined;
 
-  const { frontmatter, timeToRead, body, slug } = data;
+  const { frontmatter, body, slug } = data;
   const comments = frontmatter.comments ? (
     <Comments slug={slug} title={frontmatter.title} />
   ) : undefined;
 
   const featuredImage = frontmatter.featuredImage;
+
+  const [html, setHtml] = useState('');
+
+  useEffect(() => setHtml(body), [body]);
 
   return (
     <Layout>
@@ -61,16 +65,9 @@ const BlogPost: React.FC<Props> = ({
         <S.PostHeader>
           <S.PostTitle>{frontmatter.title}</S.PostTitle>
           <S.PostDescription>{frontmatter.description}</S.PostDescription>
-          <PostInfo
-            info={{
-              timeToRead,
-              date: frontmatter.date,
-              music: frontmatter.music,
-              tags: frontmatter.tags,
-            }}
-          />
+          <PostInfo info={frontmatter} />
         </S.PostHeader>
-        <S.MainContent dangerouslySetInnerHTML={{ __html: body }} />
+        <S.MainContent dangerouslySetInnerHTML={{ __html: html }} />
         <RecommendedPosts next={next} previous={previous} />
         {comments}
       </PaperLayout>

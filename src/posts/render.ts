@@ -1,9 +1,9 @@
 // Install gray-matter and date-fns
 import matter from 'gray-matter';
-import { parse, format } from 'date-fns';
-import fs from 'fs/promises';
+import fs from 'node:fs/promises';
 import { join } from 'path';
 import { markdownToHtml } from '@utils/markdownToHtml';
+import readingTime from 'reading-time';
 
 type AsyncReturnType<T> = T extends (...args: never) => Promise<infer R>
   ? R
@@ -38,13 +38,16 @@ export async function getPostBySlug(
   const fileContents = await fs.readFile(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
+  const { minutes } = readingTime(content);
+  const timeToRead = Math.round(minutes);
+
   const body = await markdownToHtml(content);
 
   // console.log({ body });
 
   return {
     slug: realSlug,
-    frontmatter: { ...data, slug: realSlug },
+    frontmatter: { ...data, slug: realSlug, timeToRead },
     content,
     body,
     pageContext: {
