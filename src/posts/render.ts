@@ -1,7 +1,7 @@
 // Install gray-matter and date-fns
 import matter from 'gray-matter';
 import fs from 'node:fs/promises';
-import { join } from 'path';
+import { join } from 'node:path';
 import { markdownToHtml } from '@utils/markdownToHtml';
 import readingTime from 'reading-time';
 

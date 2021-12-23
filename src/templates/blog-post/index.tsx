@@ -19,27 +19,24 @@ type node = {
 
 type Props = {
   data: any;
-  pageContext: {
+  pageContext?: {
     nextPost: any;
     previousPost: any;
   };
 };
 
-const BlogPost: React.FC<Props> = ({
-  data,
-  pageContext: { nextPost, previousPost },
-}) => {
-  const next = nextPost
+const BlogPost: React.FC<Props> = ({ data, pageContext, children }) => {
+  const next = pageContext?.nextPost
     ? {
-        slug: nextPost.slug,
-        title: nextPost.title,
+        slug: pageContext.nextPost.slug,
+        title: pageContext.nextPost.title,
       }
     : undefined;
 
-  const previous = previousPost
+  const previous = pageContext?.previousPost
     ? {
-        slug: previousPost.slug,
-        title: previousPost.title,
+        slug: pageContext.previousPost.slug,
+        title: pageContext.previousPost.title,
       }
     : undefined;
 
@@ -67,7 +64,10 @@ const BlogPost: React.FC<Props> = ({
           <S.PostDescription>{frontmatter.description}</S.PostDescription>
           <PostInfo info={frontmatter} />
         </S.PostHeader>
-        <S.MainContent dangerouslySetInnerHTML={{ __html: html }} />
+        <S.MainContent>
+          {html ? <div dangerouslySetInnerHTML={{ __html: html }}></div> : null}
+          {children}
+        </S.MainContent>
         <RecommendedPosts next={next} previous={previous} />
         {comments}
       </PaperLayout>

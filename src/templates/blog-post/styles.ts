@@ -27,7 +27,7 @@ export const PostDescription = styled.h2`
   `}
 `;
 
-export const MainContent = styled.div`
+export const MainContent = styled.section`
   font-family: var(--font-sans-serif);
   margin: 0px 0px 80px;
   ${media.lessThan('large')`
