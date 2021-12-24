@@ -5,24 +5,17 @@ import { CalendarAlt as Calendar } from '@styled-icons/fa-regular/CalendarAlt';
 
 import * as S from './styles';
 import PostTag from '@components/tag';
+import { FrontMatter } from '@model/frontmatter';
 
 type Props = {
-  info: {
-    date: string;
-    timeToRead: number;
-    tags: string[];
-    music: {
-      title: string;
-      url: string;
-    };
-  };
+  info: Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
 };
 
 const PostInfo: React.FC<Props> = ({
-  info: { date, timeToRead, music, tags },
+  info: { createAt, timeToRead, music, tags },
 }) => {
   function dateFormat() {
-    const dateObj = new Date(date);
+    const dateObj = new Date(createAt);
     let prefix = '';
     switch (dateObj.getDay()) {
       case 1:
@@ -64,7 +57,7 @@ const PostInfo: React.FC<Props> = ({
         <Calendar size="15" /> {dateFormat()}
       </S.PostDate>
       <S.PostReadTime>
-        <Clock size="15" /> Leia em {timeToRead} min
+        <Clock size="15" /> Leia em {Math.round(timeToRead.minutes)} min
       </S.PostReadTime>
       <S.PostMusic>
         <Music size="15" /> <span>Ouvindo </span>

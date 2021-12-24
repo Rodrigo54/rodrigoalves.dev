@@ -1,23 +1,18 @@
 import React from 'react';
 
-import Layout from '@components/layout';
-import SEO from '@components/seo';
-import PaperLayout from '@components/paper-layout';
 import AboutPageContent from '@components/pages/about';
+import PageLayout from '@templates/page-layout';
 
 const AboutPage: React.FC = () => {
+  const frontMatter = {
+    title: 'Sobre Mim',
+    subtitle: 'Basta querer mudar o mundo através da web.',
+    featuredImage: '/img/about-bg.jpg',
+  };
   return (
-    <Layout>
-      <SEO title="Sobre Mim" />
-      <PaperLayout
-        title="Sobre Mim"
-        subtitle="Basta querer mudar o mundo através da web."
-        image="/img/about-bg.jpg"
-        alt="Sobre Mim"
-      >
-        <AboutPageContent />
-      </PaperLayout>
-    </Layout>
+    <PageLayout data={frontMatter}>
+      <AboutPageContent />
+    </PageLayout>
   );
 };
 

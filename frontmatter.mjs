@@ -29,9 +29,8 @@ const plugin = (tree, file) => {
   // we can do whatever we want with the frontmatter
   // like, adding the time to read, formatting the date to display,
   // adding a short description using the content
-  const { minutes } = readingTime(content);
-  frontMatter.timeToRead = Math.round(minutes);
-  frontMatter.dirname = file.dirname;
+  frontMatter.timeToRead = readingTime(content);
+  frontMatter.fullPath = file.path;
 
   // finally we will add a `export` node to the tree
   tree.children.push({
@@ -74,7 +73,7 @@ const plugin = (tree, file) => {
       type: 'export',
       default: true,
       value: `export default function Layout({children}) {
-        return <BlogPost data={{frontmatter: frontMatter}}>{children}</BlogPost>;
+        return <BlogPost data={frontMatter}>{children}</BlogPost>;
       }`,
     });
   }

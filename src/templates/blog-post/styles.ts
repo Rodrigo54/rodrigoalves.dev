@@ -164,6 +164,10 @@ export const MainContent = styled.section`
       margin: 0 0 1.6rem 0;
     `}
   }
+  code:not(.grvsc-code) {
+    font-family: consolas;
+    line-height: 1.4;
+  }
   .instagram-media {
     margin: 1rem auto !important;
   }

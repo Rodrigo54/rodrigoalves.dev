@@ -10,26 +10,23 @@ music:
   title: 'Strobe - deadmau5'
   url: 'https://open.spotify.com/track/6c9EGVj5CaOeoKd9ecMW1U'
 ---
-import Layout from '@components/layout';
-import SEO from '@components/seo';
-import PaperLayout from '@components/paper-layout';
 
-<Layout>
-  <SEO title={frontMatter.title} />
-  <PaperLayout title="Teste Sobre Mim">
+import PageLayout from '@templates/page-layout';
+import AngularPagination from '@components/angular-pagination';
 
-<p>{frontMatter.timeToRead}</p>
+export default function Layout({children}) {
+  return (
+    <PageLayout data={frontMatter}>
+      {children}
+    </PageLayout>
+  );
+}
 
 # TESTE
 
-
 é um testes
 
-import AngularPagination from '@posts/components/angular-pagination';
-
 <AngularPagination />
-
-
 
 ## Lógica de paginação do Google
 
@@ -106,5 +103,3 @@ export class TableDataSource<T = any> implements DataSource<T> {
 }
 
 ```
-  </PaperLayout>
-</Layout>

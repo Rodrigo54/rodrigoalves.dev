@@ -1,7 +1,7 @@
 import * as babel from '@babel/core';
 import mdx from '@mdx-js/mdx';
 import { mdx as createElement, MDXProvider } from '@mdx-js/react';
-import AngularPagination from '@posts/components/angular-pagination';
+import AngularPagination from '@components/angular-pagination';
 import * as remarkVscode from 'gatsby-remark-vscode';
 import React from 'react';
 import { renderToString } from 'react-dom/server';

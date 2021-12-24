@@ -9,7 +9,7 @@ const Profile: React.FC = () => {
   const { title, position, description } = Metadata;
   return (
     <S.ProfileWrapper>
-      <Link href="/404" passHref>
+      <Link href="/" passHref>
         <S.ProfileLink>
           <Avatar alt={title} />
           <S.ProfileAuthor>

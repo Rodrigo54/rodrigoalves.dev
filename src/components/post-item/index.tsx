@@ -4,35 +4,33 @@ import * as S from './styles';
 import PostInfo from '@components/post-info';
 import Link from 'next/link';
 import Image from 'next/image';
+import { FrontMatter } from '@model/frontmatter';
 
 type Props = {
-  slug: string;
-  background?: string;
-  featuredImage: string;
-  category: string;
-  date: string;
-  timeToRead: number;
-  title: string;
-  description: string;
-  tags: string[];
-  music: {
-    title: string;
-    url: string;
-  };
+  frontMatter: Pick<
+    FrontMatter,
+    | 'slug'
+    | 'featuredImage'
+    | 'createAt'
+    | 'timeToRead'
+    | 'title'
+    | 'description'
+    | 'tags'
+    | 'music'
+  >;
 };
 
-const PostItem: React.FC<Props> = ({
-  slug,
-  background,
-  featuredImage,
-  category,
-  date,
-  timeToRead,
-  title,
-  description,
-  tags,
-  music,
-}) => {
+const PostItem: React.FC<Props> = ({ frontMatter }) => {
+  const {
+    slug,
+    featuredImage,
+    createAt,
+    timeToRead,
+    title,
+    description,
+    tags,
+    music,
+  } = frontMatter;
   return (
     <S.PostItemWrapper>
       <S.PostItemThumbnail>
@@ -41,6 +39,7 @@ const PostItem: React.FC<Props> = ({
           src={featuredImage}
           objectFit="cover"
           layout="fill"
+          loading="lazy"
         />
       </S.PostItemThumbnail>
       <S.PostItemContent>
@@ -50,7 +49,7 @@ const PostItem: React.FC<Props> = ({
             <S.PostItemDescription>{description}</S.PostItemDescription>
           </S.PostItemLink>
         </Link>
-        <PostInfo info={{ timeToRead, date, music, tags }} />
+        <PostInfo info={{ timeToRead, createAt, music, tags }} />
       </S.PostItemContent>
     </S.PostItemWrapper>
   );

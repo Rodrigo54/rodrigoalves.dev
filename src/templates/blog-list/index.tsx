@@ -2,61 +2,25 @@ import Layout from '@components/layout';
 import Pagination from '@components/pagination';
 import PostItem from '@components/post-item';
 import SEO from '@components/seo';
-import { Post } from '@model/post';
+import { FrontMatter } from '@model/frontmatter';
 import React from 'react';
 
 import * as S from './styles';
 
 type Props = {
-  pageContext: {
-    currentPage: number;
-    numPages: number;
-  };
-  data: {
-    allMdx: { edges: { node: Post }[] };
-  };
+  postList: FrontMatter[];
 };
 
-const BlogList: React.FC<Props> = ({ pageContext, data }) => {
-  const { currentPage, numPages } = pageContext;
-  const isFirst = currentPage === 1;
-  const isLast = currentPage === numPages;
-  const prevPage =
-    currentPage - 1 === 1 ? '/blog/' : `/blog/page/${currentPage - 1}`;
-  const nextPage = `/blog/page/${currentPage + 1}`;
-  const postList = data.allMdx.edges.map(({ node }) => ({
-    ...node.frontmatter,
-    timeToRead: node.timeToRead,
-    slug: node.fields.slug,
-  }));
-
+const BlogList: React.FC<Props> = ({ postList }) => {
   return (
     <Layout>
       <SEO title="Blog" />
       <S.ListWrapper>
         {postList.map((post, index) => (
-          <PostItem
-            key={index}
-            slug={post.slug}
-            category="JS"
-            date={post.date}
-            timeToRead={post.timeToRead}
-            title={post.title}
-            music={post.music}
-            description={post.description}
-            tags={post.tags}
-            featuredImage={post.featuredImage}
-          />
+          <PostItem key={index} frontMatter={post} />
         ))}
       </S.ListWrapper>
-      <Pagination
-        isFirst={isFirst}
-        isLast={isLast}
-        currentPage={currentPage}
-        numPages={numPages}
-        prevPage={prevPage}
-        nextPage={nextPage}
-      />
+      <Pagination />
     </Layout>
   );
 };

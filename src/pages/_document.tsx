@@ -16,6 +16,7 @@ class MyDocument extends Document {
     return (
       <Html lang="pt-br">
         <Head>
+          <link rel="icon" href="img/favicon.png" type="image/png" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             rel="stylesheet"

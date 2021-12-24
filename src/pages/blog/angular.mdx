@@ -2,15 +2,30 @@
 title: 'Lógica de Paginação com Angular'
 slug: 'angular2-logica-de-paginacao'
 description: 'Este é um exemplo de como implementar uma paginação em Angular 2 com uma lógica como a do Google.'
-date: '2017-03-18 07:20:00 -0300'
+createAt: '2017-03-18 07:20:00 -0300'
 author: 'Rodrigo Alves'
-featuredImage: '/img/post-bg-04.jpg'
+featuredImage: '/img/post-bg-06.jpg'
 comments: true
 tags: ['angular', 'typescript']
 music:
   title: 'Strobe - deadmau5'
   url: 'https://open.spotify.com/track/6c9EGVj5CaOeoKd9ecMW1U'
 ---
+
+import AngularPagination from '@components/angular-pagination';
+
+```tsx
+{{ page.date | date: '%B %d, %Y' }}
+```
+
+Quando iniciamos um projeto do zero, fica fácil decidir qual a versão do PHP será usada.
+Mais quando se trata de softwares legados, temos que utilizar a versão na qual o software foi feito.
+As vezes também pode ocorrer que o servidor de hospedagem utilizado usa uma versão do PHP
+que não temos instalado em nosso ambiente de desenvolvimento.
+
+Com tudo isso, torna-se necessário instalar várias versões de PHP no mesmo ambiente de
+desenvolvimento para diminuir a possibilidade de erros na hora de subir a aplicação
+para o ambiente de produção.
 
 ## Lógica de paginação do Google
 
@@ -20,8 +35,6 @@ Há 10 links de página mostrados a qualquer momento (por exemplo, 1 2 3 4 5 6 7
 o link ativo (página atual) está na 6ª posição, exceto quando o link ativo da página está abaixo de 6 ou a menos de 4 da última posição
 
 Aqui está o que parece para cada página se houver 15 páginas totais:
-
-import AngularPagination from '@posts/components/angular-pagination';
 
 <AngularPagination />
 

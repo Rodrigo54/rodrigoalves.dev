@@ -8,8 +8,8 @@ type Props = {
   isLast?: boolean;
   currentPage?: number;
   numPages?: number;
-  prevPage?: any;
-  nextPage?: any;
+  prevPage?: number;
+  nextPage?: number;
   children?: React.ReactNode;
 };
 
@@ -29,7 +29,7 @@ const Pagination: React.FC<Props> = ({
     content = (
       <>
         {!isFirst && (
-          <Link href={prevPage}>
+          <Link href={`/blog/page/${prevPage}`} passHref>
             <a>← Página Anterior</a>
           </Link>
         )}
@@ -37,7 +37,7 @@ const Pagination: React.FC<Props> = ({
           {currentPage} de {numPages}
         </p>
         {!isLast && (
-          <Link href={nextPage}>
+          <Link href={`/blog/page/${nextPage}`} passHref>
             <a>Proxima Página →</a>
           </Link>
         )}

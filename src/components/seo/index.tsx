@@ -15,7 +15,6 @@ type SEOProps = {
 
 const SEO: React.FC<SEOProps> = ({
   description = Metadata.description,
-  meta = [],
   title,
   image = '/img/snapshot.jpg',
 }) => {
