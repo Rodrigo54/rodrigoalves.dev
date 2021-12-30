@@ -157,7 +157,7 @@ export const MainContent = styled.section`
     }
   }
   .grvsc-container {
-    font-family: consolas;
+    font-family: 'Fira Code', monospace;
     line-height: 1.4;
     margin: 0px;
     ${media.lessThan('large')`
@@ -165,7 +165,7 @@ export const MainContent = styled.section`
     `}
   }
   code:not(.grvsc-code) {
-    font-family: consolas;
+    font-family: 'Fira Code', monospace;
     line-height: 1.4;
   }
   .instagram-media {

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import Image from 'next/image';
 
 export const PaperWrapper = styled.div`
   display: flex;
