@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ListWrapper = styled.section`
-  body#grid & {
+  body.grid & {
     display: grid;
     grid-area: posts;
     grid-gap: 20px;

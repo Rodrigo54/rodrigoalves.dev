@@ -1,9 +1,12 @@
-import getThemeColor from '@utils/getThemeColor';
+import Link from 'next/link';
 import React from 'react';
+import { useRouter } from 'next/router';
 
 import * as S from './styles';
 
 const MenuLinks: React.FC = () => {
+  const router = useRouter();
+
   const links = [
     {
       label: 'Home',
@@ -11,7 +14,7 @@ const MenuLinks: React.FC = () => {
     },
     {
       label: 'Sobre Mim',
-      url: '/about/',
+      url: '/about',
     },
   ];
 
@@ -20,20 +23,18 @@ const MenuLinks: React.FC = () => {
       <S.MenuLinksList>
         {links.map((link, i) => (
           <S.MenuLinksItem key={i}>
-            <S.MenuLinksLink
-              cover={true}
-              direction='left'
-              bg={getThemeColor()}
-              to={link.url}
-              activeClassName='active'
-            >
-              {link.label}
-            </S.MenuLinksLink>
+            <Link href={link.url} passHref>
+              <S.MenuLinksLink
+                className={router.pathname === link.url ? 'active' : ''}
+              >
+                {link.label}
+              </S.MenuLinksLink>
+            </Link>
           </S.MenuLinksItem>
         ))}
       </S.MenuLinksList>
     </S.MenuLinksWrapper>
   );
-}
+};
 
 export default MenuLinks;

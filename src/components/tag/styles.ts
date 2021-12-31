@@ -19,5 +19,5 @@ export const PostTag = styled('span')<PostTagProps>`
   font-size: 0.8rem;
   color: ${({ color }) => color};
   background: ${({ color }) => rgba(color, 0.1)};
-  text-shadow: 1px 1px 0px rgb(0 0 0 / 25%)
+  text-shadow: 1px 1px 0px rgb(0 0 0 / 25%);
 `;

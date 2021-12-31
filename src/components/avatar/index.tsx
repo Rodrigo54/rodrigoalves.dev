@@ -1,18 +1,14 @@
-import React from 'react'
-import { StaticImage } from "gatsby-plugin-image"
+import React from 'react';
+import Image from 'next/image';
 
 import * as S from './styles';
 
-const Avatar = ({ alt }) => {
+const Avatar = ({ alt = 'Profile Photo' }) => {
   return (
-    <S.AvatarWrapper>
-      <StaticImage
-        src="../../img/profile-photo.jpg"
-        alt={alt}
-        placeholder="blurred"
-      />
-    </S.AvatarWrapper>
-  )
-}
+    <S.AvatarImage>
+      <Image src="/img/profile-photo.jpg" alt={alt} layout="fill"></Image>
+    </S.AvatarImage>
+  );
+};
 
-export default Avatar
+export default Avatar;

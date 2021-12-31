@@ -1,41 +1,18 @@
-import React from "react";
+import React from 'react';
 
-import Layout from "@components/layout";
-import SEO from "@components/seo";
-import PaperLayout from "@components/paper-layout";
-import AboutPageContent from "@components/pages/about";
-import { graphql, useStaticQuery } from "gatsby";
+import AboutPageContent from '@components/pages/about';
+import PageLayout from '@templates/page-layout';
 
 const AboutPage: React.FC = () => {
-
-  const data = useStaticQuery(graphql`
-    query AboutImageQuery {
-      file(
-        relativePath: {eq: "about-bg.jpg"}
-        sourceInstanceName: { eq: "images" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(
-            layout: FULL_WIDTH,
-            placeholder: BLURRED
-          )
-        }
-      }
-    }
-  `);
-
+  const frontMatter = {
+    title: 'Sobre Mim',
+    subtitle: 'Basta querer mudar o mundo através da web.',
+    featuredImage: '/img/about-bg.jpg',
+  };
   return (
-    <Layout>
-      <SEO title="Sobre Mim" />
-      <PaperLayout
-        title="Sobre Mim"
-        subtitle="Basta querer mudar o mundo através da web."
-        image={data.file}
-        alt="Sobre Mim"
-      >
-        <AboutPageContent />
-      </PaperLayout>
-    </Layout>
+    <PageLayout data={frontMatter}>
+      <AboutPageContent />
+    </PageLayout>
   );
 };
 

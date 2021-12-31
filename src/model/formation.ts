@@ -36,7 +36,7 @@ export const Courses = [
     year: '2012',
     duration: 80,
     online: false,
-    link: 'http://www.datacontrolma.com.br/'
+    link: 'http://www.datacontrolma.com.br/',
   },
   {
     name: 'Open CG - Computação Gráfica',
@@ -44,7 +44,7 @@ export const Courses = [
     year: '2018',
     duration: 384,
     online: false,
-    link: 'http://www.gracomonline.com.br/'
+    link: 'http://www.gracomonline.com.br/',
   },
   {
     name: 'Aplicações Web com o novo Angular',
@@ -52,7 +52,7 @@ export const Courses = [
     year: '2017',
     duration: 11,
     online: true,
-    link: 'https://udemy-certificate.s3.amazonaws.com/image/UC-K91PUNWO.jpg'
+    link: 'https://udemy-certificate.s3.amazonaws.com/image/UC-K91PUNWO.jpg',
   },
   {
     name: 'Curso Completo de JavaScript Moderno - ES6',
@@ -60,7 +60,7 @@ export const Courses = [
     year: '2017',
     duration: 3.5,
     online: true,
-    link: 'https://udemy-certificate.s3.amazonaws.com/image/UC-HVZ24GCN.jpg'
+    link: 'https://udemy-certificate.s3.amazonaws.com/image/UC-HVZ24GCN.jpg',
   },
   {
     name: 'Gatsby: Crie um site PWA com React, GraphQL e Netlify CMS',
@@ -68,7 +68,7 @@ export const Courses = [
     year: '2019',
     duration: 9,
     online: true,
-    link: 'https://udemy-certificate.s3.amazonaws.com/image/UC-0JHWYWXB.jpg'
+    link: 'https://udemy-certificate.s3.amazonaws.com/image/UC-0JHWYWXB.jpg',
   },
   {
     name: 'Semana OmniStack 10.0',
@@ -76,6 +76,6 @@ export const Courses = [
     year: '2020',
     duration: 5,
     online: true,
-    link: 'https://github.com/rocketseat-education/semana-omnistack-10'
+    link: 'https://github.com/rocketseat-education/semana-omnistack-10',
   },
 ];

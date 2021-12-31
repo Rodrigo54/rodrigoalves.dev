@@ -1,17 +1,16 @@
-import getThemeColor from '@utils/getThemeColor';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import Link from 'next/link';
 import React from 'react';
 
 import * as S from './styles';
 
 type Props = {
-  isFirst?: boolean,
-  isLast?: boolean,
-  currentPage?: number,
-  numPages?: number,
-  prevPage?: string,
-  nextPage?: string,
-  children?: React.ReactNode,
+  isFirst?: boolean;
+  isLast?: boolean;
+  currentPage?: number;
+  numPages?: number;
+  prevPage?: number;
+  nextPage?: number;
+  children?: React.ReactNode;
 };
 
 const Pagination: React.FC<Props> = ({
@@ -30,38 +29,22 @@ const Pagination: React.FC<Props> = ({
     content = (
       <>
         {!isFirst && (
-          <AniLink
-            to={prevPage}
-            cover={true}
-            direction='left'
-            bg={getThemeColor()}
-            duration={0.6}
-          >
-            ← Página Anterior
-          </AniLink>
+          <Link href={`/blog/page/${prevPage}`} passHref>
+            <a>← Página Anterior</a>
+          </Link>
         )}
         <p>
           {currentPage} de {numPages}
         </p>
         {!isLast && (
-          <AniLink
-            to={nextPage}
-            cover={true}
-            direction='right'
-            bg={getThemeColor()}
-            duration={0.6}
-          >
-            Proxima Página →
-          </AniLink>
+          <Link href={`/blog/page/${nextPage}`} passHref>
+            <a>Proxima Página →</a>
+          </Link>
         )}
       </>
     );
   }
-  return (
-    <S.PaginationWrapper>
-      {content}
-    </S.PaginationWrapper>
-  );
-}
+  return <S.PaginationWrapper>{content}</S.PaginationWrapper>;
+};
 
 export default Pagination;

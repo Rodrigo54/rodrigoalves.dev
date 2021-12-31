@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
-
 export const PostInfoWrapper = styled.div`
   display: grid;
   grid-template: repeat(auto, 3) / 1fr;
@@ -25,7 +24,7 @@ export const PostDate = styled.time`
       display: none;
     }
   `}
-  body#grid & {
+  body.grid & {
     p > span:first-child {
       visibility: hidden;
       display: none;
@@ -49,7 +48,7 @@ export const PostMusic = styled.p`
   font-size: 0.9rem;
   line-height: 1.2;
   margin: 5px 0px;
-  body#grid & {
+  body.grid & {
     span {
       visibility: hidden;
       display: none;
