@@ -1,4 +1,3 @@
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styled from 'styled-components';
 
 export const RecommendedWrapper = styled.section`
@@ -10,7 +9,7 @@ export const RecommendedWrapper = styled.section`
   flex-flow: row nowrap;
 `;
 
-export const RecommendedLink = styled(AniLink)`
+export const RecommendedLink = styled.a`
   align-items: center;
   background: var(--color1);
   color: var(--color1-contrast);

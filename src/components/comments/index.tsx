@@ -1,31 +1,30 @@
 import React from 'react';
-import { Disqus } from 'gatsby-plugin-disqus';
+import { DiscussionEmbed } from 'disqus-react';
 
 import * as S from './styles';
 
 type Props = {
-  url: string,
-  title: string,
-  identifier: number,
+  title: string;
+  slug: string;
 };
 
-const Comments: React.FC<Props> = ({
-  url,
-  title,
-  identifier
-}) => {
-  const completeURL = `https://rodrigoalves.dev/blog${url}`;
+const Comments: React.FC<Props> = ({ slug, title }) => {
+  const url = `https://rodrigoalves.dev/blog${slug}`;
 
   return (
     <S.CommentsWrapper>
       <S.CommentsTitle>Comentários</S.CommentsTitle>
-      <Disqus
-        identifier={`${identifier}`}
-        title={title}
-        url={completeURL}
+      <DiscussionEmbed
+        shortname="rodrigo-io"
+        config={{
+          url,
+          title,
+          identifier: slug,
+          language: 'en',
+        }}
       />
     </S.CommentsWrapper>
   );
-}
+};
 
 export default Comments;

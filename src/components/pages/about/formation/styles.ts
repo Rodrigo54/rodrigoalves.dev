@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
-
 export const ContentWrapper = styled.section`
   font-family: var(--font-sans-serif);
 `;

@@ -1,21 +1,19 @@
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { GatsbyImage } from 'gatsby-plugin-image';
 
 export const PostItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin: 20px;
   height: 250px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   background: var(--color2);
   color: var(--color1-contrast);
   &:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
-  body#grid & {
+  body.grid & {
     flex-direction: column;
     margin: 0px;
     height: 600px;
@@ -28,7 +26,7 @@ export const PostItemWrapper = styled.div`
   `}
 `;
 
-export const PostItemLink = styled(AniLink)`
+export const PostItemLink = styled.a`
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -37,21 +35,19 @@ export const PostItemLink = styled(AniLink)`
   color: var(--color1-contrast);
   margin-bottom: auto;
   &:hover {
-    h1, p{
+    h1,
+    p {
       color: var(--color3-light);
     }
   }
 `;
 
-interface PostItemThumbnailProps {
-  objectFit?: string;
-};
-
-export const PostItemThumbnail = styled(GatsbyImage)<PostItemThumbnailProps>`
-  max-width: 400px;
+export const PostItemThumbnail = styled.div`
   height: 200px;
+  max-width: 400px;
   margin: 0px;
-  body#list & {
+  position: relative;
+  body.list & {
     height: 250px;
     flex: 1;
   }
@@ -73,7 +69,7 @@ export const PostItemTitle = styled.h1`
   font-family: var(--font-serif);
   font-size: 1.6rem;
   line-height: 1.3;
-  body#grid & {
+  body.grid & {
     margin: 15px 0px;
   }
   ${media.lessThan('large')`

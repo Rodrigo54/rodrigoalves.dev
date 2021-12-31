@@ -13,7 +13,7 @@ export const Paragrafe = styled.p`
   line-height: 1.7;
   letter-spacing: 0.02rem;
   word-break: break-word;
-  margin: 0 auto .4rem;
+  margin: 0 auto 0.4rem;
 `;
 
 export const Title = styled.h2`

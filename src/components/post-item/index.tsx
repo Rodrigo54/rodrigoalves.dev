@@ -1,60 +1,58 @@
-import getThemeColor from '@utils/getThemeColor';
-import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { Clock } from '@styled-icons/fa-regular/Clock';
-import { Music } from '@styled-icons/fa-solid/Music';
 
 import * as S from './styles';
 import PostInfo from '@components/post-info';
+import Link from 'next/link';
+import Image from 'next/image';
+import { FrontMatter } from '@model/frontmatter';
 
 type Props = {
-  slug: string,
-  background?: string,
-  featuredImage: any,
-  category: string,
-  date: string,
-  timeToRead: number,
-  title: string,
-  description: string,
-  tags: string[],
-  music: {
-    title: string,
-    url: string,
-  }
+  frontMatter: Pick<
+    FrontMatter,
+    | 'slug'
+    | 'featuredImage'
+    | 'createAt'
+    | 'timeToRead'
+    | 'title'
+    | 'description'
+    | 'tags'
+    | 'music'
+  >;
 };
 
-const PostItem: React.FC<Props> = ({
-  slug,
-  background,
-  featuredImage,
-  category,
-  date,
-  timeToRead,
-  title,
-  description,
-  tags,
-  music
-}) => {
-  const image = getImage(featuredImage) as any;
-
+const PostItem: React.FC<Props> = ({ frontMatter }) => {
+  const {
+    slug,
+    featuredImage,
+    createAt,
+    timeToRead,
+    title,
+    description,
+    tags,
+    music,
+  } = frontMatter;
   return (
     <S.PostItemWrapper>
-      <S.PostItemThumbnail alt={title} image={image} objectFit='cover' />
+      <S.PostItemThumbnail>
+        <Image
+          alt={title}
+          src={featuredImage}
+          objectFit="cover"
+          layout="fill"
+          loading="lazy"
+        />
+      </S.PostItemThumbnail>
       <S.PostItemContent>
-        <S.PostItemLink
-          to={`/blog${slug}`}
-          cover={true}
-          direction='right'
-          bg={getThemeColor()}
-          duration={0.6}
-        >
-          <S.PostItemTitle>{title}</S.PostItemTitle>
-          <S.PostItemDescription>{description}</S.PostItemDescription>
-        </S.PostItemLink>
-        <PostInfo info={{ timeToRead, date, music, tags }} />
+        <Link href={`/blog/${slug}`} passHref>
+          <S.PostItemLink>
+            <S.PostItemTitle>{title}</S.PostItemTitle>
+            <S.PostItemDescription>{description}</S.PostItemDescription>
+          </S.PostItemLink>
+        </Link>
+        <PostInfo info={{ timeToRead, createAt, music, tags }} />
       </S.PostItemContent>
     </S.PostItemWrapper>
   );
-}
+};
 
 export default PostItem;

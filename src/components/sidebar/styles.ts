@@ -3,7 +3,7 @@ import media from 'styled-media-query';
 
 export const SidebarWrapper = styled.aside`
   align-items: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   background: var(--color1);
   display: flex;
   flex-direction: column;
