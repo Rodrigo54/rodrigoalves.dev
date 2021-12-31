@@ -13,7 +13,7 @@ export const PostItemWrapper = styled.div`
   &:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
-  body#grid & {
+  body.grid & {
     flex-direction: column;
     margin: 0px;
     height: 600px;
@@ -47,7 +47,7 @@ export const PostItemThumbnail = styled.div`
   max-width: 400px;
   margin: 0px;
   position: relative;
-  body#list & {
+  body.list & {
     height: 250px;
     flex: 1;
   }
@@ -69,7 +69,7 @@ export const PostItemTitle = styled.h1`
   font-family: var(--font-serif);
   font-size: 1.6rem;
   line-height: 1.3;
-  body#grid & {
+  body.grid & {
     margin: 15px 0px;
   }
   ${media.lessThan('large')`

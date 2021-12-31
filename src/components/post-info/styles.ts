@@ -24,7 +24,7 @@ export const PostDate = styled.time`
       display: none;
     }
   `}
-  body#grid & {
+  body.grid & {
     p > span:first-child {
       visibility: hidden;
       display: none;
@@ -48,7 +48,7 @@ export const PostMusic = styled.p`
   font-size: 0.9rem;
   line-height: 1.2;
   margin: 5px 0px;
-  body#grid & {
+  body.grid & {
     span {
       visibility: hidden;
       display: none;

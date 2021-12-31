@@ -32,7 +32,7 @@ class MyDocument extends Document {
             href={`https://fonts.googleapis.com/css2?${this.fonts}&display=swap`}
           />
         </Head>
-        <body className="dark" id="list">
+        <body className="minha-classe">
           <Main />
           <NextScript />
         </body>

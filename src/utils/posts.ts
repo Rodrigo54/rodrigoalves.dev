@@ -2,7 +2,7 @@
 import matter from 'gray-matter';
 import fs from 'node:fs/promises';
 import { join } from 'node:path';
-import { markdownToHtml } from '@utils/markdownToHtml';
+import { markdownToHtml } from '@utils/markdown-to-html';
 import readingTime from 'reading-time';
 import { FrontMatter } from '@model/frontmatter';
 

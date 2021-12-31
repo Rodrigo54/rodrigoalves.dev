@@ -1,52 +1,46 @@
-import getThemeColor from '@utils/getThemeColor';
-import React, { useEffect, useState } from 'react';
 import { UpArrowAlt as Arrow } from '@styled-icons/boxicons-regular/UpArrowAlt';
 import { Grid } from '@styled-icons/boxicons-solid/Grid';
 import { Home } from '@styled-icons/boxicons-solid/Home';
-import { FormatColorFill as Light } from '@styled-icons/material/FormatColorFill';
+import { LightMode } from '@styled-icons/material-outlined/LightMode';
+import { DarkMode } from '@styled-icons/material-outlined/DarkMode';
 import { ThList as List } from '@styled-icons/typicons/ThList';
+import { useDisplayCss, useThemeCss } from '@utils/theme';
+import React, { useEffect } from 'react';
 
 import * as S from './styles';
+import { isNil } from 'lodash';
 
 const MenuBar: React.FC = () => {
-  const [theme, setTheme] = useState<string | null>(null);
-  const [display, setDisplay] = useState<string | null>(null);
+  const [theme, setTheme] = useThemeCss();
+  const [display, setDisplay] = useDisplayCss();
 
   const isDarkMode = theme === 'dark';
   const isListMode = display === 'list';
 
-  // useEffect(() => {
-  //   setTheme(globalThis.__theme);
-  //   setDisplay(globalThis.__config?.display);
-  //   globalThis.__onThemeChange = () => setTheme(globalThis.__theme);
-  //   globalThis.__onConfigChange = () => setDisplay(globalThis.__config.display);
-  // }, []);
+  useEffect(() => {
+    setTheme(theme ?? 'dark');
+    setDisplay(display ?? 'list');
+  }, []);
 
-  const setPreferredTheme = () => {
-    // if (globalThis?.__setPreferredTheme) {
-    //   globalThis.__setPreferredTheme(isDarkMode ? 'light' : 'dark');
-    // }
-    // if (globalThis.DISQUS !== undefined) {
-    //   setTimeout(() => {
-    //     globalThis.DISQUS.reset({
-    //       reload: true,
-    //       config: {},
-    //     });
-    //   }, 300);
-    // }
-  };
+  function setPreferredTheme() {
+    setTheme(isDarkMode ? 'light' : 'dark');
+    if (!isNil(globalThis.DISQUS)) {
+      setTimeout(() => {
+        globalThis.DISQUS.reset({
+          reload: true,
+          config: {},
+        });
+      }, 300);
+    }
+  }
 
-  const setPreferredConfig = () => {
-    // if (globalThis?.__setPreferredConfig) {
-    //   globalThis.__setPreferredConfig({
-    //     display: isListMode ? 'grid' : 'list',
-    //   });
-    // }
-  };
+  function setPreferredConfig() {
+    setDisplay(isListMode ? 'grid' : 'list');
+  }
 
-  const toTop = () => {
+  function toTop() {
     globalThis.scroll({ top: 0, behavior: 'smooth' });
-  };
+  }
 
   return (
     <S.MenuBarWrapper>
@@ -61,7 +55,7 @@ const MenuBar: React.FC = () => {
       </S.MenuBarGroup>
       <S.MenuBarGroup>
         <S.MenuBarItem title="Mudar o tema" onClick={() => setPreferredTheme()}>
-          <Light />
+          {isDarkMode ? <DarkMode /> : <LightMode />}
         </S.MenuBarItem>
         <S.MenuBarItem
           title="Mudar visualização"
