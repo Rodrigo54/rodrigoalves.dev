@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Comments: React.FC<Props> = ({ slug, title }) => {
-  const url = `https://rodrigoalves.dev/blog${slug}`;
+  const url = `https://rodrigoalves.dev/blog/${slug}`;
 
   return (
     <S.CommentsWrapper>
@@ -20,7 +20,7 @@ const Comments: React.FC<Props> = ({ slug, title }) => {
           url,
           title,
           identifier: slug,
-          language: 'en',
+          language: 'pt-BR',
         }}
       />
     </S.CommentsWrapper>
