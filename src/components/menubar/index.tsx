@@ -3,7 +3,7 @@ import { Grid } from '@styled-icons/boxicons-solid/Grid';
 import { Home } from '@styled-icons/boxicons-solid/Home';
 import { LightMode } from '@styled-icons/material-outlined/LightMode';
 import { DarkMode } from '@styled-icons/material-outlined/DarkMode';
-import { ThList as List } from '@styled-icons/typicons/ThList';
+import { List } from '@styled-icons/bootstrap/List';
 import { useDisplayCss, useThemeCss } from '@utils/theme';
 import React, { useEffect } from 'react';
 
@@ -62,7 +62,7 @@ const MenuBar: React.FC = () => {
           className="display"
           onClick={() => setPreferredConfig()}
         >
-          {isListMode ? <Grid /> : <List />}
+          {isListMode ? <List /> : <Grid />}
         </S.MenuBarItem>
         <S.MenuBarItem title="Ir para o Topo" onClick={() => toTop()}>
           <Arrow />
