@@ -18,11 +18,11 @@ const BlogPost: React.FC<Props> = ({ data, children }) => {
   const previous = undefined;
 
   const { body, slug, ...frontMatter } = data;
-  const comments = frontMatter.comments ? (
-    <Comments slug={slug} title={frontMatter.title} />
-  ) : undefined;
 
-  const featuredImage = frontMatter.featuredImage;
+  const identifier = new Date(frontMatter.createAt).getTime();
+  const comments = frontMatter.comments ? (
+    <Comments identifier={identifier} slug={slug} title={frontMatter.title} />
+  ) : null;
 
   const [html, setHtml] = useState('');
 
@@ -37,7 +37,7 @@ const BlogPost: React.FC<Props> = ({ data, children }) => {
         description={frontMatter.description}
         image={frontMatter.featuredImage}
       />
-      <PaperLayout alt={frontMatter.title} image={featuredImage}>
+      <PaperLayout alt={frontMatter.title} image={frontMatter.featuredImage}>
         <S.PostHeader>
           <S.PostTitle>{frontMatter.title}</S.PostTitle>
           <S.PostDescription>{frontMatter.description}</S.PostDescription>
