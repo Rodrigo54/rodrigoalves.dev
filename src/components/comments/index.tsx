@@ -6,9 +6,10 @@ import * as S from './styles';
 type Props = {
   title: string;
   slug: string;
+  identifier: number;
 };
 
-const Comments: React.FC<Props> = ({ slug, title }) => {
+const Comments: React.FC<Props> = ({ slug, title, identifier }) => {
   const url = `https://rodrigoalves.dev/blog/${slug}`;
 
   return (
@@ -19,7 +20,7 @@ const Comments: React.FC<Props> = ({ slug, title }) => {
         config={{
           url,
           title,
-          identifier: slug,
+          identifier: `${identifier}`,
           language: 'pt-BR',
         }}
       />
