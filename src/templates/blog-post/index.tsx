@@ -14,9 +14,6 @@ type Props = {
 };
 
 const BlogPost: React.FC<Props> = ({ data, children }) => {
-  const next = undefined;
-  const previous = undefined;
-
   const { body, slug, ...frontMatter } = data;
 
   const identifier = new Date(frontMatter.createAt).getTime();
@@ -47,7 +44,10 @@ const BlogPost: React.FC<Props> = ({ data, children }) => {
           {html ? <div dangerouslySetInnerHTML={{ __html: html }}></div> : null}
           {children}
         </S.MainContent>
-        <RecommendedPosts next={next} previous={previous} />
+        <RecommendedPosts
+          next={frontMatter.nextPost}
+          previous={frontMatter.prevPost}
+        />
         {comments}
       </PaperLayout>
     </Layout>

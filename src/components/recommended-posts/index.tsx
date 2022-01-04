@@ -4,16 +4,11 @@ import { ArrowRightS as Next } from '@styled-icons/remix-line/ArrowRightS';
 
 import * as S from './styles';
 import Link from 'next/link';
+import { FrontMatter } from '@model/frontmatter';
 
 type Props = {
-  next?: {
-    slug: string;
-    title: string;
-  };
-  previous?: {
-    slug: string;
-    title: string;
-  };
+  next: FrontMatter | null;
+  previous: FrontMatter | null;
 };
 
 const RecommendedPosts: React.FC<Props> = ({ next, previous }) => {

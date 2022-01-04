@@ -18,4 +18,6 @@ export interface FrontMatter {
     title: string;
     url: string;
   };
+  nextPost: FrontMatter | null;
+  prevPost: FrontMatter | null;
 }
