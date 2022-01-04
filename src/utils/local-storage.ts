@@ -19,9 +19,8 @@ export function useLocalStore(
 
   const setLocalStoreValue = (newValue: string) => {
     const oldValue = localStorage.getItem(key);
-    setValue(newValue);
-    state$.next({ key, oldValue, newValue });
     localStorage.setItem(key, newValue);
+    state$.next({ key, oldValue, newValue });
   };
 
   useEffect(() => {

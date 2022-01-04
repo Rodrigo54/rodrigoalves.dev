@@ -5,6 +5,7 @@ import { join } from 'node:path';
 import { markdownToHtml } from '@utils/markdown-to-html';
 import readingTime from 'reading-time';
 import { FrontMatter } from '@model/frontmatter';
+import { from, lastValueFrom, map, switchMap } from 'rxjs';
 
 const postsDirectory = join(process.cwd(), 'src/pages/blog');
 
@@ -18,7 +19,7 @@ async function getSlugList(searchSlug?: string) {
   return searchSlug ? slugs.find((slugs) => searchSlug === slugs) : slugs;
 }
 
-export async function getPostBySlug(
+async function makeFrontMatter(
   slug: string,
   makeHtml = false
 ): Promise<FrontMatter> {
@@ -44,14 +45,35 @@ export async function getPostBySlug(
 }
 
 export async function getAllPosts() {
-  const slugs = await getSlugList();
-  const postListPromises = slugs.map((slug) => getPostBySlug(slug));
-  const postList = await Promise.all(postListPromises);
-  return postList.sort((a, b) => {
-    const dateA = new Date(a.createAt);
-    const dateB = new Date(b.createAt);
-    return dateB.getTime() - dateA.getTime();
-  });
+  const list = from(getSlugList()).pipe(
+    switchMap((slugs) => {
+      const promiseList = slugs.map((slug) => makeFrontMatter(slug));
+      return Promise.all(promiseList);
+    }),
+    map((postList) =>
+      postList.sort((a, b) => {
+        const dateA = new Date(a.createAt);
+        const dateB = new Date(b.createAt);
+        return dateB.getTime() - dateA.getTime();
+      })
+    ),
+    map((postList) =>
+      postList.map((value, index, array) => {
+        return {
+          ...value,
+          nextPost: array[index - 1] ?? null,
+          prevPost: array[index + 1] ?? null,
+        };
+      })
+    )
+  );
+
+  return lastValueFrom(list);
+}
+
+export async function getPostBySlug(slug: string) {
+  const list = await getAllPosts();
+  return list.find((post) => post.slug === slug);
 }
 
 export function paginate(
