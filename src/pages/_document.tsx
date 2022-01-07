@@ -26,14 +26,13 @@ class MyDocument extends Document {
       <Html lang="pt-br">
         <Head>
           <base href="/" />
-          <link rel="icon" href="img/favicon.png" type="image/png" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             rel="stylesheet"
             href={`https://fonts.googleapis.com/css2?${this.fonts}&display=swap`}
           />
         </Head>
-        <body className="minha-classe">
+        <body>
           <Main />
           <NextScript />
         </body>

@@ -2,6 +2,8 @@
 import remarkVscode from 'gatsby-remark-vscode';
 import frontmatterRemarkPlugin from './frontmatter.mjs';
 import nextConfigMDX from '@next/mdx';
+import withPWA from 'next-pwa';
+import runtimeCaching from 'next-pwa/cache.js';
 
 const withMDX = nextConfigMDX({
   extension: /\.mdx?$/,
@@ -34,10 +36,14 @@ const nextConfig = {
     styledComponents: true,
     esmExternals: true,
   },
+  pwa: {
+    dest: 'public',
+    runtimeCaching,
+  },
   webpack: (config) => {
     config.cache = false;
     return config;
   },
 };
 
-export default withMDX(nextConfig);
+export default withPWA(withMDX(nextConfig));
