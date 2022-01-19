@@ -1,15 +1,14 @@
+import { List } from '@styled-icons/bootstrap/List';
 import { UpArrowAlt as Arrow } from '@styled-icons/boxicons-regular/UpArrowAlt';
 import { Grid } from '@styled-icons/boxicons-solid/Grid';
 import { Home } from '@styled-icons/boxicons-solid/Home';
-import { LightMode } from '@styled-icons/material-outlined/LightMode';
 import { DarkMode } from '@styled-icons/material-outlined/DarkMode';
-import { List } from '@styled-icons/bootstrap/List';
+import { LightMode } from '@styled-icons/material-outlined/LightMode';
 import { useDisplayCss, useThemeCss } from '@utils/theme';
+import { isNil } from 'lodash';
 import React, { useEffect } from 'react';
 
 import * as S from './styles';
-import { isNil } from 'lodash';
-import { disqusData } from '@components/comments';
 
 const MenuBar: React.FC = () => {
   const [theme, setTheme] = useThemeCss();
@@ -26,16 +25,9 @@ const MenuBar: React.FC = () => {
   const setPreferredTheme = () => {
     setTheme(isDarkMode ? 'light' : 'dark');
     if (!isNil(globalThis.DISQUS)) {
-      const { url, identifier } = disqusData.getValue();
-      if (url) {
-        globalThis.DISQUS.reset({
-          reload: true,
-          config: function () {
-            this.page.url = url;
-            this.page.identifier = identifier;
-          },
-        });
-      }
+      globalThis.DISQUS.reset({
+        reload: true,
+      });
     }
   };
 

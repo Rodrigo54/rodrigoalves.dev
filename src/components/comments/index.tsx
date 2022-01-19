@@ -1,19 +1,7 @@
-import React, { useEffect, useState } from 'react';
 import { DiscussionEmbed } from 'disqus-react';
+import React, { useEffect, useState } from 'react';
 
 import * as S from './styles';
-import { BehaviorSubject } from 'rxjs';
-
-export const disqusData = new BehaviorSubject<{
-  url?: string;
-  title?: string;
-  identifier?: string;
-  shortname: string;
-  language: string;
-}>({
-  shortname: 'rodrigo-io',
-  language: 'pt-BR',
-});
 
 type Props = {
   title: string;
@@ -31,13 +19,6 @@ const Comments: React.FC<Props> = ({ slug, title, identifier }) => {
         url,
         title,
         identifier: `${identifier}`,
-        language: 'pt-BR',
-      });
-      disqusData.next({
-        url,
-        title,
-        identifier: `${identifier}`,
-        shortname: 'rodrigo-io',
         language: 'pt-BR',
       });
     }
