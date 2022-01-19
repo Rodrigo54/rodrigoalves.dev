@@ -9,6 +9,7 @@ import React, { useEffect } from 'react';
 
 import * as S from './styles';
 import { isNil } from 'lodash';
+import { disqusData } from '@components/comments';
 
 const MenuBar: React.FC = () => {
   const [theme, setTheme] = useThemeCss();
@@ -22,25 +23,29 @@ const MenuBar: React.FC = () => {
     setDisplay(display ?? 'list');
   }, []);
 
-  function setPreferredTheme() {
+  const setPreferredTheme = () => {
     setTheme(isDarkMode ? 'light' : 'dark');
     if (!isNil(globalThis.DISQUS)) {
-      setTimeout(() => {
+      const { url, identifier } = disqusData.getValue();
+      if (url) {
         globalThis.DISQUS.reset({
           reload: true,
-          config: {},
+          config: function () {
+            this.page.url = url;
+            this.page.identifier = identifier;
+          },
         });
-      }, 300);
+      }
     }
-  }
+  };
 
-  function setPreferredConfig() {
+  const setPreferredConfig = () => {
     setDisplay(isListMode ? 'grid' : 'list');
-  }
+  };
 
-  function toTop() {
+  const toTop = () => {
     globalThis.scroll({ top: 0, behavior: 'smooth' });
-  }
+  };
 
   return (
     <S.MenuBarWrapper>
