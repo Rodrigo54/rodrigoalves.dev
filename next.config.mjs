@@ -14,6 +14,7 @@ const withMDX = nextConfigMDX({
         remarkVscode.remarkPlugin,
         {
           injectStyles: false,
+          extensions: ['vscode-ng-html'],
           theme: {
             default: 'Dark+ (default dark)',
             parentSelector: {
