@@ -2,6 +2,7 @@ import React from 'react';
 import { Clock } from '@styled-icons/fa-regular/Clock';
 import { Music } from '@styled-icons/fa-solid/Music';
 import { CalendarAlt as Calendar } from '@styled-icons/fa-regular/CalendarAlt';
+import { parse } from 'date-fns';
 
 import * as S from './styles';
 import PostTag from '@components/tag';
@@ -15,7 +16,7 @@ const PostInfo: React.FC<Props> = ({
   info: { createAt, timeToRead, music, tags },
 }) => {
   function dateFormat() {
-    const dateObj = new Date(createAt);
+    const dateObj = parse(createAt, 'yyyy-MM-dd HH:mm:ss XX', new Date());
     let prefix = '';
     switch (dateObj.getDay()) {
       case 1:
@@ -40,7 +41,7 @@ const PostInfo: React.FC<Props> = ({
         prefix = 'no domingo';
         break;
     }
-    const stringDate = Intl.DateTimeFormat('pt-BR', {
+    const stringDate = new Intl.DateTimeFormat('pt-BR', {
       dateStyle: 'long',
     }).format(dateObj);
     return (
