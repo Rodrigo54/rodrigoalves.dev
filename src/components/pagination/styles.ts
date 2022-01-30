@@ -14,11 +14,42 @@ export const PaginationWrapper = styled.section`
     padding: 1rem;
   `}
   a {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
     color: var(--color2-contrast);
     text-decoration: none;
     transition: color 0.5s;
     &:hover {
       color: var(--color3-light);
     }
+    span {
+      margin: 0px 10px;
+    }
+  }
+`;
+
+export const FirstCol = styled.div`
+  display: flex;
+  flex: 1;
+  a {
+    margin-right: auto;
+    text-align: left;
+  }
+`;
+export const MiddleCol = styled.div`
+  display: flex;
+  flex: 1;
+  p {
+    margin: 0px auto;
+    text-align: center;
+  }
+`;
+export const LastCol = styled.div`
+  display: flex;
+  flex: 1;
+  a {
+    margin-left: auto;
+    text-align: right;
   }
 `;
