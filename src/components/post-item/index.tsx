@@ -1,10 +1,10 @@
+import PostInfo from '@components/post-info';
+import { FrontMatter } from '@model/frontmatter';
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 import * as S from './styles';
-import PostInfo from '@components/post-info';
-import Link from 'next/link';
-import Image from 'next/image';
-import { FrontMatter } from '@model/frontmatter';
 
 type Props = {
   frontMatter: Pick<
@@ -31,6 +31,7 @@ const PostItem: React.FC<Props> = ({ frontMatter }) => {
     tags,
     music,
   } = frontMatter;
+
   return (
     <S.PostItemWrapper>
       <S.PostItemThumbnail>

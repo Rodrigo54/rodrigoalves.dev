@@ -6,21 +6,16 @@ import { DarkMode } from '@styled-icons/material-outlined/DarkMode';
 import { LightMode } from '@styled-icons/material-outlined/LightMode';
 import { useDisplayCss, useThemeCss } from '@utils/theme';
 import { isNil } from 'lodash';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import * as S from './styles';
 
 const MenuBar: React.FC = () => {
-  const [theme, setTheme] = useThemeCss();
-  const [display, setDisplay] = useDisplayCss();
+  const [theme, setTheme] = useThemeCss('dark');
+  const [display, setDisplay] = useDisplayCss('list');
 
   const isDarkMode = theme === 'dark';
   const isListMode = display === 'list';
-
-  useEffect(() => {
-    setTheme(theme ?? 'dark');
-    setDisplay(display ?? 'list');
-  }, []);
 
   const setPreferredTheme = () => {
     setTheme(isDarkMode ? 'light' : 'dark');
