@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import remarkVscode from 'gatsby-remark-vscode';
-import frontmatterRemarkPlugin from './frontmatter.mjs';
 import nextConfigMDX from '@next/mdx';
+import remarkVscode from 'gatsby-remark-vscode';
 import withPWA from 'next-pwa';
 import runtimeCaching from 'next-pwa/cache.js';
+import rehypeExternalLinks from 'rehype-external-links';
+
+import frontmatterRemarkPlugin from './frontmatter.mjs';
 
 const withMDX = nextConfigMDX({
   extension: /\.mdx?$/,
@@ -23,6 +25,12 @@ const withMDX = nextConfigMDX({
             },
           },
         },
+      ],
+    ],
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        { target: '_blank', rel: ['nofollow', 'noopener', 'noreferrer'] },
       ],
     ],
   },
