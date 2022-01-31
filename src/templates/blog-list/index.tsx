@@ -9,9 +9,13 @@ import * as S from './styles';
 
 type Props = {
   postList: FrontMatter[];
+  pagination: {
+    page: number;
+    total: number;
+  };
 };
 
-const BlogList: React.FC<Props> = ({ postList }) => {
+const BlogList: React.FC<Props> = ({ postList, pagination }) => {
   return (
     <Layout>
       <SEO title="Blog" />
@@ -20,7 +24,7 @@ const BlogList: React.FC<Props> = ({ postList }) => {
           <PostItem key={index} frontMatter={post} />
         ))}
       </S.ListWrapper>
-      <Pagination />
+      <Pagination {...pagination} />
     </Layout>
   );
 };

@@ -1,10 +1,7 @@
-// Install gray-matter and date-fns
-import matter from 'gray-matter';
+import { FrontMatter } from '@model/frontmatter';
+import { makeFrontMatter } from '@utils/frontmatter';
 import fs from 'node:fs/promises';
 import { join } from 'node:path';
-import { markdownToHtml } from '@utils/markdown-to-html';
-import readingTime from 'reading-time';
-import { FrontMatter } from '@model/frontmatter';
 import { from, lastValueFrom, map, switchMap } from 'rxjs';
 
 const postsDirectory = join(process.cwd(), 'src/pages/blog');
@@ -19,35 +16,23 @@ async function getSlugList(searchSlug?: string) {
   return searchSlug ? slugs.find((slugs) => searchSlug === slugs) : slugs;
 }
 
-async function makeFrontMatter(
-  slug: string,
-  makeHtml = false
-): Promise<FrontMatter> {
+async function getFrontMatter(slug: string): Promise<FrontMatter> {
   const isSlugExist = await getSlugList(slug);
   if (!isSlugExist) throw new Error('Slug não existe');
 
   const fullPath = join(postsDirectory, `${slug}.mdx`);
-  const fileContents = await fs.readFile(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
-
-  const timeToRead = readingTime(content);
-
-  if (makeHtml) {
-    data.body = await markdownToHtml(content);
-  }
+  const data = await makeFrontMatter(fullPath);
 
   return {
     ...data,
     slug,
-    timeToRead,
-    fullPath,
   } as FrontMatter;
 }
 
-export async function getAllPosts() {
+export async function getAllPosts(): Promise<FrontMatter[]> {
   const list = from(getSlugList()).pipe(
     switchMap((slugs) => {
-      const promiseList = slugs.map((slug) => makeFrontMatter(slug));
+      const promiseList = slugs.map((slug) => getFrontMatter(slug));
       return Promise.all(promiseList);
     }),
     map((postList) =>
@@ -71,9 +56,9 @@ export async function getAllPosts() {
   return lastValueFrom(list);
 }
 
-export async function getPostBySlug(slug: string) {
+export async function getPostBySlug(slug: string): Promise<FrontMatter | null> {
   const list = await getAllPosts();
-  return list.find((post) => post.slug === slug);
+  return list.find((post) => post.slug === slug) ?? null;
 }
 
 export function paginate(
