@@ -1,78 +1,33 @@
-import * as babel from '@babel/core';
-import mdx from '@mdx-js/mdx';
-import { mdx as createElement, MDXProvider } from '@mdx-js/react';
-import AngularPagination from '@components/angular-pagination';
-import * as remarkVscode from 'gatsby-remark-vscode';
-import React from 'react';
-import { renderToString } from 'react-dom/server';
-import { ServerStyleSheet } from 'styled-components';
+import { getPostBySlug } from '@utils/posts';
+import { serialize } from 'next-mdx-remote/serialize';
+import rehypeExternalLinks from 'rehype-external-links';
+import rehypePrettyCode from 'rehype-pretty-code';
 
-const transform = (code) => {
-  return babel.transformSync(code, {
-    plugins: [
-      ['styled-components', { ssr: true }],
-      '@babel/plugin-transform-react-jsx',
-      '@babel/plugin-proposal-object-rest-spread',
-    ],
-  }).code;
-};
-
-const renderWithReact = async (mdxCode) => {
-  const jsx = await mdx(mdxCode, {
-    skipExport: true,
-    remarkPlugins: [
-      [
-        remarkVscode.remarkPlugin,
-        {
-          injectStyles: false,
-          theme: {
-            default: 'Dark+ (default dark)',
-            parentSelector: {
-              'body.dark': 'Dark+ (default dark)',
-              'body.light': 'Light+ (default light)',
+export const serializeMdx = async (slug: string) => {
+  const data = await getPostBySlug(slug);
+  const mdxText = data?.content ?? '';
+  const frontMatter = { ...data };
+  const mdxSource = await serialize(mdxText, {
+    parseFrontmatter: true,
+    mdxOptions: {
+      useDynamicImport: true,
+      remarkPlugins: [],
+      rehypePlugins: [
+        [
+          rehypePrettyCode,
+          {
+            theme: {
+              dark: 'dark-plus',
+              light: 'light-plus',
             },
           },
-        },
+        ],
+        [
+          rehypeExternalLinks,
+          { target: '_blank', rel: ['nofollow', 'noopener', 'noreferrer'] },
+        ],
       ],
-    ],
+    },
   });
-  const code = transform(jsx);
-  const scope = { mdx: createElement };
-
-  const fn = new Function(
-    'React',
-    ...Object.keys(scope),
-    `${code}; return React.createElement(MDXContent)`
-  );
-
-  const element = fn(React, ...Object.values(scope));
-  const components = {
-    AngularPagination,
-  };
-
-  const elementWithProvider = React.createElement(
-    MDXProvider,
-    { components },
-    element
-  );
-
-  return makeStyles(elementWithProvider);
+  return { mdxSource, frontMatter };
 };
-
-export async function markdownToHtml(mdxString: string) {
-  return renderWithReact(mdxString);
-}
-
-function makeStyles(component: React.ReactElement) {
-  const sheet = new ServerStyleSheet();
-  try {
-    const html = renderToString(sheet.collectStyles(component));
-    const styles = sheet.getStyleTags();
-    return styles.concat(html);
-  } catch (error) {
-    // handle error
-    console.error(error);
-  } finally {
-    sheet.seal();
-  }
-}

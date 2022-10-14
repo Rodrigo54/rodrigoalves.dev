@@ -141,32 +141,14 @@ export const MainContent = styled.section`
   strong {
     font-weight: 700;
   }
-  .gatsby-resp-image-background-image {
-    z-index: 2;
-    opacity: 1 !important;
-  }
-  .gatsby-resp-image-image {
-    box-shadow: none !important;
-    transition: opacity 0.2s;
-    &.lazyload {
-      opacity: 0;
-    }
-    &.lazyloaded {
-      opacity: 1;
-      z-index: 3;
-    }
-  }
-  .grvsc-container {
+  div[data-rehype-pretty-code-fragment] {
     font-family: 'Fira Code', monospace;
     line-height: 1.4;
     margin: 0px;
+    padding: 16px 0px;
     ${media.lessThan('large')`
       margin: 0 0 1.6rem 0;
     `}
-  }
-  code:not(.grvsc-code) {
-    font-family: 'Fira Code', monospace;
-    line-height: 1.4;
   }
   .instagram-media {
     margin: 1rem auto !important;

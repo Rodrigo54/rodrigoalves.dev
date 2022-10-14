@@ -5,6 +5,7 @@ import SEO from '@components/seo';
 import PaperLayout from '@components/paper-layout';
 
 type Props = {
+  children: React.ReactNode;
   data: {
     title: string;
     subtitle: string;
