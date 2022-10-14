@@ -77,12 +77,23 @@ export const Works = [
     locale: 'Banco Sicoob',
     duration: {
       init: '2021-07-01',
-      end: undefined,
+      end: '2021-11-01',
     },
     description: `
       Desenvolvimento e manutenção de plataformas web em react-dom e Angular
       assim como do Backend em Nodejs numa arquitetura complexa de microserviços e gateways
       aplicando os conceitos de UML e metodologias ágeis como o Kanban.
+    `,
+  },
+  {
+    job: 'Desenvolvedor Frontend',
+    locale: 'Alcis - Softwares para logística ',
+    duration: {
+      init: '2021-11-15',
+    },
+    description: `
+      Desenvolvimento e manutenção de plataformas web e Mobile (Android e iOS) em Angular
+      integrado a backend dotnet e base de dados Oracle e metodologias ágeis (Scrum).
     `,
   },
 ];

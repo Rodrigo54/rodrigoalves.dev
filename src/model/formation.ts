@@ -7,12 +7,9 @@ export const Formation = [
       end: '2017-07-01',
     },
     description: `
-      Analisar problemas e projetar soluções criativas que envolvam sistemas
-      computacionais. Avaliação, especificação e desenvolvimento de
-      ferramentas, métodos e sistemas computacionais. Investigação e
-      desenvolvimento de conhecimento teórico na área de computação; análise
-      e modelagem de problemas do ponto de vista computacional; concepção e
-      implementação de sistemas de computação.
+      Habilitado a analisar problemas e projetar soluções criativas que envolvam softwares.
+      Avaliação, investigação, especificação e desenvolvimento de ferramentas, métodos e sistemas.
+      Análise e modelagem de problemas, concepção e implementação de sistemas de informação.
     `,
   },
   {
@@ -23,8 +20,8 @@ export const Formation = [
       end: '2011-12-01',
     },
     description: `
-      Planejar, executar, acompanhar e fiscalizar todas as etapas dos
-      projetos agropecuários na administração de propriedades rurais.
+      Habilitado a planejar, executar, acompanhar e fiscalizar todas as etapas
+      dos projetos agropecuários na administração de propriedades rurais.
     `,
   },
 ];

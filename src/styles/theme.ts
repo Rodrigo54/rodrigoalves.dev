@@ -35,6 +35,11 @@ const ThemeStyles = createGlobalStyle`
     --color3-light: #b39ddb;
     --color3-shade: #311b92;
     --color3-contrast: #fff;
+
+    pre:not([data-theme='dark']),
+    code:not([data-theme='dark']) {
+      display: none;
+    }
   }
   body.light {
     --color1: #fafafa;
@@ -51,6 +56,11 @@ const ThemeStyles = createGlobalStyle`
     --color3-light: #1976d2;
     --color3-shade: #0d47a1;
     --color3-contrast: #fff;
+
+    pre:not([data-theme='light']),
+    code:not([data-theme='light']) {
+      display: none;
+    }
   }
 `;
 export default ThemeStyles;
