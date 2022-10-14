@@ -4,11 +4,11 @@ import fs from 'node:fs/promises';
 import { join } from 'node:path';
 import { from, lastValueFrom, map, switchMap } from 'rxjs';
 
-const postsDirectory = join(process.cwd(), 'src/pages/blog');
+const postsDirectory = join(process.cwd(), 'src/posts');
 
-async function getSlugList(): Promise<string[]>;
-async function getSlugList(searchSlug: string): Promise<string>;
-async function getSlugList(searchSlug?: string) {
+export async function getSlugList(): Promise<string[]>;
+export async function getSlugList(searchSlug: string): Promise<string>;
+export async function getSlugList(searchSlug?: string) {
   const files = await fs.readdir(postsDirectory);
   const slugs = files
     .filter((slug) => /(\.mdx?)$/.test(slug))
@@ -16,7 +16,7 @@ async function getSlugList(searchSlug?: string) {
   return searchSlug ? slugs.find((slugs) => searchSlug === slugs) : slugs;
 }
 
-async function getFrontMatter(slug: string): Promise<FrontMatter> {
+export async function getFrontMatter(slug: string) {
   const isSlugExist = await getSlugList(slug);
   if (!isSlugExist) throw new Error('Slug não existe');
 
@@ -26,10 +26,10 @@ async function getFrontMatter(slug: string): Promise<FrontMatter> {
   return {
     ...data,
     slug,
-  } as FrontMatter;
+  };
 }
 
-export async function getAllPosts(): Promise<FrontMatter[]> {
+export async function getAllPosts() {
   const list = from(getSlugList()).pipe(
     switchMap((slugs) => {
       const promiseList = slugs.map((slug) => getFrontMatter(slug));
@@ -56,7 +56,7 @@ export async function getAllPosts(): Promise<FrontMatter[]> {
   return lastValueFrom(list);
 }
 
-export async function getPostBySlug(slug: string): Promise<FrontMatter | null> {
+export async function getPostBySlug(slug: string) {
   const list = await getAllPosts();
   return list.find((post) => post.slug === slug) ?? null;
 }

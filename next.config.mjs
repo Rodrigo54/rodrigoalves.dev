@@ -1,39 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import nextConfigMDX from '@next/mdx';
-import remarkVscode from 'gatsby-remark-vscode';
-import withPWA from 'next-pwa';
+import nextConfigPWA from 'next-pwa';
 import runtimeCaching from 'next-pwa/cache.js';
-import rehypeExternalLinks from 'rehype-external-links';
 
-import frontmatterRemarkPlugin from './frontmatter.mjs';
-
-const withMDX = nextConfigMDX({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [
-      frontmatterRemarkPlugin,
-      [
-        remarkVscode.remarkPlugin,
-        {
-          injectStyles: false,
-          extensions: ['vscode-ng-html'],
-          theme: {
-            default: 'Dark+ (default dark)',
-            parentSelector: {
-              'body.dark': 'Dark+ (default dark)',
-              'body.light': 'Light+ (default light)',
-            },
-          },
-        },
-      ],
-    ],
-    rehypePlugins: [
-      [
-        rehypeExternalLinks,
-        { target: '_blank', rel: ['nofollow', 'noopener', 'noreferrer'] },
-      ],
-    ],
-  },
+const withPWA = nextConfigPWA({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
 });
 
 /** @type {import('next').NextConfig} */
@@ -50,10 +21,6 @@ const nextConfig = {
     dest: 'public',
     runtimeCaching,
   },
-  webpack: (config) => {
-    config.cache = false;
-    return config;
-  },
 };
 
-export default withPWA(withMDX(nextConfig));
+export default withPWA(nextConfig);
