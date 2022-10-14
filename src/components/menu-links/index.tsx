@@ -11,12 +11,31 @@ const MenuLinks: React.FC = () => {
     {
       label: 'Home',
       url: '/',
+      external: false,
     },
     {
       label: 'Sobre Mim',
       url: '/about',
+      external: false,
+    },
+    {
+      label: 'Resume',
+      url: 'https://resume.rodrigoalves.dev/',
+      external: true,
     },
   ];
+
+  const ExternalLink = (link: typeof links[0]) => (
+    <S.MenuLinksLink target="_blank" rel="noopener noreferrer">
+      {link.label}
+    </S.MenuLinksLink>
+  );
+
+  const LocalLink = (link: typeof links[0]) => (
+    <S.MenuLinksLink className={router.pathname === link.url ? 'active' : ''}>
+      {link.label}
+    </S.MenuLinksLink>
+  );
 
   return (
     <S.MenuLinksWrapper>
@@ -24,11 +43,7 @@ const MenuLinks: React.FC = () => {
         {links.map((link, i) => (
           <S.MenuLinksItem key={i}>
             <Link href={link.url} passHref>
-              <S.MenuLinksLink
-                className={router.pathname === link.url ? 'active' : ''}
-              >
-                {link.label}
-              </S.MenuLinksLink>
+              {link.external ? ExternalLink(link) : LocalLink(link)}
             </Link>
           </S.MenuLinksItem>
         ))}
