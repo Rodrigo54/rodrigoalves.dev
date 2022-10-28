@@ -26,7 +26,7 @@ export const PostItemWrapper = styled.div`
   `}
 `;
 
-export const PostItemLink = styled.a`
+export const PostItemLink = styled.span`
   text-decoration: none;
   display: flex;
   flex-direction: column;

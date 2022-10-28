@@ -1,5 +1,5 @@
-import { IosArrowLeft } from '@styled-icons/fluentui-system-regular/IosArrowLeft';
-import { IosArrowRight } from '@styled-icons/fluentui-system-regular/IosArrowRight';
+import { ArrowLeft } from '@styled-icons/fluentui-system-regular/ArrowLeft';
+import { ArrowRight } from '@styled-icons/fluentui-system-regular/ArrowRight';
 import Link from 'next/link';
 import React from 'react';
 
@@ -19,10 +19,8 @@ const Pagination: React.FC<Props> = ({ total, page = 1 }) => {
       <S.FirstCol>
         {!isFirst && (
           <Link href={`/blog/page/${page - 1}`} passHref>
-            <a>
-              <IosArrowLeft size={18} />
-              <span>Página Anterior</span>
-            </a>
+            <ArrowLeft size={18} />
+            <span>Página Anterior</span>
           </Link>
         )}
       </S.FirstCol>
@@ -34,10 +32,8 @@ const Pagination: React.FC<Props> = ({ total, page = 1 }) => {
       <S.LastCol>
         {!isLast && (
           <Link href={`/blog/page/${page + 1}`} passHref>
-            <a>
-              <span>Proxima Página</span>
-              <IosArrowRight size={18} />
-            </a>
+            <span>Proxima Página</span>
+            <ArrowRight size={18} />
           </Link>
         )}
       </S.LastCol>

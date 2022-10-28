@@ -5,6 +5,7 @@ import runtimeCaching from 'next-pwa/cache.js';
 const withPWA = nextConfigPWA({
   dest: 'public',
   disable: process.env.NODE_ENV === 'development',
+  runtimeCaching,
 });
 
 /** @type {import('next').NextConfig} */
@@ -12,14 +13,11 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'tsx', 'md', 'mdx'],
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
+  compiler: {
     styledComponents: true,
-    esmExternals: true,
   },
-  pwa: {
-    disable: process.env.NODE_ENV === 'development',
-    dest: 'public',
-    runtimeCaching,
+  experimental: {
+    esmExternals: true,
   },
 };
 

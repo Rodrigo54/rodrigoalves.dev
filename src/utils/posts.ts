@@ -1,6 +1,6 @@
 import { FrontMatter } from '@model/frontmatter';
 import { makeFrontMatter } from '@utils/frontmatter';
-import fs from 'node:fs/promises';
+import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { from, lastValueFrom, map, switchMap } from 'rxjs';
 
@@ -9,7 +9,7 @@ const postsDirectory = join(process.cwd(), 'src/posts');
 export async function getSlugList(): Promise<string[]>;
 export async function getSlugList(searchSlug: string): Promise<string>;
 export async function getSlugList(searchSlug?: string) {
-  const files = await fs.readdir(postsDirectory);
+  const files = await readdir(postsDirectory);
   const slugs = files
     .filter((slug) => /(\.mdx?)$/.test(slug))
     .map((slug) => slug.replace(/(\.mdx?)$/, ''));

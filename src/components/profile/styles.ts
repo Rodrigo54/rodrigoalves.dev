@@ -7,7 +7,7 @@ export const ProfileWrapper = styled.section`
   flex-direction: column;
 `;
 
-export const ProfileLink = styled.a`
+export const ProfileLink = styled.span`
   color: var(--color1-contrast);
   text-decoration: none;
   transition: color 0.5s;

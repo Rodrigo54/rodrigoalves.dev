@@ -1,15 +1,16 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 
 export const RecommendedWrapper = styled.section`
   border-bottom: 1px solid var(--color2-light);
   border-top: 1px solid var(--color2-light);
   background: var(--color2);
   display: flex;
-  margin: 0px -25px;
   flex-flow: row nowrap;
+  margin: 0px -25px;
 `;
 
-export const RecommendedLink = styled.a`
+export const RecommendedLink = styled(Link)`
   align-items: center;
   background: var(--color1);
   color: var(--color1-contrast);

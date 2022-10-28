@@ -36,10 +36,7 @@ const NotFoundPage: React.FC = () => {
             we couldn’t find what you were looking for.
             <br />
             <br />
-            <Link href="/">
-              <a>Go home</a>
-            </Link>
-            .
+            <Link href="/">Go home</Link>.
           </p>
         </main>
       </PaperLayout>
