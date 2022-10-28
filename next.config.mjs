@@ -17,7 +17,7 @@ const nextConfig = {
     styledComponents: true,
   },
   experimental: {
-    esmExternals: true,
+    largePageDataBytes: 128 * 10000,
   },
 };
 
