@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import { useRouter } from 'next/router';
 
@@ -26,19 +25,24 @@ const MenuLinks: React.FC = () => {
   ];
 
   const ExternalLink = (link: typeof links[0]) => (
-    <Link href={link.url} passHref target="_blank" rel="noopener noreferrer">
-      <S.MenuLinksLink>{link.label}</S.MenuLinksLink>
-    </Link>
+    <S.MenuLinksLink
+      href={link.url}
+      passHref
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {link.label}
+    </S.MenuLinksLink>
   );
 
   const LocalLink = (link: typeof links[0]) => (
-    <Link
+    <S.MenuLinksLink
       href={link.url}
       passHref
       className={router.pathname === link.url ? 'active' : ''}
     >
-      <S.MenuLinksLink>{link.label}</S.MenuLinksLink>
-    </Link>
+      {link.label}
+    </S.MenuLinksLink>
   );
 
   return (
