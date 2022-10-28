@@ -20,7 +20,7 @@ export const MenuLinksItem = styled.li`
   padding: 0.5rem 0;
 `;
 
-export const MenuLinksLink = styled.a`
+export const MenuLinksLink = styled.span`
   color: var(--color1-contrast);
   font-family: var(--font-sans-serif);
   text-decoration: none;

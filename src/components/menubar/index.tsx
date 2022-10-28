@@ -37,12 +37,10 @@ const MenuBar: React.FC = () => {
   return (
     <S.MenuBarWrapper>
       <S.MenuBarGroup>
-        <S.MenuBarLink href="/">
-          <a title="Voltar para Home">
-            <S.MenuBarItem>
-              <Home />
-            </S.MenuBarItem>
-          </a>
+        <S.MenuBarLink href="/" title="Voltar para Home">
+          <S.MenuBarItem>
+            <Home />
+          </S.MenuBarItem>
         </S.MenuBarLink>
       </S.MenuBarGroup>
       <S.MenuBarGroup>

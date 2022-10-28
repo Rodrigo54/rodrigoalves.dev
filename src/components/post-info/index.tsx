@@ -1,7 +1,7 @@
 import React from 'react';
 import { Clock } from '@styled-icons/fa-regular/Clock';
 import { Music } from '@styled-icons/fa-solid/Music';
-import { CalendarAlt as Calendar } from '@styled-icons/fa-regular/CalendarAlt';
+import { Calendar } from '@styled-icons/boxicons-regular/Calendar';
 import { parse } from 'date-fns';
 
 import * as S from './styles';

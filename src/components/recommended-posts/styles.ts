@@ -4,12 +4,12 @@ export const RecommendedWrapper = styled.section`
   border-bottom: 1px solid var(--color2-light);
   border-top: 1px solid var(--color2-light);
   background: var(--color2);
-  display: flex;
+  display: grid;
+  grid-template: auto / 1fr 1fr;
   margin: 0px -25px;
-  flex-flow: row nowrap;
 `;
 
-export const RecommendedLink = styled.a`
+export const RecommendedLink = styled.span`
   align-items: center;
   background: var(--color1);
   color: var(--color1-contrast);
@@ -17,7 +17,6 @@ export const RecommendedLink = styled.a`
   padding: 3rem;
   text-decoration: none;
   transition: background 0.5s;
-  width: 50%;
   &:hover {
     background: var(--color3-shade);
     color: var(--color3-contrast);

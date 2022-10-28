@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './styles';
-import { CalendarAlt as Calendar } from '@styled-icons/fa-regular/CalendarAlt';
-import { University } from '@styled-icons/fa-solid/University';
+import { Calendar } from '@styled-icons/boxicons-regular/Calendar';
+import { BuildingColumns as University } from '@styled-icons/fa-solid/BuildingColumns';
 import { GraduationCap } from '@styled-icons/fa-solid/GraduationCap';
 import { UserGraduate } from '@styled-icons/fa-solid/UserGraduate';
 import { OndemandVideo } from '@styled-icons/material-rounded/OndemandVideo';
