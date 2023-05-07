@@ -11,7 +11,7 @@ export const Paragrafe = styled.p`
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.7;
-  letter-spacing: 0.02rem;
+  letter-spacing: 0.05rem;
   word-break: break-word;
   margin: 0 auto 0.4rem;
 `;
@@ -35,7 +35,7 @@ export const AbilitiesWrapper = styled.div`
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.7;
-  letter-spacing: 0.02rem;
+  letter-spacing: 0.05rem;
   word-break: break-word;
 `;
 

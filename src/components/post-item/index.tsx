@@ -35,13 +35,7 @@ const PostItem: React.FC<Props> = ({ frontMatter }) => {
   return (
     <S.PostItemWrapper>
       <S.PostItemThumbnail>
-        <Image
-          alt={title}
-          src={featuredImage}
-          objectFit="cover"
-          layout="fill"
-          loading="lazy"
-        />
+        <Image alt={title} src={featuredImage} fill loading="lazy" />
       </S.PostItemThumbnail>
       <S.PostItemContent>
         <Link href={`/blog/${slug}`} passHref>

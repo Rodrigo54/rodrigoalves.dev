@@ -20,18 +20,17 @@ const PaperLayout: React.FC<Props> = ({
   return (
     <S.PaperWrapper>
       <S.Thumbnail>
-        <Image
-          alt={alt ?? 'Featured Image'}
-          src={image}
-          layout="fill"
-          priority
-        />
+        <Image alt={alt ?? 'Featured Image'} src={image} fill priority />
       </S.Thumbnail>
-      <S.Header>
-        <h1>{title}</h1>
-        <p>{subtitle}</p>
-      </S.Header>
-      <S.PaperContent>{children}</S.PaperContent>
+      <S.PaperBox>
+        <S.Header>
+          <div>
+            <h1>{title}</h1>
+            <p>{subtitle}</p>
+          </div>
+        </S.Header>
+        <S.PaperContent>{children}</S.PaperContent>
+      </S.PaperBox>
     </S.PaperWrapper>
   );
 };

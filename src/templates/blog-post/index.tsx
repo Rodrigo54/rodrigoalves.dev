@@ -29,9 +29,12 @@ const BlogPost: React.FC<Props> = ({ data, children }) => {
         description={frontMatter.description}
         image={frontMatter.featuredImage}
       />
-      <PaperLayout alt={frontMatter.title} image={frontMatter.featuredImage}>
+      <PaperLayout
+        title={frontMatter.title}
+        alt={frontMatter.title}
+        image={frontMatter.featuredImage}
+      >
         <S.PostHeader>
-          <S.PostTitle>{frontMatter.title}</S.PostTitle>
           <S.PostDescription>{frontMatter.description}</S.PostDescription>
           <PostInfo info={frontMatter} />
         </S.PostHeader>

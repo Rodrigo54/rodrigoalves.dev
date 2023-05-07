@@ -5,25 +5,15 @@ export const PostHeader = styled.header`
   margin: 0px 0px 20px;
 `;
 
-export const PostTitle = styled.h1`
-  font-family: var(--font-serif);
-  font-size: 2.5rem;
-  font-weight: 400;
-  letter-spacing: 0.05rem;
-  margin: 0.8rem auto;
-  ${media.lessThan('large')`
-    font-size: 2.8rem;
-    line-height: 1.1;
-  `}
-`;
-
 export const PostDescription = styled.h2`
   font-family: var(--font-sans-serif);
   font-weight: 200;
-  margin: 30px 0px 20px;
+  margin: 10px 0px 20px;
   font-size: 1.6rem;
   line-height: 1.3;
   ${media.lessThan('large')`
+    font-size: 1.3rem;
+    line-height: 1.1;
   `}
 `;
 
@@ -47,7 +37,7 @@ export const MainContent = styled.section`
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.7;
-    letter-spacing: 0.02rem;
+    letter-spacing: 0.05rem;
     word-break: break-word;
   }
   p {
@@ -142,6 +132,7 @@ export const MainContent = styled.section`
     font-weight: 700;
   }
   div[data-rehype-pretty-code-fragment] {
+    overflow: auto;
     font-family: 'Fira Code', monospace;
     line-height: 1.4;
     margin: 0px;

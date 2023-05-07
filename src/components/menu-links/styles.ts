@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
+import Link from 'next/link';
 
 export const MenuLinksWrapper = styled.nav`
   margin: 20px auto auto;
@@ -20,7 +21,7 @@ export const MenuLinksItem = styled.li`
   padding: 0.5rem 0;
 `;
 
-export const MenuLinksLink = styled.a`
+export const MenuLinksLink = styled(Link)`
   color: var(--color1-contrast);
   font-family: var(--font-sans-serif);
   text-decoration: none;

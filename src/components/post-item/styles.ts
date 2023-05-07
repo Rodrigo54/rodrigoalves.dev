@@ -26,7 +26,7 @@ export const PostItemWrapper = styled.div`
   `}
 `;
 
-export const PostItemLink = styled.a`
+export const PostItemLink = styled.span`
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -63,6 +63,9 @@ export const PostItemContent = styled.section`
   padding: 15px;
   flex: 1.5;
   width: 100%;
+  div:last-child {
+    margin-top: auto;
+  }
 `;
 
 export const PostItemTitle = styled.h1`
@@ -86,4 +89,9 @@ export const PostItemDescription = styled.p`
   ${media.lessThan('large')`
     font-size: 1rem;
   `}
+
+  body.grid & {
+    visibility: hidden;
+    display: none;
+  }
 `;

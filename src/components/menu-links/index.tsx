@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import { useRouter } from 'next/router';
 
@@ -26,13 +25,22 @@ const MenuLinks: React.FC = () => {
   ];
 
   const ExternalLink = (link: typeof links[0]) => (
-    <S.MenuLinksLink target="_blank" rel="noopener noreferrer">
+    <S.MenuLinksLink
+      href={link.url}
+      passHref
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {link.label}
     </S.MenuLinksLink>
   );
 
   const LocalLink = (link: typeof links[0]) => (
-    <S.MenuLinksLink className={router.pathname === link.url ? 'active' : ''}>
+    <S.MenuLinksLink
+      href={link.url}
+      passHref
+      className={router.pathname === link.url ? 'active' : ''}
+    >
       {link.label}
     </S.MenuLinksLink>
   );
@@ -42,9 +50,7 @@ const MenuLinks: React.FC = () => {
       <S.MenuLinksList>
         {links.map((link, i) => (
           <S.MenuLinksItem key={i}>
-            <Link href={link.url} passHref>
-              {link.external ? ExternalLink(link) : LocalLink(link)}
-            </Link>
+            {link.external ? ExternalLink(link) : LocalLink(link)}
           </S.MenuLinksItem>
         ))}
       </S.MenuLinksList>
