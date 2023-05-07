@@ -12,6 +12,7 @@ export const PostTag = styled('span')<PostTagProps>`
   border-color: ${({ color }) => color};
   border-radius: 80px;
   padding: 5px 15px;
+  margin: 10px 0px;
   font-family: var(--font-serif);
   font-weight: 800;
   letter-spacing: 2px;

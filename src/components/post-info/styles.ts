@@ -3,7 +3,7 @@ import media from 'styled-media-query';
 
 export const PostInfoWrapper = styled.div`
   display: grid;
-  grid-template: repeat(auto, 3) / 1fr;
+  grid-template: repeat(4, auto) / 100%;
 `;
 
 export const PostTagsRow = styled.div`
@@ -48,6 +48,7 @@ export const PostMusic = styled.p`
   font-size: 0.9rem;
   line-height: 1.2;
   margin: 5px 0px;
+  width: 100%;
   body.grid & {
     span {
       visibility: hidden;
