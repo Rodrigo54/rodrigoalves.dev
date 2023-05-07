@@ -37,7 +37,8 @@ const PostInfo: React.FC<Props> = ({
       case 6:
         prefix = 'no sábado';
         break;
-      case 7:
+      default:
+      case 0:
         prefix = 'no domingo';
         break;
     }
