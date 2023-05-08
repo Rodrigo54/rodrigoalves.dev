@@ -1,5 +1,6 @@
 import GlobalStyles from '@styles/global';
 import ThemeStyles from '@styles/theme';
+import { Analytics } from '@vercel/analytics/react';
 
 import React from 'react';
 
@@ -14,6 +15,7 @@ type Props = {
 const Layout: React.FC<Props> = ({ children }) => {
   return (
     <S.LayoutWrapper>
+      <Analytics />
       <GlobalStyles />
       <ThemeStyles />
       <Sidebar />
