@@ -1,0 +1,17 @@
+<script lang="ts">
+  // @ts-nocheck
+  import { RouterOutlet } from '@angular/router' with { analog: 'imports' };
+  import layout from '@components/layout.ag' with { analog: 'imports' };
+</script>
+
+<template>
+  <layout>
+    <router-outlet />
+  </layout>
+</template>
+
+<style>
+  :host {
+    background-color: oklab(from var(--color1) 0.1 a b);
+  }
+</style>

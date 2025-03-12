@@ -1,0 +1,42 @@
+<script lang="ts">
+  import { AsyncPipe, JsonPipe } from '@angular/common' with { analog: 'imports' };
+  import { MarkdownComponent } from '@analogjs/content' with { analog: 'imports' };
+  import { toSignal } from '@angular/core/rxjs-interop';
+  import { injectContent } from '@analogjs/content';
+
+  import { postMetaResolver, postTitleResolver } from './resolvers';
+  import { RouteMeta } from '@analogjs/router';
+
+  const post$ = injectContent('slug');
+  const post = toSignal(post$, { initialValue: null });
+
+  export const routeMeta: RouteMeta = {
+    title: postTitleResolver,
+    meta: postMetaResolver,
+  };
+
+</script>
+
+<template>
+  @if (post(); as postItem) {
+    <article>
+      <h1>{{ postItem.attributes.title }}</h1>
+      <p>{{ postItem.attributes.description }}</p>
+      <img class="post__image" [src]="postItem.attributes.featuredImage" />
+      <analog-markdown [content]="postItem.content" />
+    </article>
+  } @else {
+    <p>Loading...</p>
+  }
+</template>
+
+<style>
+  .post__image {
+    max-height: 40vh;
+  }
+
+  article {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+</style>
