@@ -1,0 +1,24 @@
+<script lang="ts">
+  // @ts-nocheck
+  import profile from '@components/profile.ag' with { analog: 'imports' };
+  import navigation from '@components/navigation.ag' with { analog: 'imports' };
+  import socialLinks from '@components/social-links.ag' with { analog: 'imports' };
+</script>
+
+<template>
+  <profile />
+  <social-links />
+  <navigation />
+</template>
+
+<style>
+  :host {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+  }
+</style>

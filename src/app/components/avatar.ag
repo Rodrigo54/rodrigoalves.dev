@@ -1,0 +1,22 @@
+<script lang="ts">
+  import { NgOptimizedImage } from '@angular/common' with { analog: 'imports' };
+  import { input } from '@angular/core';
+
+  const alt = input('Profile Photo');
+</script>
+
+<template>
+  <img ngSrc="/img/profile-photo.jpg" [alt]="alt()" width="200" height="200" />
+</template>
+
+<style>
+  :host {
+    display: block;
+    height: 10rem;
+    width: 10rem;
+    margin: auto;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+  }
+</style>

@@ -1,0 +1,73 @@
+<script lang="ts">
+  import { RouterLink, RouterLinkActive } from '@angular/router' with { analog: 'imports' };
+
+  const links = [
+    {
+      label: 'Home',
+      url: '/blog',
+      external: false,
+    },
+    {
+      label: 'Sobre Mim',
+      url: '/about',
+      external: false,
+    },
+    {
+      label: 'Resume',
+      url: 'https://resume.rodrigoalves.dev/',
+      external: true,
+    },
+  ];
+</script>
+
+<template>
+  <nav>
+    <ul>
+      @for (link of links; track link.url) {
+        <li>
+          @if (link.external) {
+            <a [href]="link.url" target="_blank" rel="noopener noreferrer">
+              {{ link.label }}
+            </a>
+          } @else {
+            <a [routerLink]="[link.url]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              {{ link.label }}
+            </a>
+          }
+        </li>
+      }
+    </ul>
+  </nav>
+</template>
+
+<style>
+  :host {
+    display: block;
+    padding: 1rem 0rem;
+    width: 100%;
+  }
+  ul {
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 300;
+    li {
+      list-style: none;
+      padding: 0.5rem 0;
+      text-align: center;
+    }
+  }
+  a {
+    color: var(--color1-contrast);
+    font-family: var(--font-sans-serif);
+    text-decoration: none;
+    transition: color 0.5s;
+    width: 100%;
+    &:hover,
+    &.active {
+      color: var(--color3-light);
+    }
+    &.active {
+      font-weight: bold;
+    }
+  }
+</style>
