@@ -1,0 +1,22 @@
+{
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "files.associations": {
+    "*.ag": "analog"
+  },
+  "material-icon-theme.files.customClones": [
+    {
+      "name": "angular-provider",
+      "base": "angular",
+      "color": "red-400",
+      "fileExtensions": ["ag", "analog"]
+    },
+  ],
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Use conventional commit message format. Add lots of emojis. No exceed 80 caracteres. For example: ✨ feat(any-component): add new feature"
+    }
+  ]
+}
