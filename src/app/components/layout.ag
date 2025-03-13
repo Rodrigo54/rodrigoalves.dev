@@ -1,17 +1,18 @@
 <script lang="ts">
   // @ts-nocheck
   import sidebar from '@components/sidebar.ag' with { analog: 'imports' };
+  import menubar from '@components/menubar.ag' with { analog: 'imports' };
 </script>
 
 <template>
   <aside class="sidebar">
     <sidebar />
   </aside>
-  <main class="content">
+  <main class="content" id="content">
     <ng-content></ng-content>
   </main>
   <aside class="menubar">
-    <ng-content select="[slot='menubar']"></ng-content>
+    <menubar />
   </aside>
 </template>
 

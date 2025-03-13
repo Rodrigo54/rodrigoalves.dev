@@ -1,0 +1,76 @@
+<script lang="ts">
+  import { NgIcon } from '@ng-icons/core' with { analog: 'imports' };
+  import { RouterLink } from '@angular/router' with { analog: 'imports' };
+  import { inject, signal } from '@angular/core';
+  import { DOCUMENT } from '@angular/common';
+  import { provideIcons } from '@ng-icons/core';
+  import { iconoirHome, iconoirArrowUp, iconoirCell2x2, iconoirTableRows, iconoirPalette } from '@ng-icons/iconoir';
+
+  const document = inject(DOCUMENT);
+
+  defineMetadata({
+    viewProviders: [provideIcons({
+      iconoirHome,
+      iconoirArrowUp,
+      iconoirCell2x2,
+      iconoirTableRows,
+      iconoirPalette,
+    })],
+  });
+
+  const gridIcon = signal('iconoirCell2x2');
+
+  function toTop() {
+    document.getElementById('content')?.scroll({ top: 0, behavior: 'smooth' });
+  };
+
+  function toggleGrid() {
+    gridIcon.update(icon => icon === 'iconoirCell2x2' ? 'iconoirTableRows' : 'iconoirCell2x2');
+  }
+</script>
+
+
+<template>
+  <div class="top-icons">
+    <ng-icon name="iconoirHome" [routerLink]="['/blog']" />
+  </div>
+  <div class="bottom-icons">
+    <ng-icon (click)="toTop()" name="iconoirPalette" />
+    <ng-icon [name]="gridIcon()" (click)="toggleGrid()" />
+    <ng-icon (click)="toTop()" name="iconoirArrowUp" />
+  </div>
+</template>
+
+<style>
+  :host {
+    --ng-icon__size: 2rem;
+    color: var(--color1-contrast);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2rem 1fr auto;
+    grid-template-areas: 'top-icons' '.' 'bottom-icons';
+    height: 100%;
+    padding: 2rem 0.8rem;
+
+  }
+  .top-icons, .bottom-icons {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .top-icons {
+    grid-area: top-icons;
+  }
+  .bottom-icons {
+    grid-area: bottom-icons;
+  }
+  ng-icon {
+    cursor: pointer;
+    transition: color 0.5s;
+    &:hover {
+      color: var(--color3-light);
+    }
+  }
+</style>
