@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { AsyncPipe, JsonPipe } from '@angular/common' with { analog: 'imports' };
+  // @ts-nocheck
+  import paperLayout from '@components/paper-layout.ag' with { analog: 'imports' };
   import { MarkdownComponent } from '@analogjs/content' with { analog: 'imports' };
   import { toSignal } from '@angular/core/rxjs-interop';
   import { injectContent } from '@analogjs/content';
@@ -19,12 +20,15 @@
 
 <template>
   @if (post(); as postItem) {
-    <article>
-      <h1>{{ postItem.attributes.title }}</h1>
-      <p>{{ postItem.attributes.description }}</p>
-      <img class="post__image" [src]="postItem.attributes.featuredImage" />
-      <analog-markdown [content]="postItem.content" />
-    </article>
+    <paper-layout [image]="postItem.attributes.featuredImage" [alt]="postItem.attributes.title">
+      <ng-container slot="header">
+        <h1>{{ postItem.attributes.title }}</h1>
+        <p>{{ postItem.attributes.description }}</p>
+      </ng-container>
+      <article>
+        <analog-markdown [content]="postItem.content" />
+      </article>
+    </paper-layout>
   } @else {
     <p>Loading...</p>
   }
@@ -33,10 +37,5 @@
 <style>
   .post__image {
     max-height: 40vh;
-  }
-
-  article {
-    max-width: 800px;
-    margin: 0 auto;
   }
 </style>
