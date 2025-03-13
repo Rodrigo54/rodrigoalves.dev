@@ -1,17 +1,18 @@
 <script lang="ts">
   import { RouterLink } from '@angular/router' with { analog: 'imports' };
   import { JsonPipe } from '@angular/common' with { analog: 'imports' };
-  import { injectContentFiles } from '@analogjs/content';
+  // @ts-ignore
+  import { frontMatterSignal } from '@utils/frontmatter';
 
-  const posts = injectContentFiles();
+  const posts = frontMatterSignal('all');
 </script>
 
 <template>
   <h1>Blog Posts</h1>
-  @for (post of posts; track post.slug) {
+  @for (post of posts(); track post.createAt) {
     <a [routerLink]="['/blog/', post.slug]">
-      <h2 class="post__title">{{ post.attributes.title }}</h2>
-      <p class="post__desc">{{ post.attributes.description }}</p>
+      <h2 class="post__title">{{ post.title }}</h2>
+      <p class="post__desc">{{ post.description }}</p>
     </a>
   }
 </template>

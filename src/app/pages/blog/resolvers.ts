@@ -1,9 +1,8 @@
 import { injectContentFiles } from '@analogjs/content';
 import { MetaTag } from '@analogjs/router';
 import { ActivatedRouteSnapshot, ResolveFn } from '@angular/router';
-import { FrontMatter } from './frontmatter';
+import { FrontMatter, makeFrontMatter } from '@utils/frontmatter';
 
-// temporary
 function injectActivePostAttributes(
   route: ActivatedRouteSnapshot,
 ): FrontMatter {
@@ -13,23 +12,7 @@ function injectActivePostAttributes(
       contentFile.slug === route.params['slug']
     );
   });
-
-  return file?.attributes || {
-    title: 'Default Title',
-    description: '',
-    slug: '',
-    featuredImage: '',
-    comments: false,
-    tags: [],
-    author: '',
-    createAt: new Date().toISOString(),
-    updateAt: new Date().toISOString(),
-    music: { title: '', url: '' },
-    fullPath: '',
-    timeToRead: { text: '', minutes: 0, time: 0, words: 0 },
-    nextPost: null,
-    prevPost: null
-  };
+  return makeFrontMatter(file);
 }
 
 export const postTitleResolver: ResolveFn<string> = (route) => {
@@ -40,8 +23,7 @@ export const postTitleResolver: ResolveFn<string> = (route) => {
 
 export const postMetaResolver: ResolveFn<MetaTag[]> = (route) => {
   const postAttributes = injectActivePostAttributes(route);
-  const base =
-    import.meta.env['VITE_ANALOG_BASE_URL'] || 'http://localhost:3000';
+  const base = import.meta.env['VITE_ANALOG_BASE_URL'] || 'http://localhost:3000';
   const imageUrl = `${base}${postAttributes.featuredImage}`;
 
   return [
