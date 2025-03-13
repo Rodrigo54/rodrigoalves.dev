@@ -34,7 +34,8 @@ function injectActivePostAttributes(
 
 export const postTitleResolver: ResolveFn<string> = (route) => {
   const postAttributes = injectActivePostAttributes(route);
-  return postAttributes.title || 'Default Title';
+  const suffixText = 'Rodrigo Alves';
+  return `${postAttributes.title} | ${suffixText}`;
 };
 
 export const postMetaResolver: ResolveFn<MetaTag[]> = (route) => {
