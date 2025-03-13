@@ -43,12 +43,11 @@
 <style>
   :host {
     display: block;
-    padding: 1rem 0rem;
+    padding: 1.3rem 0rem;
     width: 100%;
   }
   ul {
     width: 100%;
-    font-size: 1.2rem;
     font-weight: 300;
     li {
       list-style: none;
@@ -59,9 +58,9 @@
   a {
     color: var(--color1-contrast);
     font-family: var(--font-sans-serif);
+    font-size: 1.2rem;
     text-decoration: none;
-    transition: color 0.5s;
-    width: 100%;
+    transition: all 0.3s;
     &:hover,
     &.active {
       color: var(--color3-light);

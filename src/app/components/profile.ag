@@ -34,7 +34,7 @@
     h1 {
       display: block;
       font-family: var(--font-serif);
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       margin-top: 1.5rem;
       font-weight: normal;
     }
@@ -48,9 +48,10 @@
   }
   p {
     color: var(--color1-contrast);
-    margin: 1.6rem 0;
+    margin: 1.6rem 0rem 2rem;
     font-family: var(--font-sans-serif);
-    font-size: 0.9rem;
+    font-size: 1rem;
+    text-wrap: balance;
     font-weight: 300;
     line-height: 1.4;
   }
