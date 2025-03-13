@@ -1,0 +1,41 @@
+<script lang="ts">
+  // @ts-nocheck
+  import { NgOptimizedImage } from '@angular/common' with { analog: 'imports' };
+  import { input, computed } from '@angular/core';
+  import { FrontMatter } from '@utils/frontmatter';
+  import { format } from 'date-fns';
+  import ptBR from 'date-fns/locale/pt-BR';
+
+  type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
+
+  const info = input.required<Info>();
+
+  const formattedDate = computed(() => {
+    const dayOfWeek = format(info().createAt, 'EEEE', { locale: ptBR });
+    const prefix = ['sábado', 'domingo'].includes(dayOfWeek) ? 'no' : 'na';
+    return format(info().createAt, `'Postado ${prefix}' EEEE, d 'de' MMMM 'de' yyyy`, { locale: ptBR });
+  });
+  const formattedReadTime = computed(() => {
+    const { minutes } = info().timeToRead;
+    return `Leia em ${minutes} minuto${minutes > 1 ? 's' : ''}`;
+  });
+  const formattedTags = computed(() => info().tags?.join(', '));
+</script>
+
+<template>
+  <div class="post-date">{{ formattedDate() }}</div>
+  <div class="post-read-time">{{ formattedReadTime() }}</div>
+  <div class="post-music">
+    <span>Ouvindo </span>
+    <a [href]="info().music.url" rel="noopener noreferrer" target="_blank">
+      {{ info().music.title }}
+    </a>
+  </div>
+  <div class="post-tags">{{ formattedTags() }}</div>
+</template>
+
+<style>
+  :host {
+    display: block;
+  }
+</style>
