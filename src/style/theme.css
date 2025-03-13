@@ -16,6 +16,7 @@
 
   --font-serif: 'Merriweather', serif;
   --font-sans-serif: 'Open Sans', sans-serif;
+  --font-size: 16px;
 }
 body.dark {
   --color1: rgb(30 30 30);
