@@ -8,7 +8,7 @@
 
 <template>
   <div class="thumbnail">
-    <img [ngSrc]="image()" [alt]="alt()" width="2400" height="1600" />
+    <img [ngSrc]="image()" [alt]="alt()" width="1080" height="450" loading="eager" />
   </div>
   <div class="paper-box">
     <header class="paper-header">

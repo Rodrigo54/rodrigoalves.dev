@@ -6,7 +6,7 @@
 </script>
 
 <template>
-  <img ngSrc="/img/profile-photo.jpg" [alt]="alt()" width="200" height="200" />
+  <img ngSrc="/img/profile-photo.jpg" [alt]="alt()" width="200" height="200" loading="eager" />
 </template>
 
 <style>
