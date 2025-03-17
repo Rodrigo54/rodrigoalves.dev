@@ -1,0 +1,4 @@
+vps.rodrigoalves.dev {
+  root * /var/www/blog
+  file_server
+}

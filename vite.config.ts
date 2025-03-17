@@ -20,8 +20,23 @@ export default defineConfig(({ mode }) => ({
       content: {
         highlighter: 'shiki',
         shikiOptions: {
+          highlight: {
+            theme: 'dark-plus',
+            // themes: {
+            //   light: 'light-plus',
+            //   dark: 'dark-plus',
+            // },
+            // transformers: [
+            //   {
+            //     pre(node) {
+            //       node.properties['style'] = "background-color: var(--code-bg, white); color: var(--code-fg, black);";
+            //     }
+            //   }
+            // ],
+          },
           highlighter: {
-            additionalLangs: ['shellscript'],
+            themes: ['light-plus', 'dark-plus'],
+            additionalLangs: ['shellscript', 'bat'],
           },
         },
       },
