@@ -6,7 +6,7 @@
   import { provideIcons } from '@ng-icons/core';
   import { input, computed } from '@angular/core';
   import { FrontMatter } from '@utils/frontmatter';
-  import { format } from 'date-fns';
+  import { format, formatISO } from 'date-fns';
   import ptBR from 'date-fns/locale/pt-BR';
   import {
     faCalendar,
@@ -23,6 +23,7 @@
     const prefix = ['sábado', 'domingo'].includes(dayOfWeek) ? 'no' : 'na';
     return format(info().createAt, `'Postado ${prefix}' EEEE, d 'de' MMMM 'de' yyyy`, { locale: ptBR });
   });
+  const formattedDateISO = computed(() => formatISO(info().createAt));
   const formattedReadTime = computed(() => {
     const { minutes } = info().timeToRead;
     return `Leia em ${minutes} minuto${minutes > 1 ? 's' : ''}`;
@@ -42,7 +43,7 @@
 <template>
   <div class="post-date">
     <ng-icon name="faCalendar" />
-    <span>{{ formattedDate() }}</span>
+    <time [attr.datetime]="formattedDateISO()">{{ formattedDate() }}</time>
   </div>
   <div class="post-read-time">
     <ng-icon name="faClock" />
@@ -67,17 +68,22 @@
   :host {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    font-size: 1rem;
-    font-family: var(--font-serif);
-    --ng-icon__size: 1.1rem;
+    gap: calc(var(--post-info__font-size, 1rem) - 0.4rem);
+    --ng-icon__size: calc(var(--post-info__font-size, 1rem) + 0.1rem);
     div {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
-      gap: 1rem;
+      gap: var(--post-info__font-size, 1rem);
+      * {
+        font-size: var(--post-info__font-size, 1rem);
+        font-family: var(--font-serif);
+      }
     }
+  }
+  ng-icon  {
+    vertical-align: text-top;
   }
   .post-music {
     a {

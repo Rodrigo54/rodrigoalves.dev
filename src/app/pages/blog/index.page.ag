@@ -1,37 +1,38 @@
 <script lang="ts">
   // @ts-nocheck
-  import { RouterLink } from '@angular/router' with { analog: 'imports' };
+
   import { JsonPipe } from '@angular/common' with { analog: 'imports' };
+  import postItem from '@components/post-item.ag' with { analog: 'imports' };
   import { frontMatterSignal } from '@utils/frontmatter';
 
   const posts = frontMatterSignal('all');
 </script>
 
 <template>
-  <h1>Blog Posts</h1>
-  @for (post of posts(); track post.createAt) {
-    <a [routerLink]="['/blog/', post.slug]">
-      <h2 class="post__title">{{ post.title }}</h2>
-      <p class="post__desc">{{ post.description }}</p>
-    </a>
-  }
+  <h1>Artigos</h1>
+  <div class="posts">
+    @for (post of posts(); track post.createAt) {
+      <post-item [info]="post" />
+    }
+  </div>
 </template>
 
 <style>
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--color3-light);
-  }
-  a {
-    text-align: left;
+  :host {
     display: block;
-    margin-bottom: 2rem;
-    color: var(--color3-light);
+    padding: 20px;
   }
 
-  .post__title,
-  .post__desc {
-    margin: 0;
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--color3);
+  }
+
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+    gap: 20px;
   }
 </style>

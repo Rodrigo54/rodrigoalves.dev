@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { NgOptimizedImage } from '@angular/common' with { analog: 'imports' };
   import { input } from '@angular/core';
 
   const alt = input('Featured Image');
@@ -8,7 +7,7 @@
 
 <template>
   <div class="thumbnail">
-    <img [ngSrc]="image()" [alt]="alt()" width="1080" height="450" loading="eager" />
+    <img [src]="image()" [alt]="alt()" width="1920" height="1080" loading="eager" fetchPriority="high" />
   </div>
   <div class="paper-box">
     <header class="paper-header">
@@ -34,6 +33,7 @@
     overflow: hidden;
     position: relative;
     img {
+      aspect-ratio: 16 / 9;
       object-fit: cover;
       position: absolute;
       height: 100%;
