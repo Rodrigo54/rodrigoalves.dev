@@ -2,7 +2,6 @@ import { ContentFile, injectContent, injectContentFiles } from '@analogjs/conten
 import { inject, Injector, runInInjectionContext, Signal, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
-import readingTime, { Stats } from '@danieldietrich/reading-time';
 
 type AdjacentPosts = { nextPost?: FrontMatter, prevPost?: FrontMatter };
 
@@ -17,7 +16,10 @@ export interface FrontMatter {
   tags: string[];
   createAt: string;
   body?: string;
-  timeToRead?: Stats;
+  timeToRead: {
+    minutes: number;
+    words: number;
+  };
   fullPath: string;
   music: {
     title: string;
@@ -92,7 +94,10 @@ export function makeFrontMatter(data?: ContentFile, adjacentPosts?: AdjacentPost
     createAt: data.attributes['createAt'] ?? new Date().toISOString(),
     body: data.content as string,
     fullPath: data.filename,
-    timeToRead: readingTime(data.content as string ?? '', { wordsPerMinute: 250 }),
+    timeToRead: data.attributes['timeToRead'] ?? {
+      words: 0,
+      minutes: 0,
+    },
     music: data.attributes['music'] ?? {
       title: '',
       url: '',
