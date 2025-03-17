@@ -99,6 +99,7 @@ section {
   display: block;
 }
 body {
+  color-scheme: light dark;
   line-height: 1;
   letter-spacing: 0.04rem;
   font-size: var(--font-size);
@@ -172,13 +173,6 @@ main analog-markdown {
   p {
     margin: 0 auto 0.4rem;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    margin: 2rem auto 1rem;
-  }
   ul,
   ol {
     list-style: decimal;
@@ -225,6 +219,7 @@ main analog-markdown {
   h3,
   h4,
   h5 {
+    margin: 2rem auto 1rem;
     font-family: var(--font-serif);
     font-weight: 400;
     letter-spacing: 0.05rem;
@@ -268,5 +263,8 @@ main analog-markdown {
     &:hover {
       border-bottom: 1px dashed var(--color3-light);
     }
+  }
+  pre.shiki {
+    margin: 1rem auto;
   }
 }
