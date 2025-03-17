@@ -57,6 +57,7 @@
     color: var(--color2-contrast);
     background: var(--color2);
     padding: 25px;
+    padding-bottom: 0px;
     h1 {
       font-family: var(--font-serif);
       font-weight: 800;

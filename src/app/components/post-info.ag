@@ -1,10 +1,18 @@
 <script lang="ts">
   // @ts-nocheck
+  import { NgIcon } from '@ng-icons/core' with { analog: 'imports' };
+  import { RouterLink } from '@angular/router' with { analog: 'imports' };
   import { NgOptimizedImage } from '@angular/common' with { analog: 'imports' };
+  import { provideIcons } from '@ng-icons/core';
   import { input, computed } from '@angular/core';
   import { FrontMatter } from '@utils/frontmatter';
   import { format } from 'date-fns';
   import ptBR from 'date-fns/locale/pt-BR';
+  import {
+    faCalendar,
+    faClock,
+  } from '@ng-icons/font-awesome/regular';
+  import { faSolidMusic, faSolidTags } from '@ng-icons/font-awesome/solid';
 
   type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
 
@@ -20,22 +28,111 @@
     return `Leia em ${minutes} minuto${minutes > 1 ? 's' : ''}`;
   });
   const formattedTags = computed(() => info().tags?.join(', '));
+
+   defineMetadata({
+    viewProviders: [provideIcons({
+      faCalendar,
+      faClock,
+      faSolidMusic,
+      faSolidTags,
+    })],
+  });
 </script>
 
 <template>
-  <div class="post-date">{{ formattedDate() }}</div>
-  <div class="post-read-time">{{ formattedReadTime() }}</div>
+  <div class="post-date">
+    <ng-icon name="faCalendar" />
+    <span>{{ formattedDate() }}</span>
+  </div>
+  <div class="post-read-time">
+    <ng-icon name="faClock" />
+    <span>{{ formattedReadTime() }}</span>
+  </div>
   <div class="post-music">
+    <ng-icon name="faSolidMusic" />
     <span>Ouvindo </span>
     <a [href]="info().music.url" rel="noopener noreferrer" target="_blank">
       {{ info().music.title }}
     </a>
   </div>
-  <div class="post-tags">{{ formattedTags() }}</div>
+  <div class="post-tags">
+    <ng-icon name="faSolidTags" />
+    @for (tag of info().tags; track tag) {
+      <a [class]="tag" [routerLink]="['/blog/tags/', tag]">{{ tag }}</a>
+    }
+  </div>
 </template>
 
 <style>
   :host {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-size: 1rem;
+    font-family: var(--font-serif);
+    --ng-icon__size: 1.1rem;
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1rem;
+    }
+  }
+  .post-music {
+    a {
+      color: var(--color3-light);
+      transition: color 0.5s;
+      &:hover {
+        border-bottom: 1px dashed var(--color3-light);
+      }
+    }
+
+  }
+  .post-tags {
+    --tag-color: hsl(0, 100%, 70%);
+    a {
+      font-family: var(--font-serif);
+      text-transform: capitalize;
+      font-weight: 800;
+      font-size: 0.8rem;
+      border-width: 1px;
+      border-style: solid;
+      border-color:  var(--tag-color);
+      color: var(--tag-color);
+      border-radius: 80px;
+      padding: 0.3rem 1rem;
+      background-color: hsl(from var(--tag-color) h s 95%);
+      @media (prefers-color-scheme: dark) {
+        background-color: hsl(from var(--tag-color) h s 15%);
+      }
+      &:hover {
+        border-color: var(--tag-color);
+        background-color: var(--tag-color);
+        color: light-dark(white, black);
+      }
+    }
+    .angular {
+      --tag-color: hsl(348, 100%, 61%);
+    }
+    .nodejs {
+      --tag-color: hsl(128, 100%, 30%);
+      @media (prefers-color-scheme: dark) {
+        --tag-color: hsl(128, 100%, 40%);
+      }
+    }
+    .typescript {
+      --tag-color: hsl(204, 86%, 53%);
+    }
+    .jekyll {
+      --tag-color: hsl(48, 40%, 45%);
+      @media (prefers-color-scheme: dark) {
+        --tag-color: hsl(48, 100%, 50%);
+      }
+    }
+    .php {
+      --tag-color: hsl(200, 100%, 50%);
+      text-transform: uppercase;
+    }
   }
 </style>
