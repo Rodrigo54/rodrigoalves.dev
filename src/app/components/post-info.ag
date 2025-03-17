@@ -30,7 +30,9 @@
   });
   const formattedTags = computed(() => info().tags?.join(', '));
 
-   defineMetadata({
+  const music = computed(() => info().music ?? { title: '', url: '' });
+
+  defineMetadata({
     viewProviders: [provideIcons({
       faCalendar,
       faClock,
@@ -52,8 +54,8 @@
   <div class="post-music">
     <ng-icon name="faSolidMusic" />
     <span>Ouvindo </span>
-    <a [href]="info().music.url" rel="noopener noreferrer" target="_blank">
-      {{ info().music.title }}
+    <a [href]="music().url" rel="noopener noreferrer" target="_blank">
+      {{ music().title }}
     </a>
   </div>
   <div class="post-tags">
