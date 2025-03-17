@@ -5,7 +5,7 @@ createAt: '2015-12-07 16:30:15 -0300'
 author: 'Rodrigo Alves'
 featuredImage: '/img/post-bg-02.jpg'
 comments: true
-tags: ['PHP']
+tags: ['php']
 music:
   title: "Don't Stop - Knightlife"
   url: 'https://open.spotify.com/track/377e3RYbkuNSpZkV0yEQKE'

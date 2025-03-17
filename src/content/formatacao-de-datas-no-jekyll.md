@@ -20,8 +20,8 @@ Jekyll (gerador de site estático) usa do Shopify o
 Para ver as datas é usando a tag `{{ page.date }}` fornecida pelo Liquid.
 Com nenhuma outra alteração, as datas produzidas são algo como:
 
-```
-2015-12-17 09:00:00 -0300
+```html
+<strong>2015-12-17 09:00:00 -0300</strong>
 ```
 
 Se houver projetos que usam esse formato, eles são poucos e não se relacionam.
