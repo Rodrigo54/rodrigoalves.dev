@@ -6,11 +6,11 @@
   import { JsonPipe } from '@angular/common' with { analog: 'imports' };
   import { toSignal } from '@angular/core/rxjs-interop';
   import { injectContent } from '@analogjs/content';
+  import { frontMatterSignal } from '@utils/frontmatter';
 
   import { postMetaResolver, postTitleResolver } from './resolvers';
   import { RouteMeta } from '@analogjs/router';
-  // @ts-ignore
-  import { frontMatterSignal } from '@utils/frontmatter';
+
 
   const post = frontMatterSignal('slug');
 

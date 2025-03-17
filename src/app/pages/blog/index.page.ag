@@ -1,7 +1,7 @@
 <script lang="ts">
+  // @ts-nocheck
   import { RouterLink } from '@angular/router' with { analog: 'imports' };
   import { JsonPipe } from '@angular/common' with { analog: 'imports' };
-  // @ts-ignore
   import { frontMatterSignal } from '@utils/frontmatter';
 
   const posts = frontMatterSignal('all');
