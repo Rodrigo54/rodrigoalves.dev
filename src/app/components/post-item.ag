@@ -35,6 +35,7 @@
       'image info';
     gap: 10px;
     color: var(--color2-contrast);
+    background: hsl(from var(--color1-shade) h s l);
   }
   .title {
     grid-area: title;
@@ -52,11 +53,17 @@
   }
   .image {
     grid-area: image;
+    overflow: hidden;
     & img {
       object-fit: cover;
       width: 100%;
       height: 100%;
       aspect-ratio: 16 / 9;
+      &:hover {
+        filter: brightness(0.8);
+        transform: scale(1.1);
+        transition: all 0.2s ease-in-out;
+      }
     }
     &:hover + .title {
       h2, p {
