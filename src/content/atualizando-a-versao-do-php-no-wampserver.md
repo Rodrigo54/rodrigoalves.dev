@@ -9,6 +9,9 @@ tags: ['php']
 music:
   title: 'There Might Be Coffee - deadmau5'
   url: 'https://open.spotify.com/track/7rwgvDDkdHTBMAruB2Lr3Z'
+timeToRead:
+  minutes: 1
+  words: 223
 ---
 
 Siga os passos abaixo para atualizar o php no Wampserver

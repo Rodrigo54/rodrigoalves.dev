@@ -9,6 +9,9 @@ tags: ['nodejs', 'typescript']
 music:
   title: 'Are You Bored Yet? (feat. Clairo) - Wallows'
   url: 'https://open.spotify.com/track/57RA3JGafJm5zRtKJiKPIm?si=26f8d6a59e5349bc'
+timeToRead:
+  minutes: 3
+  words: 620
 ---
 
 Nos últimos anos, o NestJS tem se destacado como um dos principais frameworks para o desenvolvimento de backend em Node.js. Com sua arquitetura modular e escalável, bem como sua poderosa CLI e suporte nativo para testes, o NestJS tem atraído a atenção de muitos desenvolvedores Node.js.

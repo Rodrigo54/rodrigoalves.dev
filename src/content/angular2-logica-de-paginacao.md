@@ -9,6 +9,9 @@ tags: ['angular', 'typescript']
 music:
   title: 'Strobe - deadmau5'
   url: 'https://open.spotify.com/track/6c9EGVj5CaOeoKd9ecMW1U'
+timeToRead:
+  minutes: 5
+  words: 1040
 ---
 
 ## Lógica de paginação do Google

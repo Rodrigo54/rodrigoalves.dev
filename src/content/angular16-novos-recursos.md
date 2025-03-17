@@ -9,6 +9,9 @@ tags: ['angular']
 music:
   title: 'Bon Appétit - Katy Perry ft Migos'
   url: 'https://open.spotify.com/track/4rHmKlFRiFzabiVO6e9w2e?si=1489aeb041fc42a9'
+timeToRead:
+  minutes: 8
+  words: 1660
 ---
 
 Com o Angular 16 muitos desenvolvedores estão animados com as novas funcionalidades e melhorias que vieram com essa nova versão.
