@@ -31,6 +31,7 @@
   const formattedTags = computed(() => info().tags?.join(', '));
 
   const music = computed(() => info().music ?? { title: '', url: '' });
+  const tags = computed(() => info().tags ?? []);
 
   defineMetadata({
     viewProviders: [provideIcons({
@@ -55,12 +56,12 @@
     <ng-icon name="faSolidMusic" />
     <span>Ouvindo </span>
     <a [href]="music().url" rel="noopener noreferrer" target="_blank">
-      {{ music().title }}
+      <span>{{ music().title }}</span>
     </a>
   </div>
   <div class="post-tags">
     <ng-icon name="faSolidTags" />
-    @for (tag of info().tags; track tag) {
+    @for (tag of tags(); track tag) {
       <a [class]="tag" [routerLink]="['/blog/tags/', tag]">{{ tag }}</a>
     }
   </div>

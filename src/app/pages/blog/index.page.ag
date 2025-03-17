@@ -1,7 +1,5 @@
 <script lang="ts">
   // @ts-nocheck
-
-  import { JsonPipe } from '@angular/common' with { analog: 'imports' };
   import postItem from '@components/post-item.ag' with { analog: 'imports' };
   import { frontMatterSignal } from '@utils/frontmatter';
 

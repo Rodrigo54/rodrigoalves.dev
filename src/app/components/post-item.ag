@@ -13,55 +13,64 @@
 </script>
 
 <template>
- <a [routerLink]="['/blog', info().slug]">
-   <img [src]="image()" [alt]="info().title" width="1920" height="1080" loading="eager" fetchPriority="high" />
-   <h2>{{ info().title }}</h2>
-   <p>{{ description() }}</p>
-   <post-info [info]="info()" />
- </a>
+  <a class="image" [routerLink]="['/blog', info().slug]">
+    <img [src]="image()" [alt]="info().title" width="1920" height="1080" loading="eager" fetchPriority="high" />
+  </a>
+  <a class="title" [routerLink]="['/blog', info().slug]">
+    <h2>{{ info().title }}</h2>
+    <p>{{ description() }}</p>
+  </a>
+  <post-info [info]="info()" />
 </template>
 
 <style>
   :host {
-    display: block;
     width: 100%;
     height: 100%;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'image title'
+      'image info';
+    gap: 10px;
+    color: var(--color2-contrast);
   }
-  a {
+  .title {
+    grid-area: title;
     width: 100%;
     height: 100%;
     text-decoration: none;
-    color: var(--color2-contrast);
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    grid-template-rows: auto auto 1fr;
-    grid-template-areas:
-      'image title'
-      'image description'
-      'image info';
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     &:hover {
-      h2 {
+      h2, p {
         color: var(--color3);
       }
     }
   }
-  img {
+  .image {
     grid-area: image;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 16 / 9;
+    & img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16 / 9;
+    }
+    &:hover + .title {
+      h2, p {
+        color: var(--color3);
+      }
+    }
   }
 
   h2 {
-    grid-area: title;
     font-size: 1.5rem;
     margin: 0px;
   }
 
   p {
-    grid-area: description;
     color: hsl(from var(--color1-contrast) h s 80%);
     line-height: 1.3;
     height: calc(1.3 * 2 * 1rem);
