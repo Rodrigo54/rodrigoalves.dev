@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     analog({
       liveReload: false,
+      ssr: false,
       static: true,
       content: {
         highlighter: 'shiki',
