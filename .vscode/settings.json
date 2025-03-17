@@ -18,5 +18,8 @@
     {
       "text": "Use conventional commit message format. Add lots of emojis. No exceed 80 caracteres. Use emojis list ['✨ feat', '🔥 fix', '🛠️ chore', '🐛 bug', '📦 build', '⚙️ config', '🚀 release', '📚 docs', '🧪 test', '💄 style', '🚀 deploy']. For example: ✨ feat(any-component): add new feature"
     }
+  ],
+  "cSpell.words": [
+    "webp"
   ]
 }
