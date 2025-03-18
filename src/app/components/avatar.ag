@@ -11,10 +11,9 @@
 
 <style>
   :host {
-    --avatar-size: 9rem;
     display: block;
-    height: var(--avatar-size);
-    width: var(--avatar-size);
+    height: var(--avatar-size, 9rem);
+    width: var(--avatar-size, 9rem);
     margin: auto;
     border-radius: 50%;
     position: relative;

@@ -44,7 +44,7 @@
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     &:hover {
       h2, p {
         color: var(--color3);
@@ -73,7 +73,9 @@
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    line-height: 1.2;
     margin: 0px;
   }
 

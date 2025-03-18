@@ -51,6 +51,12 @@
     grid-template-areas: 'top-icons' '.' 'bottom-icons';
     height: 100%;
     padding: 2rem 0.8rem;
+    @media (max-width: 1170px) {
+      grid-template-columns: 2rem 1fr auto;
+      grid-template-rows: 1fr;
+      grid-template-areas: 'top-icons . bottom-icons';
+      padding: 0.8rem 2rem;
+    }
 
   }
   .top-icons, .bottom-icons {
@@ -59,6 +65,10 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    @media (max-width: 1170px) {
+      flex-flow: row nowrap;
+      gap: 2rem;
+    }
   }
   .top-icons {
     grid-area: top-icons;
