@@ -34,8 +34,6 @@
       'image title'
       'image info';
     gap: 10px;
-    color: var(--color2-contrast);
-    background: hsl(from var(--color1-shade) h s l);
   }
   .title {
     grid-area: title;
@@ -47,7 +45,7 @@
     gap: 8px;
     &:hover {
       h2, p {
-        color: var(--color3);
+        color: var(--color3-light);
       }
     }
   }
@@ -67,12 +65,13 @@
     }
     &:hover + .title {
       h2, p {
-        color: var(--color3);
+        color: var(--color3-light);
       }
     }
   }
 
   h2 {
+    color: var(--color1-contrast);
     font-family: var(--font-serif);
     font-size: 1.2rem;
     line-height: 1.2;
@@ -91,6 +90,7 @@
   }
 
   post-info {
+    color: var(--color3-contrast);
     grid-area: info;
     --post-info__font-size: 0.8rem;
   }
