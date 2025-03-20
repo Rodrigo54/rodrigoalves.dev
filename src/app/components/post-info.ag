@@ -104,7 +104,7 @@
       font-family: var(--font-serif);
       text-transform: capitalize;
       font-weight: 800;
-      font-size: 0.8rem;
+      font-size: calc(var(--post-info__font-size, 1rem) - 0.1rem);
       border-width: 1px;
       border-style: solid;
       border-color:  var(--tag-color);
@@ -115,7 +115,7 @@
       @media (prefers-color-scheme: dark) {
         background-color: hsl(from var(--tag-color) h s 15%);
       }
-      &:hover {
+      &:hover, &:focus {
         border-color: var(--tag-color);
         background-color: var(--tag-color);
         color: light-dark(white, black);
