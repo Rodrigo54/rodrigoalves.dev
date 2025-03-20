@@ -18,12 +18,13 @@
 
   const info = input.required<Info>();
 
-  const formattedDate = computed(() => {
+  const formattedDateISO = computed(() => formatISO(info().createAt));
+  const formattedDateShort = computed(() => format(info().createAt, `d 'de' MMMM 'de' yyyy`, { locale: ptBR }));
+  const formattedDateLong = computed(() => {
     const dayOfWeek = format(info().createAt, 'EEEE', { locale: ptBR });
     const prefix = ['sábado', 'domingo'].includes(dayOfWeek) ? 'no' : 'na';
     return format(info().createAt, `'Postado ${prefix}' EEEE, d 'de' MMMM 'de' yyyy`, { locale: ptBR });
   });
-  const formattedDateISO = computed(() => formatISO(info().createAt));
   const formattedReadTime = computed(() => {
     const { minutes } = info().timeToRead;
     return `Leia em ${minutes} minuto${minutes > 1 ? 's' : ''}`;
@@ -46,7 +47,8 @@
 <template>
   <div class="post-date">
     <ng-icon name="faCalendar" />
-    <time [attr.datetime]="formattedDateISO()">{{ formattedDate() }}</time>
+    <time [attr.datetime]="formattedDateISO()" class="post-date-long">{{ formattedDateLong() }}</time>
+    <time [attr.datetime]="formattedDateISO()" class="post-date-short">{{ formattedDateShort() }}</time>
   </div>
   <div class="post-read-time">
     <ng-icon name="faClock" />
@@ -71,29 +73,60 @@
   :host {
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 12px;
     --ng-icon__size: calc(var(--post-info__font-size, 1rem) + 0.1rem);
     div {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
-      gap: 9px;
+      gap: 12px;
+      ng-icon  {
+        flex: 0 0 var(--ng-icon__size);
+        vertical-align: text-top;
+      }
       * {
         font-size: var(--post-info__font-size, 1rem);
         font-family: var(--font-serif);
       }
     }
   }
-  ng-icon  {
-    vertical-align: text-top;
+  .post-date{
+    .post-date-short {
+      display: none;
+    }
+    .post-date-long {
+      display: block;
+    }
+     @media (max-width: 425px) {
+      .post-date-long {
+        display: none;
+      }
+      .post-date-short {
+        display: block;
+      }
+    }
   }
+
   .post-music {
-    a {
+     a {
       color: var(--color3-light);
       transition: color 0.5s;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
       &:hover {
-        border-bottom: 1px dashed var(--color3-light);
+        text-decoration: underline dashed;
+        text-decoration-thickness: 0.1rem;
+        text-underline-offset: 0.25rem;
+      }
+    }
+    @media (max-width: 425px) {
+      & > span {
+        display: none;
       }
     }
 

@@ -4,13 +4,14 @@
   import { inject, signal } from '@angular/core';
   import { DOCUMENT } from '@angular/common';
   import { provideIcons } from '@ng-icons/core';
-  import { iconoirHome, iconoirArrowUp, iconoirCell2x2, iconoirTableRows, iconoirPalette } from '@ng-icons/iconoir';
+  import { iconoirArrowUp, iconoirCell2x2, iconoirTableRows, iconoirPalette } from '@ng-icons/iconoir';
+  import { boxHomeSolid } from '@ng-icons/boxicons/solid';
 
   const document = inject(DOCUMENT);
 
   defineMetadata({
     viewProviders: [provideIcons({
-      iconoirHome,
+      boxHomeSolid,
       iconoirArrowUp,
       iconoirCell2x2,
       iconoirTableRows,
@@ -32,7 +33,7 @@
 
 <template>
   <div class="top-icons">
-    <ng-icon name="iconoirHome" [routerLink]="['/blog']" />
+    <ng-icon name="boxHomeSolid" [routerLink]="['/blog']" />
   </div>
   <div class="bottom-icons">
     <ng-icon (click)="toTop()" name="iconoirPalette" />
