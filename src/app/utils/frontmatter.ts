@@ -61,10 +61,10 @@ export function frontMatterSignal<T extends 'all' | 'slug' >(type = 'all' as T, 
 export function makeFrontMatter(data?: ContentFile, adjacentPosts?: AdjacentPosts): FrontMatter {
   if (!data?.attributes) {
     return {
-      title: 'Default Title',
-      description: '',
+      title: 'Blog',
+      description: 'Sou um Full Stack Web Developer que gosta de aprender novas formas de programar. Tento me esforçar para ser um bom artista na web.',
       slug: '',
-      author: '',
+      author: 'Rodrigo Alves',
       createAt: new Date().toISOString(),
       music: {
         title: '',
@@ -75,7 +75,7 @@ export function makeFrontMatter(data?: ContentFile, adjacentPosts?: AdjacentPost
         words: 0,
         minutes: 0,
       },
-      featuredImage: '',
+      featuredImage: '/img/snapshot.jpg',
       comments: false,
       tags: [],
       nextPost: null,

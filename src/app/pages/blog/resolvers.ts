@@ -25,6 +25,7 @@ export const postMetaResolver: ResolveFn<MetaTag[]> = (route) => {
   const postAttributes = injectActivePostAttributes(route);
   const base = import.meta.env['VITE_ANALOG_BASE_URL'] || 'http://localhost:3000';
   const imageUrl = `${base}${postAttributes.featuredImage}`;
+  const siteTitle = 'Rodrigo Alves'; // Adjust as needed
 
   return [
     {
@@ -50,6 +51,26 @@ export const postMetaResolver: ResolveFn<MetaTag[]> = (route) => {
     {
       property: 'twitter:image',
       content: imageUrl,
+    },
+    {
+      property: 'og:type',
+      content: 'website',
+    },
+    {
+      property: 'og:site_name',
+      content: siteTitle,
+    },
+    {
+      property: 'twitter:card',
+      content: 'summary_large_image',
+    },
+    {
+      property: 'twitter:creator',
+      content: postAttributes.author ?? '@rodrigo54',
+    },
+    {
+      property: 'twitter:title',
+      content: postAttributes.title,
     },
   ];
 };

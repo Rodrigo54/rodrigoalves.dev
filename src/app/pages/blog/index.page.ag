@@ -2,8 +2,15 @@
   // @ts-nocheck
   import postItem from '@components/post-item.ag' with { analog: 'imports' };
   import { frontMatterSignal } from '@utils/frontmatter';
+  import { postMetaResolver, postTitleResolver } from './resolvers';
+  import { RouteMeta } from '@analogjs/router';
 
   const posts = frontMatterSignal('all');
+
+  export const routeMeta: RouteMeta = {
+    title: postTitleResolver,
+    meta: postMetaResolver,
+  };
 </script>
 
 <template>
