@@ -112,6 +112,7 @@
      a {
       color: var(--color3-light);
       transition: color 0.5s;
+      line-height: 1.3;
       display: -webkit-box;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
