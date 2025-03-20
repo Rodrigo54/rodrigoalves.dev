@@ -14,7 +14,6 @@
 </script>
 
 <template>
-  <h1>Artigos</h1>
   <div class="posts">
     @for (post of posts(); track post.createAt) {
       <post-item [info]="post" />
