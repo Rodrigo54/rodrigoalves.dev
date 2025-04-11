@@ -4,7 +4,8 @@
     "source.fixAll.eslint": "explicit"
   },
   "files.associations": {
-    "*.ag": "analog"
+    "*.ag": "analog",
+    "*.txt": "plaintext",
   },
   "material-icon-theme.files.customClones": [
     {
@@ -18,6 +19,12 @@
       "base": "angular",
       "color": "pink-400",
       "fileExtensions": ["ng.ts"]
+    },
+    {
+      "name": "angular-pages",
+      "base": "angular",
+      "color": "green-600",
+      "fileExtensions": ["page.ts"]
     },
   ],
   "github.copilot.chat.commitMessageGeneration.instructions": [
