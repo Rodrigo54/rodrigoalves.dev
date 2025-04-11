@@ -1,6 +1,6 @@
 <script lang="ts">
   // @ts-nocheck
-  import avatar from '@components/avatar.ag' with { analog: 'imports' };
+  import avatar from '@components/avatar.ng' with { analog: 'imports' };
   import { RouterLink } from '@angular/router' with { analog: 'imports' };
 
   const userInfo = {

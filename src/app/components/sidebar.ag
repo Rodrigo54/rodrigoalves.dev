@@ -1,7 +1,7 @@
 <script lang="ts">
   // @ts-nocheck
   import profile from '@components/profile.ag' with { analog: 'imports' };
-  import navigation from '@components/navigation.ag' with { analog: 'imports' };
+  import navigation from '@components/navigation.ng' with { analog: 'imports' };
   import socialLinks from '@components/social-links.ag' with { analog: 'imports' };
 </script>
 

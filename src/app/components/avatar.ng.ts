@@ -1,0 +1,24 @@
+import { Component, input } from '@angular/core';
+
+@Component({
+  selector: 'avatar',
+  template: `
+    <img src="/img/profile-photo.jpg" [alt]="alt()" width="200" height="200" loading="eager" />
+  `,
+  styles: [
+    `
+      :host {
+        display: block;
+        height: var(--avatar-size, 9rem);
+        width: var(--avatar-size, 9rem);
+        margin: auto;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+      }
+    `,
+  ],
+})
+export default class Avatar {
+  alt = input('Profile Photo');
+}
