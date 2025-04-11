@@ -8,10 +8,16 @@
   },
   "material-icon-theme.files.customClones": [
     {
-      "name": "angular-provider",
+      "name": "angular-analog",
       "base": "angular",
       "color": "red-400",
       "fileExtensions": ["ag", "analog"]
+    },
+    {
+      "name": "angular-inline",
+      "base": "angular",
+      "color": "pink-400",
+      "fileExtensions": ["ng.ts"]
     },
   ],
   "github.copilot.chat.commitMessageGeneration.instructions": [
