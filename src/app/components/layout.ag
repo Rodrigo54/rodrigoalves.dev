@@ -1,7 +1,7 @@
 <script lang="ts">
   // @ts-nocheck
   import sidebar from '@components/sidebar.ag' with { analog: 'imports' };
-  import menubar from '@components/menubar.ag' with { analog: 'imports' };
+  import menubar from '@components/menubar.ng' with { analog: 'imports' };
 </script>
 
 <template>
