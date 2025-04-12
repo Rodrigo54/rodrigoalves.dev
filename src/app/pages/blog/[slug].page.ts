@@ -37,13 +37,7 @@ export const routeMeta: RouteMeta = {
       <p>Loading...</p>
     }
   `,
-  styles: [
-    `
-      .post__image {
-        max-height: 40vh;
-      }
-    `,
-  ],
+  styles: [``],
 })
 export default class BlogSlugPage {
   post = frontMatterSignal('slug');

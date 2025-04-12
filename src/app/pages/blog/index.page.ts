@@ -33,7 +33,7 @@ export const routeMeta: RouteMeta = {
     .posts {
       display: grid;
       grid-template-columns: 1fr;
-      grid-auto-rows: 270px;
+      grid-auto-rows: 230px;
       gap: 20px;
       @media (max-width: 768px) {
         grid-auto-rows: 1fr;
