@@ -49,7 +49,7 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
     :host {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 9px;
       --ng-icon__size: calc(var(--post-info__font-size, 1rem) + 0.1rem);
       div {
         display: flex;
@@ -87,7 +87,7 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
       a {
         color: var(--color3-light);
         transition: color 0.5s;
-        line-height: 1.4;
+        line-height: 1.2;
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;

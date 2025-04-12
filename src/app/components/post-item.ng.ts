@@ -29,7 +29,7 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
       grid-template-areas:
         'image title'
         'image info';
-      gap: 12px;
+      gap: 12px 22px;
       @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
         grid-template-rows: 200px auto auto;
