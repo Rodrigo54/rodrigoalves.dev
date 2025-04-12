@@ -47,11 +47,6 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
       display: flex;
       flex-direction: column;
       gap: 12px;
-      &:hover {
-        h2, p {
-          color: var(--color3-light);
-        }
-      }
     }
     .image {
       grid-area: image;
@@ -61,23 +56,14 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
         width: 100%;
         height: 100%;
         aspect-ratio: 16 / 9;
-        &:hover {
-          filter: brightness(0.8);
-          transform: scale(1.1);
-          transition: all 0.2s ease-in-out;
-        }
-      }
-      &:hover + .title {
-        h2, p {
-          color: var(--color3-light);
-        }
       }
     }
     h2 {
       color: var(--color1-contrast);
       font-family: var(--font-serif);
-      font-size: 1.6rem;
-      line-height: 1.3;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.2;
       margin: 0px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
@@ -87,7 +73,7 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
     }
     p {
       color: hsl(from var(--color1-contrast) h s 80%);
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       line-height: 1.3;
       height: calc(1.3 * 2 * 1.3rem);
       display: -webkit-box;
@@ -100,6 +86,16 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
       color: var(--color3-contrast);
       grid-area: info;
       --post-info__font-size: 1rem;
+    }
+    :is(.image, .title):hover {
+      img {
+        filter: brightness(0.8);
+        transform: scale(1.1);
+        transition: all 0.2s ease-in-out;
+      }
+      h2, p {
+        color: var(--color3-light);
+      }
     }
   `],
 })
