@@ -1,0 +1,37 @@
+import { Component } from '@angular/core';
+import Navigation from '@app/components/navigation.ng';
+import Profile from '@app/components/profile.ng';
+import SocialLinks from '@app/components/social-links.ng';
+
+@Component({
+  selector: 'sidebar',
+  imports: [Profile, SocialLinks, Navigation],
+  template: `
+    <profile />
+    <social-links />
+    <navigation />
+  `,
+  styles: [
+    `:host {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 2rem;
+    }
+    @media (max-width: 1170px) {
+      :host {
+        align-items: flex-start;
+        justify-content: center;
+        padding: 1rem;
+      }
+      app-navigation, app-social-links {
+        display: none;
+        visibility: hidden;
+      }
+    }`
+  ]
+})
+export default class Sidebar {}

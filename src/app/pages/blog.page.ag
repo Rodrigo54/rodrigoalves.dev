@@ -1,7 +1,7 @@
 <script lang="ts">
   // @ts-nocheck
   import { RouterOutlet } from '@angular/router' with { analog: 'imports' };
-  import layout from '@components/layout.ag' with { analog: 'imports' };
+  import layout from '@components/layout.ng' with { analog: 'imports' };
 </script>
 
 <template>

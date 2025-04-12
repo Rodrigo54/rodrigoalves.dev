@@ -1,10 +1,10 @@
+import { MarkdownComponent } from '@analogjs/content';
+import { RouteMeta } from '@analogjs/router';
 import { Component } from '@angular/core';
 import PaperLayout from '@components/paper-layout.ng';
 import PostInfo from '@components/post-info.ng';
-import { MarkdownComponent } from '@analogjs/content';
 import { frontMatterSignal } from '@utils/frontmatter';
 import { postMetaResolver, postTitleResolver } from './resolvers';
-import { RouteMeta } from '@analogjs/router';
 
 export const routeMeta: RouteMeta = {
   title: postTitleResolver,
