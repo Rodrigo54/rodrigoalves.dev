@@ -24,7 +24,7 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
       width: 100%;
       height: 100%;
       display: grid;
-      grid-template-columns: 1fr 2.2fr;
+      grid-template-columns: 1fr 2.6fr;
       grid-template-rows: auto 1fr;
       grid-template-areas:
         'image title'
