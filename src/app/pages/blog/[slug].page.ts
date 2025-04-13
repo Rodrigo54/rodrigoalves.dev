@@ -1,8 +1,8 @@
 import { MarkdownComponent } from '@analogjs/content';
 import { RouteMeta } from '@analogjs/router';
 import { Component } from '@angular/core';
-import PaperLayout from '@components/paper-layout.ng';
-import PostInfo from '@components/post-info.ng';
+import PaperLayout from '@app/shared/paper-layout.ng';
+import PostInfo from '@app/shared/post-info.ng';
 import { frontMatterSignal } from '@utils/frontmatter';
 import { postMetaResolver, postTitleResolver } from './resolvers';
 

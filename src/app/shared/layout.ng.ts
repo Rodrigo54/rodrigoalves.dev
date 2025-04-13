@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import Menubar from '@app/components/menubar.ng';
-import Sidebar from '@app/components/sidebar.ng';
+import Menubar from '@app/shared/menubar.ng';
+import Sidebar from '@app/shared/sidebar.ng';
 
 @Component({
   selector: 'layout',

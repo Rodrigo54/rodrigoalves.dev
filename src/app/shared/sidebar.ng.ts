@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import Navigation from '@app/components/navigation.ng';
-import Profile from '@app/components/profile.ng';
-import SocialLinks from '@app/components/social-links.ng';
+import Navigation from '@app/shared/navigation.ng';
+import Profile from '@app/shared/profile.ng';
+import SocialLinks from '@app/shared/social-links.ng';
 
 @Component({
   selector: 'sidebar',

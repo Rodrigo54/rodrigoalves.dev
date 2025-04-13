@@ -1,6 +1,6 @@
 import { Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import PostInfo from '@components/post-info.ng';
+import PostInfo from '@app/shared/post-info.ng';
 import { FrontMatter } from '@utils/frontmatter';
 
 type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage' | 'createAt' | 'timeToRead' | 'music' | 'tags'>;

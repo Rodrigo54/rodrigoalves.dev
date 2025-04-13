@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import LayoutComponent from '@app/components/layout.ng';
+import LayoutComponent from '@app/shared/layout.ng';
 
 @Component({
   selector: 'app-blog-page',

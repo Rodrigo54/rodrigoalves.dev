@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import Avatar from '@app/components/avatar.ng';
+import Avatar from '@app/shared/avatar.ng';
 
 @Component({
   selector: 'profile',

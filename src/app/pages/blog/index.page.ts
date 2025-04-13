@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import PostItem from '@components/post-item.ng';
+import PostItem from '@app/shared/post-item.ng';
 import { frontMatterSignal } from '@utils/frontmatter';
 import { postMetaResolver, postTitleResolver } from './resolvers';
 import { RouteMeta } from '@analogjs/router';
