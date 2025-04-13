@@ -1,14 +1,14 @@
 import { ContentFile, injectContent, injectContentFiles } from '@analogjs/content';
-import { inject, Injector, runInInjectionContext, Signal, signal } from '@angular/core';
+import { computed, inject, Injector, runInInjectionContext, Signal, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
+import { environment } from 'src/env/env';
 
 type AdjacentPosts = { nextPost?: FrontMatter, prevPost?: FrontMatter };
 
 export interface FrontMatter {
   slug: string;
   title: string;
-  subtitle?: string;
   author: string;
   description: string;
   featuredImage: string;
@@ -16,6 +16,7 @@ export interface FrontMatter {
   tags: string[];
   createAt: string;
   body?: string;
+  draft?: boolean;
   timeToRead: {
     minutes: number;
     words: number;
