@@ -19,6 +19,7 @@
         "@ng-icons/core": "^31.2.0",
         "@ng-icons/font-awesome": "^31.1.0",
         "@ng-icons/iconoir": "^31.2.0",
+        "@ng-icons/material-icons": "^31.2.0",
         "date-fns": "^4.1.0",
         "front-matter": "^4.0.2",
         "marked": "^7.0.0",
@@ -551,6 +552,8 @@
     "@ng-icons/font-awesome": ["@ng-icons/font-awesome@31.2.0", "", { "dependencies": { "tslib": "^2.3.0" } }, "sha512-B4LO8rtj1Ss5EnfQhwBmEX4l8gtEfWRYZj1KCJbzYqR/AB8y7N20ThVQeLzIhLf9MQ1fd1MNQMqz+leE+AWErQ=="],
 
     "@ng-icons/iconoir": ["@ng-icons/iconoir@31.2.0", "", { "dependencies": { "tslib": "^2.3.0" } }, "sha512-a5c0Er7eV7atEPwF6cVPdpbGTDyo9av8FuBHTCorPIDo4nUet6obnoElusD5oIkXzto6G8+Vnq16jacl+DBqPw=="],
+
+    "@ng-icons/material-icons": ["@ng-icons/material-icons@31.2.0", "", { "dependencies": { "tslib": "^2.3.0" } }, "sha512-BMdAGhkSN9oopPbUURbxrXGAmbA/XeuvbStYPgHxLTCzzNYrWJqTF3VaO5hqZ6fsNDLKxp2tKVpcCg1ZmR//uQ=="],
 
     "@ngtools/webpack": ["@ngtools/webpack@19.2.3", "", { "peerDependencies": { "@angular/compiler-cli": "^19.0.0 || ^19.2.0-next.0", "typescript": ">=5.5 <5.9", "webpack": "^5.54.0" } }, "sha512-jN9wxtrLKX1myOXYMRiOs3jCgdruvYW13zHQWTmh1oyKiYNA0wO328R9nHUTRcYaXzj2nhUZvksafqHf254GWQ=="],
 

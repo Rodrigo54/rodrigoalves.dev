@@ -30,6 +30,7 @@
     "@ng-icons/core": "^31.2.0",
     "@ng-icons/font-awesome": "^31.1.0",
     "@ng-icons/iconoir": "^31.2.0",
+    "@ng-icons/material-icons": "^31.2.0",
     "date-fns": "^4.1.0",
     "front-matter": "^4.0.2",
     "marked": "^7.0.0",
@@ -55,11 +56,5 @@
     "vite": "^6.0.0",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^3.0.0"
-  },
-  "overrides": {
-    "@nx/vite": {
-      "vite": "$vite",
-      "vitest": "$vitest"
-    }
   }
 }
