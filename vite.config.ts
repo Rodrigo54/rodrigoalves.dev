@@ -1,9 +1,9 @@
 /// <reference types="vitest" />
 
-import { defineConfig, PluginOption } from 'vite';
 import analog from '@analogjs/platform';
+import { defineConfig, PluginOption } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import { getBlogPosts, getBlogTags } from './vite.prerender.utils';
+import { getBlogPagination, getBlogPosts } from './vite.prerender.utils';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -44,7 +44,7 @@ export default defineConfig(({ mode }) => ({
         routes: async () => [
           '/blog',
           ...getBlogPosts(),
-          ...getBlogTags(),
+          ...getBlogPagination(),
         ],
       },
       nitro: {
