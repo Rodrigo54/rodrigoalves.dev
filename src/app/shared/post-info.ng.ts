@@ -23,23 +23,23 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
   ],
   template: `
     <div class="post-date">
-      <ng-icon name="faCalendar"></ng-icon>
+      <ng-icon name="faCalendar" />
       <time [attr.datetime]="formattedDateISO()" class="post-date-long">{{ formattedDateLong() }}</time>
       <time [attr.datetime]="formattedDateISO()" class="post-date-short">{{ formattedDateShort() }}</time>
     </div>
     <div class="post-read-time">
-      <ng-icon name="faClock"></ng-icon>
+      <ng-icon name="faClock" />
       <span>{{ formattedReadTime() }}</span>
     </div>
     <div class="post-music">
-      <ng-icon name="faSolidMusic"></ng-icon>
+      <ng-icon name="faSolidMusic" />
       <span>Ouvindo </span>
       <a [href]="music().url" rel="noopener noreferrer" target="_blank">
         <span>{{ music().title }}</span>
       </a>
     </div>
     <div class="post-tags">
-      <ng-icon name="faSolidTags"></ng-icon>
+      <ng-icon name="faSolidTags" />
       @for (tag of tags(); track tag) {
         <a [class]="tag" [routerLink]="['/blog/tags/', tag]">{{ tag }}</a>
       }
