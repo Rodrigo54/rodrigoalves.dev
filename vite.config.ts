@@ -1,8 +1,9 @@
 /// <reference types="vitest" />
 
 import { defineConfig, PluginOption } from 'vite';
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import analog from '@analogjs/platform';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import { getBlogPosts, getBlogTags } from './vite.prerender.utils';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -15,8 +16,6 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     analog({
-      liveReload: false,
-      ssr: true,
       static: true,
       content: {
         highlighter: 'shiki',
@@ -44,18 +43,8 @@ export default defineConfig(({ mode }) => ({
       prerender: {
         routes: async () => [
           '/blog',
-          {
-            contentDir: 'src/content',
-            transform: (file) => {
-              // do not include files marked as draft in frontmatter
-              if (file.attributes['draft']) {
-                return false;
-              }
-              // use the slug from frontmatter if defined, otherwise use the files basename
-              const slug = file.attributes['slug'] || file.name;
-              return `/blog/${slug}`;
-            }
-          }
+          ...getBlogPosts(),
+          ...getBlogTags(),
         ],
       },
       nitro: {
@@ -65,7 +54,7 @@ export default defineConfig(({ mode }) => ({
       },
       vite: { experimental: { supportAnalogFormat: true } },
     }),
-    nxViteTsPaths(),
+    tsconfigPaths(),
   ] as PluginOption[],
   test: {
     globals: true,
