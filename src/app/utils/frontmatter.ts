@@ -1,8 +1,7 @@
 import { ContentFile, injectContent, injectContentFiles } from '@analogjs/content';
-import { computed, inject, Injector, runInInjectionContext, Signal, signal } from '@angular/core';
+import { inject, Injector, runInInjectionContext, Signal, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
-import { environment } from 'src/env/env';
 
 type AdjacentPosts = { nextPost?: FrontMatter, prevPost?: FrontMatter };
 
