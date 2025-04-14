@@ -49,7 +49,6 @@ export default defineConfig(({ mode }) => ({
         ],
       },
       nitro: {
-        preset: 'vercel',
         prerender: {
           failOnError: true,
         },
