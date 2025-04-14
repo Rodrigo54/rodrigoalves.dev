@@ -28,10 +28,8 @@ export const routeMeta: RouteMeta = {
     :host {
       display: flex;
       flex-direction: column;
-
       width: 100%;
       min-height: 100%;
-
     }
     h1 {
       font-size: 2rem;

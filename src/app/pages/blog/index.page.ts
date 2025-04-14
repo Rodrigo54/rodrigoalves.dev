@@ -1,13 +1,13 @@
+import { RouteMeta } from '@analogjs/router';
 import { Component, computed, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { ActivatedRoute } from '@angular/router';
+import { Pagination } from '@app/shared/pagination.ng';
 import PostItem from '@app/shared/post-item.ng';
 import { frontMatterSignal } from '@utils/frontmatter';
-import { postMetaResolver, postTitleResolver } from './resolvers';
-import { RouteMeta } from '@analogjs/router';
-import { Pagination } from '@app/shared/pagination.ng';
-import { environment } from 'src/env/env';
-import { ActivatedRoute } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
+import { environment } from 'src/env/env';
+import { postMetaResolver, postTitleResolver } from './resolvers';
 
 export const routeMeta: RouteMeta = {
   title: postTitleResolver,
@@ -28,10 +28,8 @@ export const routeMeta: RouteMeta = {
     :host {
       display: flex;
       flex-direction: column;
-
       width: 100%;
       min-height: 100%;
-
     }
     h1 {
       font-size: 2rem;
