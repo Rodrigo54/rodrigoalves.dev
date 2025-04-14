@@ -29,10 +29,11 @@ import { localStorageSignal } from '@utils/local-storage.signal';
       height: 100%;
       padding: 2rem 0.8rem;
       @media (max-width: 1170px) {
+        --ng-icon__size: 1.6rem;
         grid-template-columns: 2rem 1fr auto;
         grid-template-rows: 1fr;
         grid-template-areas: 'top-icons . bottom-icons';
-        padding: 0.8rem 2rem;
+        padding: 0.8rem 1rem;
       }
     }
     .top-icons, .bottom-icons {

@@ -13,8 +13,8 @@ import Avatar from '@app/shared/avatar.ng';
     </a>
     <p>{{ userInfo.description }}</p>
   `,
-  styles: [
-    `:host {
+  styles: [`
+    :host {
       display: block;
       text-align: center;
     }
@@ -27,28 +27,28 @@ import Avatar from '@app/shared/avatar.ng';
       color: var(--color1-contrast);
       text-decoration: none;
       transition: color 0.5s;
-    }
-    a:hover {
-      color: var(--color3-light);
-    }
-    a app-avatar {
-      grid-area: avatar;
-    }
-    a h1 {
-      grid-area: name;
-      display: block;
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      margin-top: 1.5rem;
-      font-weight: normal;
-    }
-    a h2 {
-      grid-area: position;
-      display: block;
-      font-family: var(--font-sans-serif);
-      font-size: 1rem;
-      margin-top: 1rem;
-      font-weight: normal;
+      &:hover {
+        color: var(--color3-light);
+      }
+      avatar {
+        grid-area: avatar;
+      }
+      h1 {
+        grid-area: name;
+        display: block;
+        font-family: var(--font-serif);
+        font-size: 1.6rem;
+        margin-top: 1.5rem;
+        font-weight: normal;
+      }
+      h2 {
+        grid-area: position;
+        display: block;
+        font-family: var(--font-sans-serif);
+        font-size: 1rem;
+        margin-top: 1rem;
+        font-weight: normal;
+      }
     }
     p {
       color: var(--color1-contrast);
@@ -65,25 +65,25 @@ import Avatar from '@app/shared/avatar.ng';
         grid-template-rows: auto auto;
         grid-template-areas: 'avatar name' 'avatar position';
         --avatar-size: 2rem;
-      }
-      a h1 {
-        font-size: 1rem;
-        margin-top: 0;
-        text-align: left;
-        height: 1rem;
-      }
-      a h2 {
-        font-size: 0.8rem;
-        height: 0.8rem;
-        margin-top: 0;
-        text-align: left;
+        h1 {
+          font-size: 1rem;
+          margin-top: 0;
+          text-align: left;
+          height: 1rem;
+        }
+        h2 {
+          font-size: 0.8rem;
+          height: 0.8rem;
+          margin-top: 0;
+          text-align: left;
+        }
       }
       p {
         display: none;
         visibility: hidden;
       }
-    }`
-  ]
+    }
+  `]
 })
 export default class Profile {
   userInfo = {

@@ -20,16 +20,14 @@ import SocialLinks from '@app/shared/social-links.ng';
       align-items: center;
       justify-content: flex-start;
       padding: 2rem;
-    }
-    @media (max-width: 1170px) {
-      :host {
+      @media (max-width: 1170px) {
         align-items: flex-start;
         justify-content: center;
         padding: 1rem;
-      }
-      app-navigation, app-social-links {
-        display: none;
-        visibility: hidden;
+        navigation, social-links {
+          display: none;
+          visibility: hidden;
+        }
       }
     }`
   ]
