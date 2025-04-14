@@ -42,6 +42,7 @@ export default defineConfig(({ mode }) => ({
       },
       prerender: {
         routes: async () => [
+          '/',
           '/blog',
           ...getBlogPosts(),
           ...getBlogPagination(),
