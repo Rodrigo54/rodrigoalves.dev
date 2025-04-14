@@ -41,7 +41,7 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
     <div class="post-tags">
       <ng-icon name="faSolidTags" />
       @for (tag of tags(); track tag) {
-        <a [class]="tag" [routerLink]="['/blog/tags/', tag]">{{ tag }}</a>
+        <a [class]="tag" [routerLink]="['/blog/tag/', tag]">{{ tag }}</a>
       }
     </div>
   `,
