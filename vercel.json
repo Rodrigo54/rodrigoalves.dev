@@ -3,5 +3,5 @@
   "version": 2,
   "framework": null,
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/analog/public"
+  "outputDirectory": "./dist/analog/public"
 }
