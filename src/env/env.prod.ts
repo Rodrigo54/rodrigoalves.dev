@@ -4,4 +4,5 @@ export const environment = {
   production: true,
   version: packageJson.version,
   postsPerPage: 5,
+  allowDraftPosts: false,
 }

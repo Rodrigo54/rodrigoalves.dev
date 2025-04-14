@@ -2,6 +2,7 @@ import { ContentFile, injectContent, injectContentFiles } from '@analogjs/conten
 import { inject, Injector, runInInjectionContext, Signal, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
+import { environment } from 'src/env/env';
 
 type AdjacentPosts = { nextPost?: FrontMatter, prevPost?: FrontMatter };
 
@@ -110,5 +111,6 @@ export function makeFrontMatter(data?: ContentFile, adjacentPosts?: AdjacentPost
 export function makeArrayFrontMatter(data: ContentFile[]): FrontMatter[] {
   return data
     .map(post => makeFrontMatter(post))
+    .filter(post => !post.draft || (post.draft && environment.allowDraftPosts))
     .toSorted((a, b) => new Date(b.createAt).getTime() - new Date(a.createAt).getTime());
 }
