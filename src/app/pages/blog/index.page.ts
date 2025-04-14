@@ -52,7 +52,7 @@ export const routeMeta: RouteMeta = {
 })
 export default class BlogIndexPage {
   activeRoute = inject(ActivatedRoute);
-  currentPage = toSignal(this.activeRoute.paramMap.pipe(
+  currentPage = toSignal(this.activeRoute.queryParamMap.pipe(
     map((params) => parseInt(params.get('page') ?? '1', 10)  )
   ), { initialValue: 1 });
   posts = frontMatterSignal('all');

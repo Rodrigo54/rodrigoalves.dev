@@ -3,7 +3,7 @@
 import analog from '@analogjs/platform';
 import { defineConfig, PluginOption } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import { getBlogPagination, getBlogPosts } from './vite.prerender.utils';
+import { getBlogPosts, getBlogTags } from './vite.prerender.utils';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -45,7 +45,7 @@ export default defineConfig(({ mode }) => ({
           '/',
           '/blog',
           ...getBlogPosts(),
-          ...getBlogPagination(),
+          ...getBlogTags(),
         ],
       },
       nitro: {

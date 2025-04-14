@@ -52,7 +52,7 @@ export const routeMeta: RouteMeta = {
 })
 export default class BlogIndexPage {
   activeRoute = inject(ActivatedRoute);
-  currentPage = toSignal(this.activeRoute.paramMap.pipe(
+  currentPage = toSignal(this.activeRoute.queryParamMap.pipe(
     map((params) => parseInt(params.get('page') ?? '1', 10)  )
   ), { initialValue: 1 });
   tag = toSignal(this.activeRoute.paramMap.pipe(
@@ -61,15 +61,15 @@ export default class BlogIndexPage {
   posts = frontMatterSignal('all');
   postsPaginated = computed(() => {
     const postsPerPage = environment.postsPerPage;
-    const publishedPosts = this.posts();
-    const totalPages = Math.ceil(publishedPosts.length / postsPerPage);
     const currentPage = this.currentPage();
     const tag = this.tag();
+    const publishedPosts = this.posts().filter(
+      post => tag ? post.tags.includes(tag) : true
+    );
+    const totalPages = Math.ceil(publishedPosts.length / postsPerPage);
     const startIndex = (currentPage - 1) * postsPerPage;
     const endIndex = startIndex + postsPerPage;
-    const postsPaginated = publishedPosts.filter(
-      post => tag ? post.tags.includes(tag) : true
-    ).slice(startIndex, endIndex);
+    const postsPaginated = publishedPosts.slice(startIndex, endIndex);
     return {
       currentPage,
       postsPaginated,

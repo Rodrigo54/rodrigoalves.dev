@@ -14,8 +14,8 @@ import { matArrowBackIosOutline, matArrowForwardIosOutline } from '@ng-icons/mat
     ],
   template: `
     <div class="pagination-prev">
-      @if (!isFirst()) {
-        <a [routerLink]="['/blog/page', previousPage()]">
+      @if (showPrev()) {
+        <a [routerLink]="['.']" [queryParams]="{ page: previousPage() }">
           <ng-icon name="matArrowBackIosOutline" />
           <span>Página Anterior</span>
         </a>
@@ -25,8 +25,8 @@ import { matArrowBackIosOutline, matArrowForwardIosOutline } from '@ng-icons/mat
       <p>Página {{ page() }} de {{ total() }}</p>
     </div>
     <div class="pagination-next">
-      @if (!isLast()) {
-        <a [routerLink]="['/blog/page', nextPage()]">
+      @if (showNext()) {
+        <a [routerLink]="['.']" [queryParams]="{ page: nextPage() }">
           <span>Próxima Página</span>
           <ng-icon name="matArrowForwardIosOutline" />
         </a>
@@ -87,8 +87,14 @@ export class Pagination {
   page = input(1);
   total = input.required<number>();
 
-  isFirst = computed(() => this.page() === 1);
-  isLast = computed(() => this.page() === this.total());
+  showPrev = computed(() => {
+    const isFirst = this.page() === 1;
+    return !isFirst && this.total() > 1;
+  });
+  showNext = computed(() => {
+    const isLast = this.page() === this.total();
+    return !isLast && this.total() > 1;
+  });
 
   nextPage = computed(() => this.page() + 1);
   previousPage = computed(() => this.page() - 1);

@@ -1,9 +1,8 @@
+import fm from 'front-matter';
 import * as fs from 'fs';
 import * as path from 'path';
-import fm from 'front-matter';
 
 import { FrontMatter } from './src/app/utils/frontmatter';
-import { environment } from './src/env/env';
 
 const POSTS_PATH = './src/content';
 
@@ -44,18 +43,5 @@ export function getBlogTags(): string[] {
 
   const uniqueTagsArray = Array.from(uniqueTags).toSorted((a, b) => a.localeCompare(b));
 
-  return uniqueTagsArray.map((tag) => `/blog/tag/${encodeURI(tag)}`);
-}
-
-export function getBlogPagination(): string[] {
-  const postsPerPage = environment.postsPerPage;
-  const publishedPosts = getPublishedPosts();
-  const totalPages = Math.ceil(publishedPosts.length / postsPerPage);
-  const paginationLinks: string[] = [];
-
-  for (let i = 1; i <= totalPages; i++) {
-    paginationLinks.push(`/blog/page/${i}`);
-  }
-
-  return paginationLinks;
+  return uniqueTagsArray.map((tag) => `/blog/tags/${encodeURI(tag)}`);
 }
