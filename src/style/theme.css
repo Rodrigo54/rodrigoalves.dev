@@ -14,12 +14,12 @@
   --color3-shade: #1565c0;
   --color3-contrast: #fff;
 
-  --font-serif: 'Merriweather', serif;
-  --font-sans-serif: 'Open Sans', sans-serif;
-  --font-size: 16px;
-
   --code-bg: var(--color2);
   --code-fg: var(--color1-contrast);
+
+  --font-serif: "Merriweather", serif;
+  --font-sans-serif: "Open Sans", sans-serif;
+  --font-size: 16px;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -42,7 +42,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --color1: #fafafa;
-    --color1-light: #EEF1F4;
+    --color1-light: #eef1f4;
     --color1-shade: #fafafa;
     --color1-contrast: #292929;
 
