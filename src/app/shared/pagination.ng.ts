@@ -91,6 +91,7 @@ export class Pagination {
     const isFirst = this.page() === 1;
     return !isFirst && this.total() > 1;
   });
+
   showNext = computed(() => {
     const isLast = this.page() === this.total();
     return !isLast && this.total() > 1;

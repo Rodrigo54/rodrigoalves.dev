@@ -44,7 +44,7 @@ export const routeMeta: RouteMeta = {
       gap: 20px;
       padding: 20px;
       @media (max-width: 768px) {
-        grid-auto-rows: 1fr;
+        grid-auto-rows: auto;
       }
     }
   `],

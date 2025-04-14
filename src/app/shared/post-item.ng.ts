@@ -24,7 +24,7 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
       width: 100%;
       height: 100%;
       display: grid;
-      grid-template-columns: 1fr 2.6fr;
+      grid-template-columns: 400px 1fr;
       grid-template-rows: auto 1fr;
       grid-template-areas:
         'image title'
@@ -32,7 +32,7 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
       gap: 22px;
       @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
-        grid-template-rows: 200px auto auto;
+        grid-template-rows: 80px auto 1fr;
         grid-template-areas:
           'image'
           'title'
