@@ -147,7 +147,7 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
         }
       }
       .php {
-        --tag-color: hsl(200, 100%, 50%);
+        --tag-color:hsl(230, 30%, 65%);
         text-transform: uppercase;
       }
     }
