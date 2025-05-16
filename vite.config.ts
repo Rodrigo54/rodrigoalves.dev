@@ -44,6 +44,7 @@ export default defineConfig(({ mode }) => ({
         routes: async () => [
           '/',
           '/blog',
+          '/about',
           ...getBlogPosts(),
           ...getBlogTags(),
         ],
