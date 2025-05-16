@@ -6,6 +6,7 @@ VPS_IP="82.25.71.137"           # IP da VPS
 VPS_DIR="/var/www/blog"       # Diretório onde o projeto será hospedado
 LOCAL_BUILD_DIR="dist/analog/public"          # Diretório de build do Vite
 DOMAIN="vps.rodrigoalves.dev"   # Domínio configurado no Caddy
+REMOTE_CADDYFILE="/etc/caddy/sites-enabled/blog.caddy"
 
 echo "🚀 Iniciando Deploy do Blog para $VPS_IP ..."
 
@@ -22,10 +23,12 @@ ssh $VPS_USER@$VPS_IP "mkdir -p $VPS_DIR"  # Garante que o diretório existe
 ssh $VPS_USER@$VPS_IP "rm -rf $VPS_DIR/*"  # Limpa o diretório antes de enviar os arquivos
 scp -r $LOCAL_BUILD_DIR/* $VPS_USER@$VPS_IP:$VPS_DIR
 
-# 4️⃣ Reinicia o Caddy para aplicar as mudanças
-echo "🔄 Reiniciando o Caddy..."
-ssh $VPS_USER@$VPS_IP "cd $VPS_DIR && caddy fmt --overwrite"
-ssh $VPS_USER@$VPS_IP "cd $VPS_DIR && caddy reload"
+# 3. Upload do Caddyfile específico do site
+scp Caddyfile $VPS_USER@$VPS_IP:/tmp/blog.caddy
+ssh $VPS_USER@$VPS_IP "sudo mv /tmp/blog.caddy $REMOTE_CADDYFILE"
+
+# 4. Reload do Caddy
+ssh $VPS_USER@$VPS_IP "sudo caddy reload --config /etc/caddy/Caddyfile"
 
 echo "🔍 Verificando o status do Caddy..."
 ssh $VPS_USER@$VPS_IP "systemctl status caddy"
