@@ -10,10 +10,12 @@ import LayoutComponent from '@app/shared/layout.ng';
       <router-outlet></router-outlet>
     </layout>
   `,
-  styles: [`
-    :host {
-      background-color: oklab(from var(--color1) 0.1 a b);
-    }
-  `]
+  styles: [
+    `
+      :host {
+        background-color: oklab(from var(--color1) 0.1 a b);
+      }
+    `,
+  ],
 })
 export default class BlogPage {}

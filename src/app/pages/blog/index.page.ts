@@ -19,42 +19,50 @@ export const routeMeta: RouteMeta = {
   template: `
     <div class="posts">
       @for (post of postsPaginated().postsPaginated; track post.createAt) {
-        <post-item [info]="post" />
+      <post-item [info]="post" />
       }
     </div>
-    <pagination [total]="postsPaginated().totalPages" [page]="postsPaginated().currentPage" />
+    <pagination
+      [total]="postsPaginated().totalPages"
+      [page]="postsPaginated().currentPage"
+    />
   `,
-  styles: [`
-    :host {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      min-height: 100%;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: var(--color3);
-    }
-    .posts {
-      flex: 1;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-auto-rows: 250px;
-      gap: 20px;
-      padding: 20px;
-      @media (max-width: 768px) {
-        grid-auto-rows: auto;
+  styles: [
+    `
+      :host {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 100%;
       }
-    }
-  `],
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: var(--color3);
+      }
+      .posts {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+        gap: 20px;
+        padding: 20px;
+        @media (max-width: 768px) {
+          grid-auto-rows: auto;
+        }
+      }
+    `,
+  ],
   imports: [PostItem, Pagination],
 })
 export default class BlogIndexPage {
   activeRoute = inject(ActivatedRoute);
-  currentPage = toSignal(this.activeRoute.queryParamMap.pipe(
-    map((params) => parseInt(params.get('page') ?? '1', 10)  )
-  ), { initialValue: 1 });
+  currentPage = toSignal(
+    this.activeRoute.queryParamMap.pipe(
+      map((params) => parseInt(params.get('page') ?? '1', 10))
+    ),
+    { initialValue: 1 }
+  );
   posts = frontMatterSignal('all');
   postsPaginated = computed(() => {
     const postsPerPage = environment.postsPerPage;
@@ -69,6 +77,6 @@ export default class BlogIndexPage {
       postsPaginated,
       postsPerPage,
       totalPages,
-    }
+    };
   });
 }
