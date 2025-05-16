@@ -3,7 +3,13 @@ import { Component, input } from '@angular/core';
 @Component({
   selector: 'avatar',
   template: `
-    <img src="/img/profile-photo.jpg" [alt]="alt()" width="200" height="200" loading="eager" />
+    <img
+      src="/img/profile-photo.webp"
+      [alt]="alt()"
+      width="200"
+      height="200"
+      loading="eager"
+    />
   `,
   styles: [
     `
