@@ -1,21 +1,16 @@
 import { Component, signal } from '@angular/core';
 import { Works } from '@app/data/works';
+import DurationComponent from '@app/shared/duration.ng';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
   matCalendarMonth,
   matMapsHomeWork,
 } from '@ng-icons/material-icons/baseline';
 import { matWorkOutline } from '@ng-icons/material-icons/outline';
-import { format, formatDistance } from 'date-fns';
-import { ptBR } from 'date-fns/locale/pt-BR';
-import { capitalize } from 'lodash';
-
-const formatData = (data: string) =>
-  capitalize(format(data, `MMMM 'de' yyyy`, { locale: ptBR }));
 
 @Component({
   selector: 'work-experience',
-  imports: [NgIcon],
+  imports: [NgIcon, DurationComponent],
   template: `
     <div>
       <h2>Experiências Profissionais</h2>
@@ -30,18 +25,7 @@ const formatData = (data: string) =>
             <ng-icon name="matMapsHomeWork" size="20" />
             {{ work.locale }}
           </p>
-          <p>
-            <ng-icon name="matCalendarMonth" size="20" />
-            <time [dateTime]="work.duration.init">
-              {{ work.duration.formatedInit }}
-            </time>
-            -
-            <time [dateTime]="work.duration.end">
-              {{ work.duration.formatedEnd }}
-            </time>
-            •
-            <span>{{ work.duration.timeElapsed }}</span>
-          </p>
+          <duration [init]="work.duration.init" [end]="work.duration.end" />
         </div>
         <blockquote>{{ work.description }}</blockquote>
       </div>
@@ -106,28 +90,8 @@ const formatData = (data: string) =>
     }),
   ],
 })
-export class WorkExperience {
+export default class WorkExperience {
   works = signal(
-    Works.toSorted((a, b) =>
-      b.duration.init.localeCompare(a.duration.init)
-    ).map((work) => {
-      const init = work.duration.init;
-      const end = work.duration.end;
-      const formatedInit = formatData(init);
-      const formatedEnd = end ? formatData(end) : 'Até o momento';
-      const timeElapsed = formatDistance(init, end ?? new Date(), {
-        locale: ptBR,
-      });
-      return {
-        ...work,
-        duration: {
-          init,
-          end,
-          formatedInit,
-          formatedEnd,
-          timeElapsed,
-        },
-      };
-    })
+    Works.toSorted((a, b) => b.duration.init.localeCompare(a.duration.init))
   );
 }
