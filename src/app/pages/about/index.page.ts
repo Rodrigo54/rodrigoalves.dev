@@ -1,8 +1,9 @@
 import { RouteMeta } from '@analogjs/router';
 import { Component } from '@angular/core';
+import FormationComponent from '@app/shared/formation.ng';
 import PaperLayout from '@app/shared/paper-layout.ng';
 import SocialLinks from '@app/shared/social-links.ng';
-import { WorkExperience } from '@app/shared/work-experience.ng';
+import WorkExperience from '@app/shared/work-experience.ng';
 
 export const routeMeta: RouteMeta = {
   title: 'Sobre Mim | Rodrigo Alves',
@@ -10,7 +11,7 @@ export const routeMeta: RouteMeta = {
 
 @Component({
   selector: 'about-index-page',
-  imports: [PaperLayout, SocialLinks, WorkExperience],
+  imports: [PaperLayout, SocialLinks, WorkExperience, FormationComponent],
   template: `
     <paper-layout [image]="featuredImage" [alt]="title">
       <ng-container slot="header">
@@ -52,6 +53,7 @@ export const routeMeta: RouteMeta = {
           conheço. 😉
         </p>
         <work-experience />
+        <formation />
         <social-links showAll />
       </article>
     </paper-layout>
