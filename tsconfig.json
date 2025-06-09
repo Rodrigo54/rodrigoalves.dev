@@ -6,28 +6,36 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "esModuleInterop": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "importHelpers": true,
     "target": "ES2023",
     "module": "ES2022",
-    "lib": ["ES2023", "dom"],
+    "lib": [
+      "ES2023",
+      "dom"
+    ],
     "useDefineForClassFields": false,
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@utils/*": ["src/app/utils/*"],
-      "@shared/*": ["src/app/shared/*"]
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@utils/*": [
+        "src/app/utils/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ]
     }
   },
   "angularCompilerOptions": {

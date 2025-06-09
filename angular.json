@@ -16,10 +16,7 @@
             "main": "src/main.ts",
             "outputPath": "dist/client",
             "tsConfig": "tsconfig.app.json",
-            "styles": [
-              "src/style/theme.css",
-              "src/style/global.css"
-            ]
+            "styles": ["src/style/theme.css", "src/style/global.css"]
           },
           "defaultConfiguration": "production",
           "configurations": {
@@ -59,6 +56,35 @@
           "builder": "@analogjs/vitest-angular:test"
         }
       }
+    }
+  },
+  "cli": {
+    "packageManager": "bun"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
     }
   }
 }
