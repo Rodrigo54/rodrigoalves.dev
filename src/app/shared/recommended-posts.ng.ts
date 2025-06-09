@@ -90,8 +90,7 @@ import { matArrowLeft, matArrowRight } from '@ng-icons/material-icons/baseline';
         font-size: 1rem;
       }
       &:hover {
-        background: var(--color3-shade);
-        color: var(--color3-contrast);
+        color: var(--color3-light);
       }
     }
   }
