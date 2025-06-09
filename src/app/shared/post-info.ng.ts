@@ -4,7 +4,7 @@ import { NgIcon, provideIcons } from '@ng-icons/core';
 import { faClock } from '@ng-icons/font-awesome/regular';
 import { faSolidMusic, faSolidTags } from '@ng-icons/font-awesome/solid';
 import { matCalendarMonth } from '@ng-icons/material-icons/baseline';
-import { FrontMatter } from '@utils/frontmatter';
+import { FrontMatter } from '@utils/frontmatter.signal';
 import { format, formatISO } from 'date-fns';
 import { ptBR } from 'date-fns/locale/pt-BR';
 

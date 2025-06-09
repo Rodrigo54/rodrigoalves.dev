@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { FrontMatter } from '@app/utils/frontmatter';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { matArrowLeft, matArrowRight } from '@ng-icons/material-icons/baseline';
+import { FrontMatter } from '@utils/frontmatter.signal';
 
 @Component({
   selector: 'recommended-posts',

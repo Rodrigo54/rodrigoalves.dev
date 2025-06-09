@@ -1,10 +1,20 @@
-import { ContentFile, injectContent, injectContentFiles } from '@analogjs/content';
-import { inject, Injector, runInInjectionContext, Signal, signal } from '@angular/core';
+import {
+  ContentFile,
+  injectContent,
+  injectContentFiles,
+} from '@analogjs/content';
+import {
+  inject,
+  Injector,
+  runInInjectionContext,
+  Signal,
+  signal,
+} from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { environment } from 'src/env/env';
 
-type AdjacentPosts = { nextPost?: FrontMatter, prevPost?: FrontMatter };
+type AdjacentPosts = { nextPost?: FrontMatter; prevPost?: FrontMatter };
 
 export interface FrontMatter {
   slug: string;
@@ -30,8 +40,10 @@ export interface FrontMatter {
   prevPost: FrontMatter | null;
 }
 
-
-export function frontMatterSignal<T extends 'all' | 'slug' >(type = 'all' as T, injector?: Injector): T extends 'slug' ? Signal<FrontMatter> : Signal<FrontMatter[]> {
+export function frontMatterSignal<T extends 'all' | 'slug'>(
+  type = 'all' as T,
+  injector?: Injector
+): T extends 'slug' ? Signal<FrontMatter> : Signal<FrontMatter[]> {
   injector ??= inject(Injector);
   const result = runInInjectionContext(injector, () => {
     const posts = injectContentFiles();
@@ -39,16 +51,19 @@ export function frontMatterSignal<T extends 'all' | 'slug' >(type = 'all' as T, 
     if (type === 'slug') {
       const post$ = injectContent('slug');
       const subscription$ = post$.pipe(
-        map(post => {
-          const adjacentPosts = formattedPosts.reduce<AdjacentPosts>((acc, curr, index) => {
-            if (curr.slug === post.slug) {
-              acc.nextPost = formattedPosts[index - 1] ?? null;
-              acc.prevPost = formattedPosts[index + 1] ?? null;
-            }
-            return acc;
-          }, {});
+        map((post) => {
+          const adjacentPosts = formattedPosts.reduce<AdjacentPosts>(
+            (acc, curr, index) => {
+              if (curr.slug === post.slug) {
+                acc.nextPost = formattedPosts[index - 1] ?? null;
+                acc.prevPost = formattedPosts[index + 1] ?? null;
+              }
+              return acc;
+            },
+            {}
+          );
           return makeFrontMatter(post, adjacentPosts);
-        }),
+        })
       );
       return toSignal(subscription$);
     }
@@ -56,14 +71,20 @@ export function frontMatterSignal<T extends 'all' | 'slug' >(type = 'all' as T, 
     return signal(makeArrayFrontMatter(posts)).asReadonly();
   });
 
-  return result as T extends 'slug' ? Signal<FrontMatter> : Signal<FrontMatter[]>;
+  return result as T extends 'slug'
+    ? Signal<FrontMatter>
+    : Signal<FrontMatter[]>;
 }
 
-export function makeFrontMatter(data?: ContentFile, adjacentPosts?: AdjacentPosts): FrontMatter {
+export function makeFrontMatter(
+  data?: ContentFile,
+  adjacentPosts?: AdjacentPosts
+): FrontMatter {
   if (!data?.attributes) {
     return {
-      title: 'Blog',
-      description: 'Sou um Full Stack Web Developer que gosta de aprender novas formas de programar. Tento me esforçar para ser um bom artista na web.',
+      title: 'Blog Rodrigo Alves',
+      description:
+        'Sou um Full Stack Web Developer que gosta de aprender novas formas de programar. Tento me esforçar para ser um bom artista na web.',
       slug: '',
       author: 'Rodrigo Alves',
       createAt: new Date().toISOString(),
@@ -110,7 +131,11 @@ export function makeFrontMatter(data?: ContentFile, adjacentPosts?: AdjacentPost
 
 export function makeArrayFrontMatter(data: ContentFile[]): FrontMatter[] {
   return data
-    .map(post => makeFrontMatter(post))
-    .filter(post => !post.draft || (post.draft && environment.allowDraftPosts))
-    .toSorted((a, b) => new Date(b.createAt).getTime() - new Date(a.createAt).getTime());
+    .map((post) => makeFrontMatter(post))
+    .filter(
+      (post) => !post.draft || (post.draft && environment.allowDraftPosts)
+    )
+    .toSorted(
+      (a, b) => new Date(b.createAt).getTime() - new Date(a.createAt).getTime()
+    );
 }

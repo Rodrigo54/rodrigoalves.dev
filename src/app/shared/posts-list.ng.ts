@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Pagination } from '@app/shared/pagination.ng';
 import PostItem from '@app/shared/post-item.ng';
-import { FrontMatter } from '@app/utils/frontmatter';
+import { FrontMatter } from '@utils/frontmatter.signal';
 
 @Component({
   selector: 'posts-list',
