@@ -1,9 +1,13 @@
 import { RouteMeta } from '@analogjs/router';
-import { Component, computed, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+} from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
-import { Pagination } from '@app/shared/pagination.ng';
-import PostItem from '@app/shared/post-item.ng';
+import { PostsList } from '@app/shared/posts-list.ng';
 import { frontMatterSignal } from '@utils/frontmatter';
 import { map } from 'rxjs';
 import { environment } from 'src/env/env';
@@ -16,44 +20,10 @@ export const routeMeta: RouteMeta = {
 
 @Component({
   selector: 'blog-index-page',
-  template: `
-    <div class="posts">
-      @for (post of postsPaginated().postsPaginated; track post.createAt) {
-      <post-item [info]="post" />
-      }
-    </div>
-    <pagination
-      [total]="postsPaginated().totalPages"
-      [page]="postsPaginated().currentPage"
-    />
-  `,
-  styles: [
-    `
-      :host {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        min-height: 100%;
-      }
-      h1 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        color: var(--color3);
-      }
-      .posts {
-        flex: 1;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-auto-rows: 250px;
-        gap: 20px;
-        padding: 20px;
-        @media (max-width: 768px) {
-          grid-auto-rows: auto;
-        }
-      }
-    `,
-  ],
-  imports: [PostItem, Pagination],
+  template: `<posts-list [postsPaginated]="postsPaginated()" />`,
+  styles: '',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [PostsList],
 })
 export default class BlogIndexPage {
   activeRoute = inject(ActivatedRoute);
