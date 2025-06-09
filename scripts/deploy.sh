@@ -12,8 +12,8 @@ echo "🚀 Iniciando Deploy do Blog para $VPS_IP ..."
 
 # 1️⃣ Gera o build do projeto
 echo "📦 Construindo o projeto..."
-npm install
-npm run build
+bun install
+bun run build
 # Copia o arquivo Caddyfile para a pasta de build
 cp Caddyfile $LOCAL_BUILD_DIR/
 
