@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, inject, linkedSignal } from '@angular/core';
+
+import { Component, inject, linkedSignal, DOCUMENT } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { boxHomeSolid } from '@ng-icons/boxicons/solid';
 import { NgIcon, provideIcons } from '@ng-icons/core';
