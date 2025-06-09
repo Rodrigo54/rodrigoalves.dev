@@ -1,6 +1,6 @@
 import { Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import PostInfo from '@app/shared/post-info.ng';
+import PostInfo from '@shared/post-info.ng';
 import { FrontMatter } from '@utils/frontmatter.signal';
 
 type Info = Pick<

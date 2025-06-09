@@ -1,9 +1,9 @@
 import { RouteMeta } from '@analogjs/router';
 import { Component } from '@angular/core';
-import FormationComponent from '@app/shared/formation.ng';
-import PaperLayout from '@app/shared/paper-layout.ng';
-import SocialLinks from '@app/shared/social-links.ng';
-import WorkExperience from '@app/shared/work-experience.ng';
+import FormationComponent from '@shared/formation.ng';
+import PaperLayout from '@shared/paper-layout.ng';
+import SocialLinks from '@shared/social-links.ng';
+import WorkExperience from '@shared/work-experience.ng';
 
 export const routeMeta: RouteMeta = {
   title: 'Sobre Mim | Rodrigo Alves',

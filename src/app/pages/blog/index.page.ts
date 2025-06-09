@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
-import { PostsList } from '@app/shared/posts-list.ng';
+import { PostsList } from '@shared/posts-list.ng';
 import { frontMatterSignal } from '@utils/frontmatter.signal';
 import { map } from 'rxjs';
 import { environment } from 'src/env/env';

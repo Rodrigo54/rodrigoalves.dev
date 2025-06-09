@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import Menubar from '@app/shared/menubar.ng';
-import Sidebar from '@app/shared/sidebar.ng';
+import Menubar from '@shared/menubar.ng';
+import Sidebar from '@shared/sidebar.ng';
 
 @Component({
   selector: 'layout',
@@ -17,28 +17,30 @@ import Sidebar from '@app/shared/sidebar.ng';
     </aside>
   `,
   styles: [
-    `:host {
-      display: grid;
-      grid-template-columns: 20rem 1fr 3.75rem;
-      height: 100vh;
-      width: 100vw;
-      overflow: hidden;
-      background: var(--color1);
-      @media (max-width: 1170px) {
-        grid-template-columns: 1fr;
-        grid-template-rows: 3.75rem 1fr 3.75rem;
+    `
+      :host {
+        display: grid;
+        grid-template-columns: 20rem 1fr 3.75rem;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        background: var(--color1);
+        @media (max-width: 1170px) {
+          grid-template-columns: 1fr;
+          grid-template-rows: 3.75rem 1fr 3.75rem;
+        }
       }
-    }
-    .sidebar {
-      background: var(--color1);
-    }
-    .content {
-      background: var(--color1-shade);
-      overflow: auto;
-    }
-    .menubar {
-      background: var(--color1);
-    }`
-  ]
+      .sidebar {
+        background: var(--color1);
+      }
+      .content {
+        background: var(--color1-shade);
+        overflow: auto;
+      }
+      .menubar {
+        background: var(--color1);
+      }
+    `,
+  ],
 })
 export default class LayoutComponent {}

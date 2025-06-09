@@ -1,6 +1,5 @@
 import { Component, signal } from '@angular/core';
 import { Courses, Formation } from '@app/data/formation';
-import DurationComponent from '@app/shared/duration.ng';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
   faSolidBuildingColumns,
@@ -8,6 +7,7 @@ import {
   faSolidUserGraduate,
 } from '@ng-icons/font-awesome/solid';
 import { matOndemandVideo } from '@ng-icons/material-icons/baseline';
+import DurationComponent from '@shared/duration.ng';
 
 @Component({
   selector: 'formation',

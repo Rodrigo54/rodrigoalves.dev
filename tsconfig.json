@@ -27,8 +27,8 @@
     "useDefineForClassFields": false,
     "skipLibCheck": true,
     "paths": {
-      "@app/*": [
-        "src/app/*"
+      "@app/data/*": [
+        "src/app/data/*"
       ],
       "@utils/*": [
         "src/app/utils/*"

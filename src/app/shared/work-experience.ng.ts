@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { Works } from '@app/data/works';
-import DurationComponent from '@app/shared/duration.ng';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
   matCalendarMonth,
   matMapsHomeWork,
 } from '@ng-icons/material-icons/baseline';
 import { matWorkOutline } from '@ng-icons/material-icons/outline';
+import DurationComponent from '@shared/duration.ng';
 
 @Component({
   selector: 'work-experience',

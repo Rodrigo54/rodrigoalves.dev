@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { Pagination } from '@app/shared/pagination.ng';
-import PostItem from '@app/shared/post-item.ng';
+import { Pagination } from '@shared/pagination.ng';
+import PostItem from '@shared/post-item.ng';
 import { FrontMatter } from '@utils/frontmatter.signal';
 
 @Component({

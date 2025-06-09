@@ -1,6 +1,6 @@
 import { injectContentFiles } from '@analogjs/content';
 import { ActivatedRouteSnapshot } from '@angular/router';
-import { FrontMatter, makeFrontMatter } from '@app/utils/frontmatter.signal';
+import { FrontMatter, makeFrontMatter } from '@utils/frontmatter.signal';
 
 export function injectActivePostAttributes(
   route: ActivatedRouteSnapshot
