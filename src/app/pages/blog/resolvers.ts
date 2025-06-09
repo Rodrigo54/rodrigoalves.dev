@@ -2,9 +2,10 @@ import { injectContentFiles } from '@analogjs/content';
 import { MetaTag } from '@analogjs/router';
 import { ActivatedRouteSnapshot, ResolveFn } from '@angular/router';
 import { FrontMatter, makeFrontMatter } from '@utils/frontmatter';
+import { environment } from 'src/env/env';
 
 function injectActivePostAttributes(
-  route: ActivatedRouteSnapshot,
+  route: ActivatedRouteSnapshot
 ): FrontMatter {
   const file = injectContentFiles<FrontMatter>().find((contentFile) => {
     return (
@@ -23,7 +24,7 @@ export const postTitleResolver: ResolveFn<string> = (route) => {
 
 export const postMetaResolver: ResolveFn<MetaTag[]> = (route) => {
   const postAttributes = injectActivePostAttributes(route);
-  const base = import.meta.env['VITE_ANALOG_BASE_URL'] || 'http://localhost:3000';
+  const base = environment.siteUrl;
   const imageUrl = `${base}${postAttributes.featuredImage}`;
   const siteTitle = 'Rodrigo Alves'; // Adjust as needed
 
@@ -37,6 +38,10 @@ export const postMetaResolver: ResolveFn<MetaTag[]> = (route) => {
       content: postAttributes.author,
     },
     {
+      property: 'og:url',
+      content: base,
+    },
+    {
       property: 'og:title',
       content: postAttributes.title,
     },
@@ -47,6 +52,10 @@ export const postMetaResolver: ResolveFn<MetaTag[]> = (route) => {
     {
       property: 'og:image',
       content: imageUrl,
+    },
+    {
+      property: 'og:logo',
+      content: `${base}/icons/icon-512x512.png`,
     },
     {
       property: 'twitter:image',
