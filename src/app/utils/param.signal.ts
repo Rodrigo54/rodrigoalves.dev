@@ -9,27 +9,27 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 
-export function queryParamSignal<T>({
+export function paramSignal<T>({
   defaultValue,
-  queryParamKey,
+  paramKey,
   parse,
   injector,
 }: {
   defaultValue: T;
-  queryParamKey: string;
+  paramKey: string;
   parse?: (value: unknown) => T;
   injector?: Injector;
 }): Signal<T> {
   if (!injector) {
-    assertInInjectionContext(queryParamSignal);
+    assertInInjectionContext(paramSignal);
   }
   injector ??= inject(Injector);
   return runInInjectionContext(injector, () => {
     const route = inject(ActivatedRoute);
 
     return toSignal(
-      route.queryParamMap.pipe(
-        map((params) => params.get(queryParamKey)),
+      route.paramMap.pipe(
+        map((params) => params.get(paramKey)),
         map((value) => (parse ? (value ? parse(value) : defaultValue) : value)),
         map((value) => (value === null ? defaultValue : (value as T)))
       ),

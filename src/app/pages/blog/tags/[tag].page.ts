@@ -6,12 +6,11 @@ import {
   inject,
   numberAttribute,
 } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { PostsList } from '@shared/posts-list.ng';
 import { frontMatterSignal } from '@utils/frontmatter.signal';
+import { paramSignal } from '@utils/param.signal';
 import { queryParamSignal } from '@utils/query-param.signal';
-import { map } from 'rxjs';
 import { environment } from 'src/env/env';
 import { postMetaResolver, postTitleResolver } from '../resolvers';
 
@@ -34,10 +33,10 @@ export default class BlogIndexPage {
     queryParamKey: 'page',
     parse: numberAttribute,
   });
-  tag = toSignal(
-    this.activeRoute.paramMap.pipe(map((params) => params.get('tag') ?? '')),
-    { initialValue: '' }
-  );
+  tag = paramSignal({
+    defaultValue: '',
+    paramKey: 'tag',
+  });
   posts = frontMatterSignal('all');
   postsPaginated = computed(() => {
     const postsPerPage = environment.postsPerPage;
