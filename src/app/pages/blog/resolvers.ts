@@ -1,20 +1,7 @@
-import { injectContentFiles } from '@analogjs/content';
 import { MetaTag } from '@analogjs/router';
-import { ActivatedRouteSnapshot, ResolveFn } from '@angular/router';
-import { FrontMatter, makeFrontMatter } from '@utils/frontmatter';
+import { ResolveFn } from '@angular/router';
+import { injectActivePostAttributes } from '@utils/post-active';
 import { environment } from 'src/env/env';
-
-function injectActivePostAttributes(
-  route: ActivatedRouteSnapshot
-): FrontMatter {
-  const file = injectContentFiles<FrontMatter>().find((contentFile) => {
-    return (
-      contentFile.filename === `/src/content/${route.params['slug']}.md` ||
-      contentFile.slug === route.params['slug']
-    );
-  });
-  return makeFrontMatter(file);
-}
 
 export const postTitleResolver: ResolveFn<string> = (route) => {
   const postAttributes = injectActivePostAttributes(route);

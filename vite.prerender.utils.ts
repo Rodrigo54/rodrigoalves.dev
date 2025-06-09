@@ -2,7 +2,7 @@ import fm from 'front-matter';
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { FrontMatter } from './src/app/utils/frontmatter';
+import { FrontMatter } from './src/app/utils/frontmatter.signal';
 
 const POSTS_PATH = './src/content';
 
@@ -12,7 +12,7 @@ function getPublishedPosts() {
     .map((contentFile) => {
       const fileContents = fs.readFileSync(
         path.resolve(POSTS_PATH, contentFile),
-        'utf8',
+        'utf8'
       );
       return {
         attributes: fm(fileContents).attributes as FrontMatter,
@@ -21,7 +21,11 @@ function getPublishedPosts() {
       };
     })
     .filter(({ attributes }) => attributes.draft !== true)
-    .toSorted((a, b) => new Date(b.attributes.createAt).getTime() - new Date(a.attributes.createAt).getTime());
+    .toSorted(
+      (a, b) =>
+        new Date(b.attributes.createAt).getTime() -
+        new Date(a.attributes.createAt).getTime()
+    );
 }
 
 export function getBlogPosts(): string[] {
@@ -41,7 +45,9 @@ export function getBlogTags(): string[] {
     }
   });
 
-  const uniqueTagsArray = Array.from(uniqueTags).toSorted((a, b) => a.localeCompare(b));
+  const uniqueTagsArray = Array.from(uniqueTags).toSorted((a, b) =>
+    a.localeCompare(b)
+  );
 
   return uniqueTagsArray.map((tag) => `/blog/tags/${encodeURI(tag)}`);
 }

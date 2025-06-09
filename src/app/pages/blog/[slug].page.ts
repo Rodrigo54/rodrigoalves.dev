@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import PaperLayout from '@app/shared/paper-layout.ng';
 import PostInfo from '@app/shared/post-info.ng';
 import { RecommendedPosts } from '@app/shared/recommended-posts.ng';
-import { frontMatterSignal } from '@utils/frontmatter';
+import { frontMatterSignal } from '@utils/frontmatter.signal';
 import { postMetaResolver, postTitleResolver } from './resolvers';
 
 export const routeMeta: RouteMeta = {
