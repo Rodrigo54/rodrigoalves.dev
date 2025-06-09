@@ -111,7 +111,7 @@ import { matOndemandVideo } from '@ng-icons/material-icons/baseline';
         blockquote {
           border-left: 0.3rem solid var(--color3-light);
           padding: 0px 15px;
-          margin: 30px 27px 15px 7px;
+          margin: 15px 27px 15px 7px;
 
           font-family: var(--font-sans-serif);
           line-height: 1.5;
