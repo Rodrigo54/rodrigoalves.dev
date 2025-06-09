@@ -4,11 +4,13 @@ import {
   Component,
   computed,
   inject,
+  numberAttribute,
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { PostsList } from '@shared/posts-list.ng';
 import { frontMatterSignal } from '@utils/frontmatter.signal';
+import { queryParamSignal } from '@utils/query-param.signal';
 import { map } from 'rxjs';
 import { environment } from 'src/env/env';
 import { postMetaResolver, postTitleResolver } from '../resolvers';
@@ -27,12 +29,11 @@ export const routeMeta: RouteMeta = {
 })
 export default class BlogIndexPage {
   activeRoute = inject(ActivatedRoute);
-  currentPage = toSignal(
-    this.activeRoute.queryParamMap.pipe(
-      map((params) => parseInt(params.get('page') ?? '1', 10))
-    ),
-    { initialValue: 1 }
-  );
+  currentPage = queryParamSignal({
+    defaultValue: 1,
+    queryParamKey: 'page',
+    parse: numberAttribute,
+  });
   tag = toSignal(
     this.activeRoute.paramMap.pipe(map((params) => params.get('tag') ?? '')),
     { initialValue: '' }
