@@ -1,5 +1,5 @@
 ---
-title: 'Introdução ao NestJS: Como acelerar o desenvolvimento de backend Node.js'
+title: 'Introdução ao NestJS: Acelerando o desenvolvimento em Node.js'
 description: 'Descubra os benefícios e a arquitetura do NestJS, um framework baseado no Angular para tornar a construção de aplicativos escaláveis e modulares mais fácil e rápida.'
 createAt: '2020-12-22 12:00:00 -0300'
 author: 'Rodrigo Alves'
