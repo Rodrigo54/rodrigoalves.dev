@@ -3,6 +3,7 @@ import { RouteMeta } from '@analogjs/router';
 import { Component } from '@angular/core';
 import PaperLayout from '@app/shared/paper-layout.ng';
 import PostInfo from '@app/shared/post-info.ng';
+import { RecommendedPosts } from '@app/shared/recommended-posts.ng';
 import { frontMatterSignal } from '@utils/frontmatter';
 import { postMetaResolver, postTitleResolver } from './resolvers';
 
@@ -12,7 +13,7 @@ export const routeMeta: RouteMeta = {
 };
 
 @Component({
-  imports: [PaperLayout, PostInfo, MarkdownComponent],
+  imports: [PaperLayout, PostInfo, MarkdownComponent, RecommendedPosts],
   template: `
     @if (post(); as postItem) {
     <paper-layout [image]="postItem.featuredImage" [alt]="postItem.title">
@@ -24,23 +25,10 @@ export const routeMeta: RouteMeta = {
       <article>
         <analog-markdown [content]="postItem.body" />
       </article>
-      <div class="adjacent-posts">
-        @if (postItem.nextPost) {
-        <p>
-          Next Post:
-          <a [href]="makeHref(postItem.nextPost.slug)">{{
-            postItem.nextPost.title
-          }}</a>
-        </p>
-        } @if (postItem.prevPost) {
-        <p>
-          Previous Post:
-          <a [href]="makeHref(postItem.prevPost.slug)">{{
-            postItem.prevPost.title
-          }}</a>
-        </p>
-        }
-      </div>
+      <recommended-posts
+        [nextPost]="postItem.nextPost"
+        [prevPost]="postItem.prevPost"
+      />
     </paper-layout>
     } @else {
     <p>Loading...</p>
