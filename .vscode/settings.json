@@ -48,6 +48,12 @@
       "color": "green-600",
       "fileExtensions": ["page.ts"]
     },
+        {
+      "name": "angular-signals",
+      "base": "angular",
+      "color": "orange-400",
+      "fileExtensions": ["signal.ts"]
+    },
   ],
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
