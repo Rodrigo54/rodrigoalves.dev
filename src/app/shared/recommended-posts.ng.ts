@@ -15,7 +15,6 @@ import { FrontMatter } from '@utils/frontmatter.signal';
           <ng-icon name="matArrowLeft" size="60" />
           <div>
             <h5>{{ prevPostItem.title }}</h5>
-            <p>{{ prevPostItem.description }}</p>
           </div>
         </a>
 
@@ -24,7 +23,6 @@ import { FrontMatter } from '@utils/frontmatter.signal';
           <ng-icon name="matArrowRight" size="60" />
           <div>
             <h5>{{ nextPostItem.title }}</h5>
-            <p>{{ nextPostItem.description }}</p>
           </div>
         </a>
         }
@@ -80,14 +78,9 @@ import { FrontMatter } from '@utils/frontmatter.signal';
         grid-area: title;
       }
       h5 {
-        margin: 0 0 0.6rem 0;
+        margin: 0;
         font-weight: 500;
         font-size: 1.1rem;
-      }
-      p {
-        margin: 0;
-        font-weight: 300;
-        font-size: 1rem;
       }
       &:hover {
         color: var(--color3-light);
