@@ -20,23 +20,20 @@ export const routeMeta: RouteMeta = {
 };
 
 @Component({
-  selector: 'blog-index-page',
+  selector: 'blog-tag-page',
   template: `<posts-list [postsPaginated]="postsPaginated()" />`,
   styles: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [PostsList],
 })
-export default class BlogIndexPage {
+export default class BlogTagPage {
   activeRoute = inject(ActivatedRoute);
   currentPage = queryParamSignal({
     defaultValue: 1,
     queryParamKey: 'page',
     parse: numberAttribute,
   });
-  tag = paramSignal({
-    defaultValue: '',
-    paramKey: 'tag',
-  });
+  tag = paramSignal({ defaultValue: '', paramKey: 'tag' });
   posts = frontMatterSignal('all');
   postsPaginated = computed(() => {
     const postsPerPage = environment.postsPerPage;
