@@ -13,7 +13,7 @@ import { injectLocalStorage } from 'ngxtension/inject-local-storage';
     </div>
     <div class="bottom-icons">
       <ng-icon (click)="toTop()" name="iconoirPalette" />
-      <ng-icon [name]="gridIcon()" (click)="toggleGrid()" />
+      <ng-icon class="grid-icon" [name]="gridIcon()" (click)="toggleGrid()" />
       <ng-icon (click)="toTop()" name="iconoirArrowUp" />
     </div>
   `,
@@ -34,6 +34,11 @@ import { injectLocalStorage } from 'ngxtension/inject-local-storage';
           grid-template-rows: 1fr;
           grid-template-areas: 'top-icons . bottom-icons';
           padding: 0.8rem 1rem;
+        }
+        @media (max-width: 768px) {
+          .grid-icon {
+            display: none;
+          }
         }
       }
       .top-icons,
