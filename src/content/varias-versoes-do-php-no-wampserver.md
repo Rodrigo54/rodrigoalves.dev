@@ -47,20 +47,22 @@ E a outra é utilizando os add-ons do próprio wampserver.
 Nesse artigo, vou mostrar como adicionar uma nova versão do PHP utilizando
 os add-ons do wampserver 3.0.
 
-1.  Instale o wampserver 3.0 no [sourceforge](https://sourceforge.net/projects/wampserver/files/latest/download)
+1. Instale o wampserver 3.0 no [sourceforge](https://sourceforge.net/projects/wampserver/files/latest/download)
 
     > É importante notar que apenas as versões do PHP 5.5 e superiores
     > dão suporte 64 bits por isso para instalar versões como o
     > PHP 5.4 ou inferiores é necessário instalar o wampserver x86
 
-2.  Baixe os Add-ons do _wampserver x86_ <br />
-    - [PHP 5.3](http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/wampserver3_x86_addon_php5.3.29.exe/download)
-    - [PHP 5.4](http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/wampserver3_x86_addon_php5.4.45.exe/download)
-    - [PHP 5.5](http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/wampserver3_x86_addon_php5.5.30.exe/download)
-    - [PHP 5.6](https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/Php/wampserver3_x86_addon_php5.6.27.exe/download)
-    - [PHP 7.0](https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/Php/wampserver3_x86_addon_php7.0.13.exe/download)
-    - [PHP 7.1](https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/Php/wampserver3_x86_addon_php7.1.0.exe/download)
-    - _Opcional_ [Apache 2.2](https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/Apache/wampserver3_x86_addon_apache2.2.31.exe/download)
+2. Baixe os Add-ons do _wampserver x86_  
+  | Versão         | Download                                                                                                                                |
+  |----------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+  | PHP 5.3        | [wampserver3_x86_addon_php5.3.29.exe](http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/wampserver3_x86_addon_php5.3.29.exe/download) |
+  | PHP 5.4        | [wampserver3_x86_addon_php5.4.45.exe](http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/wampserver3_x86_addon_php5.4.45.exe/download) |
+  | PHP 5.5        | [wampserver3_x86_addon_php5.5.30.exe](http://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/wampserver3_x86_addon_php5.5.30.exe/download) |
+  | PHP 5.6        | [wampserver3_x86_addon_php5.6.27.exe](https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/Php/wampserver3_x86_addon_php5.6.27.exe/download) |
+  | PHP 7.0        | [wampserver3_x86_addon_php7.0.13.exe](https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/Php/wampserver3_x86_addon_php7.0.13.exe/download) |
+  | PHP 7.1        | [wampserver3_x86_addon_php7.1.0.exe](https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/Php/wampserver3_x86_addon_php7.1.0.exe/download) |
+  | Apache 2.2 (Opcional) | [wampserver3_x86_addon_apache2.2.31.exe](https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/Addons/Apache/wampserver3_x86_addon_apache2.2.31.exe/download) |
 
 ## PHP na linha de comando
 
