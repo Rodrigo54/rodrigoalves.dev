@@ -45,14 +45,16 @@ import { FrontMatter } from '@utils/frontmatter.signal';
     grid-template-rows: 1fr;
     align-items: center;
     align-content: stretch;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
     .prev-post {
       text-align: left;
-      grid-column: 1;
       grid-template-areas: "icon title";
     }
     .next-post {
       text-align: right;
-      grid-column: 2;
       grid-template-columns: 1fr 60px;
       grid-template-areas: "title icon";
     }
@@ -61,11 +63,11 @@ import { FrontMatter } from '@utils/frontmatter.signal';
       display: grid;
       grid-template-columns: 60px 1fr;
       grid-template-rows: auto;
-      grid-gap: 0px;
       grid-template-areas: "icon title";
-      padding: 10px 8px;
-      align-items: center;
       align-content: stretch;
+      align-items: center;
+      padding: 10px 8px;
+      grid-gap: 0px;
       height: 100%;
       color: var(--color1-contrast);
       border-radius: 0.5rem;
