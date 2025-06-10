@@ -21,6 +21,7 @@ A lógica na paginação do Google é a seguinte:
 A paginação do Google segue uma lógica específica para exibir os números das páginas de resultados. Normalmente, são mostrados até 10 links numéricos para navegação entre as páginas (por exemplo: **1 2 3 4 5 6 7 8 9 10**), a menos que o total de páginas disponíveis seja inferior a 10.  
 
 A posição do número que representa a página atual dentro dessa sequência segue um padrão:  
+
 - Se a página atual for **1, 2, 3, 4 ou 5**, ela aparecerá na posição exata correspondente ao seu número. Por exemplo, se estiver na página 3, a sequência mostrada será **1 2 3 4 5 6 7 8 9 10**.  
 - Se a página atual estiver em um número maior ou igual a 6, ela será posicionada sempre no **6º lugar dentro da sequência exibida**. Por exemplo, se estiver na página 7, a exibição será **2 3 4 5 6 7 8 9 10 11**.  
 - No entanto, quando a página atual estiver **nos últimos 4 números disponíveis**, a numeração se ajusta para manter a última página visível no final da sequência. Por exemplo, se houver 12 páginas no total e o usuário estiver na página 10, os números exibidos serão **3 4 5 6 7 8 9 10 11 12**, garantindo que a última página apareça no final.  
