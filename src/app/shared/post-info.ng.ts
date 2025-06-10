@@ -25,12 +25,8 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
   template: `
     <div class="post-date">
       <ng-icon name="matCalendarMonth" />
-      <time [attr.datetime]="formattedDateISO()" class="post-date-long">{{
-        formattedDateLong()
-      }}</time>
-      <time [attr.datetime]="formattedDateISO()" class="post-date-short">{{
-        formattedDateShort()
-      }}</time>
+      <time [attr.datetime]="formattedDateISO()" class="post-date-long">{{ formattedDateLong() }}</time>
+      <time [attr.datetime]="formattedDateISO()" class="post-date-short">{{ formattedDateShort() }}</time>
     </div>
     <div class="post-read-time">
       <ng-icon name="faClock" />
@@ -74,13 +70,14 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
         }
       }
       .post-date {
+        container-type: inline-size;
         .post-date-short {
           display: none;
         }
         .post-date-long {
           display: block;
         }
-        @media (max-width: 425px) {
+        @container (width < 425px) {
           .post-date-long {
             display: none;
           }
@@ -165,17 +162,11 @@ export default class PostInfo {
   info = input.required<Info>();
 
   formattedDateISO = computed(() => formatISO(this.info().createAt));
-  formattedDateShort = computed(() =>
-    format(this.info().createAt, `d 'de' MMMM 'de' yyyy`, { locale: ptBR })
-  );
+  formattedDateShort = computed(() => format(this.info().createAt, `d 'de' MMMM 'de' yyyy`, { locale: ptBR }));
   formattedDateLong = computed(() => {
     const dayOfWeek = format(this.info().createAt, 'EEEE', { locale: ptBR });
     const prefix = ['sábado', 'domingo'].includes(dayOfWeek) ? 'no' : 'na';
-    return format(
-      this.info().createAt,
-      `'Postado ${prefix}' EEEE, d 'de' MMMM 'de' yyyy`,
-      { locale: ptBR }
-    );
+    return format(this.info().createAt, `'Postado ${prefix}' EEEE, d 'de' MMMM 'de' yyyy`, { locale: ptBR });
   });
   formattedReadTime = computed(() => {
     const { minutes } = this.info().timeToRead;
