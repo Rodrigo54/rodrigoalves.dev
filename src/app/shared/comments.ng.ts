@@ -1,4 +1,5 @@
-import { afterNextRender, ChangeDetectionStrategy, Component, DOCUMENT, inject } from '@angular/core';
+import { afterNextRender, ChangeDetectionStrategy, Component, DOCUMENT, effect, inject } from '@angular/core';
+import { injectLocalStorage } from 'ngxtension/inject-local-storage';
 
 @Component({
   selector: 'comments',
@@ -28,8 +29,21 @@ import { afterNextRender, ChangeDetectionStrategy, Component, DOCUMENT, inject }
 })
 export class Comments {
   document = inject(DOCUMENT);
+  theme = injectLocalStorage<'light' | 'dark'>('theme', { defaultValue: 'dark' });
+
+  #themeRef = effect(() => {
+    const theme = this.theme();
+    const giscusTheme = theme === 'dark' ? 'noborder_dark' : 'noborder_light';
+    this.sendMessage({
+      setConfig: {
+        theme: giscusTheme,
+      },
+    });
+  });
 
   #ref = afterNextRender(() => {
+    const theme = this.theme();
+    const giscusTheme = theme === 'dark' ? 'noborder_dark' : 'noborder_light';
     const giscusScript = this.document.createElement('script');
     giscusScript.src = 'https://giscus.app/client.js';
     giscusScript.setAttribute('src', 'https://giscus.app/client.js');
@@ -42,7 +56,7 @@ export class Comments {
     giscusScript.setAttribute('data-reactions-enabled', '1');
     giscusScript.setAttribute('data-emit-metadata', '0');
     giscusScript.setAttribute('data-input-position', 'bottom');
-    giscusScript.setAttribute('data-theme', 'noborder_dark');
+    giscusScript.setAttribute('data-theme', giscusTheme);
     giscusScript.setAttribute('data-lang', 'pt');
     giscusScript.setAttribute('crossorigin', 'anonymous');
     giscusScript.setAttribute('async', '');

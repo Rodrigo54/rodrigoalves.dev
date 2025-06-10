@@ -1,4 +1,4 @@
-import { Component, DOCUMENT, inject, linkedSignal } from '@angular/core';
+import { Component, DOCUMENT, effect, inject, linkedSignal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { boxHomeSolid } from '@ng-icons/boxicons/solid';
 import { NgIcon, provideIcons } from '@ng-icons/core';
@@ -12,7 +12,7 @@ import { injectLocalStorage } from 'ngxtension/inject-local-storage';
       <ng-icon name="boxHomeSolid" [routerLink]="['/blog']" />
     </div>
     <div class="bottom-icons">
-      <ng-icon (click)="toTop()" name="iconoirPalette" />
+      <ng-icon (click)="toggleTheme()" name="iconoirPalette" />
       <ng-icon class="grid-icon" [name]="gridIcon()" (click)="toggleGrid()" />
       <ng-icon (click)="toTop()" name="iconoirArrowUp" />
     </div>
@@ -82,7 +82,13 @@ import { injectLocalStorage } from 'ngxtension/inject-local-storage';
 export default class Menubar {
   document = inject(DOCUMENT);
   gridType = injectLocalStorage<'cell' | 'row'>('grid', { defaultValue: 'cell' });
+  theme = injectLocalStorage<'light' | 'dark'>('theme', { defaultValue: 'dark' });
   gridIcon = linkedSignal(() => (this.gridType() === 'row' ? 'iconoirTableRows' : 'iconoirCell2x2'));
+
+  #themeRef = effect(() => {
+    const theme = this.theme();
+    this.document.documentElement.setAttribute('data-theme', theme);
+  });
 
   toTop() {
     this.document.getElementById('content')?.scroll({ top: 0, behavior: 'smooth' });
@@ -90,5 +96,10 @@ export default class Menubar {
 
   toggleGrid() {
     this.gridType.update((icon) => (icon === 'row' ? 'cell' : 'row'));
+  }
+
+  toggleTheme() {
+    this.theme.update((theme) => (theme === 'dark' ? 'light' : 'dark'));
+    this.document.documentElement.setAttribute('data-theme', this.theme());
   }
 }
