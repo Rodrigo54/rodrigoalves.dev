@@ -51,6 +51,7 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
       :host {
         display: flex;
         flex-direction: column;
+        width: 100%;
         gap: 9px;
         --ng-icon__size: calc(var(--post-info__font-size, 1rem) + 0.1rem);
         div {
