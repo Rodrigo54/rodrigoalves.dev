@@ -1,6 +1,7 @@
 import { MarkdownComponent } from '@analogjs/content';
 import { RouteMeta } from '@analogjs/router';
 import { Component } from '@angular/core';
+import { Comments } from '@shared/comments.ng';
 import PaperLayout from '@shared/paper-layout.ng';
 import PostInfo from '@shared/post-info.ng';
 import { RecommendedPosts } from '@shared/recommended-posts.ng';
@@ -13,7 +14,13 @@ export const routeMeta: RouteMeta = {
 };
 
 @Component({
-  imports: [PaperLayout, PostInfo, MarkdownComponent, RecommendedPosts],
+  imports: [
+    PaperLayout,
+    PostInfo,
+    MarkdownComponent,
+    RecommendedPosts,
+    Comments,
+  ],
   template: `
     @if (post(); as postItem) {
     <paper-layout [image]="postItem.featuredImage" [alt]="postItem.title">
@@ -29,6 +36,7 @@ export const routeMeta: RouteMeta = {
         [nextPost]="postItem.nextPost"
         [prevPost]="postItem.prevPost"
       />
+      <comments />
     </paper-layout>
     } @else {
     <p>Loading...</p>
