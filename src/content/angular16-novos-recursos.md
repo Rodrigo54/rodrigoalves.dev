@@ -1,5 +1,5 @@
 ---
-title: 'Angular 16: Novos recursos para melhorar a experiência do desenvolvedor'
+title: 'Angular 16: Novos recursos de DX'
 description: 'Descubra as novidades do Angular 16, como o recurso de sinais, a melhoria no modelo de reatividade, a marcação de entradas obrigatórias em componentes, entre outros recursos e melhorias.'
 createAt: '2023-05-07 12:00:00 -0300'
 author: 'Rodrigo Alves'
@@ -32,6 +32,7 @@ O valor de um signal é sempre lido por meio de uma função getter, o que permi
 Signals podem ser graváveis ou somente leitura.
 
 #### Signals graváveis
+
 Signals graváveis fornecem uma API para atualizar seus valores diretamente.
 Você cria signals graváveis chamando a função signal com o valor inicial do signal:
 
@@ -69,6 +70,7 @@ todos.mutate(valor => {
 Signals graváveis têm o tipo WritableSignal.
 
 #### Signals computados
+
 Um signal computado deriva seu valor de outros signals. Defina um signal computado usando a função computed e especificando uma função de derivação:
 
 ```ts
@@ -96,8 +98,8 @@ Eles oferecem uma forma mais clara e simples de modelar dependências e fluxos d
 além de proporcionar melhor desempenho e interoperabilidade com outras bibliotecas, como o RxJS.
 Com os signals, é possível criar sistemas reativos mais eficientes e elegantes, sem comprometer a simplicidade e a legibilidade do código.
 
-
 ### Required Inputs
+
 Outra funcionalidade interessante do Angular 16 é a capacidade de marcar algumas entradas de componentes como obrigatórias,
 o que significa que o componente pai deve fornecê-las, ou então um erro será lançado.
 Isso ajudará a capturar erros e erros de digitação em tempo de compilação e garantir que os componentes recebam todos os dados necessários para funcionar corretamente.
@@ -123,8 +125,8 @@ export class App {
 
 ```
 
-
 ### Passando dados do roteador como entradas de componentes
+
 A nova versão do Angular, a v16, traz uma funcionalidade muito aguardada pelos desenvolvedores: a capacidade de passar parâmetros de rota diretamente para os inputs dos componentes correspondentes.
 Isso significa que agora é possível acessar dados de resolvers, propriedades de dados, parâmetros de caminho e parâmetros de consulta diretamente nos inputs do componente de roteamento correspondente.
 Essa é uma melhoria significativa na experiência do desenvolvedor, que agora pode acessar esses dados de maneira mais direta e conveniente.
@@ -146,6 +148,7 @@ export class About {
 ```
 
 ### Tags Auto fechadas
+
 Uma funcionalidade recentemente implementada no Angular 16 é a possibilidade de usar tags auto-fecháveis para componentes em templates.
 Essa é uma pequena melhoria na experiência de desenvolvimento que pode economizar tempo de digitação.
 Em vez de escrever a tag de fechamento do componente, agora é possível fechar a tag usando uma barra (/) no final.
@@ -158,6 +161,7 @@ Essa é uma atualização simples, mas útil, que pode tornar o desenvolvimento 
 <!-- // para isso -->
 <super-duper-long-component-name [prop]="someVar"/>
 ```
+
 ### DestroyRef provider
 
 Os hooks de ciclo de vida do Angular fornecem muita flexibilidade para conectar diferentes momentos da execução do seu aplicativo.
