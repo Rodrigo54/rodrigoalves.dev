@@ -14,13 +14,7 @@ export const routeMeta: RouteMeta = {
 };
 
 @Component({
-  imports: [
-    PaperLayout,
-    PostInfo,
-    MarkdownComponent,
-    RecommendedPosts,
-    Comments,
-  ],
+  imports: [PaperLayout, PostInfo, MarkdownComponent, RecommendedPosts, Comments],
   template: `
     @if (post(); as postItem) {
     <paper-layout [image]="postItem.featuredImage" [alt]="postItem.title">
@@ -32,12 +26,9 @@ export const routeMeta: RouteMeta = {
       <article>
         <analog-markdown [content]="postItem.body" />
       </article>
-      <recommended-posts
-        [nextPost]="postItem.nextPost"
-        [prevPost]="postItem.prevPost"
-      />
-      <comments />
+      <recommended-posts [nextPost]="postItem.nextPost" [prevPost]="postItem.prevPost" />
     </paper-layout>
+    <comments />
     } @else {
     <p>Loading...</p>
     }

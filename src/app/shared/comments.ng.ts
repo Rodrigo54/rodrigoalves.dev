@@ -8,10 +8,17 @@ import { afterNextRender, ChangeDetectionStrategy, Component, DOCUMENT, inject }
     <div id="comments" class="giscus"></div>
   `,
   styles: `
+    :host {
+      display: block;
+      max-width: 1200px;
+      width: 90%;
+      margin: 30px auto;
+    }
     h2 {
       margin: 2rem auto 1rem;
       font-size: 1.7rem;
       font-family: var(--font-serif);
+      color: var(--color1-contrast);
       font-weight: 400;
       letter-spacing: 0.05rem;
       line-height: 1.4;
@@ -35,7 +42,7 @@ export class Comments {
     giscusScript.setAttribute('data-reactions-enabled', '1');
     giscusScript.setAttribute('data-emit-metadata', '0');
     giscusScript.setAttribute('data-input-position', 'bottom');
-    giscusScript.setAttribute('data-theme', 'dark');
+    giscusScript.setAttribute('data-theme', 'noborder_dark');
     giscusScript.setAttribute('data-lang', 'pt');
     giscusScript.setAttribute('crossorigin', 'anonymous');
     giscusScript.setAttribute('async', '');
