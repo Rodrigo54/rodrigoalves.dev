@@ -2,33 +2,20 @@ import { Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import PostInfo from '@shared/post-info.ng';
 import { FrontMatter } from '@utils/frontmatter.signal';
+import { injectLocalStorage } from 'ngxtension/inject-local-storage';
 
-type Info = Pick<
-  FrontMatter,
-  | 'title'
-  | 'slug'
-  | 'description'
-  | 'featuredImage'
-  | 'createAt'
-  | 'timeToRead'
-  | 'music'
-  | 'tags'
->;
+type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage' | 'createAt' | 'timeToRead' | 'music' | 'tags'>;
 
 @Component({
   selector: 'post-item',
   standalone: true,
   imports: [RouterLink, PostInfo],
+  host: {
+    '[class]': 'gridType()',
+  },
   template: `
     <a class="image" [routerLink]="['/blog', info().slug]">
-      <img
-        [src]="image()"
-        [alt]="info().title"
-        width="1920"
-        height="1080"
-        loading="eager"
-        fetchPriority="high"
-      />
+      <img [src]="image()" [alt]="info().title" width="1920" height="1080" loading="eager" fetchPriority="high" />
     </a>
     <a class="title" [routerLink]="['/blog', info().slug]">
       <h2>{{ info().title }}</h2>
@@ -48,6 +35,23 @@ type Info = Pick<
           'image title'
           'image info';
         gap: 22px;
+        @media screen and (max-width: 768px) {
+          grid-template-columns: 1fr;
+          grid-template-rows: 80px auto 1fr;
+          grid-template-areas:
+            'image'
+            'title'
+            'info';
+        }
+      }
+      :host(.cell) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 120px auto 1fr;
+        grid-template-areas:
+          'image'
+          'title'
+          'info';
+
         @media screen and (max-width: 768px) {
           grid-template-columns: 1fr;
           grid-template-rows: 80px auto 1fr;
@@ -120,6 +124,7 @@ type Info = Pick<
 })
 export default class PostItem {
   info = input.required<Info>();
+  gridType = injectLocalStorage<'cell' | 'row'>('grid', { defaultValue: 'cell' });
 
   image = computed(() => this.info().featuredImage || '/img/post-bg-01.jpg');
   description = computed(() => this.info().description);
