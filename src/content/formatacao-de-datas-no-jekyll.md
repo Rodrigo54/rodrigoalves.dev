@@ -37,7 +37,7 @@ Por exemplo, combinando a tag e o filtro:
 
 produz uma data mais amigável ao leitor:
 
-```
+```text
 December 17, 2015
 ```
 
@@ -79,10 +79,10 @@ conseguir praticamente qualquer formato de data desejado.
   {{ page.date | date_to_string; }}
   ```
 
-  Saída do Examplo 1: **03 May 2015** <br />
-  Saída do Examplo 2: **04 Jul 2015** <br />
-  Saída do Examplo 3: **23 Sep 2015** <br />
-  Saída do Examplo 4: **26 Nov 2015** <br />
+  Saída do Examplo 1: **03 May 2015**  
+  Saída do Examplo 2: **04 Jul 2015**  
+  Saída do Examplo 3: **23 Sep 2015**  
+  Saída do Examplo 4: **26 Nov 2015**  
 
 - **Data para String longa**
 
@@ -90,10 +90,10 @@ conseguir praticamente qualquer formato de data desejado.
   {{ page.date | date_to_long_string; }}
   ```
 
-  Saída do Examplo 1: **03 May 2015** <br />
-  Saída do Examplo 2: **04 July 2015** <br />
-  Saída do Examplo 3: **23 September 2015** <br />
-  Saída do Examplo 4: **26 November 2015** <br />
+  Saída do Examplo 1: **03 May 2015**  
+  Saída do Examplo 2: **04 July 2015**  
+  Saída do Examplo 3: **23 September 2015**  
+  Saída do Examplo 4: **26 November 2015**  
 
 - **Data no padrão XML**
 
@@ -101,10 +101,10 @@ conseguir praticamente qualquer formato de data desejado.
   {{ page.date | date_to_xmlschema; }}
   ```
 
-  Saída do Examplo 1: **2015-05-03T00:00:00-03:00** <br />
-  Saída do Examplo 2: **2015-07-04T00:00:00-03:00** <br />
-  Saída do Examplo 3: **2015-09-23T00:00:00-03:00** <br />
-  Saída do Examplo 4: **2015-11-26T00:00:00-03:00** <br />
+  Saída do Examplo 1: **2015-05-03T00:00:00-03:00**  
+  Saída do Examplo 2: **2015-07-04T00:00:00-03:00**  
+  Saída do Examplo 3: **2015-09-23T00:00:00-03:00**  
+  Saída do Examplo 4: **2015-11-26T00:00:00-03:00**  
 
 - **Data no padrão RFC-822**
 
@@ -112,10 +112,10 @@ conseguir praticamente qualquer formato de data desejado.
   {{ page.date | date_to_rfc822; }}
   ```
 
-  Saída do Examplo 1: **Sun, 03 May 2015 00:00:00 -0300** <br />
-  Saída do Examplo 2: **Sat, 04 Jul 2015 00:00:00 -0300** <br />
-  Saída do Examplo 3: **Wed, 23 Sep 2015 00:00:00 -0300** <br />
-  Saída do Examplo 4: **Thu, 26 Nov 2015 00:00:00 -0300** <br />
+  Saída do Examplo 1: **Sun, 03 May 2015 00:00:00 -0300**  
+  Saída do Examplo 2: **Sat, 04 Jul 2015 00:00:00 -0300**  
+  Saída do Examplo 3: **Wed, 23 Sep 2015 00:00:00 -0300**  
+  Saída do Examplo 4: **Thu, 26 Nov 2015 00:00:00 -0300**  
 
 ## Formatação de datas no Jekyll com Liquid
 
@@ -125,10 +125,10 @@ conseguir praticamente qualquer formato de data desejado.
   {{ page.date | date: "%Y-%m-%d" }}
   ```
 
-  Saída do Examplo 1: **2015-05-03** <br />
-  Saída do Examplo 2: **2015-07-04** <br />
-  Saída do Examplo 3: **2015-09-23** <br />
-  Saída do Examplo 4: **2015-11-26** <br />
+  Saída do Examplo 1: **2015-05-03**  
+  Saída do Examplo 2: **2015-07-04**  
+  Saída do Examplo 3: **2015-09-23**  
+  Saída do Examplo 4: **2015-11-26**  
 
 - **Data no formato Americano com ano de 4 digitos** (com zeros à esquerda)
 
@@ -136,10 +136,10 @@ conseguir praticamente qualquer formato de data desejado.
   {{ page.date | date: "%m/%d/%Y" }}
   ```
 
-  Saída do Examplo 1: **05/03/2015** <br />
-  Saída do Examplo 2: **07/04/2015** <br />
-  Saída do Examplo 3: **09/23/2015** <br />
-  Saída do Examplo 4: **11/26/2015** <br />
+  Saída do Examplo 1: **05/03/2015**  
+  Saída do Examplo 2: **07/04/2015**  
+  Saída do Examplo 3: **09/23/2015**  
+  Saída do Examplo 4: **11/26/2015**  
 
 - **Data no formato Americano com ano de 4 digitos** (sem zeros à esquerda)
 
@@ -147,10 +147,10 @@ conseguir praticamente qualquer formato de data desejado.
   {{ page.date | date: "%-m/%-d/%Y" }}
   ```
 
-  Saída do Examplo 1: **5/3/2015** <br />
-  Saída do Examplo 2: **7/4/2015** <br />
-  Saída do Examplo 3: **9/23/2015** <br />
-  Saída do Examplo 4: **11/26/2015** <br />
+  Saída do Examplo 1: **5/3/2015**  
+  Saída do Examplo 2: **7/4/2015**  
+  Saída do Examplo 3: **9/23/2015**  
+  Saída do Examplo 4: **11/26/2015**  
 
 - **Data no formato Americano com ano de 2 digitos** (sem zeros à esquerda)
 
@@ -158,10 +158,10 @@ conseguir praticamente qualquer formato de data desejado.
   {{ page.date | date: "%-m/%-d/%y" }}
   ```
 
-  Saída do Examplo 1: **5/3/15** <br />
-  Saída do Examplo 2: **7/4/15** <br />
-  Saída do Examplo 3: **9/23/15** <br />
-  Saída do Examplo 4: **11/26/15** <br />
+  Saída do Examplo 1: **5/3/15**  
+  Saída do Examplo 2: **7/4/15**  
+  Saída do Examplo 3: **9/23/15**  
+  Saída do Examplo 4: **11/26/15**  
 
 - **Data no formato Americano com mês completo** (sem zeros à esquerda)
 
@@ -169,10 +169,10 @@ conseguir praticamente qualquer formato de data desejado.
   {{ page.date | date: "%-d %B %Y" }}
   ```
 
-  Saída do Examplo 1: **3 May 2015** <br />
-  Saída do Examplo 2: **4 July 2015** <br />
-  Saída do Examplo 3: **23 September 2015** <br />
-  Saída do Examplo 4: **26 November 2015** <br />
+  Saída do Examplo 1: **3 May 2015**  
+  Saída do Examplo 2: **4 July 2015**  
+  Saída do Examplo 3: **23 September 2015**  
+  Saída do Examplo 4: **26 November 2015**  
 
 - **Data no formato Brasileiro com mês completo** (sem zeros à esquerda)
 
@@ -198,10 +198,10 @@ conseguir praticamente qualquer formato de data desejado.
   {% endraw %}
   ```
 
-  Saída do Examplo 1: **3 de Maio de 2015** <br />
-  Saída do Examplo 2: **4 de Julho de 2015** <br />
-  Saída do Examplo 3: **23 de Setembro de 2015** <br />
-  Saída do Examplo 4: **26 de Novembro de 2015** <br />
+  Saída do Examplo 1: **3 de Maio de 2015**  
+  Saída do Examplo 2: **4 de Julho de 2015**  
+  Saída do Examplo 3: **23 de Setembro de 2015**  
+  Saída do Examplo 4: **26 de Novembro de 2015**  
 
 - **Data no formato padrão Americano com mês completo** (sem zeros à esquerda)
 
@@ -209,10 +209,10 @@ conseguir praticamente qualquer formato de data desejado.
   {{ page.date | date: "%B %-d, %Y" }}
   ```
 
-  Saída do Examplo 1: **May 3, 2015** <br />
-  Saída do Examplo 2: **July 4, 2015** <br />
-  Saída do Examplo 3: **September 23, 2015** <br />
-  Saída do Examplo 4: **November 26, 2015** <br />
+  Saída do Examplo 1: **May 3, 2015**  
+  Saída do Examplo 2: **July 4, 2015**  
+  Saída do Examplo 3: **September 23, 2015**  
+  Saída do Examplo 4: **November 26, 2015**  
 
 - **Data no formato Americano com mês completo e dias ordenados** (sem zeros à esquerda)
 
@@ -230,10 +230,10 @@ conseguir praticamente qualquer formato de data desejado.
   {% endraw %}
   ```
 
-  Saída do Examplo 1: **May 3rd 2015** <br />
-  Saída do Examplo 2: **July 4th 2015** <br />
-  Saída do Examplo 3: **September 23rd 2015** <br />
-  Saída do Examplo 4: **November 26th 2015** <br />
+  Saída do Examplo 1: **May 3rd 2015**  
+  Saída do Examplo 2: **July 4th 2015**  
+  Saída do Examplo 3: **September 23rd 2015**  
+  Saída do Examplo 4: **November 26th 2015**  
 
 - **Data no formato Brasileiro com dia e mês completo** (sem zeros à esquerda)
 
@@ -269,10 +269,10 @@ conseguir praticamente qualquer formato de data desejado.
   {% endraw %}
   ```
 
-  Saída do Examplo 1: **Domingo, 3 de Maio de 2015** <br />
-  Saída do Examplo 2: **Sábado, 4 de Julho de 2015** <br />
-  Saída do Examplo 3: **Quarta feira, 23 de Setembro de 2015** <br />
-  Saída do Examplo 4: **Quinta feira, 26 de Novembro de 2015** <br />
+  Saída do Examplo 1: **Domingo, 3 de Maio de 2015**  
+  Saída do Examplo 2: **Sábado, 4 de Julho de 2015**  
+  Saída do Examplo 3: **Quarta feira, 23 de Setembro de 2015**  
+  Saída do Examplo 4: **Quinta feira, 26 de Novembro de 2015**  
 
 ---
 
