@@ -81,7 +81,7 @@ import { injectLocalStorage } from 'ngxtension/inject-local-storage';
 })
 export default class Menubar {
   document = inject(DOCUMENT);
-  gridType = injectLocalStorage<'cell' | 'row'>('grid', { defaultValue: 'cell' });
+  gridType = injectLocalStorage<'cell' | 'row'>('grid', { defaultValue: 'row' });
   theme = injectLocalStorage<'light' | 'dark'>('theme', { defaultValue: 'dark' });
   gridIcon = linkedSignal(() => (this.gridType() === 'row' ? 'iconoirTableRows' : 'iconoirCell2x2'));
 

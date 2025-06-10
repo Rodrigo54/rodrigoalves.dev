@@ -124,7 +124,7 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
 })
 export default class PostItem {
   info = input.required<Info>();
-  gridType = injectLocalStorage<'cell' | 'row'>('grid', { defaultValue: 'cell' });
+  gridType = injectLocalStorage<'cell' | 'row'>('grid', { defaultValue: 'row' });
 
   image = computed(() => this.info().featuredImage || '/img/post-bg-01.jpg');
   description = computed(() => this.info().description);

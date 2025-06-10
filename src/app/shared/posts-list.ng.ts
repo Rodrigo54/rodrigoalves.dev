@@ -59,5 +59,5 @@ export class PostsList {
     totalPages: number;
   }>();
 
-  gridType = injectLocalStorage<'cell' | 'row'>('grid', { defaultValue: 'cell' });
+  gridType = injectLocalStorage<'cell' | 'row'>('grid', { defaultValue: 'row' });
 }
