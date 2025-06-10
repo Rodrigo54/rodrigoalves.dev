@@ -47,16 +47,24 @@ import { FrontMatter } from '@utils/frontmatter.signal';
     align-content: stretch;
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: repeat(2, auto);
     }
     .prev-post {
+      grid-column: 1;
       text-align: left;
       grid-template-areas: "icon title";
+      @media (max-width: 768px) {
+        grid-column: 1;
+      }
     }
     .next-post {
+      grid-column: 2;
       text-align: right;
       grid-template-columns: 1fr 60px;
       grid-template-areas: "title icon";
+      @media (max-width: 768px) {
+        grid-column: 1;
+      }
     }
 
     a {
