@@ -41,4 +41,10 @@ export class Comments {
     giscusScript.setAttribute('async', '');
     this.document.head.appendChild(giscusScript);
   });
+
+  sendMessage<T>(message: T) {
+    const iframe = this.document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
+    if (!iframe || !iframe.contentWindow) return;
+    iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
 }
