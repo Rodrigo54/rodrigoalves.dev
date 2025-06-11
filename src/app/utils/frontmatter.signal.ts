@@ -1,15 +1,5 @@
-import {
-  ContentFile,
-  injectContent,
-  injectContentFiles,
-} from '@analogjs/content';
-import {
-  inject,
-  Injector,
-  runInInjectionContext,
-  Signal,
-  signal,
-} from '@angular/core';
+import { ContentFile, injectContent, injectContentFiles } from '@analogjs/content';
+import { inject, Injector, runInInjectionContext, Signal, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { environment } from 'src/env/env';
@@ -52,16 +42,13 @@ export function frontMatterSignal<T extends 'all' | 'slug'>(
       const post$ = injectContent('slug');
       const subscription$ = post$.pipe(
         map((post) => {
-          const adjacentPosts = formattedPosts.reduce<AdjacentPosts>(
-            (acc, curr, index) => {
-              if (curr.slug === post.slug) {
-                acc.nextPost = formattedPosts[index - 1] ?? null;
-                acc.prevPost = formattedPosts[index + 1] ?? null;
-              }
-              return acc;
-            },
-            {}
-          );
+          const adjacentPosts = formattedPosts.reduce<AdjacentPosts>((acc, curr, index) => {
+            if (curr.slug === post.slug) {
+              acc.nextPost = formattedPosts[index - 1] ?? null;
+              acc.prevPost = formattedPosts[index + 1] ?? null;
+            }
+            return acc;
+          }, {});
           return makeFrontMatter(post, adjacentPosts);
         })
       );
@@ -71,18 +58,13 @@ export function frontMatterSignal<T extends 'all' | 'slug'>(
     return signal(makeArrayFrontMatter(posts)).asReadonly();
   });
 
-  return result as T extends 'slug'
-    ? Signal<FrontMatter>
-    : Signal<FrontMatter[]>;
+  return result as T extends 'slug' ? Signal<FrontMatter> : Signal<FrontMatter[]>;
 }
 
-export function makeFrontMatter(
-  data?: ContentFile,
-  adjacentPosts?: AdjacentPosts
-): FrontMatter {
+export function makeFrontMatter(data?: ContentFile, adjacentPosts?: AdjacentPosts): FrontMatter {
   if (!data?.attributes) {
     return {
-      title: 'Blog Rodrigo Alves',
+      title: 'Blog',
       description:
         'Sou um Full Stack Web Developer que gosta de aprender novas formas de programar. Tento me esforçar para ser um bom artista na web.',
       slug: '',
@@ -132,10 +114,6 @@ export function makeFrontMatter(
 export function makeArrayFrontMatter(data: ContentFile[]): FrontMatter[] {
   return data
     .map((post) => makeFrontMatter(post))
-    .filter(
-      (post) => !post.draft || (post.draft && environment.allowDraftPosts)
-    )
-    .toSorted(
-      (a, b) => new Date(b.createAt).getTime() - new Date(a.createAt).getTime()
-    );
+    .filter((post) => !post.draft || (post.draft && environment.allowDraftPosts))
+    .toSorted((a, b) => new Date(b.createAt).getTime() - new Date(a.createAt).getTime());
 }
