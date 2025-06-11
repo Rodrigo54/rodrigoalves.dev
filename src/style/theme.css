@@ -1,98 +1,82 @@
 :root {
-  --primary: #6ea9ff;
-  --background: #4c475d;
-  --foreground: #1e1e1e;
-  --primary-contrast: #000000;
-  --background-contrast: #ffffff;
-  --foreground-contrast: #ffffff;
-  --text-color: var(--foreground-contrast);
-  --text-color-light: color-mix(in srgb, var(--foreground-contrast), var(--foreground) 50%);
-  --text-color-dark: color-mix(in srgb, var(--foreground-contrast), var(--foreground) 20%);
-  --primary-color: var(--primary-color);
-  --primary-color-light: color-mix(in srgb, var(--primary-contrast), var(--primary-color) 50%);
-  --primary-color-dark: color-mix(in srgb, var(--primary-contrast), var(--primary-color) 20%);
-  --background-color: var(--background);
-  --background-color-light: color-mix(in srgb, var(--background-contrast), var(--background) 50%);
-  --background-color-dark: color-mix(in srgb, var(--background-contrast), var(--background) 20%);
-  --foreground-color: var(--foreground);
-  --foreground-color-light: color-mix(in srgb, var(--foreground-contrast), var(--foreground) 50%);
-  --foreground-color-dark: color-mix(in srgb, var(--foreground-contrast), var(--foreground) 20%);
-  --border-color: var(--background-color-light);
+  --primary-color: #6ea9ff;
+  --background-color: #303030;
+  --paper-color: #1e1e1e;
+  --primary-color-contrast: #000000;
+  --background-color-contrast: #ffffff;
+  --paper-color-contrast: #ffffff;
+  --text-color: var(--paper-color-contrast);
+  --text-color-contrast: var(--paper-color);
+  --text-color-tint: color-mix(in srgb, var(--text-color-contrast) 60%, var(--text-color) 40%);
+  --text-color-shade: color-mix(in srgb, var(--text-color-contrast) 10%, var(--text-color) 90%);
+  --text-color-alt: color-mix(in srgb, var(--text-color-contrast) 25%, var(--text-color) 75%);
+  --primary-color-tint: color-mix(in srgb, var(--primary-color-contrast) 60%, var(--primary-color) 40%);
+  --primary-color-shade: color-mix(in srgb, var(--primary-color-contrast) 10%, var(--primary-color) 90%);
+  --primary-color-alt: color-mix(in srgb, var(--primary-color-contrast) 25%, var(--primary-color) 75%);
+  --background-color-tint: color-mix(in srgb, var(--background-color-contrast) 60%, var(--background-color) 40%);
+  --background-color-shade: color-mix(in srgb, var(--background-color-contrast) 10%, var(--background-color) 90%);
+  --background-color-alt: color-mix(in srgb, var(--background-color-contrast) 25%, var(--background-color) 75%);
+  --paper-color-tint: color-mix(in srgb, var(--paper-color-contrast) 60%, var(--paper-color) 40%);
+  --paper-color-shade: color-mix(in srgb, var(--paper-color-contrast) 10%, var(--paper-color) 90%);
+  --paper-color-alt: color-mix(in srgb, var(--paper-color-contrast) 25%, var(--paper-color) 75%);
+  --border-color: var(--background-color-alt);
   --font-serif: "Merriweather", serif;
   --font-sans: "Open Sans", sans-serif;
   --font-size: 16px;
 }
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --color1: #1e1e1e;
-    --color1-light: #4c475d;
-    --color1-shade: #303030;
-    --color1-contrast: #fff;
-
-    --color2: #1e1e1e;
-    --color2-light: #3c3c3c;
-    --color2-shade: #2b2b2b;
-    --color2-contrast: #fff;
-
-    --color3: #6ea9ff;
-    --color3-light: #b39ddb;
-    --color3-shade: #1565c0;
-    --color3-contrast: #fff;
+    --primary-color: #6ea9ff;
+    --background-color: #303030;
+    --paper-color: #1e1e1e;
+    --primary-color-contrast: #000000;
+    --background-color-contrast: #ffffff;
+    --paper-color-contrast: #ffffff;
+    --text-color: var(--paper-color-contrast);
+    --text-color-contrast: var(--paper-color);
+    --text-color-tint: color-mix(in srgb, var(--text-color-contrast) 60%, var(--text-color) 40%);
+    --text-color-shade: color-mix(in srgb, var(--text-color-contrast) 10%, var(--text-color) 90%);
+    --text-color-alt: color-mix(in srgb, var(--text-color-contrast) 25%, var(--text-color) 75%);
+    --primary-color-tint: color-mix(in srgb, var(--primary-color-contrast) 60%, var(--primary-color) 40%);
+    --primary-color-shade: color-mix(in srgb, var(--primary-color-contrast) 10%, var(--primary-color) 90%);
+    --primary-color-alt: color-mix(in srgb, var(--primary-color-contrast) 25%, var(--primary-color) 75%);
+    --background-color-tint: color-mix(in srgb, var(--background-color-contrast) 60%, var(--background-color) 40%);
+    --background-color-shade: color-mix(in srgb, var(--background-color-contrast) 10%, var(--background-color) 90%);
+    --background-color-alt: color-mix(in srgb, var(--background-color-contrast) 25%, var(--background-color) 75%);
+    --paper-color-tint: color-mix(in srgb, var(--paper-color-contrast) 60%, var(--paper-color) 40%);
+    --paper-color-shade: color-mix(in srgb, var(--paper-color-contrast) 10%, var(--paper-color) 90%);
+    --paper-color-alt: color-mix(in srgb, var(--paper-color-contrast) 25%, var(--paper-color) 75%);
+    --border-color: var(--background-color-alt);
+    --font-serif: "Merriweather", serif;
+    --font-sans: "Open Sans", sans-serif;
+    --font-size: 16px;
   }
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --color1: #fafafa;
-    --color1-light: #eef1f4;
-    --color1-shade: #fafafa;
-    --color1-contrast: #292929;
-
-    --color2: #fff;
-    --color2-light: #eee;
-    --color2-shade: #eee;
-    --color2-contrast: #1b1b1b;
-
-    --color3: #1565c0;
-    --color3-light: #1976d2;
-    --color3-shade: #0d47a1;
-    --color3-contrast: #fff;
+    --primary-color: #579bb1;
+    --background-color: #ece8dd;
+    --paper-color: #f7f5eb;
+    --primary-color-contrast: #000000;
+    --background-color-contrast: #000000;
+    --paper-color-contrast: #000000;
+    --text-color: var(--paper-color-contrast);
+    --text-color-contrast: var(--paper-color);
+    --text-color-tint: color-mix(in srgb, var(--text-color-contrast) 60%, var(--text-color) 40%);
+    --text-color-shade: color-mix(in srgb, var(--text-color-contrast) 10%, var(--text-color) 90%);
+    --text-color-alt: color-mix(in srgb, var(--text-color-contrast) 25%, var(--text-color) 75%);
+    --primary-color-tint: color-mix(in srgb, var(--primary-color-contrast) 60%, var(--primary-color) 40%);
+    --primary-color-shade: color-mix(in srgb, var(--primary-color-contrast) 10%, var(--primary-color) 90%);
+    --primary-color-alt: color-mix(in srgb, var(--primary-color-contrast) 25%, var(--primary-color) 75%);
+    --background-color-tint: color-mix(in srgb, var(--background-color-contrast) 60%, var(--background-color) 40%);
+    --background-color-shade: color-mix(in srgb, var(--background-color-contrast) 10%, var(--background-color) 90%);
+    --background-color-alt: color-mix(in srgb, var(--background-color-contrast) 25%, var(--background-color) 75%);
+    --paper-color-tint: color-mix(in srgb, var(--paper-color-contrast) 60%, var(--paper-color) 40%);
+    --paper-color-shade: color-mix(in srgb, var(--paper-color-contrast) 10%, var(--paper-color) 90%);
+    --paper-color-alt: color-mix(in srgb, var(--paper-color-contrast) 25%, var(--paper-color) 75%);
+    --border-color: var(--background-color-alt);
+    --font-serif: "Merriweather", serif;
+    --font-sans: "Open Sans", sans-serif;
+    --font-size: 16px;
   }
 }
-
-@scope (html[data-theme="dark"]) {
-  :scope {
-    --color1: rgb(30 30 30);
-    --color1-light: #4c475d;
-    --color1-shade: #303030;
-    --color1-contrast: #fff;
-
-    --color2: #1e1e1e;
-    --color2-light: #3c3c3c;
-    --color2-shade: #2b2b2b;
-    --color2-contrast: #fff;
-
-    --color3: rgb(110 169 255);
-    --color3-light: #b39ddb;
-    --color3-shade: #1565c0;
-    --color3-contrast: #fff;
-  }
-}
-
-@scope (html[data-theme="light"]) {
-  :scope {
-    --color1: #faf9f6;
-    --color1-light: #777777;
-    --color1-shade: #edeade;
-    --color1-contrast: #292929;
-
-    --color2: #f9f6ee;
-    --color2-light: #7a7a7a;
-    --color2-shade: #777777;
-    --color2-contrast: #1b1b1b;
-
-    --color3: #1565c0;
-    --color3-light: #1976d2;
-    --color3-shade: #0d47a1;
-    --color3-contrast: #fff;
-  }
-} */
