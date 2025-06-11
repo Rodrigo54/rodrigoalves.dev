@@ -19,7 +19,7 @@ import { injectLocalStorage } from 'ngxtension/inject-local-storage';
       margin: 2rem auto 1rem;
       font-size: 1.7rem;
       font-family: var(--font-serif);
-      color: var(--color1-contrast);
+      color: var(--text-color);
       font-weight: 400;
       letter-spacing: 0.05rem;
       line-height: 1.4;

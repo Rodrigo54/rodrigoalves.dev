@@ -25,11 +25,11 @@ import Avatar from '@shared/avatar.ng';
         grid-template-rows: 1fr auto auto;
         grid-template-areas: 'avatar' 'name' 'position';
         gap: 0 1rem;
-        color: var(--color1-contrast);
+        color: var(--text-color);
         text-decoration: none;
         transition: color 0.5s;
         &:hover {
-          color: var(--color3-light);
+          color: var(--primary-color);
         }
         avatar {
           grid-area: avatar;
@@ -45,16 +45,16 @@ import Avatar from '@shared/avatar.ng';
         h2 {
           grid-area: position;
           display: block;
-          font-family: var(--font-sans-serif);
+          font-family: var(--font-sans);
           font-size: 1rem;
           margin-top: 1rem;
           font-weight: normal;
         }
       }
       p {
-        color: var(--color1-contrast);
+        color: var(--text-color);
         margin: 1.6rem 0rem 2rem;
-        font-family: var(--font-sans-serif);
+        font-family: var(--font-sans);
         font-size: 1rem;
         text-wrap: balance;
         font-weight: 300;

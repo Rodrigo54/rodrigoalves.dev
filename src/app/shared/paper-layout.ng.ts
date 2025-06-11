@@ -45,7 +45,7 @@ import { Component, input } from '@angular/core';
         width: 90%;
         box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
         border-radius: 6px;
-        background: var(--color2);
+        background: var(--paper-color);
       }
       .paper-header {
         display: flex;
@@ -53,7 +53,7 @@ import { Component, input } from '@angular/core';
         align-items: flex-start;
         justify-content: center;
         gap: 1.4rem;
-        color: var(--color2-contrast);
+        color: var(--text-color);
         padding: 25px;
         padding-bottom: 0px;
         h1 {
@@ -65,14 +65,14 @@ import { Component, input } from '@angular/core';
           font-size: 2.2rem;
         }
         p {
-          font-family: var(--font-sans-serif);
+          font-family: var(--font-sans);
           line-height: 1.4;
           font-size: 1.5rem;
           font-weight: 300;
         }
       }
       .paper-content {
-        color: var(--color2-contrast);
+        color: var(--text-color);
         padding: 25px;
       }
     `,

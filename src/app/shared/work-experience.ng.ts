@@ -1,10 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { Works } from '@app/data/works';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import {
-  matCalendarMonth,
-  matMapsHomeWork,
-} from '@ng-icons/material-icons/baseline';
+import { matCalendarMonth, matMapsHomeWork } from '@ng-icons/material-icons/baseline';
 import { matWorkOutline } from '@ng-icons/material-icons/outline';
 import DurationComponent from '@shared/duration.ng';
 
@@ -72,7 +69,7 @@ import DurationComponent from '@shared/duration.ng';
           padding: 0px 15px;
           margin: 30px 27px;
 
-          font-family: var(--font-sans-serif);
+          font-family: var(--font-sans);
           line-height: 1.5;
           font-weight: 200;
           font-size: 1rem;
@@ -91,7 +88,5 @@ import DurationComponent from '@shared/duration.ng';
   ],
 })
 export default class WorkExperience {
-  works = signal(
-    Works.toSorted((a, b) => b.duration.init.localeCompare(a.duration.init))
-  );
+  works = signal(Works.toSorted((a, b) => b.duration.init.localeCompare(a.duration.init)));
 }

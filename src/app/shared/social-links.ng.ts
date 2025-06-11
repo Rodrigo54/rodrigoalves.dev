@@ -23,8 +23,7 @@ import { faSolidChessBoard } from '@ng-icons/font-awesome/solid';
   selector: 'social-links',
   imports: [NgIcon],
   template: `
-    @for (icon of socialLinksList(); track icon.url) { @if (!showAll() &&
-    icon.show) {
+    @for (icon of socialLinksList(); track icon.url) { @if (!showAll() && icon.show) {
     <a [href]="icon.url" target="_blank" rel="noopener noreferrer">
       <ng-icon [name]="icon.icon" />
     </a>
@@ -52,15 +51,15 @@ import { faSolidChessBoard } from '@ng-icons/font-awesome/solid';
       :host {
         display: flex;
         gap: 1rem;
-        color: var(--color1-contrast);
+        color: var(--text-color);
       }
       a {
-        color: var(--color1-contrast);
+        color: var(--text-color);
         transition: color 0.5s;
         --ng-icon__size: 2rem;
       }
       a:hover {
-        color: var(--color3-light);
+        color: var(--primary-color);
       }
       ul {
         display: grid;

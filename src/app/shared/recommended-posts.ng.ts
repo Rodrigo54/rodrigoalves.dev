@@ -77,7 +77,7 @@ import { FrontMatter } from '@utils/frontmatter.signal';
       padding: 10px 8px;
       grid-gap: 0px;
       height: 100%;
-      color: var(--color1-contrast);
+      color: var(--text-color);
       border-radius: 0.5rem;
       ng-icon {
         grid-area: icon;
@@ -93,7 +93,7 @@ import { FrontMatter } from '@utils/frontmatter.signal';
         font-size: 1.1rem;
       }
       &:hover {
-        color: var(--color3-light);
+        color: var(--primary-color);
       }
     }
   }

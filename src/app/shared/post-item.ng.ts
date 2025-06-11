@@ -81,7 +81,7 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
         }
       }
       h2 {
-        color: var(--color1-contrast);
+        color: var(--text-color);
         font-family: var(--font-serif);
         font-size: 1.4rem;
         font-weight: 400;
@@ -94,7 +94,7 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
         text-overflow: ellipsis;
       }
       p {
-        color: hsl(from var(--color1-contrast) h s 80%);
+        color: var(--text-color-alt);
         font-size: 1.2rem;
         line-height: 1.3;
         display: -webkit-box;
@@ -104,7 +104,6 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
         text-overflow: ellipsis;
       }
       post-info {
-        color: var(--color3-contrast);
         grid-area: info;
         --post-info__font-size: 1rem;
       }
@@ -116,7 +115,7 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
         }
         h2,
         p {
-          color: var(--color3-light);
+          color: var(--primary-color);
         }
       }
     `,

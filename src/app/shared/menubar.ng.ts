@@ -1,8 +1,9 @@
-import { Component, DOCUMENT, effect, inject, linkedSignal } from '@angular/core';
+import { Component, computed, DOCUMENT, effect, inject, linkedSignal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { boxHomeSolid } from '@ng-icons/boxicons/solid';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { iconoirArrowUp, iconoirCell2x2, iconoirPalette, iconoirTableRows } from '@ng-icons/iconoir';
+import { getTheme } from '@utils/theme.class';
 import { injectLocalStorage } from 'ngxtension/inject-local-storage';
 
 @Component({
@@ -21,7 +22,7 @@ import { injectLocalStorage } from 'ngxtension/inject-local-storage';
     `
       :host {
         --ng-icon__size: 2rem;
-        color: var(--color1-contrast);
+        color: var(--text-color);
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 2rem 1fr auto;
@@ -63,7 +64,7 @@ import { injectLocalStorage } from 'ngxtension/inject-local-storage';
         cursor: pointer;
         transition: color 0.5s;
         &:hover {
-          color: var(--color3-light);
+          color: var(--primary-color);
         }
       }
     `,
@@ -85,9 +86,25 @@ export default class Menubar {
   theme = injectLocalStorage<'light' | 'dark'>('theme', { defaultValue: 'dark' });
   gridIcon = linkedSignal(() => (this.gridType() === 'row' ? 'iconoirTableRows' : 'iconoirCell2x2'));
 
-  #themeRef = effect(() => {
+  themeObject = computed(() => {
     const theme = this.theme();
-    this.document.documentElement.setAttribute('data-theme', theme);
+    return theme === 'dark' ? getTheme('default-dark') : getTheme('default-light');
+  });
+
+  #themeRef = effect(() => {
+    console.log('Theme changed:', this.theme());
+    const themeObject = this.themeObject();
+    this.document.documentElement.setAttribute('data-theme', themeObject.themeName);
+    const styleThemeTag = this.document.createElement('style');
+    styleThemeTag.setAttribute('id', 'currentTheme');
+    const themeStyle = `body { ${themeObject.createCssVariables()} }`;
+    styleThemeTag.innerHTML = themeStyle;
+    const existingThemeTag = this.document.getElementById('currentTheme');
+    if (existingThemeTag) {
+      existingThemeTag.replaceWith(styleThemeTag);
+    } else {
+      this.document.head.appendChild(styleThemeTag);
+    }
   });
 
   toTop() {

@@ -1,11 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { Courses, Formation } from '@app/data/formation';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import {
-  faSolidBuildingColumns,
-  faSolidGraduationCap,
-  faSolidUserGraduate,
-} from '@ng-icons/font-awesome/solid';
+import { faSolidBuildingColumns, faSolidGraduationCap, faSolidUserGraduate } from '@ng-icons/font-awesome/solid';
 import { matOndemandVideo } from '@ng-icons/material-icons/baseline';
 import DurationComponent from '@shared/duration.ng';
 
@@ -26,10 +22,7 @@ import DurationComponent from '@shared/duration.ng';
             <ng-icon name="faSolidBuildingColumns" size="20" />
             {{ formation.locale }}
           </p>
-          <duration
-            [init]="formation.duration.init"
-            [end]="formation.duration.end"
-          />
+          <duration [init]="formation.duration.init" [end]="formation.duration.end" />
           <blockquote>{{ formation.description }}</blockquote>
         </div>
         }
@@ -39,13 +32,7 @@ import DurationComponent from '@shared/duration.ng';
       <h2>Cursos</h2>
       <div class="formation-item">
         @for (course of courses(); track $index) {
-        <a
-          class="info-wrap"
-          [href]="course.link"
-          [title]="course.name"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a class="info-wrap" [href]="course.link" [title]="course.name" target="_blank" rel="noopener noreferrer">
           <h3>
             @if (course.online) {
             <ng-icon name="matOndemandVideo" size="20" />
@@ -113,7 +100,7 @@ import DurationComponent from '@shared/duration.ng';
           padding: 0px 15px;
           margin: 15px 27px 15px 7px;
 
-          font-family: var(--font-sans-serif);
+          font-family: var(--font-sans);
           line-height: 1.5;
           font-weight: 200;
           font-size: 1rem;
@@ -133,9 +120,7 @@ import DurationComponent from '@shared/duration.ng';
   ],
 })
 export default class FormationComponent {
-  formations = signal(
-    Formation.toSorted((a, b) => b.duration.init.localeCompare(a.duration.init))
-  );
+  formations = signal(Formation.toSorted((a, b) => b.duration.init.localeCompare(a.duration.init)));
 
   courses = signal(Courses.toSorted((a, b) => b.year.localeCompare(a.year)));
 

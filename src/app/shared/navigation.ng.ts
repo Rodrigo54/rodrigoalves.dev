@@ -5,23 +5,23 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   selector: 'navigation',
   imports: [RouterLink, RouterLinkActive],
   template: `
-  <nav>
-    <ul>
-      @for (link of links; track link.url) {
+    <nav>
+      <ul>
+        @for (link of links; track link.url) {
         <li>
           @if (link.external) {
-            <a [href]="link.url" target="_blank" rel="noopener noreferrer">
-              {{ link.label }}
-            </a>
+          <a [href]="link.url" target="_blank" rel="noopener noreferrer">
+            {{ link.label }}
+          </a>
           } @else {
-            <a [routerLink]="[link.url]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-              {{ link.label }}
-            </a>
+          <a [routerLink]="[link.url]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            {{ link.label }}
+          </a>
           }
         </li>
-      }
-    </ul>
-  </nav>
+        }
+      </ul>
+    </nav>
   `,
   styles: [
     `
@@ -40,15 +40,15 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         text-align: center;
       }
       a {
-        color: var(--color1-contrast);
-        font-family: var(--font-sans-serif);
+        color: var(--text-color);
+        font-family: var(--font-sans);
         font-size: 1.2rem;
         text-decoration: none;
         transition: all 0.3s;
       }
       a:hover,
       a.active {
-        color: var(--color3-light);
+        color: var(--primary-color);
       }
       a.active {
         font-weight: bold;
