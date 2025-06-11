@@ -1,6 +1,6 @@
 export const Works = [
   {
-    position: 'Desenvolvedor Full-Stack PHP',
+    position: 'Dev Full-Stack PHP',
     locale: 'Escritório Escola',
     duration: {
       init: '2014-07-01',
@@ -60,8 +60,8 @@ export const Works = [
       'No shopcoopera.com.br fui responsável por melhorias e manutenção, focando na otimização das integrações do sistema com parceiros do marketplace. Utilizamos o Next.js no e-commerce, resultando em maior segurança nas transações e melhor integração entre parceiros.',
   },
   {
-    position: 'Desenvolvedor Frontend e Mobile',
-    locale: 'Senior Sistemas - Softwares para logística ',
+    position: 'Dev Frontend e Mobile',
+    locale: 'Senior Sistemas',
     duration: {
       init: '2021-11-15',
     },
