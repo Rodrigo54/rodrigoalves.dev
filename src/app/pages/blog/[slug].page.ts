@@ -26,8 +26,8 @@ export const routeMeta: RouteMeta = {
       <article>
         <analog-markdown [content]="postItem.body" />
       </article>
-      <recommended-posts [nextPost]="postItem.nextPost" [prevPost]="postItem.prevPost" />
     </paper-layout>
+    <recommended-posts [nextPost]="postItem.nextPost" [prevPost]="postItem.prevPost" />
     <comments />
     } @else {
     <p>Loading...</p>
