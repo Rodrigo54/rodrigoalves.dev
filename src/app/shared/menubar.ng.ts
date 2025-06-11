@@ -92,7 +92,6 @@ export default class Menubar {
   });
 
   #themeRef = effect(() => {
-    console.log('Theme changed:', this.theme());
     const themeObject = this.themeObject();
     this.document.documentElement.setAttribute('data-theme', themeObject.themeName);
     const styleThemeTag = this.document.createElement('style');
