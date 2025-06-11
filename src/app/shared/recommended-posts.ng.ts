@@ -36,10 +36,10 @@ import { FrontMatter } from '@utils/frontmatter.signal';
     display: block;
     max-width: 1200px;
     width: 90%;
-    margin: 30px auto;
+    margin: 0px auto 30px auto;
   }
   h2 {
-    margin: 2rem auto 1rem;
+    margin: 0px auto 1rem auto;
     font-size: 1.7rem;
     font-family: var(--font-serif);
     color: var(--text-color);
