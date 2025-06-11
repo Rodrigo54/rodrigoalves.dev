@@ -300,7 +300,14 @@ main analog-markdown {
     margin: 1rem auto;
     overflow-x: auto;
     padding: 1rem 0px;
-    background: var(--background-color);
-    border-radius: 6px;
   }
+}
+
+.shiki,
+.shiki span {
+  background: var(--background-color);
+  font-family: var(--font-mono) !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
 }

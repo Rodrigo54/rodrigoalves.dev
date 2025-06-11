@@ -22,6 +22,7 @@
   --border-color: var(--background-color-alt);
   --font-serif: "Merriweather", serif;
   --font-sans: "Open Sans", sans-serif;
+  --font-mono: "Fira Code", monospace;
   --font-size: 16px;
 }
 @media (prefers-color-scheme: dark) {
@@ -49,6 +50,7 @@
     --border-color: var(--background-color-alt);
     --font-serif: "Merriweather", serif;
     --font-sans: "Open Sans", sans-serif;
+    --font-mono: "Fira Code", monospace;
     --font-size: 16px;
   }
 }
@@ -77,6 +79,23 @@
     --border-color: var(--background-color-alt);
     --font-serif: "Merriweather", serif;
     --font-sans: "Open Sans", sans-serif;
+    --font-mono: "Fira Code", monospace;
     --font-size: 16px;
+  }
+}
+
+@scope (html[data-theme="default-dark"]) {
+  .shiki,
+  .shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: transparent !important;
+  }
+}
+
+@scope (html[data-theme="default-light"]) {
+  .shiki,
+  .shiki span {
+    color: var(--shiki-light) !important;
+    background-color: transparent !important;
   }
 }

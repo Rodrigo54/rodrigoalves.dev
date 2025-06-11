@@ -10,6 +10,7 @@ export class Theme {
   public themeName: string = 'default-dark';
   public fontSerif: string = '"Merriweather", serif';
   public fontSans: string = '"Open Sans", sans-serif';
+  public fontMono: string = '"Fira Code", monospace';
   public fontSize: string = '16px';
   public palette: PaletteObject = {
     'primary-color': '#6ea9ff',
@@ -61,6 +62,7 @@ export class Theme {
       paper: string;
       fontSerif: string;
       fontSans: string;
+      fontMono: string;
       fontSize: string;
     }> = {}
   ) {
@@ -68,6 +70,7 @@ export class Theme {
       this.themeName = data.themeName ?? this.themeName;
       this.fontSerif = data.fontSerif ?? this.fontSerif;
       this.fontSans = data.fontSans ?? this.fontSans;
+      this.fontMono = data.fontMono ?? this.fontMono;
       this.fontSize = data.fontSize ?? this.fontSize;
       this.palette = {
         'primary-color': data.primary ?? this.palette['primary-color'],

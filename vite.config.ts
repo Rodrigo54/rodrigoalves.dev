@@ -21,18 +21,12 @@ export default defineConfig(({ mode }) => ({
         highlighter: 'shiki',
         shikiOptions: {
           highlight: {
-            theme: 'dark-plus',
-            // themes: {
-            //   light: 'light-plus',
-            //   dark: 'dark-plus',
-            // },
-            // transformers: [
-            //   {
-            //     pre(node) {
-            //       node.properties['style'] = "background-color: var(--code-bg, white); color: var(--code-fg, black);";
-            //     }
-            //   }
-            // ],
+            themes: {
+              light: 'light-plus',
+              dark: 'dark-plus',
+            },
+            defaultColor: false,
+            cssVariablePrefix: '--shiki-',
           },
           highlighter: {
             themes: ['light-plus', 'dark-plus'],
@@ -41,13 +35,7 @@ export default defineConfig(({ mode }) => ({
         },
       },
       prerender: {
-        routes: async () => [
-          '/',
-          '/blog',
-          '/about',
-          ...getBlogPosts(),
-          ...getBlogTags(),
-        ],
+        routes: async () => ['/', '/blog', '/about', ...getBlogPosts(), ...getBlogTags()],
       },
       nitro: {
         prerender: {
