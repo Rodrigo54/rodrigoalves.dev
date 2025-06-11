@@ -40,7 +40,7 @@ import { Component, input } from '@angular/core';
       }
       .paper-box {
         z-index: 2;
-        margin: -200px auto 0px;
+        margin: -200px auto 60px auto;
         max-width: 1200px;
         width: 90%;
         box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
