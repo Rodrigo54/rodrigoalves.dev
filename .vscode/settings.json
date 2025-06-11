@@ -48,7 +48,7 @@
       "color": "green-600",
       "fileExtensions": ["page.ts"]
     },
-        {
+    {
       "name": "angular-signals",
       "base": "angular",
       "color": "orange-400",
@@ -63,5 +63,8 @@
   "cSpell.words": [
     "iconoir",
     "webp"
-  ]
+  ],
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
