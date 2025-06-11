@@ -16,11 +16,11 @@ import DurationComponent from '@shared/duration.ng';
         <div class="info-wrap">
           <h3>
             <ng-icon name="faSolidUserGraduate" size="20" />
-            {{ formation.name }}
+            <span>{{ formation.name }}</span>
           </h3>
           <p>
             <ng-icon name="faSolidBuildingColumns" size="20" />
-            {{ formation.locale }}
+            <span>{{ formation.locale }}</span>
           </p>
           <duration [init]="formation.duration.init" [end]="formation.duration.end" />
           <blockquote>{{ formation.description }}</blockquote>
@@ -56,13 +56,16 @@ import DurationComponent from '@shared/duration.ng';
       .formation-item {
         display: flex;
         flex-flow: column nowrap;
-        color: var(--color2-contrast);
+        color: var(--text-color);
         gap: 30px;
+        :last-child {
+          margin-bottom: 0px;
+        }
         a {
-          color: var(--color2-contrast);
+          color: var(--text-color);
           text-decoration: none;
           &:hover {
-            color: var(--color3-light);
+            color: var(--primary-color);
           }
         }
         .info-wrap {
@@ -70,33 +73,45 @@ import DurationComponent from '@shared/duration.ng';
           flex-flow: column nowrap;
           gap: 10px;
           padding: 0px 0px 0px 20px;
+          @media (max-width: 768px) {
+            padding: 0px;
+          }
         }
         h3 {
           display: flex;
           flex-flow: row nowrap;
           align-items: center;
           gap: 10px;
-
           font-family: var(--font-serif);
           color: currentColor;
-          line-height: 1;
+          line-height: 1.2;
           font-weight: 500;
           font-size: 1.2rem;
+          span {
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+          @media (max-width: 768px) {
+            font-size: 1rem;
+            span {
+              font-size: 1rem;
+            }
+          }
         }
-        p {
+        & p {
           display: flex;
           flex-flow: row nowrap;
           align-items: center;
           gap: 10px;
           color: currentColor;
 
-          line-height: 1;
+          line-height: 1.2;
           font-weight: 200;
-          font-size: 1.1rem;
+          font-size: 1rem;
           margin: 0px;
         }
         blockquote {
-          border-left: 0.3rem solid var(--color3-light);
+          border-left: 0.3rem solid var(--primary-color);
           padding: 0px 15px;
           margin: 15px 27px 15px 7px;
 
@@ -106,7 +121,14 @@ import DurationComponent from '@shared/duration.ng';
           font-size: 1rem;
           font-style: italic;
           letter-spacing: 1px;
+          @media (max-width: 768px) {
+            margin: 15px 7px;
+          }
         }
+      }
+      ng-icon {
+        min-width: 20px;
+        min-height: 20px;
       }
     `,
   ],
