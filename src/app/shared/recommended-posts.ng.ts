@@ -15,6 +15,7 @@ import { FrontMatter } from '@utils/frontmatter.signal';
           <ng-icon name="matArrowLeft" size="60" />
           <div>
             <h5>{{ prevPostItem.title }}</h5>
+            <p>{{ prevPostItem.description }}</p>
           </div>
         </a>
 
@@ -23,6 +24,7 @@ import { FrontMatter } from '@utils/frontmatter.signal';
           <ng-icon name="matArrowRight" size="60" />
           <div>
             <h5>{{ nextPostItem.title }}</h5>
+            <p>{{ nextPostItem.description }}</p>
           </div>
         </a>
         }
@@ -30,10 +32,17 @@ import { FrontMatter } from '@utils/frontmatter.signal';
     </div>
   `,
   styles: `
+  :host {
+    display: block;
+    max-width: 1200px;
+    width: 90%;
+    margin: 30px auto;
+  }
   h2 {
     margin: 2rem auto 1rem;
     font-size: 1.7rem;
     font-family: var(--font-serif);
+    color: var(--text-color);
     font-weight: 400;
     letter-spacing: 0.05rem;
     line-height: 1.4;
@@ -88,12 +97,20 @@ import { FrontMatter } from '@utils/frontmatter.signal';
         grid-area: title;
       }
       h5 {
-        margin: 0;
+        margin: 0.6rem 0;
         font-weight: 500;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+      }
+      p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--text-color-alt);
       }
       &:hover {
         color: var(--primary-color);
+        h5, p {
+          color: var(--primary-color);
+        }
       }
     }
   }
