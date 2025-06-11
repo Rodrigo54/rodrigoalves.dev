@@ -56,10 +56,10 @@
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --primary-color: #579bb1;
+    --primary-color: #055c37;
     --background-color: #ece8dd;
     --paper-color: #f7f5eb;
-    --primary-color-contrast: #000000;
+    --primary-color-contrast: #ffffff;
     --background-color-contrast: #000000;
     --paper-color-contrast: #000000;
     --text-color: var(--paper-color-contrast);

@@ -123,7 +123,7 @@ export type ThemeName = (typeof themesNames)[number];
 
 const ThemesMap = new Map<ThemeName, Theme>([
   ['default-dark', new Theme({ themeName: 'default-dark', primary: '#6ea9ff', background: '#303030', paper: '#1e1e1e' })],
-  ['default-light', new Theme({ themeName: 'default-light', primary: '#579BB1', background: '#ECE8DD', paper: '#F7F5EB' })],
+  ['default-light', new Theme({ themeName: 'default-light', primary: '#055c37', background: '#ECE8DD', paper: '#F7F5EB' })],
 ]);
 
 export function getTheme(themeName: ThemeName): Theme {
