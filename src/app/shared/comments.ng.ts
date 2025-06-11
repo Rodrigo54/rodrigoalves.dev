@@ -33,7 +33,7 @@ export class Comments {
 
   #themeRef = effect(() => {
     const theme = this.theme();
-    const giscusTheme = theme === 'dark' ? 'noborder_dark' : 'noborder_light';
+    const giscusTheme = theme === 'dark' ? 'noborder_dark' : 'light_tritanopia';
     this.sendMessage({
       setConfig: {
         theme: giscusTheme,
