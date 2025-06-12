@@ -8,6 +8,7 @@
   "orientation": "portrait",
   "scope": "/",
   "start_url": "/",
+  "id": "/",
   "lang": "pt-BR",
   "dir": "ltr",
   "icons": [
@@ -55,7 +56,21 @@
       "src": "icons/maskable_icon.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot/wide.webp",
+      "sizes": "1920x911",
+      "type": "image/webp",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot/narrow.webp",
+      "sizes": "1290x2796",
+      "type": "image/webp",
+      "form_factor": "narrow"
     }
   ],
   "splash_pages": null
