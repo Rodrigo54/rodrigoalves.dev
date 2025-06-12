@@ -46,14 +46,12 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
-  text-box-trim: trim-start;
-  text-box-edge: text alphabetic;
+  line-height: 1.4;
 }
 
 p {
   text-wrap: pretty;
-  text-box-trim: trim-start;
-  text-box-edge: text alphabetic;
+  line-height: 1.2;
 }
 
 img {
