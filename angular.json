@@ -16,10 +16,7 @@
             "main": "src/main.ts",
             "outputPath": "dist/client",
             "tsConfig": "tsconfig.app.json",
-            "styles": [
-              "src/style/theme.css",
-              "src/style/global.css"
-            ],
+            "styles": ["src/style/reset.css", "src/style/theme.css", "src/style/global.css"],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
           },
