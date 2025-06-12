@@ -29,7 +29,7 @@ import Sidebar from '@shared/sidebar.ng';
         background: var(--paper-color);
         @media (max-width: 1170px) {
           grid-template-columns: auto;
-          grid-template-rows: 3.75rem 1fr 3.75rem;
+          grid-template-rows: 4.5rem 1fr 3.75rem;
           grid-template-areas: 'sidebar' 'content' 'menubar';
         }
       }
