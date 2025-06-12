@@ -2,7 +2,8 @@ import { Component, computed, DOCUMENT, effect, inject, linkedSignal } from '@an
 import { RouterLink } from '@angular/router';
 import { boxHomeSolid } from '@ng-icons/boxicons/solid';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { iconoirArrowUp, iconoirCell2x2, iconoirPalette, iconoirTableRows } from '@ng-icons/iconoir';
+import { iconoirArrowUp, iconoirCell2x2, iconoirTableRows } from '@ng-icons/iconoir';
+import { matDarkModeOutline, matLightModeOutline } from '@ng-icons/material-icons/outline';
 import { getTheme } from '@utils/theme.class';
 import { injectLocalStorage } from 'ngxtension/inject-local-storage';
 
@@ -13,7 +14,7 @@ import { injectLocalStorage } from 'ngxtension/inject-local-storage';
       <ng-icon name="boxHomeSolid" [routerLink]="['/blog']" />
     </div>
     <div class="bottom-icons">
-      <ng-icon (click)="toggleTheme()" name="iconoirPalette" />
+      <ng-icon (click)="toggleTheme()" [name]="themeIcon()" />
       <ng-icon class="grid-icon" [name]="gridIcon()" (click)="toggleGrid()" />
       <ng-icon (click)="toTop()" name="iconoirArrowUp" />
     </div>
@@ -76,7 +77,8 @@ import { injectLocalStorage } from 'ngxtension/inject-local-storage';
       iconoirArrowUp,
       iconoirCell2x2,
       iconoirTableRows,
-      iconoirPalette,
+      matDarkModeOutline,
+      matLightModeOutline,
     }),
   ],
 })
@@ -84,6 +86,7 @@ export default class Menubar {
   document = inject(DOCUMENT);
   gridType = injectLocalStorage<'cell' | 'row'>('grid', { defaultValue: 'row' });
   theme = injectLocalStorage<'light' | 'dark'>('theme', { defaultValue: 'dark' });
+  themeIcon = linkedSignal(() => (this.theme() === 'dark' ? 'matDarkModeOutline' : 'matLightModeOutline'));
   gridIcon = linkedSignal(() => (this.gridType() === 'row' ? 'iconoirCell2x2' : 'iconoirTableRows'));
 
   themeObject = computed(() => {
