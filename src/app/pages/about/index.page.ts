@@ -53,8 +53,7 @@ export const routeMeta: RouteMeta = {
   styles: [
     `
       :host {
-        display: flex;
-        flex-direction: column;
+        display: contents;
       }
       article {
         p {

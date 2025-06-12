@@ -58,12 +58,15 @@ import { matArrowBackIosOutline, matArrowForwardIosOutline } from '@ng-icons/mat
           }
         }
         .pagination-next {
+          display: block;
           justify-self: end;
         }
         .pagination-prev {
+          display: block;
           justify-self: start;
         }
         .pagination-info {
+          display: block;
           justify-self: center;
           text-align: center;
           p {

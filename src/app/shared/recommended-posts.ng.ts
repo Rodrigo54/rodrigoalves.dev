@@ -94,6 +94,7 @@ import { FrontMatter } from '@utils/frontmatter.signal';
         justify-self: center;
       }
       div {
+        display: block;
         grid-area: title;
       }
       h5 {

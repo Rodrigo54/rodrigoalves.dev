@@ -28,7 +28,7 @@ import { faSolidChessBoard } from '@ng-icons/font-awesome/solid';
   template: `
     @for (icon of socialLinksList(); track icon.url) { @if (!showAll() && icon.show) {
     <a [href]="icon.url" target="_blank" rel="noopener noreferrer">
-      <ng-icon [name]="icon.icon" />
+      <ng-icon [name]="icon.icon" [size]="'36'" />
     </a>
     } } @if (showAll()) {
     <div class="social-links">
@@ -37,7 +37,7 @@ import { faSolidChessBoard } from '@ng-icons/font-awesome/solid';
         @for (icon of socialLinksList(); track icon.url) {
         <li>
           <a [href]="icon.url" target="_blank" rel="noopener noreferrer">
-            <ng-icon [name]="icon.icon" [size]="'36'" />
+            <ng-icon [name]="icon.icon" [size]="'32'" />
             <div>
               <h3>{{ icon.label }}</h3>
               <span>{{ icon.value }}</span>
@@ -53,14 +53,12 @@ import { faSolidChessBoard } from '@ng-icons/font-awesome/solid';
     `
       :host {
         display: flex;
-        gap: 1rem;
+        justify-content: space-between;
         color: var(--text-color);
-        container-type: inline-size;
         width: 100%;
         a {
           color: var(--text-color);
           transition: color 0.5s;
-          --ng-icon__size: 2rem;
           &:hover {
             color: var(--primary-color);
           }
@@ -68,23 +66,31 @@ import { faSolidChessBoard } from '@ng-icons/font-awesome/solid';
       }
 
       :host(.show-all) {
+        container-type: inline-size;
         display: block;
         width: 100%;
         .social-links {
-          display: block;
-          width: 100%;
+          display: contents;
           ul {
+            list-style: none;
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: repeat(3, 1fr);
-            gap: 22px 18px;
+            gap: 16px 14px;
             li {
+              display: contents;
               a {
                 display: flex;
                 flex-flow: row nowrap;
                 align-items: center;
-                gap: 12px;
+                gap: 8px;
+                ng-icon {
+                  flex-shrink: 0;
+                }
                 div {
+                  display: block;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
                   line-height: 1.2;
                   span {
                     font-size: 0.9rem;
@@ -99,7 +105,13 @@ import { faSolidChessBoard } from '@ng-icons/font-awesome/solid';
               grid-template-rows: repeat(4, 1fr);
             }
           }
-          @container (width < 630px) {
+          @container (width < 830px) {
+            ul {
+              grid-template-columns: repeat(2, 1fr);
+              grid-template-rows: repeat(auto-fill, 1fr);
+            }
+          }
+          @container (width < 480px) {
             ul {
               grid-template-columns: repeat(1, 1fr);
               grid-template-rows: repeat(auto-fill, 1fr);

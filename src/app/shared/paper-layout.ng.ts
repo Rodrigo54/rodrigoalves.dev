@@ -24,6 +24,7 @@ import { Component, input } from '@angular/core';
         align-items: center;
       }
       .thumbnail {
+        display: block;
         z-index: 1;
         width: 100%;
         height: 450px;
@@ -39,6 +40,7 @@ import { Component, input } from '@angular/core';
         }
       }
       .paper-box {
+        display: block;
         z-index: 2;
         margin: -200px auto 60px auto;
         max-width: 1200px;
@@ -72,6 +74,7 @@ import { Component, input } from '@angular/core';
         }
       }
       .paper-content {
+        display: block;
         color: var(--text-color);
         padding: 25px;
       }
