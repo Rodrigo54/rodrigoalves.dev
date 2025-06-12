@@ -24,7 +24,7 @@ import Avatar from '@shared/avatar.ng';
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto auto;
         grid-template-areas: 'avatar' 'name' 'position';
-        gap: 0 1rem;
+        gap: 1rem;
         color: var(--text-color);
         text-decoration: none;
         transition: color 0.5s;
@@ -39,7 +39,6 @@ import Avatar from '@shared/avatar.ng';
           display: block;
           font-family: var(--font-serif);
           font-size: 1.6rem;
-          margin-top: 1.5rem;
           font-weight: normal;
         }
         h2 {
@@ -47,7 +46,6 @@ import Avatar from '@shared/avatar.ng';
           display: block;
           font-family: var(--font-sans);
           font-size: 1rem;
-          margin-top: 1rem;
           font-weight: normal;
         }
       }
@@ -63,9 +61,10 @@ import Avatar from '@shared/avatar.ng';
       @media (max-width: 1170px) {
         a {
           grid-template-columns: auto 1fr;
-          grid-template-rows: auto auto;
+          grid-template-rows: 1fr 1fr;
           grid-template-areas: 'avatar name' 'avatar position';
-          --avatar-size: 2rem;
+          gap: 0.6rem 1rem;
+          --avatar-size: 2.6rem;
           h1 {
             font-size: 1rem;
             margin-top: 0;
@@ -82,6 +81,27 @@ import Avatar from '@shared/avatar.ng';
         p {
           display: none;
           visibility: hidden;
+        }
+      }
+      @media (max-height: 700px) {
+        a {
+          grid-template-columns: auto 1fr;
+          grid-template-rows: 1fr 1fr;
+          grid-template-areas: 'avatar name' 'avatar position';
+          gap: 0.6rem 1rem;
+          --avatar-size: 2.6rem;
+          h1 {
+            font-size: 1rem;
+            margin-top: 0;
+            text-align: left;
+            height: 1rem;
+          }
+          h2 {
+            font-size: 0.8rem;
+            height: 0.8rem;
+            margin-top: 0;
+            text-align: left;
+          }
         }
       }
     `,
