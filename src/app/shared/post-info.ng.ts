@@ -89,6 +89,7 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
         }
       }
       .post-music {
+        container-type: inline-size;
         a {
           color: var(--primary-color);
           transition: color 0.5s;
@@ -104,7 +105,7 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
             text-underline-offset: 0.2rem;
           }
         }
-        @media (max-width: 425px) {
+        @container (width < 425px) {
           & > span {
             display: none;
           }
