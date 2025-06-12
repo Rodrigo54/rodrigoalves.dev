@@ -3,7 +3,7 @@
   "short_name": "Rodrigo | Dev",
   "theme_color": "#6ea9ff",
   "background_color": "#303030",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
   "start_url": "/",
