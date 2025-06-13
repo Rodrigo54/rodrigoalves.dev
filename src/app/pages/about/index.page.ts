@@ -100,7 +100,7 @@ export const routeMeta: RouteMeta = {
   ],
 })
 export default class AboutIndexPage {
-  featuredImage = '/img/about-bg.jpg';
+  featuredImage = '/img/about-bg.webp';
   title = 'Sobre Mim';
   subtitle = 'Basta querer mudar o mundo através da web.';
 }
