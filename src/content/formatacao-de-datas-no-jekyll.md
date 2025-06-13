@@ -11,7 +11,7 @@ music:
   url: 'https://open.spotify.com/track/5Fli1xRi01bvCjsZvKWro0'
 timeToRead:
   minutes: 7
-  words: 1528
+  words: 1424
 ---
 
 Esses exemplos fornecem trechos de código testado para a exibição de vários

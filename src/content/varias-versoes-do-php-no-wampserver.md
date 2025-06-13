@@ -11,7 +11,7 @@ music:
   url: 'https://open.spotify.com/track/377e3RYbkuNSpZkV0yEQKE'
 timeToRead:
   minutes: 3
-  words: 647
+  words: 672
 ---
 
 Quando iniciamos um projeto do zero, fica fácil decidir qual a versão do PHP será usada.

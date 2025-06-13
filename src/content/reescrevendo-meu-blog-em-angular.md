@@ -9,6 +9,9 @@ tags: ['angular', 'react']
 music:
   title: 'Shadow Of A Man - Lady Gaga'
   url: 'https://open.spotify.com/intl-pt/track/6OC87jHRiovNPEUrgaqFSu?si=b860002366a54484'
+timeToRead:
+  minutes: 2
+  words: 432
 ---
 
 Manter um blog é mais do que escrever posts.
