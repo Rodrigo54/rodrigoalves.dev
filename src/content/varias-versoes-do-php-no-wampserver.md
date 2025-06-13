@@ -3,7 +3,7 @@ title: 'Várias versões do PHP no Wampserver'
 description: 'Use desde o PHP 5.3 até o PHP 7.0 no Wampserver.'
 createAt: '2015-12-07 16:30:15 -0300'
 author: 'Rodrigo Alves'
-featuredImage: '/img/post-bg-02.jpg'
+featuredImage: '/img/post-bg-02.webp'
 comments: true
 tags: ['php']
 music:
