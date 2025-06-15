@@ -1,30 +1,40 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./src",
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noImplicitAny": false,
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "strict": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "importHelpers": true,
+    "target": "ES2023",
+    "module": "ES2022",
+    "lib": [
+      "ES2023",
+      "dom"
+    ],
+    "useDefineForClassFields": false,
+    "skipLibCheck": true,
     "paths": {
-      "@components/*": ["components/*"],
-      "@templates/*": ["templates/*"],
-      "@utils/*": ["utils/*"],
-      "@model/*": ["model/*"],
-      "@styles/*": ["styles/*"],
-      "@pages/*": ["pages/*"]
-    },
-    "incremental": true
+      "@app/data/*": ["src/app/data/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@utils/*": ["src/app/utils/*"]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
 }

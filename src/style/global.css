@@ -1,0 +1,170 @@
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background-color-shade);
+}
+::-webkit-scrollbar-thumb {
+  background: oklab(from var(--background-color-shade) 0.5 a b);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+main analog-markdown {
+  font-family: var(--font-sans);
+  margin: 0px 0px 80px;
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  ul,
+  ol,
+  .tags,
+  iframe,
+  .button-post {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7;
+    letter-spacing: 0.05rem;
+    word-break: break-word;
+  }
+  p {
+    margin: 0 auto 0.4rem;
+  }
+  ul,
+  ol {
+    padding-left: 2.5rem;
+    margin: 0 auto 1.6rem;
+    table {
+      margin: 1.6rem 0;
+      width: calc(100% - 2.5rem);
+    }
+  }
+  ul {
+    list-style: disc;
+  }
+  ol {
+    list-style: decimal;
+  }
+  li {
+    padding: 0.625rem 0;
+    & > ul {
+      margin-bottom: 0;
+    }
+  }
+  p,
+  li {
+    code {
+      word-wrap: break-word;
+    }
+  }
+  table {
+    width: 100%;
+    margin: 1.6rem auto;
+    border-collapse: collapse;
+    th,
+    td {
+      padding: 0.625rem 0.625rem;
+      border: 1px solid var(--primary-color-alt);
+      text-align: left;
+    }
+    th {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+    td {
+      color: var(--text-color);
+    }
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  iframe {
+    padding: 0 1.6rem 1.6rem;
+    width: 100%;
+  }
+  blockquote {
+    color: var(--text-color);
+    border-left: 0.3rem solid var(--primary-color);
+    padding: 0 1.875rem;
+    margin: 3.125rem auto;
+  }
+  hr {
+    border: 1px solid var(--primary-color);
+    margin: 3rem auto;
+  }
+  #twitter-widget-0,
+  .instagram-media,
+  .twitter-tweet {
+    margin: 20px auto !important;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 2rem auto 1rem;
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    line-height: 1.4;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  h5 {
+    font-size: 0.8rem;
+  }
+  strong {
+    font-weight: 700;
+  }
+  .instagram-media {
+    margin: 1rem auto !important;
+  }
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    line-height: 1.4;
+    transition: border-bottom 0.5s;
+    svg {
+      color: var(--primary-color);
+    }
+    &:hover {
+      text-decoration: underline dashed var(--primary-color);
+      text-decoration-thickness: 0.1rem;
+      text-underline-offset: 0.2rem;
+    }
+  }
+  pre.shiki {
+    margin: 1rem auto;
+    overflow-x: auto;
+    padding: 1rem 0px;
+  }
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.shiki,
+.shiki span {
+  background: var(--background-color);
+  font-family: var(--font-mono) !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
+}

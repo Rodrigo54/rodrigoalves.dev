@@ -1,6 +1,71 @@
 {
-  "editor.formatOnSave": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+  "[html]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[css][scss][less]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": "explicit"
+    }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "files.associations": {
+    "*.ag": "analog",
+    "*.txt": "plaintext",
+  },
+  "material-icon-theme.files.customClones": [
+    {
+      "name": "angular-analog",
+      "base": "angular",
+      "color": "red-400",
+      "fileExtensions": ["ag", "analog"]
+    },
+    {
+      "name": "angular-inline",
+      "base": "angular",
+      "color": "pink-400",
+      "fileExtensions": ["ng.ts"]
+    },
+    {
+      "name": "angular-pages",
+      "base": "angular",
+      "color": "green-600",
+      "fileExtensions": ["page.ts"]
+    },
+    {
+      "name": "angular-signals",
+      "base": "angular",
+      "color": "orange-400",
+      "fileExtensions": ["signal.ts"]
+    },
+  ],
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Use conventional commit message format. No exceed 80 caracteres. Add lots of emojis. Use emojis list ['✨ feat', '🔥 fix', '🛠️ chore', '🐛 bug', '📦 build', '⚙️ config', '🚀 release', '📚 docs', '🧪 test', '💄 style', '🚀 deploy']. For example: ✨ feat(any-component): add new feature"
+    }
+  ],
+  "cSpell.words": [
+    "analogjs",
+    "iconoir",
+    "webp"
+  ],
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
