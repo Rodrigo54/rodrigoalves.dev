@@ -26,15 +26,9 @@
     "useDefineForClassFields": false,
     "skipLibCheck": true,
     "paths": {
-      "@app/data/*": [
-        "src/app/data/*"
-      ],
-      "@shared/*": [
-        "src/app/shared/*"
-      ],
-      "@utils/*": [
-        "src/app/utils/*"
-      ]
+      "@app/data/*": ["src/app/data/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@utils/*": ["src/app/utils/*"]
     }
   },
   "angularCompilerOptions": {
