@@ -73,6 +73,7 @@
       "type": "ng"
     },
     "@schematics/angular:directive": {
+      "skipTests": true,
       "type": "directive"
     },
     "@schematics/angular:service": {
