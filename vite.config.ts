@@ -3,6 +3,7 @@
 import analog from '@analogjs/platform';
 import { defineConfig, PluginOption } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { anchorLinkExtension } from './marked-extensions';
 import { getBlogPosts, getBlogTags } from './vite.prerender.utils';
 
 // https://vitejs.dev/config/
@@ -18,6 +19,9 @@ export default defineConfig(({ mode }) => ({
     analog({
       static: true,
       content: {
+        markedOptions: {
+          extensions: [anchorLinkExtension],
+        },
         highlighter: 'shiki',
         shikiOptions: {
           highlight: {
