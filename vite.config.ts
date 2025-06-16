@@ -1,10 +1,29 @@
 /// <reference types="vitest" />
 
 import analog from '@analogjs/platform';
-import { defineConfig, PluginOption } from 'vite';
+import { augmentAppWithServiceWorker } from '@angular/build/private';
+import * as path from 'node:path';
+import { defineConfig, Plugin, PluginOption, UserConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { anchorLinkExtension } from './marked-extensions';
 import { getBlogPosts, getBlogTags } from './vite.prerender.utils';
+
+function swBuildPlugin(): Plugin {
+  let config: UserConfig;
+  return {
+    name: 'analog-sw',
+    config(_config) {
+      config = _config;
+    },
+    async closeBundle() {
+      if (config.build?.ssr) {
+        return;
+      }
+      console.log('Building service worker');
+      await augmentAppWithServiceWorker('.', process.cwd(), path.join(process.cwd(), 'dist/client'), '/');
+    },
+  };
+}
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -52,6 +71,7 @@ export default defineConfig(({ mode }) => ({
       vite: { experimental: { supportAnalogFormat: true } },
     }),
     tsconfigPaths(),
+    swBuildPlugin(),
   ] as PluginOption[],
   test: {
     globals: true,
