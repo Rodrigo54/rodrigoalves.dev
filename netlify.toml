@@ -1,3 +1,7 @@
 [build]
   command = "bun run build"
   publish = "dist/analog/public"
+
+[[redirects]]
+  from = "/*"
+  to = "/blog/:splat"
