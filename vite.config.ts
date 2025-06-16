@@ -40,6 +40,9 @@ export default defineConfig(({ mode }) => ({
       },
       prerender: {
         routes: async () => ['/', '/blog', '/about', ...getBlogPosts(), ...getBlogTags()],
+        sitemap: {
+          host: 'https://rodrigoalves.dev',
+        },
       },
       nitro: {
         prerender: {
