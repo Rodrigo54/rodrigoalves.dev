@@ -11,12 +11,12 @@ import { injectLocalStorage } from 'ngxtension/inject-local-storage';
   selector: 'menubar',
   template: `
     <div class="top-icons">
-      <ng-icon name="boxHomeSolid" [routerLink]="['/blog']" />
+      <ng-icon name="boxHomeSolid" [routerLink]="['/blog']" aria-hidden="false" aria-label="Go to blog" />
     </div>
     <div class="bottom-icons">
-      <ng-icon (click)="toggleTheme()" [name]="themeIcon()" />
-      <ng-icon class="grid-icon" [name]="gridIcon()" (click)="toggleGrid()" />
-      <ng-icon (click)="toTop()" name="iconoirArrowUp" />
+      <ng-icon (click)="toggleTheme()" [name]="themeIcon()" aria-label="Toggle theme" />
+      <ng-icon class="grid-icon" [name]="gridIcon()" (click)="toggleGrid()" aria-label="Toggle grid" />
+      <ng-icon (click)="toTop()" name="iconoirArrowUp" aria-label="Scroll to top" />
     </div>
   `,
   styles: [
