@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import PostInfo from '@shared/post-info.ng';
@@ -9,13 +10,13 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
 @Component({
   selector: 'post-item',
   standalone: true,
-  imports: [RouterLink, PostInfo],
+  imports: [NgOptimizedImage, RouterLink, PostInfo],
   host: {
     '[class]': 'gridType()',
   },
   template: `
     <a class="image" [routerLink]="['/blog', info().slug]">
-      <img [src]="image()" [alt]="info().title" width="1920" height="1080" loading="eager" fetchPriority="high" />
+      <img [ngSrc]="image()" [alt]="info().title" width="1920" height="1080" fetchPriority="high" priority />
     </a>
     <a class="title" [routerLink]="['/blog', info().slug]">
       <h2>{{ info().title }}</h2>
