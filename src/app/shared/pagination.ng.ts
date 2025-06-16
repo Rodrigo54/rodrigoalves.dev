@@ -15,7 +15,7 @@ import { matArrowBackIosOutline, matArrowForwardIosOutline } from '@ng-icons/mat
   template: `
     <div class="pagination-prev">
       @if (showPrev()) {
-      <a [routerLink]="['.']" [queryParams]="{ page: previousPage() }">
+      <a [routerLink]="[]" [queryParams]="{ page: previousPage() }" aria-label="Página Anterior">
         <ng-icon name="matArrowBackIosOutline" />
         <span>Página Anterior</span>
       </a>
@@ -26,7 +26,7 @@ import { matArrowBackIosOutline, matArrowForwardIosOutline } from '@ng-icons/mat
     </div>
     <div class="pagination-next">
       @if (showNext()) {
-      <a [routerLink]="['.']" [queryParams]="{ page: nextPage() }">
+      <a [routerLink]="[]" [queryParams]="{ page: nextPage() }" aria-label="Próxima Página">
         <span>Próxima Página</span>
         <ng-icon name="matArrowForwardIosOutline" />
       </a>
