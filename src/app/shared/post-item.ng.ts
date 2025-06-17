@@ -108,7 +108,7 @@ type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage'
         grid-area: info;
         --post-info__font-size: 1rem;
       }
-      :is(.image, .title):hover {
+      :host:has(a:hover) {
         img {
           filter: brightness(0.8);
           transform: scale(1.1);
