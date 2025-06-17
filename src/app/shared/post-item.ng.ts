@@ -1,22 +1,24 @@
-import { NgOptimizedImage } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { FeaturedImage } from '@shared/featured-image.ng';
 import PostInfo from '@shared/post-info.ng';
 import { FrontMatter } from '@utils/frontmatter.signal';
 import { injectLocalStorage } from 'ngxtension/inject-local-storage';
 
-type Info = Pick<FrontMatter, 'title' | 'slug' | 'description' | 'featuredImage' | 'createAt' | 'timeToRead' | 'music' | 'tags'>;
+type Info = Pick<
+  FrontMatter,
+  'title' | 'slug' | 'description' | 'featuredImage' | 'createAt' | 'timeToRead' | 'music' | 'tags'
+>;
 
 @Component({
   selector: 'post-item',
-  standalone: true,
-  imports: [NgOptimizedImage, RouterLink, PostInfo],
+  imports: [FeaturedImage, RouterLink, PostInfo],
   host: {
     '[class]': 'gridType()',
   },
   template: `
     <a class="image" [routerLink]="['/blog', info().slug]">
-      <img [ngSrc]="image()" [alt]="info().title" width="1920" height="1080" fetchPriority="high" priority />
+      <featured-image [image]="image()" [alt]="info().title" />
     </a>
     <a class="title" [routerLink]="['/blog', info().slug]">
       <h2>{{ info().title }}</h2>
