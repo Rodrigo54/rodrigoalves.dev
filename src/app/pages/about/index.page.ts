@@ -21,15 +21,16 @@ export const routeMeta: RouteMeta = {
       <article>
         <p>Meu nome é Rodrigo Alves Mesquita, nasci em São Luis - MA</p>
         <p>
-          Sou um Web Developer amante da Tecnologia que gosta de aprender novas formas de programar. Eterno aluno de C e PHP, tento me
-          esforçar para ser um bom artista da web. Meu objetivo é me tornar um profissional capaz de criar soluções eficazes e inovadoras
-          para os problemas de hoje. Gosto de trabalhar em equipe e compartilhar minhas ideias com outras pessoas. Estou sempre aberto a
-          novas tecnologias e tendências. No meu tempo livre, gosto de jogar video game, ler livros, assistir filmes e series, além de fazer
-          trabalhos manuais. Meu sonho é viajar o mundo e conhecer culturas e povos diferentes.
+          Sou um Web Developer amante da Tecnologia que gosta de aprender novas formas de programar. Eterno aluno de C e
+          PHP, tento me esforçar para ser um bom artista da web. Meu objetivo é me tornar um profissional capaz de criar
+          soluções eficazes e inovadoras para os problemas de hoje. Gosto de trabalhar em equipe e compartilhar minhas
+          ideias com outras pessoas. Estou sempre aberto a novas tecnologias e tendências. No meu tempo livre, gosto de
+          jogar video game, ler livros, assistir filmes e series, além de fazer trabalhos manuais. Meu sonho é viajar o
+          mundo e conhecer culturas e povos diferentes.
         </p>
         <p>
-          Acredito que a tecnologia tem o poder de mudar o mundo e me esforço para me tornar parte desse movimento. Aprender sempre é a
-          melhor maneira de evoluir.
+          Acredito que a tecnologia tem o poder de mudar o mundo e me esforço para me tornar parte desse movimento.
+          Aprender sempre é a melhor maneira de evoluir.
         </p>
         <div class="abilities-wrapper">
           <h2>Habilidades</h2>
@@ -100,7 +101,7 @@ export const routeMeta: RouteMeta = {
   ],
 })
 export default class AboutIndexPage {
-  featuredImage = '/img/about-bg.webp';
+  featuredImage = 'https://images.unsplash.com/photo-1621795307430-3ff25aa08945';
   title = 'Sobre Mim';
   subtitle = 'Basta querer mudar o mundo através da web.';
 }
