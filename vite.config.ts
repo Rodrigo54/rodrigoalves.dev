@@ -4,6 +4,7 @@ import analog from '@analogjs/platform';
 import { augmentAppWithServiceWorker } from '@angular/build/private';
 import * as path from 'node:path';
 import { defineConfig, Plugin, PluginOption, UserConfig } from 'vite';
+import devtoolsJson from 'vite-plugin-devtools-json';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { anchorLinkExtension } from './marked-extensions';
 import { getBlogPosts, getBlogTags } from './vite.prerender.utils';
@@ -72,6 +73,7 @@ export default defineConfig(({ mode }) => ({
     }),
     tsconfigPaths(),
     swBuildPlugin(),
+    devtoolsJson(),
   ] as PluginOption[],
   test: {
     globals: true,
