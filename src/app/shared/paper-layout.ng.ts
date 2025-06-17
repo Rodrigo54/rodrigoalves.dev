@@ -1,10 +1,12 @@
 import { Component, input } from '@angular/core';
+import { FeaturedImage } from '@shared/featured-image.ng';
 
 @Component({
   selector: 'paper-layout',
+  imports: [FeaturedImage],
   template: `
     <div class="thumbnail">
-      <img [src]="image()" [alt]="alt()" width="1920" height="1080" loading="eager" fetchPriority="high" />
+      <featured-image [image]="image()" [alt]="alt()" fullWidth />
     </div>
     <div class="paper-box">
       <header class="paper-header">
@@ -27,9 +29,12 @@ import { Component, input } from '@angular/core';
         display: block;
         z-index: 1;
         width: 100%;
-        height: 450px;
+        height: 600px;
         overflow: hidden;
         position: relative;
+        background: var(--paper-color);
+        mask-image: linear-gradient(var(--paper-color), transparent);
+
         img {
           aspect-ratio: 16 / 9;
           object-fit: cover;
@@ -42,7 +47,7 @@ import { Component, input } from '@angular/core';
       .paper-box {
         display: block;
         z-index: 2;
-        margin: -200px auto 60px auto;
+        margin: -350px auto 60px auto;
         max-width: 1200px;
         width: 90%;
         box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
