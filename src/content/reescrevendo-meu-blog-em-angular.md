@@ -3,7 +3,7 @@ title: 'Reescrevendo meu blog em Angular'
 description: 'Uma jornada de aprendizados, desafios e evolução.'
 createAt: '2025-06-12 12:00:00 -0300'
 author: 'Rodrigo Alves'
-featuredImage: '/img/post-bg-07.webp'
+featuredImage: 'https://images.unsplash.com/photo-1444080748397-f442aa95c3e5'
 comments: true
 tags: ['angular', 'react']
 music:

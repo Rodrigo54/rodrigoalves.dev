@@ -3,7 +3,7 @@ title: 'Formatação de datas no Jekyll'
 description: 'Tudo o que você queria saber sobre formatação de datas no Jekyll, mas tinham medo de perguntar.'
 createAt: '2015-12-17 12:00:00 -0300'
 author: 'Rodrigo Alves'
-featuredImage: '/img/post-bg-03.webp'
+featuredImage: 'https://images.unsplash.com/photo-1593642634402-b0eb5e2eebc9'
 comments: true
 tags: ['jekyll']
 music:

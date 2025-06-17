@@ -3,7 +3,7 @@ title: 'Angular 16: Novos recursos de DX'
 description: 'Descubra as novidades do Angular 16, como o recurso de sinais, a melhoria no modelo de reatividade, a marcação de entradas obrigatórias em componentes, entre outros recursos e melhorias.'
 createAt: '2023-05-07 12:00:00 -0300'
 author: 'Rodrigo Alves'
-featuredImage: '/img/post-bg-06.webp'
+featuredImage: 'https://images.unsplash.com/photo-1672243776246-dce4535b1628'
 comments: true
 tags: ['angular']
 music:

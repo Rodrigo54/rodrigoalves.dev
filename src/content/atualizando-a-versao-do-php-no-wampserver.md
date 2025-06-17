@@ -3,7 +3,7 @@ title: 'Atualizando a versão do PHP no Wampserver'
 description: 'Use o PHP 5.6 no Wampserver.'
 createAt: '2015-08-19 20:30:00 -0300'
 author: 'Rodrigo Alves'
-featuredImage: '/img/post-bg-01.webp'
+featuredImage: 'https://images.unsplash.com/photo-1605704366546-e3632af0c5c6'
 comments: true
 tags: ['php']
 music:
