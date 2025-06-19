@@ -33,7 +33,7 @@ import { FeaturedImage } from '@shared/featured-image.ng';
         overflow: hidden;
         position: relative;
         background: var(--paper-color);
-        mask-image: linear-gradient(var(--paper-color), transparent);
+        mask-image: linear-gradient(to bottom, var(--paper-color) 1% 30%, transparent);
 
         img {
           aspect-ratio: 16 / 9;
@@ -87,6 +87,6 @@ import { FeaturedImage } from '@shared/featured-image.ng';
   ],
 })
 export default class PaperLayout {
+  image = input.required<string>();
   alt = input('Featured Image');
-  image = input('/img/post-bg-01.jpg');
 }
