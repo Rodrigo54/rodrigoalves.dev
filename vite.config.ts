@@ -6,7 +6,7 @@ import devtoolsJson from 'vite-plugin-devtools-json';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { swBuildPlugin } from './plugins/analog-sw';
 import { anchorLinkExtension } from './plugins/marked-extensions';
-import { unsplashImagePlugin } from './plugins/process-imagens';
+import { readingTimePlugin, unsplashImagePlugin } from './plugins/vite.build.start';
 import { getBlogPosts, getBlogTags } from './plugins/vite.prerender.utils';
 
 // https://vitejs.dev/config/
@@ -55,6 +55,7 @@ export default defineConfig(({ mode }) => ({
       vite: { experimental: { supportAnalogFormat: true } },
     }),
     unsplashImagePlugin(),
+    readingTimePlugin(),
     tsconfigPaths(),
     swBuildPlugin(),
     devtoolsJson(),
