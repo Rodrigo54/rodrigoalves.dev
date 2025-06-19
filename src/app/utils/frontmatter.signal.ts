@@ -54,7 +54,7 @@ export function frontMatterSignal<T extends 'all' | 'slug'>(type = 'all' as T, i
           return makeFrontMatterFromContentFile(post, adjacentPosts);
         }),
       );
-      return toSignal(subscription$, { initialValue: makeFrontMatter() });
+      return toSignal(subscription$);
     }
 
     return computed(() => makeArrayFrontMatter(posts));
