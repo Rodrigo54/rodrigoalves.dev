@@ -36,7 +36,7 @@
     "@ng-icons/material-symbols": "^31.4.0",
     "chroma-js": "^3.1.2",
     "date-fns": "^4.1.0",
-    "front-matter": "^4.0.2",
+    "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
     "marked": "^15.0.12",
     "marked-gfm-heading-id": "^4.1.1",
