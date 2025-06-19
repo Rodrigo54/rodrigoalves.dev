@@ -3,9 +3,13 @@ title: 'Lógica de Paginação com Angular'
 description: 'Este é um exemplo de como implementar uma paginação em Angular 2 com uma lógica como a do Google.'
 createAt: '2017-03-18 07:20:00 -0300'
 author: 'Rodrigo Alves'
-featuredImage: 'https://images.unsplash.com/photo-1548454934-8c01558aa290'
 comments: true
 tags: ['angular', 'typescript']
+featuredImage: 
+  name: 'Birds Eye View do Litoral'
+  author: '@lance_asper'
+  url: 'https://unsplash.com/pt-br/fotografias/birds-eyeview-do-litoral-3P3NHLZGCp8'
+  raw: 'https://images.unsplash.com/photo-1548454934-8c01558aa290'
 music:
   title: 'Strobe - deadmau5'
   url: 'https://open.spotify.com/track/6c9EGVj5CaOeoKd9ecMW1U'
