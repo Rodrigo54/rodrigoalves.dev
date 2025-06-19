@@ -47,3 +47,4 @@ old-version/
 .vercel/
 commits_by_branch/
 src/assets/img/featured/
+src/app/data/featured-images.json
