@@ -1,6 +1,7 @@
 import frontmatter, { GrayMatterFile } from 'gray-matter';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const targetDirectory = './src/content'; // Diretório onde estão os arquivos markdown
 
@@ -62,6 +63,7 @@ export async function processReadTimes() {
 }
 
 // Para rodar diretamente via node scripts/reading-time.ts
-if (import.meta.url === `file://${process.argv[1]}`) {
+const isRunningDirectly = fileURLToPath(import.meta.url) === path.resolve(process.argv[1]);
+if (isRunningDirectly) {
   processReadTimes();
 }

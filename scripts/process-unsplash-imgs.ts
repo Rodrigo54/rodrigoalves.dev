@@ -5,6 +5,7 @@ import frontmatter from 'gray-matter';
 import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const mdDir = './src/content'; // pasta com seus arquivos .md
 const outputDir = './src/assets/img/featured'; // pasta de saída para imagens processadas
@@ -117,6 +118,7 @@ export async function processImages() {
 }
 
 // Para rodar diretamente via node scripts/process-unsplash-imgs.ts
-if (import.meta.url === `file://${process.argv[1]}`) {
+const isRunningDirectly = fileURLToPath(import.meta.url) === path.resolve(process.argv[1]);
+if (isRunningDirectly) {
   processImages();
 }
