@@ -1,15 +1,14 @@
 // Node.js script para processar imagens do Unsplash em tempo de build
-// Requisitos: node-fetch, front-matter, fs-extra
+// Requisitos: node-fetch, gray-matter, fs-extra
 
-import { FrontMatter } from '@utils/frontmatter.signal';
-import matter from 'front-matter';
+import frontmatter from 'gray-matter';
+import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { Plugin, UserConfig } from 'vite';
 
 const mdDir = './src/content'; // pasta com seus arquivos .md
 const outputDir = './src/assets/img/featured'; // pasta de saída para imagens processadas
-const outputMeta = './src/app/data/featured-images.ts';
+const outputMeta = './src/app/data/featured-images.json'; // arquivo de metadados para imagens processadas
 const sizes = [
   [320, 250],
   [700, 320],
@@ -20,6 +19,11 @@ async function clearBeforeBuild() {
   await fs.rm(outputDir, { recursive: true, force: true }).catch(() => {});
   await fs.mkdir(outputDir, { recursive: true });
   await fs.rm(outputMeta, { force: true }).catch(() => {});
+}
+
+function gerarId(code: string) {
+  const hash = crypto.createHash('sha256').update(code).digest('hex');
+  return hash.slice(0, 12); // usa os primeiros 12 caracteres do hash
 }
 
 function gerarNome(id: string, size: number[], format = 'webp') {
@@ -46,7 +50,7 @@ function gerarUrl(raw: string, size: number[], format = 'webp') {
 }
 
 async function baixarImagem(url: string, destino: string) {
-  console.log(`Baixando imagem de ${url} para ${destino}`);
+  // console.log(`Baixando imagem de ${url} para ${destino}`);
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Erro ao baixar ${url}`);
   const buffer = Buffer.from(await res.arrayBuffer());
@@ -55,18 +59,12 @@ async function baixarImagem(url: string, destino: string) {
 }
 
 async function processarPost(filepath: string) {
-  const content = await fs.readFile(filepath, 'utf8');
-  const data = matter<FrontMatter>(content);
-  const img = data.attributes.featuredImage;
+  const data = frontmatter.read(filepath);
+  const img = data.data['featuredImage'];
 
   if (!img?.raw || !img?.url) return null;
   const rawUrl = img.raw;
-
-  // extrai ID da imagem (último trecho após 'photo-')
-  const match = rawUrl.match(/\/photo-([a-zA-Z0-9-]+)(?:\?.*)?$/);
-  if (!match) return null;
-
-  const id = match[1];
+  const id = gerarId(rawUrl);
   const paths: Record<string, string> = {};
 
   for (const size of sizes) {
@@ -101,7 +99,7 @@ async function listarArquivos(dir: string): Promise<string[]> {
   return files;
 }
 
-async function processarImagens() {
+export async function processImages() {
   await clearBeforeBuild();
   const files = await listarArquivos(mdDir);
   const metas = [];
@@ -111,52 +109,14 @@ async function processarImagens() {
     if (meta) metas.push(meta);
   }
 
-  // Gera arquivo TypeScript
-  const output = `
-export const FeaturedImages = {
-  ${metas
-    .map(
-      m => `"${m.raw}": {
-    id: '${m.id}',
-    name: ${JSON.stringify(m.name)},
-    author: ${JSON.stringify(m.author)},
-    raw: ${JSON.stringify(m.raw)},
-    url: ${JSON.stringify(m.url)},
-    sizes: {
-      ${Object.entries(m.sizes)
-        .map(([k, v]) => `'${k}': '${v}'`)
-        .join(',\n      ')}
-    }
-  }`,
-    )
-    .join(',\n  ')}
-} as const;
-
-type ImageKey = keyof typeof FeaturedImages;
-type ImageValue = (typeof FeaturedImages)[ImageKey];
-
-export const FeaturedImagesMap = new Map<string, ImageValue>(
-  Object.entries(FeaturedImages).map(([key, value]) => [key, value as ImageValue])
-);
-`;
+  // Gera arquivo Json com os metadados das imagens
+  const output = JSON.stringify(metas, null, 2);
 
   await fs.writeFile(outputMeta, output);
   console.log('Imagens processadas e baixadas com sucesso!');
 }
 
-export function unsplashImagePlugin(): Plugin {
-  let config: UserConfig;
-  return {
-    name: 'vite-plugin-unsplash-image-processor',
-    apply: 'build', // roda só em build
-    config(_config) {
-      config = _config;
-    },
-    async buildStart() {
-      if (config.build?.ssr) {
-        return;
-      }
-      await processarImagens();
-    },
-  };
+// Para rodar diretamente via node scripts/process-unsplash-imgs.ts
+if (import.meta.url === `file://${process.argv[1]}`) {
+  processImages();
 }
