@@ -1,30 +1,13 @@
 /// <reference types="vitest" />
 
 import analog from '@analogjs/platform';
-import { augmentAppWithServiceWorker } from '@angular/build/private';
-import * as path from 'node:path';
-import { defineConfig, Plugin, PluginOption, UserConfig } from 'vite';
+import { defineConfig, PluginOption } from 'vite';
 import devtoolsJson from 'vite-plugin-devtools-json';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import { anchorLinkExtension } from './marked-extensions';
-import { getBlogPosts, getBlogTags } from './vite.prerender.utils';
-
-function swBuildPlugin(): Plugin {
-  let config: UserConfig;
-  return {
-    name: 'analog-sw',
-    config(_config) {
-      config = _config;
-    },
-    async closeBundle() {
-      if (config.build?.ssr) {
-        return;
-      }
-      console.log('Building service worker');
-      await augmentAppWithServiceWorker('.', process.cwd(), path.join(process.cwd(), 'dist/client'), '/');
-    },
-  };
-}
+import { swBuildPlugin } from './plugins/analog-sw';
+import { anchorLinkExtension } from './plugins/marked-extensions';
+import { unsplashImagePlugin } from './plugins/process-imagens';
+import { getBlogPosts, getBlogTags } from './plugins/vite.prerender.utils';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -71,6 +54,7 @@ export default defineConfig(({ mode }) => ({
       },
       vite: { experimental: { supportAnalogFormat: true } },
     }),
+    unsplashImagePlugin(),
     tsconfigPaths(),
     swBuildPlugin(),
     devtoolsJson(),
