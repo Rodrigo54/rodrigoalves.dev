@@ -1,26 +1,10 @@
 import { IMAGE_CONFIG, IMAGE_LOADER, ImageLoaderConfig, NgOptimizedImage } from '@angular/common';
 import { booleanAttribute, ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { injectLocalStorage } from 'ngxtension/inject-local-storage';
+import { FeaturedImagesMap } from '../data/featured-images';
 
 function imageLoader(config: ImageLoaderConfig): string {
-  const url = new URL(config.src, 'https://images.unsplash.com/');
-  if (config.loaderParams) {
-    const defaultParams = {
-      w: 1920,
-      h: 1080,
-      auto: 'format',
-      fit: 'crop',
-      crop: 'entropy',
-      fm: 'webp',
-      q: 80,
-    };
-    const loaderParams = { ...defaultParams, ...config.loaderParams };
-    Object.entries(loaderParams).forEach(([key, value]) => {
-      url.searchParams.set(key, String(value));
-    });
-  }
-
-  return url.toString();
+  return config.src;
 }
 
 @Component({
@@ -42,36 +26,15 @@ function imageLoader(config: ImageLoaderConfig): string {
   template: `
     @if (this.fullWidth()) {
     <picture>
-      <img
-        [ngSrc]="this.image()"
-        [width]="1920"
-        [height]="1080"
-        placeholder
-        priority
-        [alt]="this.alt()"
-        [loaderParams]="this.loaderParams()" />
+      <img [ngSrc]="this.imageFull()" [width]="1920" [height]="1080" placeholder priority [alt]="this.alt()" />
     </picture>
     } @else { @if (this.gridType() === 'cell') {
     <picture>
-      <img
-        [ngSrc]="this.image()"
-        [width]="500"
-        [height]="120"
-        placeholder
-        priority
-        [alt]="this.alt()"
-        [loaderParams]="this.loaderParams()" />
+      <img [ngSrc]="this.imageCell()" [width]="700" [height]="320" placeholder priority [alt]="this.alt()" />
     </picture>
     } @if (this.gridType() === 'row') {
     <picture>
-      <img
-        [ngSrc]="this.image()"
-        [width]="320"
-        [height]="250"
-        placeholder
-        priority
-        [alt]="this.alt()"
-        [loaderParams]="this.loaderParams()" />
+      <img [ngSrc]="this.imageRow()" [width]="320" [height]="250" placeholder priority [alt]="this.alt()" />
     </picture>
     } }
   `,
@@ -80,21 +43,23 @@ function imageLoader(config: ImageLoaderConfig): string {
 })
 export class FeaturedImage {
   image = input.required<string>();
+  featuredImagesMap = FeaturedImagesMap;
   alt = input('Featured Image');
   fullWidth = input(false, { transform: booleanAttribute });
   gridType = injectLocalStorage<'cell' | 'row'>('grid', { defaultValue: 'row' });
 
-  loaderParams = computed((): Record<string, string | number> => {
-    const isRow = this.gridType() === 'row';
-    const isFullWidth = this.fullWidth();
-    return {
-      w: isFullWidth ? 1920 : isRow ? 320 : 500,
-      h: isFullWidth ? 1080 : isRow ? 250 : 120,
-      auto: 'format',
-      fit: 'crop',
-      crop: 'entropy',
-      fm: 'webp',
-      q: 80,
-    };
+  imageFull = computed((): string => {
+    const image = this.image();
+    return this.featuredImagesMap.get(image)?.sizes['1920x1080'] || image;
+  });
+
+  imageCell = computed((): string => {
+    const image = this.image();
+    return this.featuredImagesMap.get(image)?.sizes['700x320'] || image;
+  });
+
+  imageRow = computed((): string => {
+    const image = this.image();
+    return this.featuredImagesMap.get(image)?.sizes['320x250'] || image;
   });
 }
