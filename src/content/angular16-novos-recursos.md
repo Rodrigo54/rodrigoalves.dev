@@ -1,21 +1,25 @@
 ---
 title: 'Angular 16: Novos recursos de DX'
-description: 'Descubra as novidades do Angular 16, como o recurso de sinais, a melhoria no modelo de reatividade, a marcação de entradas obrigatórias em componentes, entre outros recursos e melhorias.'
+description: >-
+  Descubra as novidades do Angular 16, como o recurso de sinais, a melhoria no
+  modelo de reatividade, a marcação de entradas obrigatórias em componentes,
+  entre outros recursos e melhorias.
 createAt: '2023-05-07 12:00:00 -0300'
-author: 'Rodrigo Alves'
+author: Rodrigo Alves
 comments: true
-tags: ['angular']
-featuredImage: 
-  name: 'Birds Eye View do Litoral'
+tags:
+  - angular
+featuredImage:
+  name: Birds Eye View do Litoral
   author: '@lance_asper'
   url: 'https://unsplash.com/pt-br/fotografias/birds-eyeview-do-litoral-3P3NHLZGCp8'
   raw: 'https://images.unsplash.com/photo-1672243776246-dce4535b1628'
 music:
-  title: 'Bon Appétit - Katy Perry ft Migos'
+  title: Bon Appétit - Katy Perry ft Migos
   url: 'https://open.spotify.com/track/4rHmKlFRiFzabiVO6e9w2e?si=1489aeb041fc42a9'
 timeToRead:
   minutes: 8
-  words: 1656
+  words: 1677
 ---
 
 Com o Angular 16 muitos desenvolvedores estão animados com as novas funcionalidades e melhorias que vieram com essa nova versão.

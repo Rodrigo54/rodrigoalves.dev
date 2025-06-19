@@ -1,21 +1,22 @@
 ---
-title: 'Atualizando a versão do PHP no Wampserver'
-description: 'Use o PHP 5.6 no Wampserver.'
+title: Atualizando a versão do PHP no Wampserver
+description: Use o PHP 5.6 no Wampserver.
 createAt: '2015-08-19 20:30:00 -0300'
-author: 'Rodrigo Alves'
+author: Rodrigo Alves
 comments: true
-tags: ['php']
-featuredImage: 
-  name: 'Birds Eye View do Litoral'
+tags:
+  - php
+featuredImage:
+  name: Birds Eye View do Litoral
   author: '@lance_asper'
   url: 'https://unsplash.com/pt-br/fotografias/birds-eyeview-do-litoral-3P3NHLZGCp8'
   raw: 'https://images.unsplash.com/photo-1605704366546-e3632af0c5c6'
 music:
-  title: 'There Might Be Coffee - deadmau5'
+  title: There Might Be Coffee - deadmau5
   url: 'https://open.spotify.com/track/7rwgvDDkdHTBMAruB2Lr3Z'
 timeToRead:
   minutes: 1
-  words: 223
+  words: 224
 ---
 
 Siga os passos abaixo para atualizar o php no Wampserver

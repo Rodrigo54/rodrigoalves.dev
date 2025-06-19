@@ -1,21 +1,22 @@
 ---
-title: 'Várias versões do PHP no Wampserver'
-description: 'Use desde o PHP 5.3 até o PHP 7.0 no Wampserver.'
+title: Várias versões do PHP no Wampserver
+description: Use desde o PHP 5.3 até o PHP 7.0 no Wampserver.
 createAt: '2015-12-07 16:30:15 -0300'
-author: 'Rodrigo Alves'
+author: Rodrigo Alves
 comments: true
-tags: ['php']
-featuredImage: 
-  name: 'Birds Eye View do Litoral'
+tags:
+  - php
+featuredImage:
+  name: Birds Eye View do Litoral
   author: '@lance_asper'
   url: 'https://unsplash.com/pt-br/fotografias/birds-eyeview-do-litoral-3P3NHLZGCp8'
   raw: 'https://images.unsplash.com/photo-1503197979108-c824168d51a8'
 music:
-  title: "Don't Stop - Knightlife"
+  title: Don't Stop - Knightlife
   url: 'https://open.spotify.com/track/377e3RYbkuNSpZkV0yEQKE'
 timeToRead:
-  minutes: 3
-  words: 672
+  minutes: 4
+  words: 878
 ---
 
 Quando iniciamos um projeto do zero, fica fácil decidir qual a versão do PHP será usada.

@@ -1,21 +1,26 @@
 ---
 title: 'NestJS: Framework Moderno para Backend em Node.js'
-description: 'Descubra os benefícios e a arquitetura do NestJS, um framework baseado no Angular para tornar a construção de aplicativos escaláveis e modulares mais fácil e rápida.'
+description: >-
+  Descubra os benefícios e a arquitetura do NestJS, um framework baseado no
+  Angular para tornar a construção de aplicativos escaláveis e modulares mais
+  fácil e rápida.
 createAt: '2020-12-22 12:00:00 -0300'
-author: 'Rodrigo Alves'
+author: Rodrigo Alves
 comments: true
-tags: ['nodejs', 'typescript']
-featuredImage: 
-  name: 'Birds Eye View do Litoral'
+tags:
+  - nodejs
+  - typescript
+featuredImage:
+  name: Birds Eye View do Litoral
   author: '@lance_asper'
   url: 'https://unsplash.com/pt-br/fotografias/birds-eyeview-do-litoral-3P3NHLZGCp8'
   raw: 'https://images.unsplash.com/photo-1682533945500-9e7012432f75'
 music:
-  title: 'Are You Bored Yet? (feat. Clairo) - Wallows'
+  title: Are You Bored Yet? (feat. Clairo) - Wallows
   url: 'https://open.spotify.com/track/57RA3JGafJm5zRtKJiKPIm?si=26f8d6a59e5349bc'
 timeToRead:
   minutes: 3
-  words: 617
+  words: 582
 ---
 
 Nos últimos anos, o NestJS tem se destacado como um dos principais frameworks para o desenvolvimento de backend em Node.js. Com sua arquitetura modular e escalável, bem como sua poderosa CLI e suporte nativo para testes, o NestJS tem atraído a atenção de muitos desenvolvedores Node.js.
