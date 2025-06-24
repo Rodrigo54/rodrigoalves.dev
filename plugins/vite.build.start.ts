@@ -2,6 +2,8 @@ import { Plugin, UserConfig } from 'vite';
 import { processImages } from '../scripts/process-unsplash-imgs';
 import { processReadTimes } from '../scripts/reading-time';
 
+const isDeployedOnNetlify = process.env['DEPLOYED_ON_NETLIFY'] === 'true';
+
 export function unsplashImagePlugin(): Plugin {
   let config: UserConfig;
   return {
@@ -11,7 +13,7 @@ export function unsplashImagePlugin(): Plugin {
       config = _config;
     },
     async buildStart() {
-      if (config.build?.ssr) {
+      if (config.build?.ssr || isDeployedOnNetlify) {
         return;
       }
       await processImages();
@@ -28,7 +30,7 @@ export function readingTimePlugin(): Plugin {
       config = _config;
     },
     async buildStart() {
-      if (config.build?.ssr) {
+      if (config.build?.ssr || isDeployedOnNetlify) {
         return;
       }
       await processReadTimes();
