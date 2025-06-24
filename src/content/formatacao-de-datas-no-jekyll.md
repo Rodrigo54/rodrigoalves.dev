@@ -1,17 +1,24 @@
 ---
-title: 'Formatação de datas no Jekyll'
-description: 'Tudo o que você queria saber sobre formatação de datas no Jekyll, mas tinham medo de perguntar.'
+title: Formatação de datas no Jekyll
+description: >-
+  Tudo o que você queria saber sobre formatação de datas no Jekyll, mas tinham
+  medo de perguntar.
 createAt: '2015-12-17 12:00:00 -0300'
-author: 'Rodrigo Alves'
-featuredImage: '/img/post-bg-03.webp'
+author: Rodrigo Alves
 comments: true
-tags: ['jekyll']
+tags:
+  - jekyll
+featuredImage:
+  name: Birds Eye View do Litoral
+  author: '@lance_asper'
+  url: 'https://unsplash.com/pt-br/fotografias/birds-eyeview-do-litoral-3P3NHLZGCp8'
+  raw: 'https://images.unsplash.com/photo-1593642634402-b0eb5e2eebc9'
 music:
-  title: 'Houdini - Foster The People'
+  title: Houdini - Foster The People
   url: 'https://open.spotify.com/track/5Fli1xRi01bvCjsZvKWro0'
 timeToRead:
   minutes: 7
-  words: 1424
+  words: 1439
 ---
 
 Esses exemplos fornecem trechos de código testado para a exibição de vários

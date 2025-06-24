@@ -17,11 +17,41 @@
     <meta name="apple-mobile-web-app-title" content="Rodrigo | Dev">
     <!-- Ícone para iOS (ideal ter um PNG 180x180 transparente) -->
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
-    <link rel="stylesheet" href="/src/style/reset.css" />
-    <link rel="stylesheet" href="/src/style/theme.css" />
-    <link rel="stylesheet" href="/src/style/global.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;family=Fira+Code:wght@400;700&amp;display=swap">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+      rel="preload"
+      href="/src/style/reset.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+
+    <link
+      rel="preload"
+      href="/src/style/theme.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="/src/style/global.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;family=Fira+Code:wght@400;700&amp;display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="/src/style/reset.css" />
+      <link rel="stylesheet" href="/src/style/theme.css" />
+      <link rel="stylesheet" href="/src/style/global.css" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;family=Fira+Code:wght@400;700&amp;display=swap">
+    </noscript>
   </head>
   <body>
     <app-root></app-root>

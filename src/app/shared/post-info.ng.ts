@@ -1,9 +1,9 @@
 import { Component, computed, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { faClock } from '@ng-icons/font-awesome/regular';
 import { faSolidMusic, faSolidTags } from '@ng-icons/font-awesome/solid';
 import { matCalendarMonth } from '@ng-icons/material-icons/baseline';
+import TagComponent from '@shared/tag.ng';
 import { FrontMatter } from '@utils/frontmatter.signal';
 import { format, formatISO } from 'date-fns';
 import { ptBR } from 'date-fns/locale/pt-BR';
@@ -13,7 +13,7 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
 @Component({
   selector: 'post-info',
   standalone: true,
-  imports: [NgIcon, RouterLink],
+  imports: [NgIcon, TagComponent],
   providers: [
     provideIcons({
       matCalendarMonth,
@@ -42,7 +42,7 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
     <div class="post-tags">
       <ng-icon name="faSolidTags" />
       @for (tag of tags(); track tag) {
-      <a [class]="tag" [routerLink]="['/blog/tags/', tag]">{{ tag }}</a>
+      <tag [tag]="tag" />
       }
     </div>
   `,
@@ -112,51 +112,10 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
         }
       }
       .post-tags {
-        --tag-color: hsl(0, 100%, 70%);
-        a {
-          font-family: var(--font-serif);
-          text-transform: capitalize;
-          font-weight: 800;
-          font-size: calc(var(--post-info__font-size, 1rem) - 0.1rem);
-          border-width: 1px;
-          border-style: solid;
-          border-color: var(--tag-color);
-          color: var(--tag-color);
-          border-radius: 80px;
-          padding: 0.3rem 1rem;
-          background-color: hsl(from var(--tag-color) h s 95%);
-          @media (prefers-color-scheme: dark) {
-            background-color: hsl(from var(--tag-color) h s 15%);
-          }
-          &:hover,
-          &:focus {
-            border-color: var(--tag-color);
-            background-color: var(--tag-color);
-            color: light-dark(white, black);
-          }
-        }
-        .angular {
-          --tag-color: hsl(348, 100%, 61%);
-        }
-        .nodejs {
-          --tag-color: hsl(128, 100%, 30%);
-          @media (prefers-color-scheme: dark) {
-            --tag-color: hsl(128, 100%, 40%);
-          }
-        }
-        .typescript {
-          --tag-color: hsl(204, 86%, 53%);
-        }
-        .jekyll {
-          --tag-color: hsl(48, 40%, 45%);
-          @media (prefers-color-scheme: dark) {
-            --tag-color: hsl(48, 100%, 50%);
-          }
-        }
-        .php {
-          --tag-color: hsl(230, 30%, 65%);
-          text-transform: uppercase;
-        }
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        line-height: 1.7rem;
       }
     `,
   ],

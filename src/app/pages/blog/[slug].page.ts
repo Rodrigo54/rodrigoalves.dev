@@ -17,7 +17,7 @@ export const routeMeta: RouteMeta = {
   imports: [PaperLayout, PostInfo, MarkdownComponent, RecommendedPosts, Comments],
   template: `
     @if (post(); as postItem) {
-    <paper-layout [image]="postItem.featuredImage" [alt]="postItem.title">
+    <paper-layout [image]="postItem.featuredImage.raw" [alt]="postItem.title">
       <ng-container slot="header">
         <h1>{{ postItem.title }}</h1>
         <p>{{ postItem.description }}</p>

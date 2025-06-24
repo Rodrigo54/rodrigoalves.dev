@@ -1,17 +1,24 @@
 ---
-title: 'Reescrevendo meu blog em Angular'
+title: Reescrevendo meu blog em Angular
 description: 'Uma jornada de aprendizados, desafios e evolução.'
 createAt: '2025-06-12 12:00:00 -0300'
-author: 'Rodrigo Alves'
-featuredImage: '/img/post-bg-07.webp'
+author: Rodrigo Alves
 comments: true
-tags: ['angular', 'react']
+tags:
+  - angular
+  - react
+featuredImage:
+  name: Birds Eye View do Litoral
+  author: '@lance_asper'
+  url: 'https://unsplash.com/pt-br/fotografias/birds-eyeview-do-litoral-3P3NHLZGCp8'
+  raw: 'https://images.unsplash.com/photo-1444080748397-f442aa95c3e5'
 music:
-  title: 'Shadow Of A Man - Lady Gaga'
-  url: 'https://open.spotify.com/intl-pt/track/6OC87jHRiovNPEUrgaqFSu?si=b860002366a54484'
+  title: Shadow Of A Man - Lady Gaga
+  url: >-
+    https://open.spotify.com/intl-pt/track/6OC87jHRiovNPEUrgaqFSu?si=b860002366a54484
 timeToRead:
   minutes: 2
-  words: 432
+  words: 439
 ---
 
 Manter um blog é mais do que escrever posts.
