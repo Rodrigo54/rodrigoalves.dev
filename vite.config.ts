@@ -52,7 +52,6 @@ export default defineConfig(({ mode }) => ({
           failOnError: true,
         },
       },
-      vite: { experimental: { supportAnalogFormat: true } },
     }),
     unsplashImagePlugin(),
     readingTimePlugin(),
