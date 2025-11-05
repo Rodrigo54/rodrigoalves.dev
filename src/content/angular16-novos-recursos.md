@@ -6,6 +6,7 @@ description: >-
   entre outros recursos e melhorias.
 createAt: '2023-05-07 12:00:00 -0300'
 author: Rodrigo Alves
+slug: angular16-novos-recursos
 comments: true
 tags:
   - angular

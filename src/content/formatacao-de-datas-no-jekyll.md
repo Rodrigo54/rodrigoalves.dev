@@ -5,6 +5,7 @@ description: >-
   medo de perguntar.
 createAt: '2015-12-17 12:00:00 -0300'
 author: Rodrigo Alves
+slug: formatacao-de-datas-no-jekyll
 comments: true
 tags:
   - jekyll

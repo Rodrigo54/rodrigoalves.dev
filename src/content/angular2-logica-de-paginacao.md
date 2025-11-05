@@ -5,6 +5,7 @@ description: >-
   lógica como a do Google.
 createAt: '2017-03-18 07:20:00 -0300'
 author: Rodrigo Alves
+slug: angular2-logica-de-paginacao
 comments: true
 tags:
   - angular

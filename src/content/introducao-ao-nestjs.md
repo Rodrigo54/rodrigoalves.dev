@@ -6,6 +6,7 @@ description: >-
   fácil e rápida.
 createAt: '2020-12-22 12:00:00 -0300'
 author: Rodrigo Alves
+slug: introducao-ao-nestjs
 comments: true
 tags:
   - nodejs
