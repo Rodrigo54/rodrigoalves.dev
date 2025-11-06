@@ -53,7 +53,7 @@ Foi usado o projeto angular 2 quickstart como uma base para o aplicativo, ele é
 
 Para facilitar a reutilização da lógica de paginação em diferentes componentes ou módulos Angular 2, colocamos a lógica de paginação em um serviço angular 2.
 
-```typescript
+```angular-ts pager.service.ts
 import * as _ from 'underscore';
 
 export class PagerService {
@@ -107,7 +107,7 @@ export class PagerService {
 
 Um exemplo de componente angular 2 que usa o Pager Service acima para paginar uma lista de itens fictícios que são extraídos de um arquivo json no servidor.
 
-```typescript
+```angular-ts app.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -169,7 +169,7 @@ export class AppComponent implements OnInit {
 
 Um exemplo de modelo angular 2 que mostra uma lista de itens paginados e os links de paginação para navegar entre páginas.
 
-```html
+```angular-html app.component.html
 <div>
   <div class="container">
     <div class="text-center">

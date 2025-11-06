@@ -45,7 +45,7 @@ Signals podem ser graváveis ou somente leitura.
 Signals graváveis fornecem uma API para atualizar seus valores diretamente.
 Você cria signals graváveis chamando a função signal com o valor inicial do signal:
 
-```ts
+```angular-ts new-angular-signal.ts
 const count = signal(0);
 
 // Signals são funções getter - chamá-las lê seu valor.
@@ -54,20 +54,20 @@ console.log('A contagem é: ' + count());
 
 Para alterar o valor de um signal gravável, você pode atribuir diretamente o novo valor usando o método .set():
 
-```ts
+```angular-ts new-angular-signal.ts
 count.set(3);
 ```
 
 ou usar a operação .update() para calcular um novo valor com base no valor anterior:
 
-```ts
+```angular-ts new-angular-signal.ts
 // Incrementa a contagem em 1.
 count.update(valor => valor + 1);
 ```
 
 Ao trabalhar com signals que contêm objetos, às vezes é útil mutar o objeto diretamente. Por exemplo, se o objeto for um array, você pode querer adicionar um novo valor sem substituir completamente o array. Para fazer uma mudança interna como essa, use o método .mutate:
 
-```ts
+```angular-ts new-angular-signal.ts
 const todos = signal([{title: 'Aprender signals', done: false}]);
 
 todos.mutate(valor => {
@@ -82,7 +82,7 @@ Signals graváveis têm o tipo WritableSignal.
 
 Um signal computado deriva seu valor de outros signals. Defina um signal computado usando a função computed e especificando uma função de derivação:
 
-```ts
+```angular-ts new-angular-signal.ts
 const count: WritableSignal<number> = signal(0);
 const doubleCount: Signal<number> = computed(() => count() * 2);
 ```
@@ -98,7 +98,7 @@ Como resultado, é seguro realizar derivações computacionalmente caras em sign
 Os signals computados não são signals graváveis
 Você não pode atribuir valores diretamente a um signal computado. Ou seja, a seguinte operação produzirá um erro de compilação, porque doubleCount não é um WritableSignal:
 
-```ts
+```angular-ts new-angular-signal.ts
 doubleCount.set(3);
 ```
 
@@ -114,7 +114,7 @@ o que significa que o componente pai deve fornecê-las, ou então um erro será 
 Isso ajudará a capturar erros e erros de digitação em tempo de compilação e garantir que os componentes recebam todos os dados necessários para funcionar corretamente.
 As entradas obrigatórias também tornarão os componentes mais auto-documentáveis e fáceis de usar.
 
-```ts
+```angular-ts new-angular-16.ts
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -140,7 +140,7 @@ A nova versão do Angular, a v16, traz uma funcionalidade muito aguardada pelos 
 Isso significa que agora é possível acessar dados de resolvers, propriedades de dados, parâmetros de caminho e parâmetros de consulta diretamente nos inputs do componente de roteamento correspondente.
 Essa é uma melhoria significativa na experiência do desenvolvedor, que agora pode acessar esses dados de maneira mais direta e conveniente.
 
-```ts
+```angular-ts new-angular-16.ts
 const routes = [
   {
     path: 'about',
@@ -163,7 +163,7 @@ Essa é uma pequena melhoria na experiência de desenvolvimento que pode economi
 Em vez de escrever a tag de fechamento do componente, agora é possível fechar a tag usando uma barra (/) no final.
 Essa é uma atualização simples, mas útil, que pode tornar o desenvolvimento Angular um pouco mais conveniente.
 
-```html
+```angular-html new-angular-16.ts
 <!-- // Agora você pode substituir isso -->
 <super-duper-long-component-name [prop]="someVar"></super-duper-long-component-name>
 
@@ -188,7 +188,7 @@ Com novo provider, é possível criar uma lógica que depende do **DestroyRef**,
 o contexto de um componente, diretiva ou pipe é destruído. Isso torna a programação Angular ainda mais eficiente e intuitiva,
 proporcionando aos desenvolvedores uma maneira mais fácil e organizada de gerenciar os ciclos de vida de seus componentes.
 
-```ts
+```angular-ts new-angular-16.ts
 import { Component, OnInit, DestroyRef } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
