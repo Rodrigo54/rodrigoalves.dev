@@ -8,8 +8,10 @@ import Avatar from '@shared/avatar.ng';
   template: `
     <a [routerLink]="['/blog']">
       <avatar />
-      <h1>{{ userInfo.name }}</h1>
-      <h2>{{ userInfo.position }}</h2>
+      <div class="user-info">
+        <h1>{{ userInfo.name }}</h1>
+        <h2>{{ userInfo.position }}</h2>
+      </div>
     </a>
     <p>{{ userInfo.description }}</p>
   `,
@@ -23,7 +25,7 @@ import Avatar from '@shared/avatar.ng';
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto auto;
-        grid-template-areas: 'avatar' 'name' 'position';
+        grid-template-areas: 'avatar' 'user-info';
         gap: 1rem;
         color: var(--text-color);
         text-decoration: none;
@@ -34,19 +36,23 @@ import Avatar from '@shared/avatar.ng';
         avatar {
           grid-area: avatar;
         }
-        h1 {
-          grid-area: name;
-          display: block;
-          font-family: var(--font-serif);
-          font-size: 1.6rem;
-          font-weight: normal;
-        }
-        h2 {
-          grid-area: position;
-          display: block;
-          font-family: var(--font-sans);
-          font-size: 1rem;
-          font-weight: normal;
+        .user-info {
+          grid-area: user-info;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 0.2rem;
+          h1 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: normal;
+          }
+          h2 {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: normal;
+          }
         }
       }
       p {
@@ -61,21 +67,26 @@ import Avatar from '@shared/avatar.ng';
       @media (max-width: 1170px) {
         a {
           grid-template-columns: auto 1fr;
-          grid-template-rows: 1fr 1fr;
-          grid-template-areas: 'avatar name' 'avatar position';
+          grid-template-rows: 1fr;
+          grid-template-areas: 'avatar user-info';
           gap: 0.6rem 1rem;
           --avatar-size: 2.6rem;
-          h1 {
-            font-size: 1rem;
-            margin-top: 0;
-            text-align: left;
-            height: 1rem;
-          }
-          h2 {
-            font-size: 0.8rem;
-            height: 0.8rem;
-            margin-top: 0;
-            text-align: left;
+          .user-info {
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0.4rem;
+            h1 {
+              font-size: 1rem;
+              margin-top: 0;
+              text-align: left;
+              height: 1rem;
+            }
+            h2 {
+              font-size: 0.8rem;
+              height: 0.8rem;
+              margin-top: 0;
+              text-align: left;
+            }
           }
         }
         p {
@@ -86,21 +97,26 @@ import Avatar from '@shared/avatar.ng';
       @media (max-height: 700px) {
         a {
           grid-template-columns: auto 1fr;
-          grid-template-rows: 1fr 1fr;
-          grid-template-areas: 'avatar name' 'avatar position';
+          grid-template-rows: 1fr;
+          grid-template-areas: 'avatar user-info';
           gap: 0.6rem 1rem;
           --avatar-size: 2.6rem;
-          h1 {
-            font-size: 1rem;
-            margin-top: 0;
-            text-align: left;
-            height: 1rem;
-          }
-          h2 {
-            font-size: 0.8rem;
-            height: 0.8rem;
-            margin-top: 0;
-            text-align: left;
+          .user-info {
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0.4rem;
+            h1 {
+              font-size: 1rem;
+              margin-top: 0;
+              text-align: left;
+              height: 1rem;
+            }
+            h2 {
+              font-size: 0.8rem;
+              height: 0.8rem;
+              margin-top: 0;
+              text-align: left;
+            }
           }
         }
       }
