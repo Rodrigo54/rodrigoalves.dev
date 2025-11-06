@@ -57,8 +57,8 @@
 @media (prefers-color-scheme: light) {
   :root {
     --primary-color: oklch(59.6% 0.145 163.225);
-    --background-color: oklch(92.9% 0.013 255.508);
-    --paper-color: oklch(97% 0.001 106.424);
+    --background-color: oklch(92.3% 0.003 48.717);
+    --paper-color: oklch(98.5% 0 0);
     --primary-color-contrast: #ffffff;
     --background-color-contrast: #000000;
     --paper-color-contrast: #000000;
