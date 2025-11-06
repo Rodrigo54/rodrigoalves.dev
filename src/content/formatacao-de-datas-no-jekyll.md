@@ -18,8 +18,8 @@ music:
   title: Houdini - Foster The People
   url: 'https://open.spotify.com/track/5Fli1xRi01bvCjsZvKWro0'
 timeToRead:
-  minutes: 7
-  words: 1439
+  minutes: 6
+  words: 1108
 ---
 
 Esses exemplos fornecem trechos de código testado para a exibição de vários

@@ -19,8 +19,8 @@ music:
   title: Strobe - deadmau5
   url: 'https://open.spotify.com/track/6c9EGVj5CaOeoKd9ecMW1U'
 timeToRead:
-  minutes: 6
-  words: 1107
+  minutes: 3
+  words: 577
 ---
 
 ## Lógica de paginação do Google

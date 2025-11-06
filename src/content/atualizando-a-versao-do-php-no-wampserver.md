@@ -17,7 +17,7 @@ music:
   url: 'https://open.spotify.com/track/7rwgvDDkdHTBMAruB2Lr3Z'
 timeToRead:
   minutes: 1
-  words: 224
+  words: 176
 ---
 
 Siga os passos abaixo para atualizar o php no Wampserver

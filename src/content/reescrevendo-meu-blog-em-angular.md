@@ -19,7 +19,7 @@ music:
     https://open.spotify.com/intl-pt/track/6OC87jHRiovNPEUrgaqFSu?si=b860002366a54484
 timeToRead:
   minutes: 2
-  words: 439
+  words: 382
 ---
 
 Manter um blog é mais do que escrever posts.
