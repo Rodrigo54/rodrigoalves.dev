@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #6ea9ff;
-  --background-color: #303030;
-  --paper-color: #1e1e1e;
+  --primary-color: oklch(70.7% 0.165 254.624);
+  --background-color: oklch(14.7% 0.004 49.25);
+  --paper-color: oklch(20.5% 0 0);
   --primary-color-contrast: #000000;
   --background-color-contrast: #ffffff;
   --paper-color-contrast: #ffffff;
@@ -20,16 +20,16 @@
   --paper-color-shade: color-mix(in srgb, var(--paper-color-contrast) 10%, var(--paper-color) 90%);
   --paper-color-alt: color-mix(in srgb, var(--paper-color-contrast) 25%, var(--paper-color) 75%);
   --border-color: var(--background-color-alt);
-  --font-serif: "Merriweather", serif;
-  --font-sans: "Open Sans", sans-serif;
-  --font-mono: "Fira Code", monospace;
+  --font-serif: 'Merriweather', serif;
+  --font-sans: 'Open Sans', sans-serif;
+  --font-mono: 'Fira Code', monospace;
   --font-size: 16px;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: #6ea9ff;
-    --background-color: #303030;
-    --paper-color: #1e1e1e;
+    --primary-color: oklch(70.7% 0.165 254.624);
+    --background-color: oklch(14.7% 0.004 49.25);
+    --paper-color: oklch(20.5% 0 0);
     --primary-color-contrast: #000000;
     --background-color-contrast: #ffffff;
     --paper-color-contrast: #ffffff;
@@ -48,17 +48,17 @@
     --paper-color-shade: color-mix(in srgb, var(--paper-color-contrast) 10%, var(--paper-color) 90%);
     --paper-color-alt: color-mix(in srgb, var(--paper-color-contrast) 25%, var(--paper-color) 75%);
     --border-color: var(--background-color-alt);
-    --font-serif: "Merriweather", serif;
-    --font-sans: "Open Sans", sans-serif;
-    --font-mono: "Fira Code", monospace;
+    --font-serif: 'Merriweather', serif;
+    --font-sans: 'Open Sans', sans-serif;
+    --font-mono: 'Fira Code', monospace;
     --font-size: 16px;
   }
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --primary-color: #055c37;
-    --background-color: #ece8dd;
-    --paper-color: #f7f5eb;
+    --primary-color: oklch(59.6% 0.145 163.225);
+    --background-color: oklch(92.3% 0.003 48.717);
+    --paper-color: oklch(98.5% 0 0);
     --primary-color-contrast: #ffffff;
     --background-color-contrast: #000000;
     --paper-color-contrast: #000000;
@@ -77,9 +77,9 @@
     --paper-color-shade: color-mix(in srgb, var(--paper-color-contrast) 10%, var(--paper-color) 90%);
     --paper-color-alt: color-mix(in srgb, var(--paper-color-contrast) 25%, var(--paper-color) 75%);
     --border-color: var(--background-color-alt);
-    --font-serif: "Merriweather", serif;
-    --font-sans: "Open Sans", sans-serif;
-    --font-mono: "Fira Code", monospace;
+    --font-serif: 'Merriweather', serif;
+    --font-sans: 'Open Sans', sans-serif;
+    --font-mono: 'Fira Code', monospace;
     --font-size: 16px;
   }
 }

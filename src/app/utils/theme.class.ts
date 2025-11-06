@@ -64,7 +64,7 @@ export class Theme {
       fontSans: string;
       fontMono: string;
       fontSize: string;
-    }> = {}
+    }> = {},
   ) {
     if (data) {
       this.themeName = data.themeName ?? this.themeName;
@@ -122,8 +122,24 @@ const themesNames = ['default-dark', 'default-light'] as const;
 export type ThemeName = (typeof themesNames)[number];
 
 const ThemesMap = new Map<ThemeName, Theme>([
-  ['default-dark', new Theme({ themeName: 'default-dark', primary: '#6ea9ff', background: '#303030', paper: '#1e1e1e' })],
-  ['default-light', new Theme({ themeName: 'default-light', primary: '#055c37', background: '#ECE8DD', paper: '#F7F5EB' })],
+  [
+    'default-dark',
+    new Theme({
+      themeName: 'default-dark',
+      primary: 'oklch(70.7% 0.165 254.624)',
+      background: 'oklch(14.7% 0.004 49.25)',
+      paper: 'oklch(20.5% 0 0)',
+    }),
+  ],
+  [
+    'default-light',
+    new Theme({
+      themeName: 'default-light',
+      primary: 'oklch(59.6% 0.145 163.225)',
+      background: 'oklch(92.3% 0.003 48.717)',
+      paper: 'oklch(98.5% 0 0)',
+    }),
+  ],
 ]);
 
 export function getTheme(themeName: ThemeName): Theme {

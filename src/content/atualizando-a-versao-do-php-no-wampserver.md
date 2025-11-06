@@ -3,6 +3,7 @@ title: Atualizando a versão do PHP no Wampserver
 description: Use o PHP 5.6 no Wampserver.
 createAt: '2015-08-19 20:30:00 -0300'
 author: Rodrigo Alves
+slug: atualizando-a-versao-do-php-no-wampserver
 comments: true
 tags:
   - php
@@ -16,7 +17,7 @@ music:
   url: 'https://open.spotify.com/track/7rwgvDDkdHTBMAruB2Lr3Z'
 timeToRead:
   minutes: 1
-  words: 224
+  words: 176
 ---
 
 Siga os passos abaixo para atualizar o php no Wampserver

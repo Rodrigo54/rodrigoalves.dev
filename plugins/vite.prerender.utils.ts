@@ -23,7 +23,7 @@ function getPublishedPosts() {
 
 export function getBlogPosts(): string[] {
   const publishedPosts = getPublishedPosts().map(post => {
-    return `/blog/${path.parse(post.file).name}`;
+    return `/blog/${post.attributes.slug}`;
   });
   return publishedPosts;
 }

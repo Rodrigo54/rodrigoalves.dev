@@ -3,6 +3,7 @@ title: Várias versões do PHP no Wampserver
 description: Use desde o PHP 5.3 até o PHP 7.0 no Wampserver.
 createAt: '2015-12-07 16:30:15 -0300'
 author: Rodrigo Alves
+slug: varias-versoes-do-php-no-wampserver
 comments: true
 tags:
   - php
@@ -15,8 +16,8 @@ music:
   title: Don't Stop - Knightlife
   url: 'https://open.spotify.com/track/377e3RYbkuNSpZkV0yEQKE'
 timeToRead:
-  minutes: 4
-  words: 878
+  minutes: 3
+  words: 512
 ---
 
 Quando iniciamos um projeto do zero, fica fácil decidir qual a versão do PHP será usada.
@@ -79,7 +80,7 @@ a variável de ambiente do Windows mude conforme mudamos a versão do php no wam
 
 Para isso vamos precisar cria um arquivo **php.bat** para que dinamicamente mude a variável de ambiente "PATH" após troca da versão do PHP no wampserver. O arquivo deve se parecer com esse abaixo.
 
-```bat
+```bat php.bat
 @REM This file detects the current enabled PHP version
 @REM of wampserver (http://www.wampserver.com/) and executes the enabled php.exe
 @REM and all parameters are passed

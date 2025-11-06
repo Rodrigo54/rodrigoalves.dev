@@ -6,6 +6,7 @@ import devtoolsJson from 'vite-plugin-devtools-json';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { swBuildPlugin } from './plugins/analog-sw';
 import { anchorLinkExtension } from './plugins/marked-extensions';
+import { addCopyButton } from './plugins/shiki-transformer';
 import { readingTimePlugin, unsplashImagePlugin } from './plugins/vite.build.start';
 import { getBlogPosts, getBlogTags } from './plugins/vite.prerender.utils';
 
@@ -28,6 +29,7 @@ export default defineConfig(({ mode }) => ({
         highlighter: 'shiki',
         shikiOptions: {
           highlight: {
+            transformers: [addCopyButton()],
             themes: {
               light: 'light-plus',
               dark: 'dark-plus',
@@ -52,7 +54,6 @@ export default defineConfig(({ mode }) => ({
           failOnError: true,
         },
       },
-      vite: { experimental: { supportAnalogFormat: true } },
     }),
     unsplashImagePlugin(),
     readingTimePlugin(),

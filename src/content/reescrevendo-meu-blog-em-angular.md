@@ -3,6 +3,7 @@ title: Reescrevendo meu blog em Angular
 description: 'Uma jornada de aprendizados, desafios e evolução.'
 createAt: '2025-06-12 12:00:00 -0300'
 author: Rodrigo Alves
+slug: reescrevendo-meu-blog-em-angular
 comments: true
 tags:
   - angular
@@ -18,7 +19,7 @@ music:
     https://open.spotify.com/intl-pt/track/6OC87jHRiovNPEUrgaqFSu?si=b860002366a54484
 timeToRead:
   minutes: 2
-  words: 439
+  words: 382
 ---
 
 Manter um blog é mais do que escrever posts.

@@ -5,6 +5,7 @@ description: >-
   lógica como a do Google.
 createAt: '2017-03-18 07:20:00 -0300'
 author: Rodrigo Alves
+slug: angular2-logica-de-paginacao
 comments: true
 tags:
   - angular
@@ -18,8 +19,8 @@ music:
   title: Strobe - deadmau5
   url: 'https://open.spotify.com/track/6c9EGVj5CaOeoKd9ecMW1U'
 timeToRead:
-  minutes: 6
-  words: 1107
+  minutes: 3
+  words: 577
 ---
 
 ## Lógica de paginação do Google
@@ -52,7 +53,7 @@ Foi usado o projeto angular 2 quickstart como uma base para o aplicativo, ele é
 
 Para facilitar a reutilização da lógica de paginação em diferentes componentes ou módulos Angular 2, colocamos a lógica de paginação em um serviço angular 2.
 
-```typescript
+```angular-ts pager.service.ts
 import * as _ from 'underscore';
 
 export class PagerService {
@@ -106,7 +107,7 @@ export class PagerService {
 
 Um exemplo de componente angular 2 que usa o Pager Service acima para paginar uma lista de itens fictícios que são extraídos de um arquivo json no servidor.
 
-```typescript
+```angular-ts app.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -168,7 +169,7 @@ export class AppComponent implements OnInit {
 
 Um exemplo de modelo angular 2 que mostra uma lista de itens paginados e os links de paginação para navegar entre páginas.
 
-```html
+```angular-html app.component.html
 <div>
   <div class="container">
     <div class="text-center">

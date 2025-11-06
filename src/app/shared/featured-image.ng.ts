@@ -24,17 +24,17 @@ function imageLoader(config: ImageLoaderConfig): string {
     },
   ],
   template: `
-    @if (this.fullWidth()) {
+    @switch (this.imageType()) { @case ('full') {
     <picture>
       <img [ngSrc]="this.imageFull()" [width]="1920" [height]="1080" placeholder priority [alt]="this.alt()" />
     </picture>
-    } @else { @if (this.gridType() === 'cell') {
+    } @case ('cell') {
     <picture>
-      <img [ngSrc]="this.imageCell()" [width]="700" [height]="320" placeholder priority [alt]="this.alt()" />
+      <img [ngSrc]="this.imageCell()" [width]="700" [height]="320" placeholder [alt]="this.alt()" />
     </picture>
-    } @if (this.gridType() === 'row') {
+    } @case ('row') {
     <picture>
-      <img [ngSrc]="this.imageRow()" [width]="320" [height]="250" placeholder priority [alt]="this.alt()" />
+      <img [ngSrc]="this.imageRow()" [width]="320" [height]="250" placeholder [alt]="this.alt()" />
     </picture>
     } }
   `,
@@ -47,6 +47,16 @@ export class FeaturedImage {
   alt = input('Featured Image');
   fullWidth = input(false, { transform: booleanAttribute });
   gridType = injectLocalStorage<'cell' | 'row'>('grid', { defaultValue: 'row' });
+
+  imageType = computed<'full' | 'cell' | 'row'>(() => {
+    if (this.fullWidth()) {
+      return 'full';
+    }
+    if (this.gridType() === 'cell') {
+      return 'cell';
+    }
+    return 'row';
+  });
 
   imageFull = computed((): string => {
     const image = this.image();
