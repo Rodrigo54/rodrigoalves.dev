@@ -12,6 +12,7 @@ import { Component, input } from '@angular/core';
         height: var(--avatar-size, 9rem);
         width: var(--avatar-size, 9rem);
         margin: auto;
+        border: 4px solid var(--paper-color-shade);
         border-radius: 50%;
         position: relative;
         overflow: hidden;
