@@ -22,11 +22,12 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     analog({
       static: true,
+      ssr: false,
       content: {
+        highlighter: 'shiki',
         markedOptions: {
           extensions: [anchorLinkExtension],
         },
-        highlighter: 'shiki',
         shikiOptions: {
           highlight: {
             transformers: [addCopyButton()],
@@ -50,9 +51,7 @@ export default defineConfig(({ mode }) => ({
         },
       },
       nitro: {
-        prerender: {
-          failOnError: true,
-        },
+        preset: 'node_server',
       },
     }),
     unsplashImagePlugin(),
