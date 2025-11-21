@@ -17,8 +17,8 @@ music:
   title: Fly Out West - Yot Club
   url: 'https://open.spotify.com/intl-pt/track/1GPmqcYcbgQeOiu7P3S6Xo?si=d98e7ea4dede4039'
 timeToRead:
-  minutes: 7
-  words: 1476
+  minutes: 5
+  words: 966
 ---
 
 O Angular 21 marca uma das maiores mudanças na história recente do framework. Lançado em novembro de 2025, ele não apenas consolida a arquitetura baseada em *Signals*, como também redefine padrões de performance, produtividade e assistência ao desenvolvedor.
