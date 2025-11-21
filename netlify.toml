@@ -2,3 +2,8 @@
   command = "bun run build"
   publish = "dist/analog/public"
   environment = { DEPLOYED_ON_NETLIFY = "true" }
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
