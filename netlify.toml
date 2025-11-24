@@ -1,4 +1,5 @@
 [build]
   command = "bun run build"
   publish = "dist/analog/public"
+  functions = "dist/analog"
   environment = { DEPLOYED_ON_NETLIFY = "true" }
