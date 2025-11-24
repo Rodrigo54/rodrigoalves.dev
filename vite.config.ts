@@ -21,7 +21,6 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     analog({
-      static: true,
       ssr: false,
       content: {
         highlighter: 'shiki',
