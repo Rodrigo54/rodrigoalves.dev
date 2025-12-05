@@ -18,6 +18,7 @@ export const postMetaResolver: ResolveFn<MetaTag[]> = route => {
   const siteTitle = 'Rodrigo Alves'; // Adjust as needed
 
   return [
+    // HTML Meta Tags
     {
       name: 'description',
       content: postAttributes.description,
@@ -26,9 +27,28 @@ export const postMetaResolver: ResolveFn<MetaTag[]> = route => {
       name: 'author',
       content: postAttributes.author,
     },
+    // Google / Search Engine Tags
+    // Unsupported in Analog Router for now
+    // {
+    //   itemprop: 'name',
+    //   content: postAttributes.title,
+    // },
+    // {
+    //   itemprop: 'description',
+    //   content: postAttributes.description,
+    // },
+    // {
+    //   itemprop: 'image',
+    //   content: imageUrl,
+    // },
+    // Facebook Meta Tags
     {
       property: 'og:url',
       content: base,
+    },
+    {
+      property: 'og:type',
+      content: 'website',
     },
     {
       property: 'og:title',
@@ -43,32 +63,34 @@ export const postMetaResolver: ResolveFn<MetaTag[]> = route => {
       content: imageUrl,
     },
     {
+      property: 'og:site_name',
+      content: siteTitle,
+    },
+    {
       property: 'og:logo',
       content: `${base}/icons/icon-512x512.png`,
     },
+
+    // Twitter Meta Tags
     {
       property: 'twitter:image',
       content: imageUrl,
-    },
-    {
-      property: 'og:type',
-      content: 'website',
-    },
-    {
-      property: 'og:site_name',
-      content: siteTitle,
     },
     {
       property: 'twitter:card',
       content: 'summary_large_image',
     },
     {
-      property: 'twitter:creator',
-      content: postAttributes.author ?? '@rodrigo54',
-    },
-    {
       property: 'twitter:title',
       content: postAttributes.title,
+    },
+    {
+      property: 'twitter:description',
+      content: postAttributes.description,
+    },
+    {
+      property: 'twitter:creator',
+      content: postAttributes.author ?? '@rodrigo54',
     },
   ];
 };
