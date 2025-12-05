@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     analog({
-      ssr: false,
+      static: true,
       content: {
         highlighter: 'shiki',
         markedOptions: {
@@ -50,7 +50,9 @@ export default defineConfig(({ mode }) => ({
         },
       },
       nitro: {
-        preset: 'node_server',
+        prerender: {
+          failOnError: true,
+        },
       },
     }),
     unsplashImagePlugin(),
