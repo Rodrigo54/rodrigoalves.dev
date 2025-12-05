@@ -1,18 +1,20 @@
 import { MetaTag } from '@analogjs/router';
 import { ResolveFn } from '@angular/router';
+import { FeaturedImagesMap } from '@app/data/featured-images';
 import { injectActivePostAttributes } from '@utils/post-active';
 import { environment } from 'src/env/env';
 
-export const postTitleResolver: ResolveFn<string> = (route) => {
+export const postTitleResolver: ResolveFn<string> = route => {
   const postAttributes = injectActivePostAttributes(route);
   const suffixText = 'Rodrigo Alves';
   return `${postAttributes.title} | ${suffixText}`;
 };
 
-export const postMetaResolver: ResolveFn<MetaTag[]> = (route) => {
+export const postMetaResolver: ResolveFn<MetaTag[]> = route => {
   const postAttributes = injectActivePostAttributes(route);
   const base = environment.siteUrl;
-  const imageUrl = `${base}${postAttributes.featuredImage}`;
+  const imagePath = FeaturedImagesMap.get(postAttributes.featuredImage.raw)?.sizes['320x250'];
+  const imageUrl = imagePath ? `${base}${imagePath}` : postAttributes.featuredImage.raw;
   const siteTitle = 'Rodrigo Alves'; // Adjust as needed
 
   return [
