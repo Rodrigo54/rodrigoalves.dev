@@ -1,23 +1,13 @@
-import { RouteMeta } from '@analogjs/router';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  inject,
-  numberAttribute,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, numberAttribute } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostsList } from '@shared/posts-list.ng';
 import { frontMatterSignal } from '@utils/frontmatter.signal';
+import { resolvePageMeta } from '@utils/meta-tags.resolvers';
 import { paramSignal } from '@utils/param.signal';
 import { queryParamSignal } from '@utils/query-param.signal';
 import { environment } from 'src/env/env';
-import { postMetaResolver, postTitleResolver } from '../resolvers';
 
-export const routeMeta: RouteMeta = {
-  title: postTitleResolver,
-  meta: postMetaResolver,
-};
+export const routeMeta = resolvePageMeta();
 
 @Component({
   selector: 'blog-tag-page',
@@ -39,9 +29,7 @@ export default class BlogTagPage {
     const postsPerPage = environment.postsPerPage;
     const currentPage = this.currentPage();
     const tag = this.tag();
-    const publishedPosts = this.posts().filter((post) =>
-      tag ? post.tags.includes(tag) : true
-    );
+    const publishedPosts = this.posts().filter(post => (tag ? post.tags.includes(tag) : true));
     const totalPages = Math.ceil(publishedPosts.length / postsPerPage);
     const startIndex = (currentPage - 1) * postsPerPage;
     const endIndex = startIndex + postsPerPage;
