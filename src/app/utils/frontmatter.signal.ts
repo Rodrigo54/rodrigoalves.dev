@@ -66,7 +66,7 @@ export function frontMatterSignal<T extends 'all' | 'slug'>(type = 'all' as T, i
 export function makeFrontMatter(data?: Partial<FrontMatter>, adjacentPosts?: AdjacentPosts): FrontMatter {
   // Valores padrão
   const defaults: FrontMatter = {
-    title: 'Blog',
+    title: 'Blog | Rodrigo Alves',
     description:
       'Sou um Full Stack Web Developer que gosta de aprender novas formas de programar. Tento me esforçar para ser um bom artista na web.',
     slug: '',
