@@ -1,22 +1,12 @@
-import { RouteMeta } from '@analogjs/router';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  inject,
-  numberAttribute,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, numberAttribute } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostsList } from '@shared/posts-list.ng';
 import { frontMatterSignal } from '@utils/frontmatter.signal';
+import { resolvePageMeta } from '@utils/meta-tags.resolvers';
 import { queryParamSignal } from '@utils/query-param.signal';
 import { environment } from 'src/env/env';
-import { postMetaResolver, postTitleResolver } from './resolvers';
 
-export const routeMeta: RouteMeta = {
-  title: postTitleResolver,
-  meta: postMetaResolver,
-};
+export const routeMeta = resolvePageMeta();
 
 @Component({
   selector: 'blog-index-page',

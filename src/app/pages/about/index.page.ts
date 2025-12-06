@@ -1,13 +1,15 @@
-import { RouteMeta } from '@analogjs/router';
 import { Component } from '@angular/core';
 import FormationComponent from '@shared/formation.ng';
 import PaperLayout from '@shared/paper-layout.ng';
 import SocialLinks from '@shared/social-links.ng';
 import WorkExperience from '@shared/work-experience.ng';
+import { resolvePageMeta } from '@utils/meta-tags.resolvers';
 
-export const routeMeta: RouteMeta = {
-  title: 'Sobre Mim | Rodrigo Alves',
-};
+export const routeMeta = resolvePageMeta({
+  title: 'Sobre Mim',
+  featuredImage: '/img/about-bg.webp',
+  description: 'Basta querer mudar o mundo através da web.',
+});
 
 @Component({
   selector: 'about-index-page',
