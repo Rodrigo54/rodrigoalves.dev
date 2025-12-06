@@ -10,7 +10,7 @@
     "dev": "ng serve",
     "start": "npm run dev",
     "build": "ng build --configuration production",
-    "build:preview": "ng build --configuration development",
+    "build:develop": "ng build --configuration development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postinstall": "bun ./scripts/postinstall.ts"

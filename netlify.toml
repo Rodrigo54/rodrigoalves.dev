@@ -3,6 +3,6 @@
   publish = "dist/analog/public"
   environment = { DEPLOYED_ON_NETLIFY = "true" }
 
-[preview]
-  command = "bun run build:preview"
+[context.branch.develop]
+  command = "bun run build:develop"
   publish = "dist/analog/public"
