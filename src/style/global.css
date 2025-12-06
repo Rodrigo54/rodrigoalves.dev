@@ -13,9 +13,11 @@
   background: var(--primary-color);
 }
 
-main analog-markdown {
+main .analog-markdown {
   font-family: var(--font-sans);
-  margin: 0px 0px 80px;
+  overflow-x: auto;
+  max-width: 100%;
+  display: block;
   p,
   h1,
   h2,
@@ -64,9 +66,12 @@ main analog-markdown {
     }
   }
   table {
-    width: 100%;
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
     margin: 1.6rem auto;
     border-collapse: collapse;
+
     th,
     td {
       padding: 0.625rem 0.625rem;
