@@ -5,7 +5,7 @@ import { faSolidMusic, faSolidTags } from '@ng-icons/font-awesome/solid';
 import { matCalendarMonth } from '@ng-icons/material-icons/baseline';
 import TagComponent from '@shared/tag.ng';
 import { FrontMatter } from '@utils/frontmatter.signal';
-import { format, formatISO } from 'date-fns';
+import { format, formatISO, parse } from 'date-fns';
 import { ptBR } from 'date-fns/locale/pt-BR';
 
 type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
@@ -122,13 +122,13 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
 })
 export default class PostInfo {
   info = input.required<Info>();
-
-  formattedDateISO = computed(() => formatISO(this.info().createAt));
-  formattedDateShort = computed(() => format(this.info().createAt, `d 'de' MMMM 'de' yyyy`, { locale: ptBR }));
+  parsedDate = computed(() => parse(this.info().createAt, 'yyyy-MM-dd HH:mm:ss XXX', new Date()));
+  formattedDateISO = computed(() => formatISO(this.parsedDate()));
+  formattedDateShort = computed(() => format(this.parsedDate(), `d 'de' MMMM 'de' yyyy`, { locale: ptBR }));
   formattedDateLong = computed(() => {
-    const dayOfWeek = format(this.info().createAt, 'EEEE', { locale: ptBR });
+    const dayOfWeek = format(this.parsedDate(), 'EEEE', { locale: ptBR });
     const prefix = ['sábado', 'domingo'].includes(dayOfWeek) ? 'no' : 'na';
-    return format(this.info().createAt, `'Postado ${prefix}' EEEE, d 'de' MMMM 'de' yyyy`, { locale: ptBR });
+    return format(this.parsedDate(), `'Postado ${prefix}' EEEE, d 'de' MMMM 'de' yyyy`, { locale: ptBR });
   });
   formattedReadTime = computed(() => {
     const { minutes } = this.info().timeToRead;
