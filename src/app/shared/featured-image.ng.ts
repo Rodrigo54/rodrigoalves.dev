@@ -30,11 +30,11 @@ function imageLoader(config: ImageLoaderConfig): string {
     </picture>
     } @case ('cell') {
     <picture>
-      <img [ngSrc]="this.imageCell()" [width]="700" [height]="320" placeholder [alt]="this.alt()" />
+      <img [ngSrc]="this.imageCell()" [width]="700" [height]="320" placeholder priority [alt]="this.alt()" />
     </picture>
     } @case ('row') {
     <picture>
-      <img [ngSrc]="this.imageRow()" [width]="320" [height]="250" placeholder [alt]="this.alt()" />
+      <img [ngSrc]="this.imageRow()" [width]="320" [height]="250" placeholder priority [alt]="this.alt()" />
     </picture>
     } }
   `,
