@@ -4,7 +4,7 @@ description: >-
   Descubra os benefícios e a arquitetura do NestJS, um framework baseado no
   Angular para tornar a construção de aplicativos escaláveis e modulares mais
   fácil e rápida.
-createAt: '2020-12-22 12:00:00 -0300'
+createAt: '2020-12-22T12:00:00-03:00'
 author: Rodrigo Alves
 slug: introducao-ao-nestjs
 comments: true

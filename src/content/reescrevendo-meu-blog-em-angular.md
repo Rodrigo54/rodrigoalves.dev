@@ -1,7 +1,7 @@
 ---
 title: Reescrevendo meu blog em Angular
 description: 'Uma jornada de aprendizados, desafios e evolução.'
-createAt: '2025-06-12 12:00:00 -0300'
+createAt: '2025-06-12T12:00:00-03:00'
 author: Rodrigo Alves
 slug: reescrevendo-meu-blog-em-angular
 comments: true

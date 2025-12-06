@@ -4,7 +4,7 @@ description: >-
   Descubra as novidades do Angular 16, como o recurso de sinais, a melhoria no
   modelo de reatividade, a marcação de entradas obrigatórias em componentes,
   entre outros recursos e melhorias.
-createAt: '2023-05-07 12:00:00 -0300'
+createAt: '2023-05-07T12:00:00-03:00'
 author: Rodrigo Alves
 slug: angular16-novos-recursos
 comments: true

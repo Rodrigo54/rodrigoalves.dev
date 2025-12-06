@@ -3,7 +3,7 @@ title: Lógica de Paginação com Angular
 description: >-
   Este é um exemplo de como implementar uma paginação em Angular 2 com uma
   lógica como a do Google.
-createAt: '2017-03-18 07:20:00 -0300'
+createAt: '2017-03-18T07:20:00-03:00'
 author: Rodrigo Alves
 slug: angular2-logica-de-paginacao
 comments: true

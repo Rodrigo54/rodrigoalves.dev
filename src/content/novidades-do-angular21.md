@@ -2,7 +2,7 @@
 title: 'Novidades do Angular 21'
 description: >-
   O Angular 21 traz diversas melhorias e novos recursos para desenvolvedores. Neste artigo, exploramos as principais novidades, incluindo atualizações no framework, novas ferramentas e aprimoramentos de desempenho que tornam o desenvolvimento de aplicações web ainda mais eficiente e agradável.
-createAt: '2025-11-21 12:00:00 -0300'
+createAt: '2025-11-21T12:00:00-03:00'
 author: Rodrigo Alves
 slug: novidades-do-angular21
 comments: true
