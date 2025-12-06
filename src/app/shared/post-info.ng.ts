@@ -5,7 +5,7 @@ import { faSolidMusic, faSolidTags } from '@ng-icons/font-awesome/solid';
 import { matCalendarMonth } from '@ng-icons/material-icons/baseline';
 import TagComponent from '@shared/tag.ng';
 import { FrontMatter } from '@utils/frontmatter.signal';
-import { format, formatISO, parse } from 'date-fns';
+import { format, formatISO, parseISO } from 'date-fns';
 import { ptBR } from 'date-fns/locale/pt-BR';
 
 type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
@@ -122,7 +122,7 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
 })
 export default class PostInfo {
   info = input.required<Info>();
-  parsedDate = computed(() => parse(this.info().createAt, 'yyyy-MM-dd HH:mm:ss XXX', new Date()));
+  parsedDate = computed(() => (this.info().createAt ? parseISO(this.info().createAt) : new Date()));
   formattedDateISO = computed(() => formatISO(this.parsedDate()));
   formattedDateShort = computed(() => format(this.parsedDate(), `d 'de' MMMM 'de' yyyy`, { locale: ptBR }));
   formattedDateLong = computed(() => {
