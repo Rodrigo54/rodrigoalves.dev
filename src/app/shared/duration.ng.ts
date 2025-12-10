@@ -3,7 +3,7 @@ import { NgIcon, provideIcons } from '@ng-icons/core';
 import { matCalendarMonth } from '@ng-icons/material-icons/baseline';
 import { formatDuration, intervalToDuration } from 'date-fns';
 import { ptBR } from 'date-fns/locale/pt-BR';
-import _ from 'lodash';
+import { capitalize } from 'lodash-es';
 
 const formatData = (data: string | Date, type: 'full' | 'short') => {
   const dateFormat = new Intl.DateTimeFormat('pt-BR', {
@@ -17,7 +17,7 @@ const formatData = (data: string | Date, type: 'full' | 'short') => {
   if (isNaN(data.getTime())) {
     return 'Data inválida';
   }
-  return _.capitalize(dateFormat.format(data));
+  return capitalize(dateFormat.format(data));
 };
 
 const durationFormat = ({ init, end }: { init: string | Date; end: string | Date }) => {
