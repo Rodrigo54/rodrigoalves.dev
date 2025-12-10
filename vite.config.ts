@@ -5,7 +5,7 @@ import { defineConfig, PluginOption } from 'vite';
 import devtoolsJson from 'vite-plugin-devtools-json';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { swBuildPlugin } from './plugins/analog-sw';
-import { anchorLinkExtension } from './plugins/marked-extensions';
+import { anchorLinkExtension, tableWrapperExtension } from './plugins/marked-extensions';
 import { addCopyButton } from './plugins/shiki-transformer';
 import { readingTimePlugin, unsplashImagePlugin } from './plugins/vite.build.start';
 import { getBlogPosts, getBlogTags } from './plugins/vite.prerender.utils';
@@ -25,7 +25,7 @@ export default defineConfig(({ mode }) => ({
       content: {
         highlighter: 'shiki',
         markedOptions: {
-          extensions: [anchorLinkExtension],
+          extensions: [anchorLinkExtension, tableWrapperExtension],
         },
         shikiOptions: {
           highlight: {
