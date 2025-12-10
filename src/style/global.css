@@ -65,25 +65,52 @@ main .analog-markdown {
       word-wrap: break-word;
     }
   }
-  table {
+
+  .table-wrapper {
     display: block;
     overflow-x: auto;
     max-width: 100%;
     margin: 1.6rem auto;
-    border-collapse: collapse;
 
-    th,
-    td {
-      padding: 0.625rem 0.625rem;
-      border: 1px solid var(--primary-color-alt);
-      text-align: left;
-    }
-    th {
-      color: var(--primary-color);
-      font-weight: 700;
-    }
-    td {
-      color: var(--text-color);
+    table {
+      max-width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+
+      /* Tabela com 2 colunas */
+      &:has(th:nth-child(2):last-child) {
+        min-width: 320px;
+      }
+
+      /* Tabela com mais de 2 colunas */
+      &:has(th:nth-child(3)) {
+        min-width: 425px;
+      }
+
+      thead,
+      tbody,
+      tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        margin: 0px;
+      }
+      th,
+      td {
+        padding: 0.625rem;
+        border: 1px solid var(--primary-color-alt);
+        text-align: left;
+        word-wrap: break-word;
+      }
+
+      th {
+        color: var(--primary-color);
+        font-weight: 700;
+      }
+
+      td {
+        color: var(--text-color);
+      }
     }
   }
   img {
