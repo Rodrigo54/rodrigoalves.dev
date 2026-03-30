@@ -135,7 +135,7 @@ const ThemesMap = new Map<ThemeName, Theme>([
     'default-light',
     new Theme({
       themeName: 'default-light',
-      primary: 'oklch(59.6% 0.145 163.225)',
+      primary: 'oklch(0.51 0.16 255.96)',
       background: 'oklch(92.3% 0.003 48.717)',
       paper: 'oklch(98.5% 0 0)',
     }),
