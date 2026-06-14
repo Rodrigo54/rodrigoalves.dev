@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import Menubar from '@shared/menubar.ng';
 import Sidebar from '@shared/sidebar.ng';
 
@@ -16,6 +16,7 @@ import Sidebar from '@shared/sidebar.ng';
       <menubar />
     </aside>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [
     `
       :host {

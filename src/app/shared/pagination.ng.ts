@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { matArrowBackIosOutline, matArrowForwardIosOutline } from '@ng-icons/material-icons/outline';
@@ -33,6 +33,7 @@ import { matArrowBackIosOutline, matArrowForwardIosOutline } from '@ng-icons/mat
       }
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [
     `
       :host {

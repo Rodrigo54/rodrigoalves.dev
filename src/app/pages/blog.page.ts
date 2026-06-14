@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import LayoutComponent from '@shared/layout.ng';
 
@@ -10,6 +10,7 @@ import LayoutComponent from '@shared/layout.ng';
       <router-outlet></router-outlet>
     </layout>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [``],
 })
 export default class BlogPage {}

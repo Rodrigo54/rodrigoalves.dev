@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import FormationComponent from '@shared/formation.ng';
 import PaperLayout from '@shared/paper-layout.ng';
 import SocialLinks from '@shared/social-links.ng';
@@ -53,6 +53,7 @@ export const routeMeta = resolvePageMeta({
       </article>
     </paper-layout>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [
     `
       :host {

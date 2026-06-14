@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import Avatar from '@shared/avatar.ng';
 
@@ -15,6 +15,7 @@ import Avatar from '@shared/avatar.ng';
     </a>
     <p>{{ userInfo.description }}</p>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [
     `
       :host {

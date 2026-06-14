@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { Courses, Formation } from '@app/data/formation';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { faSolidBuildingColumns, faSolidGraduationCap, faSolidUserGraduate } from '@ng-icons/font-awesome/solid';
@@ -132,6 +132,7 @@ import DurationComponent from '@shared/duration.ng';
       }
     `,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     provideIcons({
       faSolidUserGraduate,

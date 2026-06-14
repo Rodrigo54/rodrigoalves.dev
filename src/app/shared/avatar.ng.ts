@@ -1,10 +1,11 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'avatar',
   imports: [NgOptimizedImage],
   template: ` <img [ngSrc]="'/img/profile-photo.webp'" [alt]="alt()" width="200" height="200" loading="eager" /> `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [
     `
       :host {

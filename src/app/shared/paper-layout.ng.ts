@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { FeaturedImage } from '@shared/featured-image.ng';
 
 @Component({
@@ -17,6 +17,7 @@ import { FeaturedImage } from '@shared/featured-image.ng';
       </section>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [
     `
       :host {

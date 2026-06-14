@@ -1,4 +1,4 @@
-import { Component, computed, DOCUMENT, effect, inject, linkedSignal } from '@angular/core';
+import { Component, computed, DOCUMENT, effect, inject, linkedSignal, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { boxHomeSolid } from '@ng-icons/boxicons/solid';
 import { NgIcon, provideIcons } from '@ng-icons/core';
@@ -71,6 +71,7 @@ import { injectLocalStorage } from 'ngxtension/inject-local-storage';
     `,
   ],
   imports: [NgIcon, RouterLink],
+  changeDetection: ChangeDetectionStrategy.Eager,
   viewProviders: [
     provideIcons({
       boxHomeSolid,

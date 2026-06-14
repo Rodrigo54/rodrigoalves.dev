@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, ChangeDetectionStrategy } from '@angular/core';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { matCalendarMonth } from '@ng-icons/material-icons/baseline';
 import { formatDuration, intervalToDuration } from 'date-fns';
@@ -63,6 +63,7 @@ const durationFormat = ({ init, end }: { init: string | Date; end: string | Date
       matCalendarMonth,
     }),
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [
     `
       :host {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import Navigation from '@shared/navigation.ng';
 import Profile from '@shared/profile.ng';
 import SocialLinks from '@shared/social-links.ng';
@@ -11,6 +11,7 @@ import SocialLinks from '@shared/social-links.ng';
     <social-links />
     <navigation />
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [
     `
       :host {

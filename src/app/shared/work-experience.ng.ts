@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { Works } from '@app/data/works';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { matCalendarMonth, matMapsHomeWork } from '@ng-icons/material-icons/baseline';
@@ -98,6 +98,7 @@ import DurationComponent from '@shared/duration.ng';
       }
     `,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     provideIcons({
       matWorkOutline,

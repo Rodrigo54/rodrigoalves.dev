@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FeaturedImage } from '@shared/featured-image.ng';
 import PostInfo from '@shared/post-info.ng';
@@ -26,6 +26,7 @@ type Info = Pick<
     </a>
     <post-info [info]="info()" />
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [
     `
       :host {

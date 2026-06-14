@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, input, signal } from '@angular/core';
+import { booleanAttribute, Component, input, signal, ChangeDetectionStrategy } from '@angular/core';
 import { SocialLinksList } from '@app/data/social-links';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
@@ -121,6 +121,7 @@ import { faSolidChessBoard } from '@ng-icons/font-awesome/solid';
       }
     `,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     provideIcons({
       faBrandLinkedin,

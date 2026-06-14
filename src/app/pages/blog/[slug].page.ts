@@ -1,5 +1,5 @@
 import { MarkdownComponent } from '@analogjs/content';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Comments } from '@shared/comments.ng';
 import PaperLayoutLoading from '@shared/paper-layout-loading.ng';
 import PaperLayout from '@shared/paper-layout.ng';
@@ -30,6 +30,7 @@ export const routeMeta = resolvePageMeta();
     <paper-layout-loading />
     }
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [``],
 })
 export default class BlogSlugPage {
