@@ -17,7 +17,7 @@ import { FeaturedImage } from '@shared/featured-image.ng';
       </section>
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
       :host {

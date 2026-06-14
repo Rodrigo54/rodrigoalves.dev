@@ -26,7 +26,7 @@ type Info = Pick<
     </a>
     <post-info [info]="info()" />
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
       :host {

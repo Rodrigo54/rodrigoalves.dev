@@ -53,7 +53,7 @@ export const routeMeta = resolvePageMeta({
       </article>
     </paper-layout>
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
       :host {

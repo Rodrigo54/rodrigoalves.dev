@@ -71,7 +71,7 @@ import { injectLocalStorage } from 'ngxtension/inject-local-storage';
     `,
   ],
   imports: [NgIcon, RouterLink],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   viewProviders: [
     provideIcons({
       boxHomeSolid,

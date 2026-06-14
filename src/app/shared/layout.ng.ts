@@ -16,7 +16,7 @@ import Sidebar from '@shared/sidebar.ng';
       <menubar />
     </aside>
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
       :host {

@@ -132,7 +132,7 @@ import DurationComponent from '@shared/duration.ng';
       }
     `,
   ],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     provideIcons({
       faSolidUserGraduate,

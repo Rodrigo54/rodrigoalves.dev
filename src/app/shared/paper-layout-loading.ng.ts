@@ -15,7 +15,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
       </section>
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
       :host {

@@ -5,7 +5,7 @@ import { Component, input, ChangeDetectionStrategy } from '@angular/core';
   selector: 'avatar',
   imports: [NgOptimizedImage],
   template: ` <img [ngSrc]="'/img/profile-photo.webp'" [alt]="alt()" width="200" height="200" loading="eager" /> `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
       :host {

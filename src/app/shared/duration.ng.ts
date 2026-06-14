@@ -63,7 +63,7 @@ const durationFormat = ({ init, end }: { init: string | Date; end: string | Date
       matCalendarMonth,
     }),
   ],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
       :host {

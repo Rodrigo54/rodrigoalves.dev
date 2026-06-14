@@ -121,7 +121,7 @@ import { faSolidChessBoard } from '@ng-icons/font-awesome/solid';
       }
     `,
   ],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     provideIcons({
       faBrandLinkedin,

@@ -15,7 +15,7 @@ import Avatar from '@shared/avatar.ng';
     </a>
     <p>{{ userInfo.description }}</p>
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
       :host {

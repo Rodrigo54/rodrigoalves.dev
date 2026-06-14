@@ -10,7 +10,7 @@ import LayoutComponent from '@shared/layout.ng';
       <router-outlet></router-outlet>
     </layout>
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [``],
 })
 export default class BlogPage {}

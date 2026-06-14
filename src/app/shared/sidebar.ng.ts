@@ -11,7 +11,7 @@ import SocialLinks from '@shared/social-links.ng';
     <social-links />
     <navigation />
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
       :host {

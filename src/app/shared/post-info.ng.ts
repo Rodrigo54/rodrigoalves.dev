@@ -46,7 +46,7 @@ type Info = Pick<FrontMatter, 'createAt' | 'timeToRead' | 'music' | 'tags'>;
       }
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
       :host {

@@ -30,7 +30,7 @@ export const routeMeta = resolvePageMeta();
     <paper-layout-loading />
     }
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [``],
 })
 export default class BlogSlugPage {
