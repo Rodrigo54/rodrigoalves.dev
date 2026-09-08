@@ -6,12 +6,14 @@ import devtoolsJson from 'vite-plugin-devtools-json';
 import { swBuildPlugin } from './plugins/analog-sw.ts';
 import { anchorLinkExtension, tableWrapperExtension } from './plugins/marked-extensions.ts';
 import { addCopyButton } from './plugins/shiki-transformer.ts';
+import { createSilencedLogger } from './plugins/vite.silent-logger.ts';
 import { readingTimePlugin, unsplashImagePlugin } from './plugins/vite.build.start.ts';
 import { getBlogPosts, getBlogTags } from './plugins/vite.prerender.utils.ts';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   publicDir: 'src/assets',
+  customLogger: createSilencedLogger(),
   build: {
     target: ['es2020'],
   },
