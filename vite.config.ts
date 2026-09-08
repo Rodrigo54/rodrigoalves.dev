@@ -3,12 +3,11 @@
 import analog from '@analogjs/platform';
 import { defineConfig, PluginOption } from 'vite';
 import devtoolsJson from 'vite-plugin-devtools-json';
-import tsconfigPaths from 'vite-tsconfig-paths';
-import { swBuildPlugin } from './plugins/analog-sw';
-import { anchorLinkExtension, tableWrapperExtension } from './plugins/marked-extensions';
-import { addCopyButton } from './plugins/shiki-transformer';
-import { readingTimePlugin, unsplashImagePlugin } from './plugins/vite.build.start';
-import { getBlogPosts, getBlogTags } from './plugins/vite.prerender.utils';
+import { swBuildPlugin } from './plugins/analog-sw.ts';
+import { anchorLinkExtension, tableWrapperExtension } from './plugins/marked-extensions.ts';
+import { addCopyButton } from './plugins/shiki-transformer.ts';
+import { readingTimePlugin, unsplashImagePlugin } from './plugins/vite.build.start.ts';
+import { getBlogPosts, getBlogTags } from './plugins/vite.prerender.utils.ts';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -18,6 +17,7 @@ export default defineConfig(({ mode }) => ({
   },
   resolve: {
     mainFields: ['module'],
+    tsconfigPaths: true,
   },
   plugins: [
     analog({
@@ -57,7 +57,6 @@ export default defineConfig(({ mode }) => ({
     }),
     unsplashImagePlugin(),
     readingTimePlugin(),
-    tsconfigPaths(),
     swBuildPlugin(),
     devtoolsJson(),
   ] as PluginOption[],
