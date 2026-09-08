@@ -23,8 +23,7 @@
           "defaultConfiguration": "production",
           "configurations": {
             "development": {
-              "mode": "development",
-              "sourcemap": false
+              "mode": "development"
             },
             "production": {
               "sourcemap": false,
