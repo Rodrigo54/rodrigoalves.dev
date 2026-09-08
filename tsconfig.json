@@ -1,12 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
-    // Deprecated in TS 6.0, removed in 7.0. Kept for now: bare imports like
-    // 'src/env/env' resolve through it, and Angular's fileReplacements build
-    // option (env.ts -> env.prod.ts) only swaps that exact module path when
-    // ngtsc resolves it the same way.
-    "ignoreDeprecations": "6.0",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -31,9 +25,10 @@
     "useDefineForClassFields": false,
     "skipLibCheck": true,
     "paths": {
-      "@app/data/*": ["src/app/data/*"],
-      "@shared/*": ["src/app/shared/*"],
-      "@utils/*": ["src/app/utils/*"]
+      "@app/data/*": ["./src/app/data/*"],
+      "@env/*": ["./src/env/*"],
+      "@shared/*": ["./src/app/shared/*"],
+      "@utils/*": ["./src/app/utils/*"]
     }
   },
   "angularCompilerOptions": {

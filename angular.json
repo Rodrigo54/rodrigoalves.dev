@@ -27,13 +27,7 @@
             },
             "production": {
               "sourcemap": false,
-              "mode": "production",
-              "fileReplacements": [
-                {
-                  "replace": "src/env/env.ts",
-                  "with": "src/env/env.prod.ts"
-                }
-              ]
+              "mode": "production"
             }
           }
         },

@@ -2,7 +2,7 @@ import { MetaTag, RouteMeta } from '@analogjs/router';
 import { ResolveFn } from '@angular/router';
 import { FeaturedImagesMap } from '@app/data/featured-images';
 import { injectActivePostAttributes } from '@utils/post-active';
-import { environment } from 'src/env/env';
+import { environment } from '@env/env';
 
 interface PageMetaParams {
   title?: string;

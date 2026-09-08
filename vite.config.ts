@@ -22,6 +22,11 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     analog({
       static: true,
+      // angular.json's fileReplacements never worked with @analogjs/platform:vite
+      // (see https://github.com/analogjs/analog/issues/1241) — it's silently
+      // ignored there, so the swap has to happen here instead.
+      fileReplacements:
+        mode === 'production' ? [{ replace: 'src/env/env.ts', with: 'src/env/env.prod.ts' }] : [],
       content: {
         highlighter: 'shiki',
         markedOptions: {

@@ -4,7 +4,7 @@ import { PostsList } from '@shared/posts-list.ng';
 import { frontMatterSignal } from '@utils/frontmatter.signal';
 import { resolvePageMeta } from '@utils/meta-tags.resolvers';
 import { queryParamSignal } from '@utils/query-param.signal';
-import { environment } from 'src/env/env';
+import { environment } from '@env/env';
 
 export const routeMeta = resolvePageMeta();
 
