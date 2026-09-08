@@ -60,6 +60,7 @@
     "@angular/compiler-cli": "^22.1.5",
     "@types/chroma-js": "^3.1.2",
     "@types/lodash-es": "^4.17.12",
+    "baseline-browser-mapping": "^2.11.21",
     "hastscript": "^9.0.1",
     "jsdom": "^27.4.0",
     "ngxtension-plugin": "^7.2.0",
