@@ -18,12 +18,12 @@
         "@angular/router": "^22.1.5",
         "@angular/service-worker": "^22.1.5",
         "@angular/ssr": "^22.1.7",
-        "@ng-icons/boxicons": "^33.1.0",
-        "@ng-icons/core": "^33.1.0",
-        "@ng-icons/font-awesome": "^33.1.0",
-        "@ng-icons/iconoir": "^33.1.0",
-        "@ng-icons/material-icons": "^33.1.0",
-        "@ng-icons/material-symbols": "^33.1.0",
+        "@ng-icons/boxicons": "^36.0.0",
+        "@ng-icons/core": "^36.0.0",
+        "@ng-icons/font-awesome": "^36.0.0",
+        "@ng-icons/iconoir": "^36.0.0",
+        "@ng-icons/material-icons": "^36.0.0",
+        "@ng-icons/material-symbols": "^36.0.0",
         "chroma-js": "^3.2.0",
         "date-fns": "^4.1.0",
         "gray-matter": "^4.0.3",
@@ -352,17 +352,17 @@
 
     "@napi-rs/wasm-runtime": ["@napi-rs/wasm-runtime@0.2.4", "", { "dependencies": { "@emnapi/core": "^1.1.0", "@emnapi/runtime": "^1.1.0", "@tybys/wasm-util": "^0.9.0" } }, "sha512-9zESzOO5aDByvhIAsOy9TbpZ0Ur2AJbUI7UT73kcUTS2mxAMHOBaa1st/jAymNoCtvrit99kkzT1FZuXVcgfIQ=="],
 
-    "@ng-icons/boxicons": ["@ng-icons/boxicons@33.1.0", "", { "dependencies": { "tslib": "^2.3.0" } }, "sha512-/RjHP9f7g41fkCDIBRRKUgXY4SE9t1poIFj2FzRjJ1USyraCfn67ZhtsZn/tEtgrzgg34MvpyvYyUc9GWVYvzQ=="],
+    "@ng-icons/boxicons": ["@ng-icons/boxicons@36.0.0", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@ng-icons/core": "^36.0.0" } }, "sha512-ztLNzkuwPL2Yeznf9qhkQIy/oW6M3Hqp2NNQVHQixnTfJn7AaggW/Yj3T7S7tN+uvESksPbhggk35VUqvj1pEg=="],
 
-    "@ng-icons/core": ["@ng-icons/core@33.1.0", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@angular-devkit/schematics": ">=21.0.0", "@angular/common": ">=21.0.0", "@angular/core": ">=21.0.0", "@schematics/angular": ">=21.0.0", "rxjs": "^6.5.3 || ^7.4.0" } }, "sha512-kNkVt+saULAZp6f84PXmMRbNiiBVdqpM71ajiTAyTqOZCjKxXJe6gnpBfuOd0QvnkxEKSkFuswu4xFYbRPVXUQ=="],
+    "@ng-icons/core": ["@ng-icons/core@36.0.0", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@angular-devkit/schematics": ">=22.0.0", "@angular/common": ">=22.0.0", "@angular/core": ">=22.0.0", "@schematics/angular": ">=22.0.0", "rxjs": "^6.5.3 || ^7.4.0" } }, "sha512-u4BxD2MTeZNbugAHQcUrG2lhOFDmfbiZwqvxA2uABHrYQmTG1xjnTe7kivJJ/Cl2MfTy8U8aIL3u0eryaPavCA=="],
 
-    "@ng-icons/font-awesome": ["@ng-icons/font-awesome@33.1.0", "", { "dependencies": { "tslib": "^2.3.0" } }, "sha512-6eaW1Vd91KoCrISKtz3KMnbO3J5ui7MWguOPURFhNWLmzcrPEtfi5IyvZNS02VIxU6+is+QZE8LY8tDiVcrCoA=="],
+    "@ng-icons/font-awesome": ["@ng-icons/font-awesome@36.0.0", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@ng-icons/core": "^36.0.0" } }, "sha512-IupoCDN4h1hGe4o9xJK//m7bIpP+gpAIaINLAhfu1rqFdIBMY1fWZ0w/GoWx+kQWgFVK9XejRBOZo7ENuFUOYA=="],
 
-    "@ng-icons/iconoir": ["@ng-icons/iconoir@33.1.0", "", { "dependencies": { "tslib": "^2.3.0" } }, "sha512-CgVu6sw929OFtiIqNqyHoQnSmUfQn+IMV5IWryun1fmqNgtiEZ/raxmrdpgi6r2ywp4KMGX875hVQe+9H4ES8g=="],
+    "@ng-icons/iconoir": ["@ng-icons/iconoir@36.0.0", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@ng-icons/core": "^36.0.0" } }, "sha512-cKNTNS47/o1tr+wd/JyE513I1tXGvDiiTVLqUwat6hYkiZanVUSUyBcbF1K3PlJLZPXEVdXsCCx2/0trUzwHcA=="],
 
-    "@ng-icons/material-icons": ["@ng-icons/material-icons@33.1.0", "", { "dependencies": { "tslib": "^2.3.0" } }, "sha512-Ytl4cnJ6btK68XFMgC+X4c+mfyfb9AYEZGO/a3+RG+oGN3+cELMg3eX4OjeR7XvGyUgJFs1QED9ksT+T1mTSIQ=="],
+    "@ng-icons/material-icons": ["@ng-icons/material-icons@36.0.0", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@ng-icons/core": "^36.0.0" } }, "sha512-xMnPlHKseRlgA36pGGtdScAmzubR35skBVvgYTyiaimhYBXP0fu2teUDn2GO7NQvA4e6iLx8toyOirdoK8xOJA=="],
 
-    "@ng-icons/material-symbols": ["@ng-icons/material-symbols@33.1.0", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@ng-icons/core": "33.1.0" } }, "sha512-kmb5V4gTPYZBwRji9+zRwX2IiyQJ12HCWQeDhk3T2UvtQh3OUM+WGKCmxSFbJ6Vz82PUpxeiwhGskTieSQJp3A=="],
+    "@ng-icons/material-symbols": ["@ng-icons/material-symbols@36.0.0", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@ng-icons/core": "^36.0.0" } }, "sha512-yQlFd6EEAJCmqPXOvok6Q7OrCATKuNwvNWnXRfYR0VZw4Tb5/+DPKUZCF+02NrntIO819n2rgmfNZCLRV/9oCg=="],
 
     "@nodelib/fs.scandir": ["@nodelib/fs.scandir@2.1.5", "", { "dependencies": { "@nodelib/fs.stat": "2.0.5", "run-parallel": "^1.1.9" } }, "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="],
 
