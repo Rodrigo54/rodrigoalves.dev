@@ -7,11 +7,11 @@
   },
   "scripts": {
     "ng": "ng",
-    "dev": "ng serve",
+    "dev": "VITE_CONFIG_NATIVE_IGNORE_WARNING=true ng serve",
     "start": "bun run dev",
-    "build": "ng build --configuration production",
-    "build:develop": "ng build --configuration development",
-    "watch": "ng build --watch --configuration development",
+    "build": "VITE_CONFIG_NATIVE_IGNORE_WARNING=true ng build --configuration production",
+    "build:develop": "VITE_CONFIG_NATIVE_IGNORE_WARNING=true ng build --configuration development",
+    "watch": "VITE_CONFIG_NATIVE_IGNORE_WARNING=true ng build --watch --configuration development",
     "test": "ng test",
     "postinstall": "bun ./scripts/postinstall.ts"
   },
@@ -60,6 +60,7 @@
     "@angular/compiler-cli": "^22.1.5",
     "@types/chroma-js": "^3.1.2",
     "@types/lodash-es": "^4.17.12",
+    "@types/node": "^26.5.0",
     "baseline-browser-mapping": "^2.11.21",
     "hastscript": "^9.0.1",
     "jsdom": "^27.4.0",

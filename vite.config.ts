@@ -3,11 +3,11 @@
 import analog from '@analogjs/platform';
 import { defineConfig, PluginOption } from 'vite';
 import devtoolsJson from 'vite-plugin-devtools-json';
-import { swBuildPlugin } from './plugins/analog-sw.ts';
-import { anchorLinkExtension, tableWrapperExtension } from './plugins/marked-extensions.ts';
-import { addCopyButton } from './plugins/shiki-transformer.ts';
-import { readingTimePlugin, unsplashImagePlugin } from './plugins/vite.build.start.ts';
-import { getBlogPosts, getBlogTags } from './plugins/vite.prerender.utils.ts';
+import { swBuildPlugin } from './plugins/analog-sw';
+import { anchorLinkExtension, tableWrapperExtension } from './plugins/marked-extensions';
+import { addCopyButton } from './plugins/shiki-transformer';
+import { readingTimePlugin, unsplashImagePlugin } from './plugins/vite.build.start';
+import { getBlogPosts, getBlogTags } from './plugins/vite.prerender.utils';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({

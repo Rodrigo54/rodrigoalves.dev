@@ -1,6 +1,6 @@
 import { Plugin, UserConfig } from 'vite';
-import { processImages } from '../scripts/process-unsplash-imgs.ts';
-import { processReadTimes } from '../scripts/reading-time.ts';
+import { processImages } from '../scripts/process-unsplash-imgs';
+import { processReadTimes } from '../scripts/reading-time';
 
 const isDeployedOnNetlify = process.env['DEPLOYED_ON_NETLIFY'] === 'true';
 

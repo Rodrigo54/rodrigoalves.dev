@@ -2,7 +2,7 @@ import fm from 'gray-matter';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 
-import { FrontMatter } from '../src/app/utils/frontmatter.signal.ts';
+import { FrontMatter } from '../src/app/utils/frontmatter.signal';
 
 const POSTS_PATH = './src/content';
 
