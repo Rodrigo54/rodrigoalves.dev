@@ -1,7 +1,7 @@
 [build]
   command = "bun run build"
   publish = "dist/analog/public"
-  environment = { DEPLOYED_ON_NETLIFY = "true" }
+  environment = { DEPLOYED_ON_NETLIFY = "true", NODE_VERSION = "26" }
 
 [context.branch.develop]
   command = "bun run build:develop"
