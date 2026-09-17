@@ -14,7 +14,8 @@
     "build:develop": "VITE_CONFIG_NATIVE_IGNORE_WARNING=true ng build --configuration development",
     "watch": "VITE_CONFIG_NATIVE_IGNORE_WARNING=true ng build --watch --configuration development",
     "test": "ng test",
-    "postinstall": "bun ./scripts/postinstall.ts"
+    "postinstall": "bun ./scripts/postinstall.ts",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -59,11 +60,14 @@
     "@angular/build": "^22.1.7",
     "@angular/cli": "^22.1.7",
     "@angular/compiler-cli": "^22.1.6",
+    "@commitlint/cli": "^21.2.2",
+    "@commitlint/config-conventional": "^21.2.2",
     "@types/chroma-js": "^3.1.2",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^26.5.0",
     "baseline-browser-mapping": "^2.11.21",
     "hastscript": "^9.0.1",
+    "husky": "^9.1.7",
     "jsdom": "^27.4.0",
     "ngxtension-plugin": "^7.3.0",
     "typescript": "~6.0.3",
